@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -16,6 +17,7 @@ namespace UI.Desktop
         public Especialidades()
         {
             InitializeComponent();
+            this.dgvEspecialidades.AutoGenerateColumns = false;
         }
 
         private void Especialidades_Load(object sender, EventArgs e)
@@ -24,11 +26,10 @@ namespace UI.Desktop
         }
         public void listarEspecialidades()
         {
-            Business.Logic.EspecialidadLogic el = new Business.Logic.EspecialidadLogic();
-            this.dgvEspecialidades.DataSource = el.GetAll();
+            this.dgvEspecialidades.DataSource = EspecialidadLogic.GetInstance().GetAll();
         }
-    
-  
+
+
         private void toolStripContainer2_ContentPanel_Load(object sender, EventArgs e)
         {
 
@@ -68,6 +69,11 @@ namespace UI.Desktop
         {
             EspecialidadForm especialidadForm = new EspecialidadForm(((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Baja);
             this.listarEspecialidades();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

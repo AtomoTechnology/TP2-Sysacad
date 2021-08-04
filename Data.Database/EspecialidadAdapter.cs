@@ -6,12 +6,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Data.Database
 {
     public class EspecialidadAdapter : Adapter
     {
-     
+
 
         public List<Especialidad> GetAll()
         {
@@ -19,7 +20,6 @@ namespace Data.Database
 
             try
             {
-
                 this.OpenConnection();
                 SqlCommand cmdEsp = new SqlCommand("SELECT * FROM especialidades", this.SqlConn);
                 SqlDataReader reader = cmdEsp.ExecuteReader();
@@ -46,14 +46,14 @@ namespace Data.Database
             }
 
             return especialidades;
-        } 
-       public Business.Entities.Especialidad GetOne(int id)
+        }
+        public Business.Entities.Especialidad GetOne(int id)
         {
             Especialidad esp = new Especialidad();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdEsp= new SqlCommand( "SELECT * FROM especialidades WHERE id_especialidad = @id",this.SqlConn  );
+                SqlCommand cmdEsp = new SqlCommand("SELECT * FROM especialidades WHERE id_especialidad = @id", this.SqlConn);
                 cmdEsp.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader reader = cmdEsp.ExecuteReader();
 
@@ -78,7 +78,7 @@ namespace Data.Database
             }
             return esp;
         }
-        public void DeleteOne( int ID )
+        public void DeleteOne(int ID)
         {
             try
             {
@@ -86,7 +86,9 @@ namespace Data.Database
                 SqlCommand cmdEsp = new SqlCommand("DELETE  FROM especialidades WHERE id_especialidad = @id", this.SqlConn);
                 cmdEsp.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdEsp.ExecuteNonQuery();
-               
+
+                MessageBox.Show("Especialidad borrado con exito");
+
 
             }
             catch (Exception ex)
@@ -106,26 +108,24 @@ namespace Data.Database
 
             try
             {
-
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand(
 
                 "UPDATE especialidades SET desc_especialidad = @desc_especialidad WHERE id_especialidad=@id", SqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = esp.ID;
-               
+
                 cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = esp.desc_especialidad;
                 cmdSave.ExecuteNonQuery();
+                MessageBox.Show("Especialidad actualizado con exito");
             }
             catch (Exception Ex)
             {
-
                 Exception Excepcionalejada = new Exception("Error al actualizar la especialidad", Ex); throw Excepcionalejada;
             }
 
             finally
             {
-
                 this.CloseConnection();
             }
 
@@ -134,22 +134,16 @@ namespace Data.Database
         {
             try
             {
-                 
 
                 this.OpenConnection();
                 SqlCommand cmdEsp = new SqlCommand("insert into  especialidades (desc_especialidad) " + "values (@desc_especialidad)", this.SqlConn);
                 cmdEsp.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = esp.desc_especialidad;
                 cmdEsp.ExecuteNonQuery();
-
-                //SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email)" +
-                //    "values (@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" +
-                //    "select @@identity",    //esta lanea es para recuperar el ID que asigna el sql automaticamente 
-                //    SqlConn);
+                MessageBox.Show("Especialidad creado con exito");
 
             }
             catch (Exception ex)
             {
-
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la especialidad", ex);
 
                 throw ExcepcionManejada;

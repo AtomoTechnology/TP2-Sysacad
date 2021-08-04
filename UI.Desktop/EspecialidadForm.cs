@@ -24,17 +24,22 @@ namespace UI.Desktop
             InitializeComponent();
             Modo = modo;
         }
-        public EspecialidadForm( int ID , ModoForm modo  )
+        public EspecialidadForm(int ID, ModoForm modo)
         {
             InitializeComponent();
             Modo = modo;
-            EspecialidadLogic el = new EspecialidadLogic();
-            currentEsp =  el.GetOne(ID);
-            if(currentEsp != null)
+            currentEsp = EspecialidadLogic.GetInstance().GetOne(ID);
+            if (currentEsp != null)
             {
-                if(modo ==  ModoForm.Baja)
+                if (modo == ModoForm.Baja)
                 {
-                    el.DeleteOne(ID);
+                    var result = MessageBox.Show("Estas seguro que quieres borra el registro", "Borra especialidad", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+
+                        EspecialidadLogic.GetInstance().DeleteOne(ID);
+                    }
+
                 }
                 else
                 {
@@ -45,11 +50,9 @@ namespace UI.Desktop
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+
+        public override void MapearDeDatos()
         {
-            this.Close();
-        }
-        public override void MapearDeDatos() {
 
             this.tbId.Text = currentEsp.ID.ToString();
             this.tbDescripcion.Text = currentEsp.desc_especialidad;
@@ -59,10 +62,13 @@ namespace UI.Desktop
                     this.btnSaveEsp.Text = "Crear";
                     break;
                 case ModoForm.Baja:
-                    this.btnSaveEsp.Text = "Eliminar";
+                    this.tbId.Enabled = false;
+                    this.btnSaveEsp.Text = "Borrar";
                     break;
                 case ModoForm.Modificacion:
+                    this.tbId.Enabled = false;
                     this.btnSaveEsp.Text = "Guardar";
+                    this.label3.Text = "Actualizar Especialidad";
                     break;
                 case ModoForm.Consulta:
                     this.btnSaveEsp.Text = "Aceptar";
@@ -73,9 +79,10 @@ namespace UI.Desktop
             }
 
         }
-        public override void MapearADatos() {
+        public override void MapearADatos()
+        {
 
-          
+
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -101,38 +108,42 @@ namespace UI.Desktop
 
 
         }
-        public override void GuardarCambios() {
+        public override void GuardarCambios()
+        {
             this.MapearADatos();
             EspecialidadLogic el = new EspecialidadLogic();
             el.Save(currentEsp);
 
         }
         public override bool Validar()
-        { 
-            if(this.tbDescripcion.Text.Length != 0) {
-
-                 return true; 
-            }else
+        {
+            if (this.tbDescripcion.Text.Length != 0)
             {
-                this.Notificar("Verifique los datos del formulario", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+
+                return true;
+            }
+            else
+            {
+                this.Notificar("Verifique los datos del formulario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-        
+
         }
 
         private void btnSaveEsp_Click(object sender, EventArgs e)
         {
             if (this.Validar())
             {
-               
+
                 this.GuardarCambios();
                 this.Close();
             }
         }
 
-        private void tbId_TextChanged(object sender, EventArgs e)
-        {
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

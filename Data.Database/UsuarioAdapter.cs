@@ -34,6 +34,8 @@ namespace Data.Database
                 usr.Telefono = (string)drUsuarios["telefono"];
                 usr.FechaNac = (DateTime)drUsuarios["fecha_nac"];
                 usr.TipoPersona = (int)drUsuarios["tipo_persona"];
+                usr.IdPlan = (int)drUsuarios["id_plan"];
+                usr.DescPlan = (string)drUsuarios["desc_plan"];
                 switch (usr.TipoPersona)
                 {
                     case 1:
@@ -48,9 +50,6 @@ namespace Data.Database
                     default:
                         break;
                 }
-             
-                usr.IdPlan = (int)drUsuarios["id_plan"];
-                usr.DescPlan = (string)drUsuarios["desc_plan"];
 
                 usuarios.Add(usr);
             }
@@ -70,21 +69,28 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUsuario = new SqlCommand("select * from usuarios where id_usuario = @id", SqlConn);
+                SqlCommand cmdUsuario = new SqlCommand("select * from usuarios usr inner join personas per on usr.id_persona = per.id_persona inner join planes pl on pl.id_plan = per.id_plan  where id_usuario = @id", SqlConn);
                 cmdUsuario.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                SqlDataReader drUsuario = cmdUsuario.ExecuteReader();
-                if (drUsuario.Read())
+                SqlDataReader drUsuarios = cmdUsuario.ExecuteReader();
+                if (drUsuarios.Read())
                 {
-                    usr.ID = (int)drUsuario["id_usuario"];
-                    usr.NombreUsuario = (string)drUsuario["nombre_usuario"];
-                    usr.Clave = (string)drUsuario["clave"];
-                    usr.Habilitado = (bool)drUsuario["habilitado"];
-                    usr.Nombre = (string)drUsuario["nombre"];
-                    usr.Apellido = (string)drUsuario["apellido"];
-                    usr.Email = (string)drUsuario["email"];
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.Legajo = (int)drUsuarios["legajo"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.Email = (string)drUsuarios["email"];
+                    usr.Direccion = (string)drUsuarios["direccion"];
+                    usr.Telefono = (string)drUsuarios["telefono"];
+                    usr.FechaNac = (DateTime)drUsuarios["fecha_nac"];
+                    usr.TipoPersona = (int)drUsuarios["tipo_persona"];
+                    usr.IdPlan = (int)drUsuarios["id_plan"];
+                    usr.DescPlan = (string)drUsuarios["desc_plan"];
 
                 }
-                drUsuario.Close();
+                drUsuarios.Close();
             }
             catch (Exception ex)
             {
