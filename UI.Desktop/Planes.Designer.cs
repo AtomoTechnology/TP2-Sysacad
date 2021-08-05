@@ -42,6 +42,9 @@ namespace UI.Desktop
             this.btnAddPlan = new System.Windows.Forms.ToolStripButton();
             this.btnEditEsp = new System.Windows.Forms.ToolStripButton();
             this.btnDeletePlan = new System.Windows.Forms.ToolStripButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
@@ -56,7 +59,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1407, 755);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(938, 527);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -83,7 +86,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowCount = 2;
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1407, 755);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(938, 527);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvPlanes
@@ -98,42 +101,46 @@ namespace UI.Desktop
             this.dgvPlanes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPlanes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPlanes.ColumnHeadersHeight = 30;
             this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.descPlan,
+            this.descEspecialidad});
             this.tlpEspecialidades.SetColumnSpan(this.dgvPlanes, 2);
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPlanes.EnableHeadersVisualStyles = false;
-            this.dgvPlanes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
+            this.dgvPlanes.GridColor = System.Drawing.SystemColors.Control;
             this.dgvPlanes.Location = new System.Drawing.Point(3, 3);
             this.dgvPlanes.MultiSelect = false;
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPlanes.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlanes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             this.dgvPlanes.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPlanes.RowTemplate.DividerHeight = 1;
             this.dgvPlanes.RowTemplate.Height = 28;
             this.dgvPlanes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanes.Size = new System.Drawing.Size(1401, 666);
+            this.dgvPlanes.Size = new System.Drawing.Size(932, 454);
             this.dgvPlanes.TabIndex = 0;
             // 
             // btnUpdatePlanes
@@ -143,14 +150,12 @@ namespace UI.Desktop
             this.btnUpdatePlanes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUpdatePlanes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdatePlanes.FlatAppearance.BorderSize = 0;
-            this.btnUpdatePlanes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnUpdatePlanes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.btnUpdatePlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatePlanes.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePlanes.Location = new System.Drawing.Point(971, 675);
+            this.btnUpdatePlanes.Location = new System.Drawing.Point(502, 463);
             this.btnUpdatePlanes.Name = "btnUpdatePlanes";
             this.btnUpdatePlanes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnUpdatePlanes.Size = new System.Drawing.Size(216, 77);
+            this.btnUpdatePlanes.Size = new System.Drawing.Size(216, 59);
             this.btnUpdatePlanes.TabIndex = 1;
             this.btnUpdatePlanes.Text = "Actualizar";
             this.btnUpdatePlanes.UseVisualStyleBackColor = false;
@@ -166,9 +171,9 @@ namespace UI.Desktop
             this.btnClosePlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClosePlanes.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClosePlanes.ForeColor = System.Drawing.Color.White;
-            this.btnClosePlanes.Location = new System.Drawing.Point(1193, 675);
+            this.btnClosePlanes.Location = new System.Drawing.Point(724, 463);
             this.btnClosePlanes.Name = "btnClosePlanes";
-            this.btnClosePlanes.Size = new System.Drawing.Size(211, 76);
+            this.btnClosePlanes.Size = new System.Drawing.Size(211, 61);
             this.btnClosePlanes.TabIndex = 2;
             this.btnClosePlanes.Text = "Salir";
             this.btnClosePlanes.UseVisualStyleBackColor = false;
@@ -184,7 +189,7 @@ namespace UI.Desktop
             this.btnDeletePlan});
             this.tsPlanes.Location = new System.Drawing.Point(30, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(180, 57);
+            this.tsPlanes.Size = new System.Drawing.Size(120, 33);
             this.tsPlanes.TabIndex = 0;
             // 
             // btnAddPlan
@@ -193,7 +198,7 @@ namespace UI.Desktop
             this.btnAddPlan.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPlan.Image")));
             this.btnAddPlan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(34, 52);
+            this.btnAddPlan.Size = new System.Drawing.Size(34, 28);
             this.btnAddPlan.Text = "Agregar Plan";
             this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
@@ -203,7 +208,7 @@ namespace UI.Desktop
             this.btnEditEsp.Image = ((System.Drawing.Image)(resources.GetObject("btnEditEsp.Image")));
             this.btnEditEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditEsp.Name = "btnEditEsp";
-            this.btnEditEsp.Size = new System.Drawing.Size(34, 52);
+            this.btnEditEsp.Size = new System.Drawing.Size(34, 28);
             this.btnEditEsp.Text = "editar Especialidad";
             this.btnEditEsp.Click += new System.EventHandler(this.btnEditEsp_Click);
             // 
@@ -213,8 +218,36 @@ namespace UI.Desktop
             this.btnDeletePlan.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePlan.Image")));
             this.btnDeletePlan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeletePlan.Name = "btnDeletePlan";
-            this.btnDeletePlan.Size = new System.Drawing.Size(34, 52);
+            this.btnDeletePlan.Size = new System.Drawing.Size(34, 28);
             this.btnDeletePlan.Text = "Borrar Plan";
+            this.btnDeletePlan.Click += new System.EventHandler(this.btnDeletePlan_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 80;
+            // 
+            // descPlan
+            // 
+            this.descPlan.DataPropertyName = "DescPlan";
+            this.descPlan.HeaderText = "Desc. Plan";
+            this.descPlan.MinimumWidth = 8;
+            this.descPlan.Name = "descPlan";
+            this.descPlan.ReadOnly = true;
+            this.descPlan.Width = 197;
+            // 
+            // descEspecialidad
+            // 
+            this.descEspecialidad.DataPropertyName = "DescEspecialidad";
+            this.descEspecialidad.HeaderText = "Desc Especialidad";
+            this.descEspecialidad.MinimumWidth = 8;
+            this.descEspecialidad.Name = "descEspecialidad";
+            this.descEspecialidad.ReadOnly = true;
+            this.descEspecialidad.Width = 307;
             // 
             // Planes
             // 
@@ -253,5 +286,8 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridView dgvPlanes;
         private System.Windows.Forms.Button btnUpdatePlanes;
         private System.Windows.Forms.Button btnClosePlanes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descEspecialidad;
     }
 }

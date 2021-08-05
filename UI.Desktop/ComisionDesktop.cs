@@ -14,40 +14,56 @@ namespace UI.Desktop
 {
     public partial class ComisionDesktop : ApplicationForm
     {
-        Comision currentComision =  new Comision();
-       
+        Comision currentComision = new Comision();
+
         public ComisionDesktop()
         {
             InitializeComponent();
-           
+
         }
         public ComisionDesktop(ModoForm modo)
         {
             InitializeComponent();
+            this.CargarPlan();
             Modo = modo;
         }
 
-        public ComisionDesktop(int ID , ModoForm modo )
+        public ComisionDesktop(int ID, ModoForm modo)
         {
             InitializeComponent();
             Modo = modo;
-            currentComision =  ComisionLogic.GetInstance().GetOne(ID);
-            if(currentComision != null)
+            currentComision = ComisionLogic.GetInstance().GetOne(ID);
+            if (currentComision != null)
             {
-                this.MapearDeDatos();
+                if (Modo == ModoForm.Baja)
+                {
+                    DialogResult result = MessageBox.Show("Quieres Borrar esta comision?", "Borrar Comision", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+
+                        ComisionLogic.GetInstance().Delete(ID);
+                    }
+                }
+                else
+                {
+
+                    this.MapearDeDatos();
+                }
             }
 
         }
 
 
-        public override void MapearDeDatos() {
+        public override void MapearDeDatos()
+        {
 
             this.txtId.Text = currentComision.ID.ToString();
             this.txtDess.Text = currentComision.DescComision;
             this.txtAnioEspecialidad.Text = currentComision.AnioEspecialidad.ToString();
+            Plan p = PlanLogic.GetInstance().GetOne(currentComision.IdPlan);
+            this.CargarPlan();
+            this.cbPlan.SelectedIndex = this.cbPlan.FindString(p.DescPlan);
 
-            this.cbPlan.SelectedText =  currentComision.IdPlan.ToString();   
-            
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -55,15 +71,12 @@ namespace UI.Desktop
                     this.lbTitle.Text = "Agregar una comision";
                     break;
                 case ModoForm.Baja:
-                    this.btnSaveComision.Text = "Borrar";
-                    this.lbTitle.Text = "Borrar una comision";
                     break;
                 case ModoForm.Modificacion:
                     this.btnSaveComision.Text = "Guardar";
                     this.lbTitle.Text = "Modificar una comision";
                     break;
                 case ModoForm.Consulta:
-                    //this.btnSaveComision.Visible = false;
                     this.btnSaveComision.Enabled = false;
                     this.lbTitle.Text = "Consulta una comision";
                     break;
@@ -72,7 +85,8 @@ namespace UI.Desktop
                     break;
             }
         }
-        public override void MapearADatos() {
+        public override void MapearADatos()
+        {
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -102,21 +116,23 @@ namespace UI.Desktop
 
 
         }
-        public override void GuardarCambios() {
+        public override void GuardarCambios()
+        {
 
             this.MapearADatos();
             ComisionLogic.GetInstance().Save(currentComision);
-        
+
         }
-        public override bool Validar() {
-            if(this.txtDess.Text != "" && this.txtAnioEspecialidad.Text != "" && this.cbPlan.SelectedItem != null)
+        public override bool Validar()
+        {
+            if (this.txtDess.Text != "" && this.txtAnioEspecialidad.Text != "" && this.cbPlan.SelectedItem != null)
             {
                 return true;
             }
             else
             {
-                this.Notificar("Verifique todos los campos ", MessageBoxButtons.OK, MessageBoxIcon.Error ); 
-                return false; 
+                this.Notificar("Verifique todos los campos ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 
@@ -133,12 +149,12 @@ namespace UI.Desktop
                 this.Close();
             }
         }
-
-        private void ComisionDesktop_Load(object sender, EventArgs e)
+        public void CargarPlan()
         {
             this.cbPlan.DataSource = new PlanLogic().GetAll();
-            this.cbPlan.DisplayMember = "DescComision";
+            this.cbPlan.DisplayMember = "DescPlan";
             this.cbPlan.ValueMember = "ID";
         }
+
     }
 }

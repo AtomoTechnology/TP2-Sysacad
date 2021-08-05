@@ -6,16 +6,25 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Comision :BusinessEntity
+    public class Comision : BusinessEntity
     {
         private string desc_comision;
+        private int id_plan;
+        private int anio_especialidad;
+        private string _descPlan;
+
+        public string DescPlan
+        {
+            get { return _descPlan; }
+            set { _descPlan = value; }
+        }
+
 
         public string DescComision
         {
             get { return desc_comision; }
             set { desc_comision = value; }
         }
-        private int anio_especialidad;
 
         public int AnioEspecialidad
         {
@@ -23,7 +32,6 @@ namespace Business.Entities
             set { anio_especialidad = value; }
         }
 
-        private int id_plan;
 
         public int IdPlan
         {

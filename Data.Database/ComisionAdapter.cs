@@ -18,7 +18,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("Select * from comisiones", SqlConn);
+                SqlCommand cmdComision = new SqlCommand("select * from comisiones com  inner join planes pl on com.id_plan = pl.id_plan", SqlConn);
                 SqlDataReader reader = cmdComision.ExecuteReader();
                 while (reader.Read())
                 {
@@ -26,7 +26,8 @@ namespace Data.Database
                     com.ID = (int)reader["id_comision"];
                     com.DescComision = (string)reader["desc_comision"];
                     com.AnioEspecialidad = (int)reader["anio_especialidad"];
-                    com.IdPlan = (int)reader["id_plan"];          
+                    com.IdPlan = (int)reader["id_plan"];
+                    com.DescPlan = (string)reader["desc_plan"];
                     comisiones.Add(com);
                 }
                 //cerramos el dataReader 

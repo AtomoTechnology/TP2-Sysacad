@@ -22,7 +22,7 @@ namespace UI.Desktop
         public PlanDesktop(ModoForm modo)
         {
             InitializeComponent();
-
+            this.CargarEspecialidades();
             Modo = modo;
 
 
@@ -30,14 +30,19 @@ namespace UI.Desktop
         public PlanDesktop(int ID, ModoForm modo)
         {
             InitializeComponent();
+            this.CargarEspecialidades();
             Modo = modo;
-            PlanLogic pl = new PlanLogic();
-            currentPlan = pl.GetOne(ID);
+            currentPlan = PlanLogic.GetInstance().GetOne(ID);
             if (currentPlan != null)
             {
                 if (modo == ModoForm.Baja)
                 {
-                    pl.Delete(ID);
+                    DialogResult result = MessageBox.Show("Estas seguro de borrar el plan ?", "Borrar Plan", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+
+                        PlanLogic.GetInstance().Delete(ID);
+                    }
                 }
                 else
                 {
@@ -46,16 +51,19 @@ namespace UI.Desktop
             }
 
         }
-        public override void MapearDeDatos() {
+        public override void MapearDeDatos()
+        {
 
-            this.txtId.Text =  currentPlan.ID.ToString() ;
+            this.txtId.Text = currentPlan.ID.ToString();
             this.txtDess.Text = currentPlan.DescPlan;
-            this.cbEspecialidades.Text =  currentPlan.IdEspecialidad.ToString();
+            this.CargarEspecialidades();
+            Especialidad esp = EspecialidadLogic.GetInstance().GetOne(currentPlan.IdEspecialidad);
+            this.cbEspecialidades.SelectedIndex = this.cbEspecialidades.FindString(esp.desc_especialidad);
+            //this.cbEspecialidades.Text = currentPlan.IdEspecialidad.ToString();
             switch (Modo)
             {
                 case ModoForm.Alta:
                     this.btnSavePlan.Text = "Crear Plan";
-                  
                     break;
                 case ModoForm.Baja:
                     this.btnSavePlan.Text = "Borrar Plan";
@@ -70,14 +78,15 @@ namespace UI.Desktop
                     break;
             }
         }
-        public override void MapearADatos() {
+        public override void MapearADatos()
+        {
 
-           
+
             switch (Modo)
             {
                 case ModoForm.Alta:
                     currentPlan.DescPlan = this.txtDess.Text;
-                    currentPlan.IdEspecialidad = ((Especialidad ) this.cbEspecialidades.SelectedItem).ID;
+                    currentPlan.IdEspecialidad = ((Especialidad)this.cbEspecialidades.SelectedItem).ID;
                     currentPlan.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Baja:
@@ -95,24 +104,25 @@ namespace UI.Desktop
 
 
         }
-        public override void GuardarCambios() {
+        public override void GuardarCambios()
+        {
             this.MapearADatos();
-            PlanLogic pl = new PlanLogic();
-            pl.Save(currentPlan);
-        
+            PlanLogic.GetInstance().Save(currentPlan);
+
         }
-        public override bool Validar() {
-        
-            if(this.txtDess.Text != "" && this.cbEspecialidades.SelectedItem != null)
+        public override bool Validar()
+        {
+
+            if (this.txtDess.Text != "" && this.cbEspecialidades.SelectedItem != null)
             {
                 return true;
             }
             else
             {
-                this.Notificar("Error", "Verifique los datos del formulario",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar("Error", "Verifique los datos del formulario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-        
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -122,17 +132,14 @@ namespace UI.Desktop
 
         private void PlanDesktop_Load(object sender, EventArgs e)
         {
-            EspecialidadLogic el = new EspecialidadLogic();
-             this.cbEspecialidades.DataSource = el.GetAll();
+
+
+        }
+        public void CargarEspecialidades()
+        {
+            this.cbEspecialidades.DataSource = EspecialidadLogic.GetInstance().GetAll();
             this.cbEspecialidades.DisplayMember = "desc_especialidad";
             this.cbEspecialidades.ValueMember = "ID";
-            //foreach (var esp in el.GetAll())
-            //{
-            //    this.cbEspecialidades.Items.Add(esp.ID);
-                
-
-            //}
-            
         }
 
         private void btnSavePlan_Click(object sender, EventArgs e)

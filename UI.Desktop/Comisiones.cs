@@ -17,14 +17,15 @@ namespace UI.Desktop
         public Comisiones()
         {
             InitializeComponent();
+            this.dgvComisiones.AutoGenerateColumns = false;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        public void  ListarComisiones()
+        public void ListarComisiones()
         {
-           this.dgvComisiones.DataSource =  ComisionLogic.GetInstance().GetAll();
+            this.dgvComisiones.DataSource = ComisionLogic.GetInstance().GetAll();
         }
 
         private void Comisiones_Load(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace UI.Desktop
 
         private void btnEditComision_Click(object sender, EventArgs e)
         {
-            ComisionDesktop comDesk = new ComisionDesktop(((Business.Entities.Comision)(this.dgvComisiones.SelectedRows[0].DataBoundItem)).ID , ApplicationForm.ModoForm.Modificacion);
+            ComisionDesktop comDesk = new ComisionDesktop(((Business.Entities.Comision)(this.dgvComisiones.SelectedRows[0].DataBoundItem)).ID, ApplicationForm.ModoForm.Modificacion);
             comDesk.ShowDialog();
             this.ListarComisiones();
         }
@@ -54,7 +55,7 @@ namespace UI.Desktop
         private void tbnDeleteComision_Click(object sender, EventArgs e)
         {
             ComisionDesktop comDesk = new ComisionDesktop(((Business.Entities.Comision)(this.dgvComisiones.SelectedRows[0].DataBoundItem)).ID, ApplicationForm.ModoForm.Baja);
-            comDesk.ShowDialog();
+            //comDesk.ShowDialog();
             this.ListarComisiones();
         }
     }

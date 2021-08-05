@@ -86,7 +86,6 @@ namespace UI.Desktop
             switch (Modo)
             {
                 case ModoForm.Alta:
-                    //currentEsp.ID = Convert.ToInt32(this.tbId.Text);
                     currentEsp.desc_especialidad = this.tbDescripcion.Text;
                     currentEsp.State = BusinessEntity.States.New;
                     break;

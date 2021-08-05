@@ -10,7 +10,7 @@ namespace Business.Logic
 {
     public class ComisionLogic : BusinessLogic
     {
-        private ComisionAdapter  _comisionData;
+        private ComisionAdapter _comisionData;
         private static ComisionLogic singleton;
 
         public ComisionAdapter ComisionData

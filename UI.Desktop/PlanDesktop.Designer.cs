@@ -57,14 +57,15 @@ namespace UI.Desktop
             // btnSavePlan
             // 
             this.btnSavePlan.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSavePlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSavePlan.FlatAppearance.BorderSize = 0;
             this.btnSavePlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSavePlan.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSavePlan.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSavePlan.Location = new System.Drawing.Point(84, 542);
+            this.btnSavePlan.Location = new System.Drawing.Point(70, 542);
             this.btnSavePlan.Name = "btnSavePlan";
             this.btnSavePlan.Size = new System.Drawing.Size(148, 52);
-            this.btnSavePlan.TabIndex = 1;
+            this.btnSavePlan.TabIndex = 3;
             this.btnSavePlan.Text = "Guardar";
             this.btnSavePlan.UseVisualStyleBackColor = false;
             this.btnSavePlan.Click += new System.EventHandler(this.btnSavePlan_Click);
@@ -87,7 +88,7 @@ namespace UI.Desktop
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(324, 47);
-            this.txtId.TabIndex = 3;
+            this.txtId.TabIndex = 0;
             // 
             // txtDess
             // 
@@ -100,7 +101,7 @@ namespace UI.Desktop
             this.txtDess.Multiline = true;
             this.txtDess.Name = "txtDess";
             this.txtDess.Size = new System.Drawing.Size(324, 47);
-            this.txtDess.TabIndex = 6;
+            this.txtDess.TabIndex = 1;
             // 
             // panel1
             // 
@@ -124,6 +125,8 @@ namespace UI.Desktop
             // 
             // cbEspecialidades
             // 
+            this.cbEspecialidades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbEspecialidades.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbEspecialidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEspecialidades.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEspecialidades.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -132,7 +135,8 @@ namespace UI.Desktop
             this.cbEspecialidades.Location = new System.Drawing.Point(84, 447);
             this.cbEspecialidades.Name = "cbEspecialidades";
             this.cbEspecialidades.Size = new System.Drawing.Size(324, 37);
-            this.cbEspecialidades.TabIndex = 7;
+            this.cbEspecialidades.Sorted = true;
+            this.cbEspecialidades.TabIndex = 2;
             // 
             // label2
             // 
@@ -147,7 +151,9 @@ namespace UI.Desktop
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,7 +161,7 @@ namespace UI.Desktop
             this.btnCancel.Location = new System.Drawing.Point(260, 542);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(148, 52);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -173,9 +179,11 @@ namespace UI.Desktop
             // 
             // PlanDesktop
             // 
+            this.AcceptButton = this.btnSavePlan;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(494, 699);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.btnCancel);

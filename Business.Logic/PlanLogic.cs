@@ -10,7 +10,7 @@ namespace Business.Logic
 {
     public class PlanLogic : BusinessLogic
     {
-        PlanAdapter adapterPlan ;
+        PlanAdapter adapterPlan;
         private static PlanLogic singleton;
 
 
@@ -33,13 +33,13 @@ namespace Business.Logic
         {
             return adapterPlan.GetAll();
         }
-        public void Delete( int ID )
+        public void Delete(int ID)
         {
             adapterPlan.Delete(ID);
         }
         public Plan GetOne(int ID)
         {
-           return  adapterPlan.GetOne(ID);
+            return adapterPlan.GetOne(ID);
         }
         public void Save(Plan plan)
         {

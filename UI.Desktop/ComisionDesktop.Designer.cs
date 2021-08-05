@@ -49,12 +49,13 @@ namespace UI.Desktop
             // txtAnioEspecialidad
             // 
             this.txtAnioEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAnioEspecialidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnioEspecialidad.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtAnioEspecialidad.Location = new System.Drawing.Point(52, 378);
             this.txtAnioEspecialidad.Multiline = true;
             this.txtAnioEspecialidad.Name = "txtAnioEspecialidad";
             this.txtAnioEspecialidad.Size = new System.Drawing.Size(352, 47);
-            this.txtAnioEspecialidad.TabIndex = 13;
+            this.txtAnioEspecialidad.TabIndex = 1;
             // 
             // panel2
             // 
@@ -68,8 +69,9 @@ namespace UI.Desktop
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(47, 332);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 29);
@@ -79,8 +81,9 @@ namespace UI.Desktop
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(45, 27);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(366, 37);
@@ -89,7 +92,9 @@ namespace UI.Desktop
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,7 +102,7 @@ namespace UI.Desktop
             this.btnCancel.Location = new System.Drawing.Point(256, 613);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(148, 52);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -105,8 +110,9 @@ namespace UI.Desktop
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(47, 468);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 29);
@@ -123,17 +129,18 @@ namespace UI.Desktop
             this.cbPlan.Location = new System.Drawing.Point(52, 521);
             this.cbPlan.Name = "cbPlan";
             this.cbPlan.Size = new System.Drawing.Size(357, 37);
-            this.cbPlan.TabIndex = 7;
+            this.cbPlan.TabIndex = 2;
             // 
             // txtDess
             // 
             this.txtDess.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDess.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDess.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtDess.Location = new System.Drawing.Point(52, 249);
             this.txtDess.Multiline = true;
             this.txtDess.Name = "txtDess";
             this.txtDess.Size = new System.Drawing.Size(352, 47);
-            this.txtDess.TabIndex = 6;
+            this.txtDess.TabIndex = 0;
             // 
             // panel1
             // 
@@ -147,8 +154,9 @@ namespace UI.Desktop
             // lbDesc
             // 
             this.lbDesc.AutoSize = true;
+            this.lbDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbDesc.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDesc.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbDesc.ForeColor = System.Drawing.Color.White;
             this.lbDesc.Location = new System.Drawing.Point(47, 203);
             this.lbDesc.Name = "lbDesc";
             this.lbDesc.Size = new System.Drawing.Size(139, 29);
@@ -158,6 +166,7 @@ namespace UI.Desktop
             // txtId
             // 
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtId.Location = new System.Drawing.Point(52, 136);
             this.txtId.Multiline = true;
@@ -178,6 +187,7 @@ namespace UI.Desktop
             // btnSaveComision
             // 
             this.btnSaveComision.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSaveComision.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveComision.FlatAppearance.BorderSize = 0;
             this.btnSaveComision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveComision.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,7 +195,7 @@ namespace UI.Desktop
             this.btnSaveComision.Location = new System.Drawing.Point(52, 613);
             this.btnSaveComision.Name = "btnSaveComision";
             this.btnSaveComision.Size = new System.Drawing.Size(148, 52);
-            this.btnSaveComision.TabIndex = 1;
+            this.btnSaveComision.TabIndex = 3;
             this.btnSaveComision.Text = "Guardar";
             this.btnSaveComision.UseVisualStyleBackColor = false;
             this.btnSaveComision.Click += new System.EventHandler(this.btnSaveComision_Click);
@@ -193,8 +203,9 @@ namespace UI.Desktop
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(47, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 29);
@@ -203,8 +214,11 @@ namespace UI.Desktop
             // 
             // ComisionDesktop
             // 
+            this.AcceptButton = this.btnSaveComision;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(473, 712);
             this.Controls.Add(this.txtAnioEspecialidad);
             this.Controls.Add(this.panel2);
@@ -225,7 +239,6 @@ namespace UI.Desktop
             this.Name = "ComisionDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PlanDesktop";
-            this.Load += new System.EventHandler(this.ComisionDesktop_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,8 +18,9 @@ namespace UI.Desktop
         public Planes()
         {
             InitializeComponent();
+            this.dgvPlanes.AutoGenerateColumns = false;
         }
-       
+
 
         private void btnClosePlanes_Click(object sender, EventArgs e)
         {
@@ -33,7 +34,7 @@ namespace UI.Desktop
 
         private void ListarPlanes()
         {
-           
+
             this.dgvPlanes.DataSource = PlanLogic.GetInstance().GetAll();
         }
 
@@ -42,11 +43,11 @@ namespace UI.Desktop
             this.ListarPlanes();
         }
 
-        
+
 
         private void btnAddPlan_Click(object sender, EventArgs e)
         {
-            PlanDesktop pd = new PlanDesktop( ApplicationForm.ModoForm.Alta);
+            PlanDesktop pd = new PlanDesktop(ApplicationForm.ModoForm.Alta);
             pd.ShowDialog();
             this.ListarPlanes();
         }
@@ -55,6 +56,13 @@ namespace UI.Desktop
         {
             PlanDesktop pd = new PlanDesktop(((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Modificacion);
             pd.ShowDialog();
+            this.ListarPlanes();
+        }
+
+        private void btnDeletePlan_Click(object sender, EventArgs e)
+        {
+            PlanDesktop pd = new PlanDesktop(((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Baja);
+            //pd.ShowDialog();
             this.ListarPlanes();
         }
     }

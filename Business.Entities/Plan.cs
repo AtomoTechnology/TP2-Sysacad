@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Plan :BusinessEntity
+    public class Plan : BusinessEntity
     {
         private string desc_plan;
+        private string _descEspecialiad;
+
+        public string DescEspecialidad
+        {
+            get { return _descEspecialiad; }
+            set { _descEspecialiad = value; }
+        }
+
 
         public string DescPlan
         {
@@ -22,6 +30,7 @@ namespace Business.Entities
             get { return id_especialidad; }
             set { id_especialidad = value; }
         }
+
 
     }
 }
