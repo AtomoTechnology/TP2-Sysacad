@@ -10,26 +10,42 @@ using System.Windows.Forms;
 
 namespace Data.Database
 {
-    public class MateriaAdapter : Adapter
+    public class InscripcionAdapter : Adapter
     {
-        public List<Materia> GetAll()
+        private static InscripcionAdapter singleton;
+        public static InscripcionAdapter GetInstance()
         {
-            List<Materia> materias = new List<Materia>();
+            if (singleton == null)
+            {
+                singleton = new InscripcionAdapter();
+            }
+            return singleton;
+        }
+        public List<Inscripcion> GetAll()
+        {
+            List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMateria = new SqlCommand("select * from materias m inner join planes p  on m.id_plan = p.id_plan", SqlConn);
+                SqlCommand cmdMateria = new SqlCommand("select ai.id_inscripcion , mat.desc_materia, com.desc_comision , CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , ai.nota  from alumnos_inscripciones ai inner join personas per on per.id_persona = ai.id_alumno inner join cursos cur on cur.id_curso = ai.id_curso inner join materias mat on mat.id_materia = cur.id_materia  inner join comisiones com on com.id_comision = cur.id_comision", SqlConn);
                 SqlDataReader reader = cmdMateria.ExecuteReader();
                 while (reader.Read())
                 {
-                    Materia mat = new Materia();
-                    mat.ID = (int)reader["id_materia"];
-                    mat.DescMateria = (string)reader["desc_materia"];
-                    mat.HsSemanales = (int)reader["hs_semanales"];
-                    mat.HsTotales = (int)reader["hs_totales"];
-                    mat.IdPlan = (int)reader["id_plan"];
-                    mat.DescPlan = (string)reader["desc_plan"];
-                    materias.Add(mat);
+                    Inscripcion ins = new Inscripcion();
+                    ins.ID = (int)reader["id_inscripcion"];
+                    ins.DescMateria = (string)reader["desc_materia"];
+                    ins.DescComision = (string)reader["desc_comision"];
+                    ins.NombreCompleto = (string)reader["NombreCompleto"];
+                    ins.Condicion = (string)reader["condicion"];
+                    //var n = 0 ;
+                    //reader["nota"]  ? n = 10 : n= 20;
+
+                    //ins.Nota =   reader["nota"] == null ? 0 : (int)reader["nota"];
+                    //ins.HsSemanales = (int)reader["hs_semanales"];
+                    //ins.HsTotales = (int)reader["hs_totales"];
+                    //ins.IdPlan = (int)reader["id_plan"];
+                    //ins.DescPlan = (string)reader["desc_plan"];
+                    inscripciones.Add(ins);
                 }
                 //cerramos el dataReader 
                 reader.Close();
@@ -47,7 +63,7 @@ namespace Data.Database
 
 
 
-            return materias;
+            return inscripciones;
         }
 
         public Materia GetOne(int ID)

@@ -14,41 +14,40 @@ namespace UI.Desktop
 {
     public partial class MateriaDesktop : ApplicationForm
     {
-        private MateriaLogic ml;
         private Materia currentMateria = new Materia();
         public MateriaDesktop()
         {
             InitializeComponent();
         }
-     
 
-        public MateriaDesktop( ModoForm modo )
+
+        public MateriaDesktop(ModoForm modo)
         {
             InitializeComponent();
             this.FillCbPlan();
             Modo = modo;
         }
-        public MateriaDesktop(int ID , ModoForm modo)
+        public MateriaDesktop(int ID, ModoForm modo)
         {
             InitializeComponent();
-            ml = new MateriaLogic();
             Modo = modo;
-            currentMateria = ml.GetOne(ID);
-            if(currentMateria != null)
+            currentMateria = MateriaLogic.GetInstance().GetOne(ID);
+            if (currentMateria != null)
             {
                 this.MapearDeDatos();
             }
 
         }
-        public override void MapearDeDatos() {
+        public override void MapearDeDatos()
+        {
             this.txtId.Text = currentMateria.ID.ToString();
-            this.txtDess.Text= currentMateria.DescMateria;
+            this.txtDess.Text = currentMateria.DescMateria;
             this.txtHsSemanales.Text = currentMateria.HsSemanales.ToString();
             this.txtHstotales.Text = currentMateria.HsTotales.ToString();
             this.cbPlan.SelectedItem = currentMateria.IdPlan.ToString();
             var p = PlanLogic.GetInstance().GetOne(currentMateria.IdPlan);
             this.FillCbPlan();
-            this.cbPlan.SelectedIndex =  this.cbPlan.FindString(p.DescPlan);
+            this.cbPlan.SelectedIndex = this.cbPlan.FindString(p.DescPlan);
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -60,7 +59,7 @@ namespace UI.Desktop
                     this.txtDess.ReadOnly = true;
                     this.txtHsSemanales.ReadOnly = true;
                     this.txtHstotales.ReadOnly = true;
-                    this.cbPlan.Enabled  = false;
+                    this.cbPlan.Enabled = false;
                     this.lbTitle.Text = "Borrar Materia";
                     break;
                 case ModoForm.Modificacion:
@@ -75,7 +74,8 @@ namespace UI.Desktop
             }
 
         }
-        public override void MapearADatos() {
+        public override void MapearADatos()
+        {
 
             switch (Modo)
             {
@@ -85,7 +85,6 @@ namespace UI.Desktop
                     currentMateria.HsTotales = Convert.ToInt32(this.txtHstotales.Text);
                     currentMateria.IdPlan = ((Business.Entities.Plan)this.cbPlan.SelectedItem).ID;
                     currentMateria.State = BusinessEntity.States.New;
-
                     break;
                 case ModoForm.Baja:
                     currentMateria.DescMateria = this.txtDess.Text;
@@ -107,14 +106,15 @@ namespace UI.Desktop
                     break;
             }
         }
-        public override void GuardarCambios() {
+        public override void GuardarCambios()
+        {
             this.MapearADatos();
-            ml = new MateriaLogic();
-            ml.Save(currentMateria);
-            
+            MateriaLogic.GetInstance().Save(currentMateria);
+
         }
-        public override bool Validar() { 
-            if(this.txtDess.Text != "" && this.txtHsSemanales.Text != ""  && txtHstotales.Text != "" && cbPlan.SelectedItem != null)
+        public override bool Validar()
+        {
+            if (this.txtDess.Text != "" && this.txtHsSemanales.Text != "" && txtHstotales.Text != "" && cbPlan.SelectedItem != null)
             {
                 return true;
             }
@@ -124,7 +124,7 @@ namespace UI.Desktop
                 return false;
 
             }
-        
+
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

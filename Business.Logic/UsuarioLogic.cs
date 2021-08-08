@@ -12,19 +12,19 @@ namespace Business.Logic
     public class UsuarioLogic : BusinessLogic
     {
         private UsuarioAdapter _usuarioData;
-        private static UsuarioLogic singleton ;
-  
-       
-        public static UsuarioLogic GetInstance ()
+        private static UsuarioLogic singleton;
+
+
+        public static UsuarioLogic GetInstance()
         {
-   
-            if(singleton == null)
+
+            if (singleton == null)
             {
                 singleton = new UsuarioLogic();
             }
 
             return singleton;
-           
+
         }
 
         public UsuarioAdapter Usuario
@@ -41,7 +41,7 @@ namespace Business.Logic
         {
             return Usuario.GetAll();
         }
-        public Usuario GetOne(int id )
+        public Usuario GetOne(int id)
         {
             return Usuario.GetOne(id);
         }
@@ -53,10 +53,10 @@ namespace Business.Logic
         {
             Usuario.Save(usuario);
         }
-        public Usuario LogIn(string username , string password)
+        public Usuario LogIn(string username, string password)
         {
-            return  Usuario.LogIn(username, password);
+            return Usuario.LogIn(username, password);
         }
-       
+
     }
 }

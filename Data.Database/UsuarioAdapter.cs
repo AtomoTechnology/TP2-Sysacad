@@ -39,7 +39,7 @@ namespace Data.Database
                 switch (usr.TipoPersona)
                 {
                     case 1:
-                    usr.DescTipoPersona = "Administrativo";
+                        usr.DescTipoPersona = "Administrativo";
                         break;
                     case 2:
                         usr.DescTipoPersona = "Docente";
@@ -144,7 +144,7 @@ namespace Data.Database
                         SqlCommand cmdSavePersona = new SqlCommand("insert into personas (nombre, apellido,direccion, email,telefono,fecha_nac,legajo,tipo_persona,id_plan)" +
                             "values (@nombre, @apellido,@direccion, @email,@telefono, @fecha_nac, @legajo,@tipo_persona,@id_plan )" +
                             "select @@identity",    //esta lanea es para recuperar el ID que asigna el sql automaticamente 
-                            SqlConn,dbTr);
+                            SqlConn, dbTr);
                         cmdSavePersona.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
                         cmdSavePersona.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                         cmdSavePersona.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
@@ -157,23 +157,23 @@ namespace Data.Database
                         //var result = cmdSavePersona.ExecuteNonQuery();
                         //if (result == 1)
                         //{
-                            int idPersona = Decimal.ToInt32((decimal)cmdSavePersona.ExecuteScalar());
+                        int idPersona = Decimal.ToInt32((decimal)cmdSavePersona.ExecuteScalar());
 
-                            SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, id_persona)" +
-                                "values (@nombre_usuario, @clave, @habilitado, @id_persona)" +
-                                "select @@identity",    //esta lanea es para recuperar el ID que asigna el sql automaticamente 
-                                SqlConn,dbTr);
-                            cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
-                            cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
-                            cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                            cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = idPersona;
-                            cmdSave.ExecuteNonQuery();
-                            MessageBox.Show("Operación realizada con exito. )");
+                        SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, id_persona)" +
+                            "values (@nombre_usuario, @clave, @habilitado, @id_persona)" +
+                            "select @@identity",    //esta lanea es para recuperar el ID que asigna el sql automaticamente 
+                            SqlConn, dbTr);
+                        cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                        cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+                        cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
+                        cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = idPersona;
+                        cmdSave.ExecuteNonQuery();
+                        MessageBox.Show("Operación realizada con exito. )");
 
                         //}
                         dbTr.Commit();
                     }
-                    catch (Exception ex )
+                    catch (Exception ex)
                     {
                         dbTr.Rollback();
                         MessageBox.Show("Error al realizar la operación!!!");

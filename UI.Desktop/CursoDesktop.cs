@@ -22,14 +22,15 @@ namespace UI.Desktop
         public CursoDesktop(ModoForm modo)
         {
             InitializeComponent();
+            this.CargarMateriasYComision();
             Modo = modo;
         }
-        public CursoDesktop(int ID , ModoForm modo )
+        public CursoDesktop(int ID, ModoForm modo)
         {
             InitializeComponent();
             Modo = modo;
             currentCurso = CursoLogic.GetInstance().GetOne(ID);
-            if(currentCurso != null)
+            if (currentCurso != null)
             {
                 this.MapearDeDatos();
             }
@@ -40,11 +41,18 @@ namespace UI.Desktop
         {
             this.Close();
         }
-        public override void MapearDeDatos() {
+        public override void MapearDeDatos()
+        {
 
             this.txtId.Text = (currentCurso.ID).ToString();
             this.txtAnioCalendario.Text = currentCurso.AnioCalendario.ToString();
             this.txtCupo.Text = currentCurso.Cupo.ToString();
+
+            this.CargarMateriasYComision();
+            Comision com = ComisionLogic.GetInstance().GetOne(currentCurso.IdComision);
+            Materia mat = MateriaLogic.GetInstance().GetOne(currentCurso.IdMateria);
+            this.cbMaterias.SelectedIndex = this.cbMaterias.FindString(mat.DescMateria);
+            this.cbComisiones.SelectedIndex = this.cbComisiones.FindString(com.DescComision);
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -56,6 +64,7 @@ namespace UI.Desktop
                     this.lbTitle.Text = " ¿ Estas seguro ? ";
                     this.lbTitle.ForeColor = Color.Red;
                     this.btnSaveCurso.BackColor = Color.Red;
+                    this.btnCancel.BackColor = Color.Gray;
                     this.cbComisiones.Enabled = false;
                     this.cbMaterias.Enabled = false;
                     this.txtAnioCalendario.Enabled = false;
@@ -73,7 +82,8 @@ namespace UI.Desktop
 
 
         }
-        public override void MapearADatos() {
+        public override void MapearADatos()
+        {
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -104,25 +114,28 @@ namespace UI.Desktop
             }
 
         }
-        public override void GuardarCambios() {
+        public override void GuardarCambios()
+        {
 
             this.MapearADatos();
             CursoLogic.GetInstance().Save(currentCurso);
-        
+
         }
-        public override bool Validar() { 
-            if(this.cbComisiones.SelectedValue != null && this.cbMaterias.SelectedItem != null && this.txtAnioCalendario.Text != "" && this.txtCupo.Text != null)
+        public override bool Validar()
+        {
+            if (this.cbComisiones.SelectedValue != null && this.cbMaterias.SelectedItem != null && this.txtAnioCalendario.Text != "" && this.txtCupo.Text != null && Convert.ToInt32(this.txtCupo.Text) != 0)
             {
                 return true;
             }
             else
             {
-                this.Notificar("Todos los campos son requeridos ", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                this.Notificar("Todos los campos son requeridos ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-        
+
         }
-        private void CursoDesktop_Load(object sender, EventArgs e)
+
+        public void CargarMateriasYComision()
         {
             this.cbComisiones.DataSource = ComisionLogic.GetInstance().GetAll();
             this.cbComisiones.DisplayMember = "DescComision";

@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class Cursos
+    partial class Insccipciones
     {
         /// <summary>
         /// Required designer variable.
@@ -32,26 +32,27 @@ namespace UI.Desktop
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cursos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Insccipciones));
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.dgvInscripciones = new System.Windows.Forms.DataGridView();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.tsMaterias = new System.Windows.Forms.ToolStrip();
-            this.btnAddCurso = new System.Windows.Forms.ToolStripButton();
-            this.btnEditCurso = new System.Windows.Forms.ToolStripButton();
-            this.tbnDeleteCurso = new System.Windows.Forms.ToolStripButton();
+            this.btnAddInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
             this.tlpEspecialidades.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).BeginInit();
             this.tsMaterias.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.ColumnCount = 2;
             this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpEspecialidades.Controls.Add(this.dgvCursos, 0, 0);
+            this.tlpEspecialidades.Controls.Add(this.dgvInscripciones, 0, 0);
             this.tlpEspecialidades.Controls.Add(this.btnUpdate, 0, 1);
             this.tlpEspecialidades.Controls.Add(this.btnClose, 1, 1);
             this.tlpEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,17 +92,17 @@ namespace UI.Desktop
             this.tlpEspecialidades.Size = new System.Drawing.Size(1214, 669);
             this.tlpEspecialidades.TabIndex = 0;
             // 
-            // dgvCursos
+            // dgvInscripciones
             // 
-            this.dgvCursos.AllowUserToAddRows = false;
-            this.dgvCursos.AllowUserToDeleteRows = false;
-            this.dgvCursos.AllowUserToResizeColumns = false;
-            this.dgvCursos.AllowUserToResizeRows = false;
-            this.dgvCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvCursos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCursos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvCursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvInscripciones.AllowUserToAddRows = false;
+            this.dgvInscripciones.AllowUserToDeleteRows = false;
+            this.dgvInscripciones.AllowUserToResizeColumns = false;
+            this.dgvInscripciones.AllowUserToResizeRows = false;
+            this.dgvInscripciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvInscripciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvInscripciones.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvInscripciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInscripciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,23 +110,24 @@ namespace UI.Desktop
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCursos.ColumnHeadersHeight = 30;
-            this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInscripciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvInscripciones.ColumnHeadersHeight = 30;
+            this.dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.descMateria,
             this.descComision,
-            this.anioCalendario,
-            this.cupo});
-            this.tlpEspecialidades.SetColumnSpan(this.dgvCursos, 2);
-            this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCursos.EnableHeadersVisualStyles = false;
-            this.dgvCursos.Location = new System.Drawing.Point(3, 3);
-            this.dgvCursos.MultiSelect = false;
-            this.dgvCursos.Name = "dgvCursos";
-            this.dgvCursos.ReadOnly = true;
-            this.dgvCursos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.NombreApellido,
+            this.Condicion,
+            this.nota});
+            this.tlpEspecialidades.SetColumnSpan(this.dgvInscripciones, 2);
+            this.dgvInscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInscripciones.EnableHeadersVisualStyles = false;
+            this.dgvInscripciones.Location = new System.Drawing.Point(3, 3);
+            this.dgvInscripciones.MultiSelect = false;
+            this.dgvInscripciones.Name = "dgvInscripciones";
+            this.dgvInscripciones.ReadOnly = true;
+            this.dgvInscripciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,19 +135,19 @@ namespace UI.Desktop
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCursos.RowHeadersWidth = 62;
-            this.dgvCursos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvInscripciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvInscripciones.RowHeadersWidth = 62;
+            this.dgvInscripciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCursos.RowTemplate.Height = 28;
-            this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(1208, 569);
-            this.dgvCursos.TabIndex = 0;
+            this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvInscripciones.RowTemplate.Height = 28;
+            this.dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInscripciones.Size = new System.Drawing.Size(1208, 569);
+            this.dgvInscripciones.TabIndex = 0;
             // 
             // btnUpdate
             // 
@@ -180,51 +182,47 @@ namespace UI.Desktop
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Salir";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tsMaterias
             // 
             this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
             this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddCurso,
-            this.btnEditCurso,
-            this.tbnDeleteCurso});
+            this.btnAddInscripcion,
+            this.btnEditInscripcion,
+            this.tbnDeleteInscripcion});
             this.tsMaterias.Location = new System.Drawing.Point(14, 0);
             this.tsMaterias.Name = "tsMaterias";
             this.tsMaterias.Size = new System.Drawing.Size(120, 33);
             this.tsMaterias.TabIndex = 0;
             // 
-            // btnAddCurso
+            // btnAddInscripcion
             // 
-            this.btnAddCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCurso.Image")));
-            this.btnAddCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddCurso.Name = "btnAddCurso";
-            this.btnAddCurso.Size = new System.Drawing.Size(34, 28);
-            this.btnAddCurso.Text = "Agregar Curso";
-            this.btnAddCurso.Click += new System.EventHandler(this.btnAddCurso_Click);
+            this.btnAddInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
+            this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddInscripcion.Name = "btnAddInscripcion";
+            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
+            this.btnAddInscripcion.Text = "Agregar Inscripcion";
             // 
-            // btnEditCurso
+            // btnEditInscripcion
             // 
-            this.btnEditCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCurso.Image")));
-            this.btnEditCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditCurso.Name = "btnEditCurso";
-            this.btnEditCurso.Size = new System.Drawing.Size(34, 28);
-            this.btnEditCurso.Text = "editar Curso";
-            this.btnEditCurso.Click += new System.EventHandler(this.btnEditCurso_Click);
+            this.btnEditInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
+            this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditInscripcion.Name = "btnEditInscripcion";
+            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
+            this.btnEditInscripcion.Text = "editar Inscripcion";
             // 
-            // tbnDeleteCurso
+            // tbnDeleteInscripcion
             // 
-            this.tbnDeleteCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbnDeleteCurso.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteCurso.Image")));
-            this.tbnDeleteCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbnDeleteCurso.Name = "tbnDeleteCurso";
-            this.tbnDeleteCurso.Size = new System.Drawing.Size(34, 28);
-            this.tbnDeleteCurso.Text = "Borrar Curso";
-            this.tbnDeleteCurso.ToolTipText = "Borrar Curso";
-            this.tbnDeleteCurso.Click += new System.EventHandler(this.tbnDeleteCurso_Click);
+            this.tbnDeleteInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
+            this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
+            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
+            this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
+            this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
             // 
             // ID
             // 
@@ -253,42 +251,51 @@ namespace UI.Desktop
             this.descComision.ReadOnly = true;
             this.descComision.Width = 255;
             // 
-            // anioCalendario
+            // NombreApellido
             // 
-            this.anioCalendario.DataPropertyName = "AnioCalendario";
-            this.anioCalendario.HeaderText = "Año Calendario";
-            this.anioCalendario.MinimumWidth = 8;
-            this.anioCalendario.Name = "anioCalendario";
-            this.anioCalendario.ReadOnly = true;
-            this.anioCalendario.Width = 263;
+            this.NombreApellido.DataPropertyName = "NombreApellido";
+            this.NombreApellido.HeaderText = "Nombre Apellido";
+            this.NombreApellido.MinimumWidth = 8;
+            this.NombreApellido.Name = "NombreApellido";
+            this.NombreApellido.ReadOnly = true;
+            this.NombreApellido.Width = 281;
             // 
-            // cupo
+            // Condicion
             // 
-            this.cupo.DataPropertyName = "Cupo";
-            this.cupo.HeaderText = "Cupo";
-            this.cupo.MinimumWidth = 8;
-            this.cupo.Name = "cupo";
-            this.cupo.ReadOnly = true;
-            this.cupo.Width = 123;
+            this.Condicion.DataPropertyName = "Condicion";
+            this.Condicion.HeaderText = "Condicion";
+            this.Condicion.MinimumWidth = 8;
+            this.Condicion.Name = "Condicion";
+            this.Condicion.ReadOnly = true;
+            this.Condicion.Width = 190;
             // 
-            // Cursos
+            // nota
+            // 
+            this.nota.DataPropertyName = "Nota";
+            this.nota.HeaderText = "Nota";
+            this.nota.MinimumWidth = 8;
+            this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
+            this.nota.Width = 115;
+            // 
+            // Insccipciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 702);
             this.Controls.Add(this.tscEspecialidades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Cursos";
+            this.Name = "Insccipciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cursos";
-            this.Load += new System.EventHandler(this.Cursos_Load);
+            this.Load += new System.EventHandler(this.Insccipciones_Load);
             this.tscEspecialidades.ContentPanel.ResumeLayout(false);
             this.tscEspecialidades.TopToolStripPanel.ResumeLayout(false);
             this.tscEspecialidades.TopToolStripPanel.PerformLayout();
             this.tscEspecialidades.ResumeLayout(false);
             this.tscEspecialidades.PerformLayout();
             this.tlpEspecialidades.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).EndInit();
             this.tsMaterias.ResumeLayout(false);
             this.tsMaterias.PerformLayout();
             this.ResumeLayout(false);
@@ -299,17 +306,18 @@ namespace UI.Desktop
 
         private System.Windows.Forms.ToolStripContainer tscEspecialidades;
         private System.Windows.Forms.ToolStrip tsMaterias;
-        private System.Windows.Forms.ToolStripButton btnAddCurso;
-        private System.Windows.Forms.ToolStripButton btnEditCurso;
-        private System.Windows.Forms.ToolStripButton tbnDeleteCurso;
+        private System.Windows.Forms.ToolStripButton btnAddInscripcion;
+        private System.Windows.Forms.ToolStripButton btnEditInscripcion;
+        private System.Windows.Forms.ToolStripButton tbnDeleteInscripcion;
         private System.Windows.Forms.TableLayoutPanel tlpEspecialidades;
-        private System.Windows.Forms.DataGridView dgvCursos;
+        private System.Windows.Forms.DataGridView dgvInscripciones;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn descComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anioCalendario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
     }
 }

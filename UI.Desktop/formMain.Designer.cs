@@ -54,6 +54,7 @@ namespace UI.Desktop
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.pnlMenuAcademia.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,7 +83,7 @@ namespace UI.Desktop
             this.mnsPrincipal.Location = new System.Drawing.Point(169, 20);
             this.mnsPrincipal.Name = "mnsPrincipal";
             this.mnsPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.mnsPrincipal.Size = new System.Drawing.Size(748, 33);
+            this.mnsPrincipal.Size = new System.Drawing.Size(928, 33);
             this.mnsPrincipal.TabIndex = 1;
             this.mnsPrincipal.Text = "Menu principal";
             // 
@@ -117,7 +118,7 @@ namespace UI.Desktop
             // crearPersonaToolStripMenuItem
             // 
             this.crearPersonaToolStripMenuItem.Name = "crearPersonaToolStripMenuItem";
-            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(251, 34);
+            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.crearPersonaToolStripMenuItem.Text = "Listar persona";
             this.crearPersonaToolStripMenuItem.Click += new System.EventHandler(this.crearPersonaToolStripMenuItem_Click);
             // 
@@ -142,7 +143,8 @@ namespace UI.Desktop
             this.materiaToolStripMenuItem,
             this.especialidadToolStripMenuItem,
             this.comisionesToolStripMenuItem,
-            this.cursosToolStripMenuItem});
+            this.cursosToolStripMenuItem,
+            this.inscripcionesToolStripMenuItem});
             this.utilidadesToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.crafts;
             this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
             this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(147, 29);
@@ -151,35 +153,35 @@ namespace UI.Desktop
             // planToolStripMenuItem
             // 
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.planToolStripMenuItem.Text = "Planes";
             this.planToolStripMenuItem.Click += new System.EventHandler(this.planToolStripMenuItem_Click);
             // 
             // materiaToolStripMenuItem
             // 
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.materiaToolStripMenuItem.Text = "Materias";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // especialidadToolStripMenuItem
             // 
             this.especialidadToolStripMenuItem.Name = "especialidadToolStripMenuItem";
-            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.especialidadToolStripMenuItem.Text = "Especialidades";
             this.especialidadToolStripMenuItem.Click += new System.EventHandler(this.especialidadToolStripMenuItem_Click);
             // 
             // comisionesToolStripMenuItem
             // 
             this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
-            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.comisionesToolStripMenuItem.Text = "Comisiones";
             this.comisionesToolStripMenuItem.Click += new System.EventHandler(this.comisionesToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.cursosToolStripMenuItem.Text = "Cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
@@ -337,6 +339,13 @@ namespace UI.Desktop
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // inscripcionesToolStripMenuItem
+            // 
+            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
+            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -401,5 +410,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
     }
 }

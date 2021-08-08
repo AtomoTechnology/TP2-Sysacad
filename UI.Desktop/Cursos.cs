@@ -17,8 +17,9 @@ namespace UI.Desktop
         public Cursos()
         {
             InitializeComponent();
+            this.dgvCursos.AutoGenerateColumns = false;
         }
-        
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,14 +41,14 @@ namespace UI.Desktop
 
         private void btnAddCurso_Click(object sender, EventArgs e)
         {
-            CursoDesktop cursoDesk = new CursoDesktop( ApplicationForm.ModoForm.Alta );
+            CursoDesktop cursoDesk = new CursoDesktop(ApplicationForm.ModoForm.Alta);
             cursoDesk.ShowDialog();
             this.ListarCursos();
         }
 
         private void btnEditCurso_Click(object sender, EventArgs e)
         {
-            CursoDesktop cursoDesk = new CursoDesktop( ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID ,ApplicationForm.ModoForm.Modificacion);
+            CursoDesktop cursoDesk = new CursoDesktop(((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Modificacion);
             cursoDesk.ShowDialog();
             this.ListarCursos();
         }

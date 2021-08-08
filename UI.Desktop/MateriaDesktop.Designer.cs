@@ -52,6 +52,7 @@ namespace UI.Desktop
             // txtHstotales
             // 
             this.txtHstotales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHstotales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHstotales.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtHstotales.Location = new System.Drawing.Point(246, 378);
             this.txtHstotales.Multiline = true;
@@ -82,6 +83,7 @@ namespace UI.Desktop
             // txtHsSemanales
             // 
             this.txtHsSemanales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHsSemanales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHsSemanales.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtHsSemanales.Location = new System.Drawing.Point(52, 378);
             this.txtHsSemanales.Multiline = true;
@@ -153,19 +155,20 @@ namespace UI.Desktop
             this.cbPlan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbPlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbPlan.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPlan.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPlan.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cbPlan.FormattingEnabled = true;
-            this.cbPlan.ItemHeight = 29;
+            this.cbPlan.ItemHeight = 28;
             this.cbPlan.Location = new System.Drawing.Point(52, 521);
             this.cbPlan.Name = "cbPlan";
-            this.cbPlan.Size = new System.Drawing.Size(357, 37);
+            this.cbPlan.Size = new System.Drawing.Size(357, 36);
             this.cbPlan.Sorted = true;
             this.cbPlan.TabIndex = 4;
             // 
             // txtDess
             // 
             this.txtDess.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDess.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDess.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtDess.Location = new System.Drawing.Point(52, 249);
             this.txtDess.Multiline = true;
@@ -196,6 +199,7 @@ namespace UI.Desktop
             // txtId
             // 
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtId.Location = new System.Drawing.Point(52, 136);
             this.txtId.Multiline = true;

@@ -183,6 +183,15 @@ namespace UI.Desktop
             form.Show();
         }
 
+        private void inscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new Insccipciones();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             if (this.pnlUserModal.Visible)
@@ -220,5 +229,6 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
     }
 }

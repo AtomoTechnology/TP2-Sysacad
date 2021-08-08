@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Business.Logic
 {
-    public class MateriaLogic: BusinessLogic
+    public class MateriaLogic : BusinessLogic
     {
         private MateriaAdapter materiaAdapter;
         private static MateriaLogic singleton;
 
-        public static  MateriaLogic GetInstance()
+        public static MateriaLogic GetInstance()
         {
-            if(singleton == null)
+            if (singleton == null)
             {
                 singleton = new MateriaLogic();
             }

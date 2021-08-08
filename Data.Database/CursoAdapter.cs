@@ -10,7 +10,7 @@ using Business.Entities;
 
 namespace Data.Database
 {
-    public class CursoAdapter :Adapter
+    public class CursoAdapter : Adapter
     {
         public List<Curso> GetAll()
         {
@@ -18,7 +18,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand("Select * from cursos", SqlConn);
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos c inner join comisiones com on com.id_comision = c.id_comision inner join materias m on m.id_materia = c.id_materia", SqlConn);
                 SqlDataReader reader = cmdCursos.ExecuteReader();
                 while (reader.Read())
                 {
@@ -28,6 +28,8 @@ namespace Data.Database
                     cur.IdComision = (int)reader["id_comision"];
                     cur.AnioCalendario = (int)reader["anio_calendario"];
                     cur.Cupo = (int)reader["cupo"];
+                    cur.DescComision = (string)reader["desc_comision"];
+                    cur.DescMateria = (string)reader["desc_materia"];
                     cursos.Add(cur);
                 }
                 //cerramos el dataReader 
@@ -157,7 +159,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
 
-              
+
                 cmdSave.ExecuteNonQuery();
                 MessageBox.Show("Curso actualizado con exito :)");
             }

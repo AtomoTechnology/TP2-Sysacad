@@ -51,7 +51,7 @@ namespace UI.Desktop
         private void btnDeleteUsuario_Click(object sender, EventArgs e)
         {
             UsuarioDesktop usuarioDesktop = new UsuarioDesktop(((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Baja);
-            usuarioDesktop.ShowDialog();
+            //usuarioDesktop.ShowDialog();
             this.ListarUsuarios();
         }
     }

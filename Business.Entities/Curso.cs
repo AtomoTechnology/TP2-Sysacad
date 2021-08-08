@@ -9,6 +9,25 @@ namespace Business.Entities
     public class Curso : BusinessEntity
     {
         private int id_materia;
+        private int id_comision;
+        private int anio_calendario;
+        private int cupo;
+        private string _descComision;
+        private string _descMateria;
+
+        public string DescMateria
+        {
+            get { return _descMateria; }
+            set { _descMateria = value; }
+        }
+
+
+        public string DescComision
+        {
+            get { return _descComision; }
+            set { _descComision = value; }
+        }
+
 
         public int IdMateria
         {
@@ -16,7 +35,6 @@ namespace Business.Entities
             set { id_materia = value; }
         }
 
-        private int id_comision;
 
         public int IdComision
         {
@@ -24,7 +42,6 @@ namespace Business.Entities
             set { id_comision = value; }
         }
 
-        private int anio_calendario;
 
         public int AnioCalendario
         {
@@ -32,16 +49,11 @@ namespace Business.Entities
             set { anio_calendario = value; }
         }
 
-        private int cupo;
 
         public int Cupo
         {
             get { return cupo; }
             set { cupo = value; }
         }
-
-
-
-
     }
 }

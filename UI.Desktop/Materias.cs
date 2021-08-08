@@ -17,6 +17,7 @@ namespace UI.Desktop
         public Materias()
         {
             InitializeComponent();
+            this.dgvMaterias.AutoGenerateColumns = false; 
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -24,8 +25,7 @@ namespace UI.Desktop
         }
         private void ListarMaterias()
         {
-            MateriaLogic ml = new MateriaLogic();
-            this.dgvMaterias.DataSource = ml.GetAll();
+            this.dgvMaterias.DataSource = MateriaLogic.GetInstance().GetAll();
         }
 
         private void Materias_Load(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace UI.Desktop
 
         private void btnEditMateria_Click(object sender, EventArgs e)
         {
-            MateriaDesktop md = new MateriaDesktop(( (Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID ,ApplicationForm.ModoForm.Modificacion);
+            MateriaDesktop md = new MateriaDesktop(((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Modificacion);
             md.ShowDialog();
             this.ListarMaterias();
 

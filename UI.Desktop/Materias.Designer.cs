@@ -29,8 +29,8 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
@@ -41,6 +41,11 @@ namespace UI.Desktop
             this.btnAddMateria = new System.Windows.Forms.ToolStripButton();
             this.btnEditMateria = new System.Windows.Forms.ToolStripButton();
             this.tbnDeleteMateria = new System.Windows.Forms.ToolStripButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
@@ -55,7 +60,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(2118, 1158);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1412, 796);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -65,8 +70,9 @@ namespace UI.Desktop
             // 
             // tscEspecialidades.TopToolStripPanel
             // 
-            this.tscEspecialidades.TopToolStripPanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tscEspecialidades.TopToolStripPanel.BackColor = System.Drawing.Color.Transparent;
             this.tscEspecialidades.TopToolStripPanel.Controls.Add(this.tsMaterias);
+            this.tscEspecialidades.TopToolStripPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tscEspecialidades.TopToolStripPanel.ForeColor = System.Drawing.Color.White;
             // 
             // tlpEspecialidades
@@ -84,7 +90,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowCount = 2;
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEspecialidades.Size = new System.Drawing.Size(2118, 1158);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1412, 796);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvMaterias
@@ -92,19 +98,29 @@ namespace UI.Desktop
             this.dgvMaterias.AllowUserToAddRows = false;
             this.dgvMaterias.AllowUserToDeleteRows = false;
             this.dgvMaterias.AllowUserToOrderColumns = true;
+            this.dgvMaterias.AllowUserToResizeColumns = false;
+            this.dgvMaterias.AllowUserToResizeRows = false;
+            this.dgvMaterias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvMaterias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMaterias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(223)))));
             this.dgvMaterias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMaterias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMaterias.ColumnHeadersHeight = 30;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.descMateria,
+            this.hsSemanales,
+            this.hsTotales,
+            this.descPlan});
             this.tlpEspecialidades.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaterias.EnableHeadersVisualStyles = false;
@@ -115,13 +131,13 @@ namespace UI.Desktop
             this.dgvMaterias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvMaterias.RowHeadersWidth = 62;
             this.dgvMaterias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dgvMaterias.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvMaterias.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaterias.RowTemplate.Height = 28;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(2112, 1078);
+            this.dgvMaterias.Size = new System.Drawing.Size(1406, 716);
             this.dgvMaterias.TabIndex = 0;
             // 
             // btnUpdate
@@ -129,10 +145,13 @@ namespace UI.Desktop
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(1675, 1087);
+            this.btnUpdate.Location = new System.Drawing.Point(969, 725);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(223, 68);
             this.btnUpdate.TabIndex = 1;
@@ -144,10 +163,13 @@ namespace UI.Desktop
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1904, 1087);
+            this.btnClose.Location = new System.Drawing.Point(1198, 725);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(211, 68);
             this.btnClose.TabIndex = 2;
@@ -163,9 +185,9 @@ namespace UI.Desktop
             this.btnAddMateria,
             this.btnEditMateria,
             this.tbnDeleteMateria});
-            this.tsMaterias.Location = new System.Drawing.Point(108, 0);
+            this.tsMaterias.Location = new System.Drawing.Point(30, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(180, 57);
+            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddMateria
@@ -174,7 +196,7 @@ namespace UI.Desktop
             this.btnAddMateria.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMateria.Image")));
             this.btnAddMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddMateria.Name = "btnAddMateria";
-            this.btnAddMateria.Size = new System.Drawing.Size(34, 52);
+            this.btnAddMateria.Size = new System.Drawing.Size(34, 28);
             this.btnAddMateria.Text = "Agregar Materia";
             this.btnAddMateria.Click += new System.EventHandler(this.btnAddMateria_Click);
             // 
@@ -184,7 +206,7 @@ namespace UI.Desktop
             this.btnEditMateria.Image = ((System.Drawing.Image)(resources.GetObject("btnEditMateria.Image")));
             this.btnEditMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditMateria.Name = "btnEditMateria";
-            this.btnEditMateria.Size = new System.Drawing.Size(34, 52);
+            this.btnEditMateria.Size = new System.Drawing.Size(34, 28);
             this.btnEditMateria.Text = "editar Materia";
             this.btnEditMateria.Click += new System.EventHandler(this.btnEditMateria_Click);
             // 
@@ -194,10 +216,55 @@ namespace UI.Desktop
             this.tbnDeleteMateria.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteMateria.Image")));
             this.tbnDeleteMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteMateria.Name = "tbnDeleteMateria";
-            this.tbnDeleteMateria.Size = new System.Drawing.Size(34, 52);
+            this.tbnDeleteMateria.Size = new System.Drawing.Size(34, 28);
             this.tbnDeleteMateria.Text = "Borrar Materia";
             this.tbnDeleteMateria.ToolTipText = "Borrar Materia";
             this.tbnDeleteMateria.Click += new System.EventHandler(this.tbnDeleteMateria_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 73;
+            // 
+            // descMateria
+            // 
+            this.descMateria.DataPropertyName = "DescMateria";
+            this.descMateria.HeaderText = "Desc Materia";
+            this.descMateria.MinimumWidth = 8;
+            this.descMateria.Name = "descMateria";
+            this.descMateria.ReadOnly = true;
+            this.descMateria.Width = 201;
+            // 
+            // hsSemanales
+            // 
+            this.hsSemanales.DataPropertyName = "HsSemanales";
+            this.hsSemanales.HeaderText = "Hs Semanales";
+            this.hsSemanales.MinimumWidth = 8;
+            this.hsSemanales.Name = "hsSemanales";
+            this.hsSemanales.ReadOnly = true;
+            this.hsSemanales.Width = 216;
+            // 
+            // hsTotales
+            // 
+            this.hsTotales.DataPropertyName = "HsTotales";
+            this.hsTotales.HeaderText = "HS. Totales";
+            this.hsTotales.MinimumWidth = 8;
+            this.hsTotales.Name = "hsTotales";
+            this.hsTotales.ReadOnly = true;
+            this.hsTotales.Width = 185;
+            // 
+            // descPlan
+            // 
+            this.descPlan.DataPropertyName = "DescPlan";
+            this.descPlan.HeaderText = "Desc. Plan";
+            this.descPlan.MinimumWidth = 8;
+            this.descPlan.Name = "descPlan";
+            this.descPlan.ReadOnly = true;
+            this.descPlan.Width = 173;
             // 
             // Materias
             // 
@@ -233,5 +300,10 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridView dgvMaterias;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hsSemanales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hsTotales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descPlan;
     }
 }
