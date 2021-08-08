@@ -25,5 +25,18 @@ namespace Business.Logic
         {
            return  InscripcionAdapter.GetInstance().GetAll();
         }
+        public Inscripcion GetOne(int ID)
+        {
+            return InscripcionAdapter.GetInstance().GetOne(ID);
+        }
+        public void Delete(int ID)
+        {
+            InscripcionAdapter.GetInstance().Delete(ID);
+        }
+       
+        public void Save(Inscripcion ins)
+        {
+            InscripcionAdapter.GetInstance().Save(ins);
+        }
     }
 }

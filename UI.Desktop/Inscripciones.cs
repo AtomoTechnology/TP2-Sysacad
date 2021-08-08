@@ -34,5 +34,31 @@ namespace UI.Desktop
         {
             this.ListarInscripciones();
         }
+
+        private void btnAddInscripcion_Click(object sender, EventArgs e)
+        {
+            InscripcionDesktop insDesk = new InscripcionDesktop(ApplicationForm.ModoForm.Alta);
+            insDesk.ShowDialog();
+            this.ListarInscripciones();
+        }
+
+        private void btnEditInscripcion_Click(object sender, EventArgs e)
+        {
+            InscripcionDesktop insDesk = new InscripcionDesktop( ((Business.Entities.Inscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID , ApplicationForm.ModoForm.Modificacion);
+            insDesk.ShowDialog();
+            this.ListarInscripciones();
+        }
+
+        private void tbnDeleteInscripcion_Click(object sender, EventArgs e)
+        {
+            InscripcionDesktop insDesk = new InscripcionDesktop(((Business.Entities.Inscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Baja);
+            //insDesk.ShowDialog();
+            this.ListarInscripciones();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

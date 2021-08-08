@@ -27,20 +27,30 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMateria = new SqlCommand("select ai.id_inscripcion , mat.desc_materia, com.desc_comision , CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , ai.nota  from alumnos_inscripciones ai inner join personas per on per.id_persona = ai.id_alumno inner join cursos cur on cur.id_curso = ai.id_curso inner join materias mat on mat.id_materia = cur.id_materia  inner join comisiones com on com.id_comision = cur.id_comision", SqlConn);
+                SqlCommand cmdMateria = new SqlCommand(
+                    "select ai.id_inscripcion , mat.desc_materia, com.desc_comision ,per.legajo,ai.id_curso," +
+                    " CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , isnull(ai.nota,-1) nota  from alumnos_inscripciones ai " +
+                    "inner join personas per on per.id_persona = ai.id_alumno " +
+                    "inner join cursos cur on cur.id_curso = ai.id_curso " +
+                    "inner join materias mat on mat.id_materia = cur.id_materia " +
+                    " inner join comisiones com on com.id_comision = cur.id_comision",
+                    SqlConn);
                 SqlDataReader reader = cmdMateria.ExecuteReader();
                 while (reader.Read())
                 {
                     Inscripcion ins = new Inscripcion();
+                    ins.IdCurso = (int)reader["id_curso"];
                     ins.ID = (int)reader["id_inscripcion"];
                     ins.DescMateria = (string)reader["desc_materia"];
                     ins.DescComision = (string)reader["desc_comision"];
                     ins.NombreCompleto = (string)reader["NombreCompleto"];
                     ins.Condicion = (string)reader["condicion"];
+                    ins.Nota = (int)reader["nota"];
+                    ins.Legajo = (int)reader["legajo"];
+
                     //var n = 0 ;
                     //reader["nota"]  ? n = 10 : n= 20;
 
-                    //ins.Nota =   reader["nota"] == null ? 0 : (int)reader["nota"];
                     //ins.HsSemanales = (int)reader["hs_semanales"];
                     //ins.HsTotales = (int)reader["hs_totales"];
                     //ins.IdPlan = (int)reader["id_plan"];
@@ -66,32 +76,46 @@ namespace Data.Database
             return inscripciones;
         }
 
-        public Materia GetOne(int ID)
+        public Inscripcion GetOne(int ID)
         {
 
             //return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
-            Materia mat = new Materia();
+            Inscripcion ins = new Inscripcion();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMateria = new SqlCommand("select * from materias where id_materia = @id", SqlConn);
+                SqlCommand cmdMateria = new SqlCommand(
+                    "select ai.id_inscripcion , ai.id_curso , ai.id_alumno, mat.desc_materia, com.desc_comision ,cur.cupo , per.legajo,ai.id_curso," +
+                    " CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , isnull(ai.nota,-1) nota from alumnos_inscripciones ai " +
+                    "inner join personas per on per.id_persona = ai.id_alumno " +
+                    "inner join cursos cur on cur.id_curso = ai.id_curso " +
+                    "inner join materias mat on mat.id_materia = cur.id_materia " +
+                    " inner join comisiones com on com.id_comision = cur.id_comision" +
+                    "  where id_inscripcion = @id",
+                    SqlConn);
                 cmdMateria.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader reader = cmdMateria.ExecuteReader();
                 if (reader.Read())
                 {
-                    mat.ID = (int)reader["id_materia"];
-                    mat.DescMateria = (string)reader["desc_materia"];
-                    mat.HsSemanales = (int)reader["hs_semanales"];
-                    mat.HsTotales = (int)reader["hs_totales"];
-                    mat.IdPlan = (int)reader["id_plan"];
-                    mat.State = BusinessEntity.States.Unmodified;
+                    ins.ID = (int)reader["id_inscripcion"];
+                    ins.IdCurso = (int)reader["id_curso"];
+                    ins.IdCurso = (int)reader["id_curso"];
+                    ins.IdAlumno = (int)reader["id_alumno"];
+                    ins.DescMateria = (string)reader["desc_materia"];
+                    ins.DescComision = (string)reader["desc_comision"];
+                    ins.NombreCompleto = (string)reader["NombreCompleto"];
+                    ins.Condicion = (string)reader["condicion"];
+                    ins.Nota = (int)reader["nota"];
+                    ins.Legajo = (int)reader["legajo"];
+                    ins.CursoCupo = (int)reader["cupo"];
+
 
                 }
                 reader.Close();
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar los datos de las materias", ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar los datos de l inscripcion", ex);
 
                 throw ExcepcionManejada;
             }
@@ -99,7 +123,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            return mat;
+            return ins;
         }
 
         public void Delete(int ID)
@@ -107,15 +131,15 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete  from materias where id_materia = @id", SqlConn);
+                SqlCommand cmdDelete = new SqlCommand("delete  from alumnos_inscripciones where id_inscripcion = @id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                MessageBox.Show("Materia borrada con exito :)");
+                MessageBox.Show("Inscripcion borrada con exito :)");
 
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al eliminar la materia", ex);
+                Exception ExcepcionManejada = new Exception("Error al eliminar la inscripcion", ex);
 
                 throw ExcepcionManejada;
             }
@@ -125,38 +149,53 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(Materia materia)
+        public void Insert(Inscripcion ins)
         {
-
-            try
+            if (ins.CursoCupo > 0)
             {
 
-                this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("insert into materias (desc_materia,hs_semanales,hs_totales,id_plan )" +
-                    "values (@desc_materia,@hs_semanales,@hs_totales,@id_plan)", SqlConn);
-                cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.DescMateria;
-                cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HsSemanales;
-                cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HsTotales;
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
-                cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Materia agregada con exito :)");
-                //asi se obtiene el ID que asigna al BD automaticamente
+                try
+                {
+
+                    this.OpenConnection();
+
+                    SqlCommand cmdSave = new SqlCommand(
+                        "insert into alumnos_inscripciones" +
+                        " (id_alumno,id_curso,condicion,nota )" +
+                        "values (@id_alumno,@id_curso,@condicon,null)"
+                        , SqlConn);
+                    cmdSave.Parameters.Add("@condicon", SqlDbType.VarChar, 50).Value = ins.Condicion;
+                    cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ins.IdAlumno;
+                    cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = ins.IdCurso;
+                    cmdSave.ExecuteNonQuery();
+                    MessageBox.Show("Inscripcion realizada con exito :)");
+
+                    SqlCommand updateCursoCupo = new SqlCommand("UPDATE cursos SET  cupo = @cupo WHERE id_curso=@id", SqlConn);
+                    updateCursoCupo.Parameters.Add("@id", SqlDbType.Int).Value = ins.IdCurso;
+                    updateCursoCupo.Parameters.Add("@cupo", SqlDbType.Int).Value = ins.CursoCupo - 1;
+                    updateCursoCupo.ExecuteNonQuery();
+                    //asi se obtiene el ID que asigna al BD automaticamente
+                }
+                catch (Exception Ex)
+                {
+
+                    Exception Excepcionalejada = new Exception("Error al realizar la inscipcion", Ex); throw Excepcionalejada;
+                }
+
+                finally
+                {
+
+                    this.CloseConnection();
+                }
             }
-            catch (Exception Ex)
+            else
             {
-
-                Exception Excepcionalejada = new Exception("Error al crear la materia", Ex); throw Excepcionalejada;
-            }
-
-            finally
-            {
-
-                this.CloseConnection();
+                MessageBox.Show("Lo siento!! Ya no hay más cupo para eso curso","Agotación de Cupo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
         }
-        protected void Update(Materia materia)
+        protected void Update(Inscripcion ins)
         {
 
             try
@@ -165,22 +204,21 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand(
-
-                "UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales, " +
-                "hs_totales = @hs_totales, id_plan = @id_plan " +
-                "WHERE id_materia=@id", SqlConn);
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.ID;
-                cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.DescMateria;
-                cmdSave.Parameters.Add("@hs_semanales", SqlDbType.VarChar, 50).Value = materia.HsSemanales;
-                cmdSave.Parameters.Add("@hs_totales", SqlDbType.VarChar, 50).Value = materia.HsTotales;
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
+                "UPDATE alumnos_inscripciones SET nota = @nota, condicion = @condicion, " +
+                "id_alumno = @id_alumno, id_curso = @id_curso " +
+                "WHERE id_inscripcion = @id", SqlConn);
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = ins.ID;
+                cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ins.IdAlumno;
+                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = ins.IdCurso;
+                cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = ins.Nota;
+                cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = ins.Condicion;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Materia actualizada con exito :)");
+                MessageBox.Show("Inscripcion actualizada con exito :)");
             }
             catch (Exception Ex)
             {
 
-                Exception Excepcionalejada = new Exception("Error al actualizar la materia", Ex); throw Excepcionalejada;
+                Exception Excepcionalejada = new Exception("Error al actualizar la inscripcion", Ex); throw Excepcionalejada;
             }
 
             finally
@@ -191,24 +229,24 @@ namespace Data.Database
 
         }
 
-        public void Save(Materia materia)
+        public void Save(Inscripcion ins)
         {
 
-            if (materia.State == BusinessEntity.States.Delete)
+            if (ins.State == BusinessEntity.States.Delete)
             {
-                this.Delete(materia.ID);
+                this.Delete(ins.ID);
 
             }
-            else if (materia.State == BusinessEntity.States.New)
+            else if (ins.State == BusinessEntity.States.New)
             {
-                this.Insert(materia);
+                this.Insert(ins);
 
             }
-            else if (materia.State == BusinessEntity.States.Modified)
+            else if (ins.State == BusinessEntity.States.Modified)
             {
-                this.Update(materia);
+                this.Update(ins);
             }
-            materia.State = BusinessEntity.States.Unmodified;
+            ins.State = BusinessEntity.States.Unmodified;
 
         }
     }

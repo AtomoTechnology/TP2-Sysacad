@@ -43,8 +43,10 @@ namespace UI.Desktop
             this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
             this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,7 +100,7 @@ namespace UI.Desktop
             this.dgvInscripciones.AllowUserToDeleteRows = false;
             this.dgvInscripciones.AllowUserToResizeColumns = false;
             this.dgvInscripciones.AllowUserToResizeRows = false;
-            this.dgvInscripciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvInscripciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvInscripciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInscripciones.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvInscripciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -115,8 +117,10 @@ namespace UI.Desktop
             this.dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.isCurso,
             this.descMateria,
             this.descComision,
+            this.legajo,
             this.NombreApellido,
             this.Condicion,
             this.nota});
@@ -182,6 +186,7 @@ namespace UI.Desktop
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Salir";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tsMaterias
             // 
@@ -204,6 +209,7 @@ namespace UI.Desktop
             this.btnAddInscripcion.Name = "btnAddInscripcion";
             this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
             this.btnAddInscripcion.Text = "Agregar Inscripcion";
+            this.btnAddInscripcion.Click += new System.EventHandler(this.btnAddInscripcion_Click);
             // 
             // btnEditInscripcion
             // 
@@ -213,6 +219,7 @@ namespace UI.Desktop
             this.btnEditInscripcion.Name = "btnEditInscripcion";
             this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
             this.btnEditInscripcion.Text = "editar Inscripcion";
+            this.btnEditInscripcion.Click += new System.EventHandler(this.btnEditInscripcion_Click);
             // 
             // tbnDeleteInscripcion
             // 
@@ -223,15 +230,25 @@ namespace UI.Desktop
             this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
             this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
             this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
+            this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);
             // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
+            this.ID.HeaderText = "ID Inscripcion";
             this.ID.MinimumWidth = 8;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 80;
+            this.ID.Width = 242;
+            // 
+            // isCurso
+            // 
+            this.isCurso.DataPropertyName = "IdCurso";
+            this.isCurso.HeaderText = "ID Curso";
+            this.isCurso.MinimumWidth = 8;
+            this.isCurso.Name = "isCurso";
+            this.isCurso.ReadOnly = true;
+            this.isCurso.Width = 169;
             // 
             // descMateria
             // 
@@ -251,9 +268,18 @@ namespace UI.Desktop
             this.descComision.ReadOnly = true;
             this.descComision.Width = 255;
             // 
+            // legajo
+            // 
+            this.legajo.DataPropertyName = "Legajo";
+            this.legajo.HeaderText = "Legajo";
+            this.legajo.MinimumWidth = 8;
+            this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
+            this.legajo.Width = 144;
+            // 
             // NombreApellido
             // 
-            this.NombreApellido.DataPropertyName = "NombreApellido";
+            this.NombreApellido.DataPropertyName = "NombreCompleto";
             this.NombreApellido.HeaderText = "Nombre Apellido";
             this.NombreApellido.MinimumWidth = 8;
             this.NombreApellido.Name = "NombreApellido";
@@ -314,8 +340,10 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn descComision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;

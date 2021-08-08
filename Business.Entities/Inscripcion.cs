@@ -15,6 +15,22 @@ namespace Business.Entities
         private string _descMateria;
         private string _descComision;
         private string _nombreCompleto;
+        private int _legajo;
+        private int _cupoCurso;
+
+        public int CursoCupo
+        {
+            get { return _cupoCurso; }
+            set { _cupoCurso = value; }
+        }
+
+
+        public int Legajo
+        {
+            get { return _legajo; }
+            set { _legajo = value; }
+        }
+
 
         public string NombreCompleto
         {

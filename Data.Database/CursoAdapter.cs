@@ -18,7 +18,13 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand("select * from cursos c inner join comisiones com on com.id_comision = c.id_comision inner join materias m on m.id_materia = c.id_materia", SqlConn);
+                SqlCommand cmdCursos = new SqlCommand(
+                    "select * from cursos c" +
+                    " inner join comisiones com " +
+                    "on com.id_comision = c.id_comision " +
+                    "inner join materias m " +
+                    "on m.id_materia = c.id_materia",
+                    SqlConn);
                 SqlDataReader reader = cmdCursos.ExecuteReader();
                 while (reader.Read())
                 {
@@ -59,7 +65,12 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCurso = new SqlCommand("select * from cursos where id_curso = @id", SqlConn);
+                SqlCommand cmdCurso = new SqlCommand("select * from cursos c" +
+                    " inner join comisiones com " +
+                    "on com.id_comision = c.id_comision " +
+                    "inner join materias m " +
+                    "on m.id_materia = c.id_materia" +
+                    " where id_curso = @id", SqlConn);
                 cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader reader = cmdCurso.ExecuteReader();
                 if (reader.Read())
@@ -69,6 +80,8 @@ namespace Data.Database
                     cur.IdComision = (int)reader["id_comision"];
                     cur.AnioCalendario = (int)reader["anio_calendario"];
                     cur.Cupo = (int)reader["cupo"];
+                    cur.DescComision = (string)reader["desc_comision"];
+                    cur.DescMateria = (string)reader["desc_materia"];
 
                 }
                 reader.Close();
