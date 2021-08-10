@@ -32,9 +32,9 @@ namespace Business.Logic
             _cursoData = new CursoAdapter();
         }
 
-        public List<Curso> GetAll()
+        public List<Curso> GetAll(int? idMateria = null, int? idComision = null , int? limit = null)
         {
-            return CursoData.GetAll();
+            return CursoData.GetAll(idMateria, idComision, limit  );
         }
 
         public Curso GetOne(int id)

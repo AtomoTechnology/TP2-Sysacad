@@ -12,18 +12,35 @@ namespace Data.Database
 {
     public class CursoAdapter : Adapter
     {
-        public List<Curso> GetAll()
+        public List<Curso> GetAll(int? idMateria = null, int? idComision = null, int? limit = null )
         {
             List<Curso> cursos = new List<Curso>();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand(
-                    "select * from cursos c" +
+                string query = "select ";
+                if (limit != null)
+                {
+                    query += $"top {limit}";
+                }
+
+                query += " * from cursos c" +
                     " inner join comisiones com " +
                     "on com.id_comision = c.id_comision " +
                     "inner join materias m " +
-                    "on m.id_materia = c.id_materia",
+                    "on m.id_materia = c.id_materia ";
+                if(idMateria != null)
+                {
+                    query += $" where c.id_materia = {idMateria} ";
+                }
+                if(idComision != null)
+                {
+                    query += $" and c.id_comision = {idComision} ";
+                }
+               
+                MessageBox.Show(query);
+                SqlCommand cmdCursos = new SqlCommand(query
+                   ,
                     SqlConn);
                 SqlDataReader reader = cmdCursos.ExecuteReader();
                 while (reader.Read())

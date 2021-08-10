@@ -59,5 +59,11 @@ namespace UI.Desktop
             cursoDesk.ShowDialog();
             this.ListarCursos();
         }
+
+        private void btnAsignarDocente_Click(object sender, EventArgs e)
+        {
+            Usuarios usrs = new Usuarios();
+            usrs.ShowDialog();
+        }
     }
 }

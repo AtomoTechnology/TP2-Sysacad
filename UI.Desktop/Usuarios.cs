@@ -19,6 +19,12 @@ namespace UI.Desktop
             InitializeComponent();
             this.dgvUsuarios.AutoGenerateColumns = false;
         }
+        public Usuarios( bool usr )
+        {
+            InitializeComponent();
+            this.tsUsuarios.Visible = false;
+
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {

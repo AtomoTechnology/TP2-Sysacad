@@ -6,17 +6,31 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Inscripcion :BusinessEntity
+    public class Inscripcion : BusinessEntity
     {
-        private int  _idAlumno;
+        private int _idAlumno;
         private int _idCurso;
         private string _condicion;
-        private int _nota;
+        private int? _nota;
         private string _descMateria;
         private string _descComision;
         private string _nombreCompleto;
         private int _legajo;
         private int _cupoCurso;
+        public string notaString
+        {
+            get
+            {
+                if (Nota.HasValue)
+                {
+                    return Nota.Value.ToString( "N2" );
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+        }
 
         public int CursoCupo
         {
@@ -53,7 +67,7 @@ namespace Business.Entities
         }
 
 
-        public int Nota
+        public int? Nota
         {
             get { return _nota; }
             set { _nota = value; }
@@ -74,7 +88,7 @@ namespace Business.Entities
         }
 
 
-        public int  IdAlumno
+        public int IdAlumno
         {
             get { return _idAlumno; }
             set { _idAlumno = value; }

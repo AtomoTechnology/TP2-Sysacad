@@ -15,6 +15,7 @@ namespace UI.Desktop
     public partial class InscripcionDesktop : ApplicationForm
     {
         Inscripcion currentInscripcion = new Inscripcion();
+        private int? idMateriaActual = null;
 
         public InscripcionDesktop()
         {
@@ -55,13 +56,13 @@ namespace UI.Desktop
 
 
             this.txtId.Text = currentInscripcion.ID.ToString();
-            this.txtNota.Text = currentInscripcion.Nota.ToString();
+            //this.txtNota.Text = currentInscripcion.Nota.ToString();
             this.CargarAlumnosCursos();
             Curso cur = CursoLogic.GetInstance().GetOne(currentInscripcion.IdCurso);
             Usuario usr = UsuarioLogic.GetInstance().GetOne(currentInscripcion.IdAlumno);
             this.cbCursos.SelectedIndex = this.cbCursos.FindString(cur.DescMateria);
             this.cbAlumnos.SelectedIndex = this.cbAlumnos.FindString(usr.Legajo.ToString());
-            this.cbCondicions.SelectedIndex = this.cbCondicions.FindString(currentInscripcion.Condicion);
+            //this.cbCondicions.SelectedIndex = this.cbCondicions.FindString(currentInscripcion.Condicion);
 
             switch (Modo)
             {
@@ -91,7 +92,7 @@ namespace UI.Desktop
                 case ModoForm.Alta:
                     currentInscripcion.IdAlumno = ((Business.Entities.Usuario)this.cbAlumnos.SelectedItem).ID;
                     currentInscripcion.IdCurso = ((Business.Entities.Curso)this.cbCursos.SelectedItem).ID;
-                    currentInscripcion.Condicion = this.cbCondicions.SelectedItem.ToString();
+                    currentInscripcion.Condicion = "Cursando";
                     currentInscripcion.CursoCupo = ((Business.Entities.Curso)this.cbCursos.SelectedItem).Cupo;
                     //currentInscripcion.Nota = Convert.ToInt32(this.txtNota.Text);
                     currentInscripcion.State = BusinessEntity.States.New;
@@ -102,8 +103,8 @@ namespace UI.Desktop
                 case ModoForm.Modificacion:
                     currentInscripcion.IdAlumno = ((Business.Entities.Usuario)this.cbAlumnos.SelectedItem).ID;
                     currentInscripcion.IdCurso = ((Business.Entities.Curso)this.cbCursos.SelectedItem).ID;
-                    currentInscripcion.Condicion = this.cbCondicions.SelectedItem.ToString();
-                    currentInscripcion.Nota = Convert.ToInt32(this.txtNota.Text);
+                    currentInscripcion.Condicion = "Cursando";
+                    //currentInscripcion.Nota = Convert.ToInt32(this.txtNota.Text);
                     currentInscripcion.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Consulta:
@@ -124,7 +125,7 @@ namespace UI.Desktop
         public override bool Validar()
         {
 
-            if (this.cbAlumnos.SelectedItem != null && this.cbCursos.SelectedItem != null && this.cbCondicions.SelectedItem != null)
+            if (this.cbAlumnos.SelectedItem != null && this.cbCursos.SelectedItem != null)
             {
                 return true;
             }
@@ -153,12 +154,43 @@ namespace UI.Desktop
 
         private void CargarAlumnosCursos()
         {
-            this.cbCursos.DataSource = CursoLogic.GetInstance().GetAll();
-            this.cbCursos.DisplayMember = "DescMateria";
-            this.cbCursos.ValueMember = "ID";
+            //this.cbCursos.DataSource = CursoLogic.GetInstance().GetAll();
+            //this.cbCursos.DisplayMember = "DescMateria";
+            //this.cbCursos.ValueMember = "ID";
+            this.cbMaterias.DataSource = MateriaLogic.GetInstance().GetAll();
+            this.cbMaterias.DisplayMember = "DescMateria";
+            this.cbMaterias.ValueMember = "ID";
+            //this.cbMaterias.SelectedIndex = -1;
             this.cbAlumnos.DataSource = UsuarioLogic.GetInstance().GetAll();
             this.cbAlumnos.DisplayMember = "Legajo";
             this.cbAlumnos.ValueMember = "ID";
+            this.cbAlumnos.SelectedIndex = -1;
+
+        }
+
+        private void cbCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.cbComisiones.Text = ((Business.Entities.Curso)this.cbCursos.SelectedItem).ID.ToString(); 
+        }
+
+        private void cbMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                this.idMateriaActual = ((Business.Entities.Materia)this.cbMaterias.SelectedItem).ID;
+                this.cbComisiones.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, null, null);
+                this.cbComisiones.DisplayMember = "DescComision";
+                this.cbComisiones.ValueMember = "ID";
+            
+        }
+
+        private void cbComisiones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                int idComision = ((Business.Entities.Curso)this.cbComisiones.SelectedItem).IdComision;
+                this.cbCursos.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, idComision, null);
+                this.cbCursos.DisplayMember = "ID";
+                this.cbCursos.ValueMember = "ID";
+            
 
         }
     }

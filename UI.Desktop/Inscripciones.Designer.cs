@@ -297,7 +297,7 @@ namespace UI.Desktop
             // 
             // nota
             // 
-            this.nota.DataPropertyName = "Nota";
+            this.nota.DataPropertyName = "notaString";
             this.nota.HeaderText = "Nota";
             this.nota.MinimumWidth = 8;
             this.nota.Name = "nota";

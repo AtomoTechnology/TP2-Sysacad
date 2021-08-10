@@ -93,6 +93,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowCount = 2;
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpEspecialidades.Size = new System.Drawing.Size(958, 539);
             this.tlpEspecialidades.TabIndex = 0;
             // 

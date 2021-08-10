@@ -30,9 +30,6 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InscripcionDesktop));
-            this.txtNota = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,42 +40,15 @@ namespace UI.Desktop
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbAlumnos = new System.Windows.Forms.ComboBox();
+            this.cbComisiones = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbCondicions = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbMaterias = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // txtNota
-            // 
-            this.txtNota.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNota.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txtNota.Location = new System.Drawing.Point(51, 584);
-            this.txtNota.MaxLength = 2;
-            this.txtNota.Multiline = true;
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(353, 47);
-            this.txtNota.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Location = new System.Drawing.Point(51, 632);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(353, 2);
-            this.panel3.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(47, 537);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 29);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Nota";
             // 
             // lbTitle
             // 
@@ -100,7 +70,7 @@ namespace UI.Desktop
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCancel.Location = new System.Drawing.Point(260, 694);
+            this.btnCancel.Location = new System.Drawing.Point(261, 669);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(148, 52);
             this.btnCancel.TabIndex = 6;
@@ -114,7 +84,7 @@ namespace UI.Desktop
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(47, 314);
+            this.label2.Location = new System.Drawing.Point(47, 543);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 29);
             this.label2.TabIndex = 8;
@@ -128,11 +98,12 @@ namespace UI.Desktop
             this.cbCursos.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cbCursos.FormattingEnabled = true;
             this.cbCursos.ItemHeight = 28;
-            this.cbCursos.Location = new System.Drawing.Point(52, 367);
+            this.cbCursos.Location = new System.Drawing.Point(52, 596);
             this.cbCursos.Name = "cbCursos";
             this.cbCursos.Size = new System.Drawing.Size(357, 36);
             this.cbCursos.Sorted = true;
             this.cbCursos.TabIndex = 1;
+            this.cbCursos.SelectedIndexChanged += new System.EventHandler(this.cbCursos_SelectedIndexChanged);
             // 
             // txtId
             // 
@@ -163,7 +134,7 @@ namespace UI.Desktop
             this.btnSaveInscripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveInscripcion.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveInscripcion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSaveInscripcion.Location = new System.Drawing.Point(51, 694);
+            this.btnSaveInscripcion.Location = new System.Drawing.Point(52, 669);
             this.btnSaveInscripcion.Name = "btnSaveInscripcion";
             this.btnSaveInscripcion.Size = new System.Drawing.Size(148, 52);
             this.btnSaveInscripcion.TabIndex = 5;
@@ -197,7 +168,8 @@ namespace UI.Desktop
             // 
             // cbAlumnos
             // 
-            this.cbAlumnos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbAlumnos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbAlumnos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
             this.cbAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbAlumnos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAlumnos.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -209,6 +181,21 @@ namespace UI.Desktop
             this.cbAlumnos.Sorted = true;
             this.cbAlumnos.TabIndex = 0;
             // 
+            // cbComisiones
+            // 
+            this.cbComisiones.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbComisiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbComisiones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbComisiones.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.cbComisiones.FormattingEnabled = true;
+            this.cbComisiones.ItemHeight = 28;
+            this.cbComisiones.Location = new System.Drawing.Point(52, 474);
+            this.cbComisiones.Name = "cbComisiones";
+            this.cbComisiones.Size = new System.Drawing.Size(357, 36);
+            this.cbComisiones.Sorted = true;
+            this.cbComisiones.TabIndex = 19;
+            this.cbComisiones.SelectedIndexChanged += new System.EventHandler(this.cbComisiones_SelectedIndexChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -217,42 +204,105 @@ namespace UI.Desktop
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(47, 421);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 29);
+            this.label6.Size = new System.Drawing.Size(137, 29);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Condicion";
+            this.label6.Text = "Comisiones";
             // 
-            // cbCondicions
+            // label3
             // 
-            this.cbCondicions.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbCondicions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCondicions.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCondicions.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.cbCondicions.FormattingEnabled = true;
-            this.cbCondicions.ItemHeight = 28;
-            this.cbCondicions.Items.AddRange(new object[] {
-            "Aprobada",
-            "Cursando",
-            "Libre",
-            "Regular"});
-            this.cbCondicions.Location = new System.Drawing.Point(52, 474);
-            this.cbCondicions.Name = "cbCondicions";
-            this.cbCondicions.Size = new System.Drawing.Size(357, 36);
-            this.cbCondicions.Sorted = true;
-            this.cbCondicions.TabIndex = 19;
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(48, 306);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 29);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Materias";
+            // 
+            // cbMaterias
+            // 
+            this.cbMaterias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMaterias.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaterias.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.cbMaterias.FormattingEnabled = true;
+            this.cbMaterias.ItemHeight = 28;
+            this.cbMaterias.Location = new System.Drawing.Point(53, 359);
+            this.cbMaterias.Name = "cbMaterias";
+            this.cbMaterias.Size = new System.Drawing.Size(357, 36);
+            this.cbMaterias.Sorted = true;
+            this.cbMaterias.TabIndex = 21;
+            this.cbMaterias.SelectedIndexChanged += new System.EventHandler(this.cbMaterias_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Bowlby One SC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.LightCoral;
+            this.label4.Location = new System.Drawing.Point(160, 198);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 56);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label7.Font = new System.Drawing.Font("Bowlby One SC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.LightCoral;
+            this.label7.Location = new System.Drawing.Point(161, 300);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 56);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "*";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("Bowlby One SC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.LightCoral;
+            this.label8.Location = new System.Drawing.Point(184, 415);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 56);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Bowlby One SC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.LightCoral;
+            this.label9.Location = new System.Drawing.Point(144, 537);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 56);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "*";
             // 
             // InscripcionDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            this.ClientSize = new System.Drawing.Size(471, 793);
+            this.ClientSize = new System.Drawing.Size(450, 756);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbMaterias);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbCondicions);
+            this.Controls.Add(this.cbComisiones);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbAlumnos);
-            this.Controls.Add(this.txtNota);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label2);
@@ -281,12 +331,15 @@ namespace UI.Desktop
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TextBox txtNota;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbAlumnos;
+        private System.Windows.Forms.ComboBox cbComisiones;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbCondicions;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbMaterias;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
