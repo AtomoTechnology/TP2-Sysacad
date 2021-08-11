@@ -63,7 +63,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1214, 669);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1821, 968);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -90,7 +90,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1214, 669);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1821, 968);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvCursos
@@ -146,7 +146,7 @@ namespace UI.Desktop
             this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCursos.RowTemplate.Height = 28;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(1208, 569);
+            this.dgvCursos.Size = new System.Drawing.Size(1815, 868);
             this.dgvCursos.TabIndex = 0;
             // 
             // ID
@@ -204,7 +204,7 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(760, 578);
+            this.btnUpdate.Location = new System.Drawing.Point(1367, 877);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(218, 68);
             this.btnUpdate.TabIndex = 1;
@@ -221,7 +221,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(984, 578);
+            this.btnClose.Location = new System.Drawing.Point(1591, 877);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(227, 68);
             this.btnClose.TabIndex = 2;
