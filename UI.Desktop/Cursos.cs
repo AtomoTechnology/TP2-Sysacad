@@ -62,8 +62,11 @@ namespace UI.Desktop
 
         private void btnAsignarDocente_Click(object sender, EventArgs e)
         {
-            Usuarios usrs = new Usuarios();
-            usrs.ShowDialog();
+            DocenteCursoDesktop dictado = new DocenteCursoDesktop(((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID);
+            dictado.ShowDialog();
+
+            //Usuarios usrs = new Usuarios();
+            //usrs.ShowDialog();
         }
     }
 }

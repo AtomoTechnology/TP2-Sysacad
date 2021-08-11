@@ -52,6 +52,12 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocenteCursoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCursoDesktop.Designer.cs">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="InscripcionDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,13 @@
     <Compile Include="PlanDesktop.Designer.cs">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Docentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>Docentes.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +166,9 @@
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCursoDesktop.resx">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InscripcionDesktop.resx">
       <DependentUpon>InscripcionDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlanDesktop.resx">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docentes.resx">
+      <DependentUpon>Docentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

@@ -38,7 +38,7 @@ namespace Data.Database
                     query += $" and c.id_comision = {idComision} ";
                 }
                
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 SqlCommand cmdCursos = new SqlCommand(query
                    ,
                     SqlConn);

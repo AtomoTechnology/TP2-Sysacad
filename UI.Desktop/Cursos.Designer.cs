@@ -239,7 +239,7 @@ namespace UI.Desktop
             this.tbnDeleteCurso,
             this.toolStripSeparator1,
             this.btnAsignarDocente});
-            this.tsMaterias.Location = new System.Drawing.Point(14, 0);
+            this.tsMaterias.Location = new System.Drawing.Point(4, 0);
             this.tsMaterias.Name = "tsMaterias";
             this.tsMaterias.Size = new System.Drawing.Size(206, 33);
             this.tsMaterias.TabIndex = 0;

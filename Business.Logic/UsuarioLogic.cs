@@ -37,9 +37,9 @@ namespace Business.Logic
         {
             _usuarioData = new UsuarioAdapter();
         }
-        public List<Usuario> GetAll()
+        public List<Usuario> GetAll(int? tipoPersona = null )
         {
-            return Usuario.GetAll();
+            return Usuario.GetAll( tipoPersona );
         }
         public Usuario GetOne(int id)
         {
