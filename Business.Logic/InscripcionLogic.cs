@@ -38,5 +38,10 @@ namespace Business.Logic
         {
             InscripcionAdapter.GetInstance().Save(ins);
         }
+        public List<Inscripcion> ReporteCursos(int? idCurso = null)
+        {
+            return InscripcionAdapter.GetInstance().ReporteCursos(idCurso);
+        }
+
     }
 }

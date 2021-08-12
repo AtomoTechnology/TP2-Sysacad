@@ -56,6 +56,7 @@ namespace UI.Desktop
                 {
                     this.GetStudent();
                 }
+                this.lblUserName.Text = Sesion.userName;
             }
            
           
@@ -230,5 +231,50 @@ namespace UI.Desktop
             this.Close();
         }
 
+        private void misCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new Dictados();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            if (this.pnlUserModal.Visible)
+            {
+                this.pnlUserModal.Visible = false;
+            }
+            else
+            {
+
+                this.pnlUserModal.Visible = true;
+            }
+        }
+
+        private void lblUserName_Click(object sender, EventArgs e)
+        {
+            if (this.pnlUserModal.Visible)
+            {
+                this.pnlUserModal.Visible = false;
+            }
+            else
+            {
+
+                this.pnlUserModal.Visible = true;
+            }
+        }
+
+        private void reporteCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new ReporteCursos();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }

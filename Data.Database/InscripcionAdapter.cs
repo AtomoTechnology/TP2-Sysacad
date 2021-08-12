@@ -229,6 +229,8 @@ namespace Data.Database
 
         }
 
+
+
         public void Save(Inscripcion ins)
         {
 
@@ -248,6 +250,70 @@ namespace Data.Database
             }
             ins.State = BusinessEntity.States.Unmodified;
 
+        }
+        public List<Inscripcion> ReporteCursos( int? idCurso )
+        {
+            List<Inscripcion> inscripciones = new List<Inscripcion>();
+            try
+            {
+                this.OpenConnection();
+                string query = "select ins.id_curso , per.legajo, CONCAT(per.apellido ,' ', per.nombre) NombreCompleto , ins.condicion " +
+                    ",isnull(ins.nota,-1), mat.desc_materia ,com.desc_comision  " +
+                    "from alumnos_inscripciones ins " +
+                    "inner join cursos cur " +
+                    "on cur.id_curso = ins.id_curso " +
+                    "inner join usuarios usr " +
+                    "on usr.id_usuario = ins.id_alumno " +
+                    "inner join personas per " +
+                    "on per.id_persona = usr.id_persona " +
+                    "inner join materias mat " +
+                    "on mat.id_materia = cur.id_materia " +
+                    "inner join comisiones com " +
+                    "on com.id_comision = cur.id_comision";
+                if(idCurso != null)
+                {
+                    query += $"where ins.id_curso = {idCurso} ";
+                }
+                SqlCommand cmdInscripcion = new SqlCommand(query,SqlConn);
+                SqlDataReader reader = cmdInscripcion.ExecuteReader();
+                while (reader.Read())
+                {
+                    Inscripcion ins = new Inscripcion();
+                    ins.IdCurso = (int)reader["id_curso"];
+                    //ins.ID = (int)reader["id_inscripcion"];
+                    ins.DescMateria = (string)reader["desc_materia"];
+                    ins.DescComision = (string)reader["desc_comision"];
+                    ins.NombreCompleto = (string)reader["NombreCompleto"];
+                    ins.Condicion = (string)reader["condicion"];
+                    //ins.Nota = (int)reader["nota"];
+                    ins.Legajo = (int)reader["legajo"];
+
+                    //var n = 0 ;
+                    //reader["nota"]  ? n = 10 : n= 20;
+
+                    //ins.HsSemanales = (int)reader["hs_semanales"];
+                    //ins.HsTotales = (int)reader["hs_totales"];
+                    //ins.IdPlan = (int)reader["id_plan"];
+                    //ins.DescPlan = (string)reader["desc_plan"];
+                    inscripciones.Add(ins);
+                }
+                //cerramos el dataReader 
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+
+
+            return inscripciones;
         }
     }
 }

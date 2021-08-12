@@ -36,31 +36,36 @@ namespace UI.Desktop
             this.crearPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.misCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especialidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMenuAcademia = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlUserModal = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.pnlMenuAcademia.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlUserModal.SuspendLayout();
@@ -118,12 +123,14 @@ namespace UI.Desktop
             // crearPersonaToolStripMenuItem
             // 
             this.crearPersonaToolStripMenuItem.Name = "crearPersonaToolStripMenuItem";
-            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(251, 34);
             this.crearPersonaToolStripMenuItem.Text = "Listar persona";
             this.crearPersonaToolStripMenuItem.Click += new System.EventHandler(this.crearPersonaToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
+            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteCursosToolStripMenuItem});
             this.adminToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.admin;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(113, 29);
@@ -131,10 +138,19 @@ namespace UI.Desktop
             // 
             // profesoresToolStripMenuItem
             // 
+            this.profesoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.misCursosToolStripMenuItem});
             this.profesoresToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.docente;
             this.profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
             this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(160, 29);
             this.profesoresToolStripMenuItem.Text = "Profesores";
+            // 
+            // misCursosToolStripMenuItem
+            // 
+            this.misCursosToolStripMenuItem.Name = "misCursosToolStripMenuItem";
+            this.misCursosToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.misCursosToolStripMenuItem.Text = "Mis Cursos";
+            this.misCursosToolStripMenuItem.Click += new System.EventHandler(this.misCursosToolStripMenuItem_Click);
             // 
             // utilidadesToolStripMenuItem
             // 
@@ -153,37 +169,44 @@ namespace UI.Desktop
             // planToolStripMenuItem
             // 
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.planToolStripMenuItem.Text = "Planes";
             this.planToolStripMenuItem.Click += new System.EventHandler(this.planToolStripMenuItem_Click);
             // 
             // materiaToolStripMenuItem
             // 
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.materiaToolStripMenuItem.Text = "Materias";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // especialidadToolStripMenuItem
             // 
             this.especialidadToolStripMenuItem.Name = "especialidadToolStripMenuItem";
-            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.especialidadToolStripMenuItem.Text = "Especialidades";
             this.especialidadToolStripMenuItem.Click += new System.EventHandler(this.especialidadToolStripMenuItem_Click);
             // 
             // comisionesToolStripMenuItem
             // 
             this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
-            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.comisionesToolStripMenuItem.Text = "Comisiones";
             this.comisionesToolStripMenuItem.Click += new System.EventHandler(this.comisionesToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.cursosToolStripMenuItem.Text = "Cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
+            // 
+            // inscripcionesToolStripMenuItem
+            // 
+            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
+            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -196,6 +219,7 @@ namespace UI.Desktop
             // pnlMenuAcademia
             // 
             this.pnlMenuAcademia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            this.pnlMenuAcademia.Controls.Add(this.panel2);
             this.pnlMenuAcademia.Controls.Add(this.panel1);
             this.pnlMenuAcademia.Controls.Add(this.mnsPrincipal);
             this.pnlMenuAcademia.Controls.Add(this.pictureBox1);
@@ -205,21 +229,56 @@ namespace UI.Desktop
             this.pnlMenuAcademia.Size = new System.Drawing.Size(1737, 73);
             this.pnlMenuAcademia.TabIndex = 5;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblUserName);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Location = new System.Drawing.Point(1187, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(283, 70);
+            this.panel2.TabIndex = 4;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUserName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(39, 21);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Padding = new System.Windows.Forms.Padding(2);
+            this.lblUserName.Size = new System.Drawing.Size(167, 32);
+            this.lblUserName.TabIndex = 3;
+            this.lblUserName.Text = "usernamefull";
+            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::UI.Desktop.Properties.Resources.logoUserRounded;
+            this.pictureBox3.Location = new System.Drawing.Point(225, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(54, 55);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(1394, -6);
+            this.panel1.Location = new System.Drawing.Point(1508, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 79);
+            this.panel1.Size = new System.Drawing.Size(229, 69);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::UI.Desktop.Properties.Resources.minimize;
-            this.pictureBox5.Location = new System.Drawing.Point(115, 18);
+            this.pictureBox5.Location = new System.Drawing.Point(16, 8);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(63, 55);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,7 +291,7 @@ namespace UI.Desktop
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::UI.Desktop.Properties.Resources._786465;
-            this.pictureBox4.Location = new System.Drawing.Point(193, 18);
+            this.pictureBox4.Location = new System.Drawing.Point(85, 8);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(63, 55);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -240,23 +299,11 @@ namespace UI.Desktop
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::UI.Desktop.Properties.Resources.logoUserRounded;
-            this.pictureBox3.Location = new System.Drawing.Point(22, 18);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(54, 55);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::UI.Desktop.Properties.Resources.closeLogin;
-            this.pictureBox2.Location = new System.Drawing.Point(280, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(154, 8);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(63, 55);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -339,12 +386,12 @@ namespace UI.Desktop
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // inscripcionesToolStripMenuItem
+            // reporteCursosToolStripMenuItem
             // 
-            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
-            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
+            this.reporteCursosToolStripMenuItem.Name = "reporteCursosToolStripMenuItem";
+            this.reporteCursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.reporteCursosToolStripMenuItem.Text = "Reporte Cursos";
+            this.reporteCursosToolStripMenuItem.Click += new System.EventHandler(this.reporteCursosToolStripMenuItem_Click);
             // 
             // formMain
             // 
@@ -371,10 +418,12 @@ namespace UI.Desktop
             this.mnsPrincipal.PerformLayout();
             this.pnlMenuAcademia.ResumeLayout(false);
             this.pnlMenuAcademia.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlUserModal.ResumeLayout(false);
@@ -411,5 +460,9 @@ namespace UI.Desktop
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem misCursosToolStripMenuItem;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolStripMenuItem reporteCursosToolStripMenuItem;
     }
 }

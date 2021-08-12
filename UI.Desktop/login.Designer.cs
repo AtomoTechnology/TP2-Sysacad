@@ -56,7 +56,7 @@ namespace UI.Desktop
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(57, 577);
+            this.btnIngresar.Location = new System.Drawing.Point(56, 477);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(405, 53);
             this.btnIngresar.TabIndex = 0;
@@ -72,7 +72,7 @@ namespace UI.Desktop
             this.lbWelcome.AutoSize = true;
             this.lbWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            this.lbWelcome.Location = new System.Drawing.Point(21, 209);
+            this.lbWelcome.Location = new System.Drawing.Point(37, 182);
             this.lbWelcome.Name = "lbWelcome";
             this.lbWelcome.Size = new System.Drawing.Size(411, 50);
             this.lbWelcome.TabIndex = 1;
@@ -87,24 +87,24 @@ namespace UI.Desktop
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtUsuario.Location = new System.Drawing.Point(108, 305);
+            this.txtUsuario.Location = new System.Drawing.Point(107, 279);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(365, 70);
+            this.txtUsuario.Size = new System.Drawing.Size(354, 43);
             this.txtUsuario.TabIndex = 4;
-            this.txtUsuario.Text = "Jojo";
+            this.txtUsuario.Text = "jhmesseroux";
             // 
             // txtPass
             // 
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(108, 443);
+            this.txtPass.Location = new System.Drawing.Point(107, 373);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(354, 45);
             this.txtPass.TabIndex = 5;
-            this.txtPass.Text = "jonas1234";
+            this.txtPass.Text = "10101010";
             // 
             // lmkOlvidaPass
             // 
@@ -112,7 +112,7 @@ namespace UI.Desktop
             this.lmkOlvidaPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lmkOlvidaPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
             this.lmkOlvidaPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            this.lmkOlvidaPass.Location = new System.Drawing.Point(122, 733);
+            this.lmkOlvidaPass.Location = new System.Drawing.Point(121, 633);
             this.lmkOlvidaPass.Name = "lmkOlvidaPass";
             this.lmkOlvidaPass.Size = new System.Drawing.Size(244, 26);
             this.lmkOlvidaPass.TabIndex = 6;
@@ -123,7 +123,7 @@ namespace UI.Desktop
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(172, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(172, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(157, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -133,7 +133,7 @@ namespace UI.Desktop
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(57, 305);
+            this.pictureBox2.Location = new System.Drawing.Point(56, 279);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,7 +143,7 @@ namespace UI.Desktop
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel1.Location = new System.Drawing.Point(57, 354);
+            this.panel1.Location = new System.Drawing.Point(56, 328);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 2);
             this.panel1.TabIndex = 9;
@@ -151,7 +151,7 @@ namespace UI.Desktop
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel2.Location = new System.Drawing.Point(57, 494);
+            this.panel2.Location = new System.Drawing.Point(56, 424);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(405, 2);
             this.panel2.TabIndex = 11;
@@ -159,7 +159,7 @@ namespace UI.Desktop
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(57, 443);
+            this.pictureBox3.Location = new System.Drawing.Point(56, 373);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,7 +186,7 @@ namespace UI.Desktop
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(57, 649);
+            this.btnRegister.Location = new System.Drawing.Point(56, 549);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(405, 53);
             this.btnRegister.TabIndex = 14;
@@ -199,7 +199,7 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(517, 792);
+            this.ClientSize = new System.Drawing.Size(517, 751);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
