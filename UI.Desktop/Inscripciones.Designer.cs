@@ -36,12 +36,6 @@ namespace UI.Desktop
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
             this.dgvInscripciones = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.tsMaterias = new System.Windows.Forms.ToolStrip();
-            this.btnAddInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +44,12 @@ namespace UI.Desktop
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.tsMaterias = new System.Windows.Forms.ToolStrip();
+            this.btnAddInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
@@ -64,7 +64,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1214, 669);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1821, 968);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -91,7 +91,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1214, 669);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1821, 968);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvInscripciones
@@ -150,87 +150,8 @@ namespace UI.Desktop
             this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInscripciones.RowTemplate.Height = 28;
             this.dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInscripciones.Size = new System.Drawing.Size(1208, 569);
+            this.dgvInscripciones.Size = new System.Drawing.Size(1815, 868);
             this.dgvInscripciones.TabIndex = 0;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(760, 578);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Actualizar";
-            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(984, 578);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(227, 68);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Salir";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // tsMaterias
-            // 
-            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddInscripcion,
-            this.btnEditInscripcion,
-            this.tbnDeleteInscripcion});
-            this.tsMaterias.Location = new System.Drawing.Point(14, 0);
-            this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
-            this.tsMaterias.TabIndex = 0;
-            // 
-            // btnAddInscripcion
-            // 
-            this.btnAddInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
-            this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddInscripcion.Name = "btnAddInscripcion";
-            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.btnAddInscripcion.Text = "Agregar Inscripcion";
-            this.btnAddInscripcion.Click += new System.EventHandler(this.btnAddInscripcion_Click);
-            // 
-            // btnEditInscripcion
-            // 
-            this.btnEditInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
-            this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditInscripcion.Name = "btnEditInscripcion";
-            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.btnEditInscripcion.Text = "editar Inscripcion";
-            this.btnEditInscripcion.Click += new System.EventHandler(this.btnEditInscripcion_Click);
-            // 
-            // tbnDeleteInscripcion
-            // 
-            this.tbnDeleteInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
-            this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
-            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
-            this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
-            this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);
             // 
             // ID
             // 
@@ -303,6 +224,85 @@ namespace UI.Desktop
             this.nota.Name = "nota";
             this.nota.ReadOnly = true;
             this.nota.Width = 115;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(1367, 877);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1591, 877);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(227, 68);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // tsMaterias
+            // 
+            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddInscripcion,
+            this.btnEditInscripcion,
+            this.tbnDeleteInscripcion});
+            this.tsMaterias.Location = new System.Drawing.Point(14, 0);
+            this.tsMaterias.Name = "tsMaterias";
+            this.tsMaterias.Size = new System.Drawing.Size(180, 57);
+            this.tsMaterias.TabIndex = 0;
+            // 
+            // btnAddInscripcion
+            // 
+            this.btnAddInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
+            this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddInscripcion.Name = "btnAddInscripcion";
+            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 52);
+            this.btnAddInscripcion.Text = "Agregar Inscripcion";
+            this.btnAddInscripcion.Click += new System.EventHandler(this.btnAddInscripcion_Click);
+            // 
+            // btnEditInscripcion
+            // 
+            this.btnEditInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
+            this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditInscripcion.Name = "btnEditInscripcion";
+            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 52);
+            this.btnEditInscripcion.Text = "editar Inscripcion";
+            this.btnEditInscripcion.Click += new System.EventHandler(this.btnEditInscripcion_Click);
+            // 
+            // tbnDeleteInscripcion
+            // 
+            this.tbnDeleteInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
+            this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
+            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 52);
+            this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
+            this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
+            this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);
             // 
             // Insccipciones
             // 

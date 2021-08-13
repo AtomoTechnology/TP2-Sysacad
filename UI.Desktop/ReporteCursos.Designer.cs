@@ -32,35 +32,40 @@ namespace UI.Desktop
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteCursos));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
-            this.dgvReporteCursos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chkMenorNota = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.chkMayorNota = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.tsMaterias = new System.Windows.Forms.ToolStrip();
-            this.tscEspecialidades.ContentPanel.SuspendLayout();
-            this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
-            this.tscEspecialidades.SuspendLayout();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvReporteCursos = new System.Windows.Forms.DataGridView();
+            this.isCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteCursos)).BeginInit();
-            this.tlpEspecialidades.SuspendLayout();
-            this.tsMaterias.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -99,23 +104,219 @@ namespace UI.Desktop
             // 
             this.ContentPanel.Size = new System.Drawing.Size(1138, 576);
             // 
-            // tscEspecialidades
+            // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1692, 102);
+            this.panel1.TabIndex = 0;
             // 
-            // tscEspecialidades.ContentPanel
+            // panel5
             // 
-            this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1056, 484);
-            this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
-            this.tscEspecialidades.Name = "tscEspecialidades";
-            this.tscEspecialidades.Size = new System.Drawing.Size(1056, 517);
-            this.tscEspecialidades.TabIndex = 0;
-            this.tscEspecialidades.Text = "toolStripContainer1";
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.btnBuscar);
+            this.panel5.Controls.Add(this.txtBuscar);
+            this.panel5.Location = new System.Drawing.Point(1008, 12);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(613, 78);
+            this.panel5.TabIndex = 1;
             // 
-            // tscEspecialidades.TopToolStripPanel
+            // btnBuscar
             // 
-            this.tscEspecialidades.TopToolStripPanel.Controls.Add(this.tsMaterias);
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(419, 13);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(153, 53);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.txtBuscar.Location = new System.Drawing.Point(41, 13);
+            this.txtBuscar.Multiline = true;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(372, 53);
+            this.txtBuscar.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Bowlby One SC", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-9, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(365, 93);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reporte Cursos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.chkMenorNota);
+            this.panel2.Controls.Add(this.checkBox2);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.chkMayorNota);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 102);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(296, 963);
+            this.panel2.TabIndex = 1;
+            // 
+            // chkMenorNota
+            // 
+            this.chkMenorNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkMenorNota.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chkMenorNota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkMenorNota.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.chkMenorNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkMenorNota.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMenorNota.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkMenorNota.Location = new System.Drawing.Point(6, 153);
+            this.chkMenorNota.Name = "chkMenorNota";
+            this.chkMenorNota.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.chkMenorNota.Size = new System.Drawing.Size(287, 54);
+            this.chkMenorNota.TabIndex = 7;
+            this.chkMenorNota.Text = "Menor Nota";
+            this.chkMenorNota.UseVisualStyleBackColor = false;
+            this.chkMenorNota.CheckedChanged += new System.EventHandler(this.chkMenorNota_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox2.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.checkBox2.Location = new System.Drawing.Point(6, 213);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.checkBox2.Size = new System.Drawing.Size(287, 54);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "Comision";
+            this.checkBox2.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel6.Location = new System.Drawing.Point(-2, 70);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(308, 10);
+            this.panel6.TabIndex = 5;
+            // 
+            // chkMayorNota
+            // 
+            this.chkMayorNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkMayorNota.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chkMayorNota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkMayorNota.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.chkMayorNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkMayorNota.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMayorNota.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkMayorNota.Location = new System.Drawing.Point(6, 93);
+            this.chkMayorNota.Name = "chkMayorNota";
+            this.chkMayorNota.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.chkMayorNota.Size = new System.Drawing.Size(287, 54);
+            this.chkMayorNota.TabIndex = 3;
+            this.chkMayorNota.Text = "Mayor Nota";
+            this.chkMayorNota.UseVisualStyleBackColor = false;
+            this.chkMayorNota.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Bowlby One SC", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(294, 66);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Filtrar";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.Controls.Add(this.btnSalir);
+            this.panel3.Controls.Add(this.btnUpdate);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(296, 973);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1396, 92);
+            this.panel3.TabIndex = 2;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(1166, 13);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(218, 68);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(921, 13);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.dgvReporteCursos);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(296, 102);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1396, 871);
+            this.panel4.TabIndex = 3;
             // 
             // dgvReporteCursos
             // 
@@ -140,16 +341,15 @@ namespace UI.Desktop
             this.dgvReporteCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvReporteCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.isCurso,
+            this.descMateria,
+            this.descComision,
             this.legajo,
             this.NombreApellido,
             this.Condicion,
-            this.nota,
-            this.descMateria,
-            this.descComision,
-            this.ID});
-            this.tlpEspecialidades.SetColumnSpan(this.dgvReporteCursos, 2);
+            this.nota});
+            this.dgvReporteCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReporteCursos.EnableHeadersVisualStyles = false;
-            this.dgvReporteCursos.Location = new System.Drawing.Point(3, 3);
+            this.dgvReporteCursos.Location = new System.Drawing.Point(0, 0);
             this.dgvReporteCursos.MultiSelect = false;
             this.dgvReporteCursos.Name = "dgvReporteCursos";
             this.dgvReporteCursos.ReadOnly = true;
@@ -172,71 +372,8 @@ namespace UI.Desktop
             this.dgvReporteCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvReporteCursos.RowTemplate.Height = 28;
             this.dgvReporteCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReporteCursos.Size = new System.Drawing.Size(1050, 384);
-            this.dgvReporteCursos.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID Inscripcion";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 242;
-            // 
-            // descComision
-            // 
-            this.descComision.DataPropertyName = "DescComision";
-            this.descComision.HeaderText = "Desc Comision";
-            this.descComision.MinimumWidth = 8;
-            this.descComision.Name = "descComision";
-            this.descComision.ReadOnly = true;
-            this.descComision.Width = 255;
-            // 
-            // descMateria
-            // 
-            this.descMateria.DataPropertyName = "DescMateria";
-            this.descMateria.HeaderText = "Desc. Materia";
-            this.descMateria.MinimumWidth = 8;
-            this.descMateria.Name = "descMateria";
-            this.descMateria.ReadOnly = true;
-            this.descMateria.Width = 240;
-            // 
-            // nota
-            // 
-            this.nota.DataPropertyName = "notaString";
-            this.nota.HeaderText = "Nota";
-            this.nota.MinimumWidth = 8;
-            this.nota.Name = "nota";
-            this.nota.ReadOnly = true;
-            this.nota.Width = 115;
-            // 
-            // Condicion
-            // 
-            this.Condicion.DataPropertyName = "Condicion";
-            this.Condicion.HeaderText = "Condicion";
-            this.Condicion.MinimumWidth = 8;
-            this.Condicion.Name = "Condicion";
-            this.Condicion.ReadOnly = true;
-            this.Condicion.Width = 190;
-            // 
-            // NombreApellido
-            // 
-            this.NombreApellido.DataPropertyName = "NombreCompleto";
-            this.NombreApellido.HeaderText = "Nombre Apellido";
-            this.NombreApellido.MinimumWidth = 8;
-            this.NombreApellido.Name = "NombreApellido";
-            this.NombreApellido.ReadOnly = true;
-            this.NombreApellido.Width = 281;
-            // 
-            // legajo
-            // 
-            this.legajo.DataPropertyName = "Legajo";
-            this.legajo.HeaderText = "Legajo";
-            this.legajo.MinimumWidth = 8;
-            this.legajo.Name = "legajo";
-            this.legajo.ReadOnly = true;
-            this.legajo.Width = 144;
+            this.dgvReporteCursos.Size = new System.Drawing.Size(1396, 871);
+            this.dgvReporteCursos.TabIndex = 3;
             // 
             // isCurso
             // 
@@ -247,119 +384,81 @@ namespace UI.Desktop
             this.isCurso.ReadOnly = true;
             this.isCurso.Width = 169;
             // 
-            // btnClose
+            // descMateria
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(826, 393);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(227, 68);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Salir";
-            this.btnClose.UseVisualStyleBackColor = false;
+            this.descMateria.DataPropertyName = "DescMateria";
+            this.descMateria.HeaderText = "Materia";
+            this.descMateria.MinimumWidth = 8;
+            this.descMateria.Name = "descMateria";
+            this.descMateria.ReadOnly = true;
+            this.descMateria.Width = 154;
             // 
-            // btnUpdate
+            // descComision
             // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(602, 393);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Actualizar";
-            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.descComision.DataPropertyName = "DescComision";
+            this.descComision.HeaderText = "Comision";
+            this.descComision.MinimumWidth = 8;
+            this.descComision.Name = "descComision";
+            this.descComision.ReadOnly = true;
+            this.descComision.Width = 178;
             // 
-            // tlpEspecialidades
+            // legajo
             // 
-            this.tlpEspecialidades.ColumnCount = 2;
-            this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpEspecialidades.Controls.Add(this.dgvReporteCursos, 0, 0);
-            this.tlpEspecialidades.Controls.Add(this.btnUpdate, 0, 1);
-            this.tlpEspecialidades.Controls.Add(this.btnClose, 1, 1);
-            this.tlpEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEspecialidades.Location = new System.Drawing.Point(0, 0);
-            this.tlpEspecialidades.Name = "tlpEspecialidades";
-            this.tlpEspecialidades.RowCount = 3;
-            this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1056, 484);
-            this.tlpEspecialidades.TabIndex = 0;
+            this.legajo.DataPropertyName = "Legajo";
+            this.legajo.HeaderText = "Legajo";
+            this.legajo.MinimumWidth = 8;
+            this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
+            this.legajo.Width = 144;
             // 
-            // btnAddInscripcion
+            // NombreApellido
             // 
-            this.btnAddInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
-            this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddInscripcion.Name = "btnAddInscripcion";
-            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.btnAddInscripcion.Text = "Agregar Inscripcion";
+            this.NombreApellido.DataPropertyName = "NombreCompleto";
+            this.NombreApellido.HeaderText = "Nombre Apellido";
+            this.NombreApellido.MinimumWidth = 8;
+            this.NombreApellido.Name = "NombreApellido";
+            this.NombreApellido.ReadOnly = true;
+            this.NombreApellido.Width = 281;
             // 
-            // btnEditInscripcion
+            // Condicion
             // 
-            this.btnEditInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
-            this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditInscripcion.Name = "btnEditInscripcion";
-            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.btnEditInscripcion.Text = "editar Inscripcion";
+            this.Condicion.DataPropertyName = "Condicion";
+            this.Condicion.HeaderText = "Condicion";
+            this.Condicion.MinimumWidth = 8;
+            this.Condicion.Name = "Condicion";
+            this.Condicion.ReadOnly = true;
+            this.Condicion.Width = 190;
             // 
-            // tbnDeleteInscripcion
+            // nota
             // 
-            this.tbnDeleteInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
-            this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
-            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
-            this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
-            // 
-            // tsMaterias
-            // 
-            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddInscripcion,
-            this.btnEditInscripcion,
-            this.tbnDeleteInscripcion});
-            this.tsMaterias.Location = new System.Drawing.Point(14, 0);
-            this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(166, 33);
-            this.tsMaterias.TabIndex = 0;
+            this.nota.DataPropertyName = "Nota";
+            this.nota.HeaderText = "Nota";
+            this.nota.MinimumWidth = 8;
+            this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
+            this.nota.Width = 115;
             // 
             // ReporteCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 517);
-            this.Controls.Add(this.tscEspecialidades);
+            this.ClientSize = new System.Drawing.Size(1692, 1065);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.ReporteCursos_Load);
-            this.tscEspecialidades.ContentPanel.ResumeLayout(false);
-            this.tscEspecialidades.TopToolStripPanel.ResumeLayout(false);
-            this.tscEspecialidades.TopToolStripPanel.PerformLayout();
-            this.tscEspecialidades.ResumeLayout(false);
-            this.tscEspecialidades.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteCursos)).EndInit();
-            this.tlpEspecialidades.ResumeLayout(false);
-            this.tsMaterias.ResumeLayout(false);
-            this.tsMaterias.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -371,22 +470,28 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
-        private System.Windows.Forms.ToolStripContainer tscEspecialidades;
-        private System.Windows.Forms.TableLayoutPanel tlpEspecialidades;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvReporteCursos;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.CheckBox chkMayorNota;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.CheckBox chkMenorNota;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridViewTextBoxColumn isCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descComision;
         private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ToolStrip tsMaterias;
-        private System.Windows.Forms.ToolStripButton btnAddInscripcion;
-        private System.Windows.Forms.ToolStripButton btnEditInscripcion;
-        private System.Windows.Forms.ToolStripButton tbnDeleteInscripcion;
     }
 }

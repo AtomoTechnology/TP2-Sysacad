@@ -36,12 +36,6 @@ namespace UI.Desktop
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDocentes = new System.Windows.Forms.DataGridView();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.tsUsuarios = new System.Windows.Forms.ToolStrip();
-            this.btnAddUsuario = new System.Windows.Forms.ToolStripButton();
-            this.btnEditUsuario = new System.Windows.Forms.ToolStripButton();
-            this.btnDeleteUsuario = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,12 @@ namespace UI.Desktop
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.tsUsuarios = new System.Windows.Forms.ToolStrip();
+            this.btnAddUsuario = new System.Windows.Forms.ToolStripButton();
+            this.btnEditUsuario = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteUsuario = new System.Windows.Forms.ToolStripButton();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
@@ -63,7 +63,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(958, 539);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(958, 534);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -91,7 +91,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(958, 539);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(958, 534);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvDocentes
@@ -150,86 +150,8 @@ namespace UI.Desktop
             this.dgvDocentes.RowTemplate.DividerHeight = 1;
             this.dgvDocentes.RowTemplate.Height = 28;
             this.dgvDocentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDocentes.Size = new System.Drawing.Size(952, 459);
+            this.dgvDocentes.Size = new System.Drawing.Size(952, 454);
             this.dgvDocentes.TabIndex = 0;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(522, 468);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAceptar.Size = new System.Drawing.Size(216, 68);
-            this.btnAceptar.TabIndex = 1;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(744, 468);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(211, 68);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Salir";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // tsUsuarios
-            // 
-            this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsUsuarios.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddUsuario,
-            this.btnEditUsuario,
-            this.btnDeleteUsuario});
-            this.tsUsuarios.Location = new System.Drawing.Point(30, 0);
-            this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(166, 33);
-            this.tsUsuarios.TabIndex = 0;
-            // 
-            // btnAddUsuario
-            // 
-            this.btnAddUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUsuario.Image")));
-            this.btnAddUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddUsuario.Name = "btnAddUsuario";
-            this.btnAddUsuario.Size = new System.Drawing.Size(34, 28);
-            this.btnAddUsuario.Text = "Agregar Usuario";
-            // 
-            // btnEditUsuario
-            // 
-            this.btnEditUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUsuario.Image")));
-            this.btnEditUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(34, 28);
-            this.btnEditUsuario.Text = "editar Usuario";
-            // 
-            // btnDeleteUsuario
-            // 
-            this.btnDeleteUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDeleteUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteUsuario.Image")));
-            this.btnDeleteUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDeleteUsuario.Name = "btnDeleteUsuario";
-            this.btnDeleteUsuario.Size = new System.Drawing.Size(34, 28);
-            this.btnDeleteUsuario.Text = "Borrar Usuario";
             // 
             // ID
             // 
@@ -293,6 +215,84 @@ namespace UI.Desktop
             this.tipo_persona.Name = "tipo_persona";
             this.tipo_persona.ReadOnly = true;
             this.tipo_persona.Width = 232;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Location = new System.Drawing.Point(522, 463);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAceptar.Size = new System.Drawing.Size(216, 68);
+            this.btnAceptar.TabIndex = 1;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(744, 463);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(211, 68);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // tsUsuarios
+            // 
+            this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsUsuarios.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddUsuario,
+            this.btnEditUsuario,
+            this.btnDeleteUsuario});
+            this.tsUsuarios.Location = new System.Drawing.Point(30, 0);
+            this.tsUsuarios.Name = "tsUsuarios";
+            this.tsUsuarios.Size = new System.Drawing.Size(120, 38);
+            this.tsUsuarios.TabIndex = 0;
+            // 
+            // btnAddUsuario
+            // 
+            this.btnAddUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUsuario.Image")));
+            this.btnAddUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddUsuario.Name = "btnAddUsuario";
+            this.btnAddUsuario.Size = new System.Drawing.Size(34, 33);
+            this.btnAddUsuario.Text = "Agregar Usuario";
+            // 
+            // btnEditUsuario
+            // 
+            this.btnEditUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUsuario.Image")));
+            this.btnEditUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditUsuario.Name = "btnEditUsuario";
+            this.btnEditUsuario.Size = new System.Drawing.Size(34, 33);
+            this.btnEditUsuario.Text = "editar Usuario";
+            // 
+            // btnDeleteUsuario
+            // 
+            this.btnDeleteUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeleteUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteUsuario.Image")));
+            this.btnDeleteUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteUsuario.Name = "btnDeleteUsuario";
+            this.btnDeleteUsuario.Size = new System.Drawing.Size(34, 33);
+            this.btnDeleteUsuario.Text = "Borrar Usuario";
             // 
             // Docentes
             // 

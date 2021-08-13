@@ -29,6 +29,11 @@ namespace UI.Desktop
         {
             this.Dispose();
         }
+        public void PantallaOk()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+        }
 
         private void formMain_Shown(object sender, EventArgs e)
         {
@@ -65,6 +70,7 @@ namespace UI.Desktop
         private void formMain_Load(object sender, EventArgs e)
         {
             this.pnlUserModal.Visible = false;
+            this.PantallaOk();
         }
         private void GetAdmin(  )
         {

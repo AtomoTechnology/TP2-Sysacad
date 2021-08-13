@@ -38,9 +38,9 @@ namespace Business.Logic
         {
             InscripcionAdapter.GetInstance().Save(ins);
         }
-        public List<Inscripcion> ReporteCursos(int? idCurso = null)
+        public List<Inscripcion> ReporteCursos(int? idCurso = null, string orderBy = null )
         {
-            return InscripcionAdapter.GetInstance().ReporteCursos(idCurso);
+            return InscripcionAdapter.GetInstance().ReporteCursos(idCurso, orderBy);
         }
 
     }

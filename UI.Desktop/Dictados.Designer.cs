@@ -36,14 +36,6 @@ namespace UI.Desktop
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDictados = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.tsMaterias = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAddCurso = new System.Windows.Forms.ToolStripButton();
-            this.btnEditCurso = new System.Windows.Forms.ToolStripButton();
-            this.tbnDeleteCurso = new System.Windows.Forms.ToolStripButton();
-            this.btnAsignarDocente = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +43,14 @@ namespace UI.Desktop
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.tsMaterias = new System.Windows.Forms.ToolStrip();
+            this.btnAddCurso = new System.Windows.Forms.ToolStripButton();
+            this.btnEditCurso = new System.Windows.Forms.ToolStripButton();
+            this.tbnDeleteCurso = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAsignarDocente = new System.Windows.Forms.ToolStripButton();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
@@ -153,98 +153,6 @@ namespace UI.Desktop
             this.dgvDictados.Size = new System.Drawing.Size(838, 409);
             this.dgvDictados.TabIndex = 0;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(390, 418);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Actualizar";
-            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(614, 418);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(227, 68);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Salir";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // tsMaterias
-            // 
-            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddCurso,
-            this.btnEditCurso,
-            this.tbnDeleteCurso,
-            this.toolStripSeparator1,
-            this.btnAsignarDocente});
-            this.tsMaterias.Location = new System.Drawing.Point(4, 0);
-            this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(160, 38);
-            this.tsMaterias.TabIndex = 0;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
-            // 
-            // btnAddCurso
-            // 
-            this.btnAddCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCurso.Image")));
-            this.btnAddCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddCurso.Name = "btnAddCurso";
-            this.btnAddCurso.Size = new System.Drawing.Size(34, 33);
-            this.btnAddCurso.Text = "Agregar Curso";
-            // 
-            // btnEditCurso
-            // 
-            this.btnEditCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCurso.Image")));
-            this.btnEditCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditCurso.Name = "btnEditCurso";
-            this.btnEditCurso.Size = new System.Drawing.Size(34, 33);
-            this.btnEditCurso.Text = "editar Curso";
-            // 
-            // tbnDeleteCurso
-            // 
-            this.tbnDeleteCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbnDeleteCurso.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteCurso.Image")));
-            this.tbnDeleteCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbnDeleteCurso.Name = "tbnDeleteCurso";
-            this.tbnDeleteCurso.Size = new System.Drawing.Size(34, 33);
-            this.tbnDeleteCurso.Text = "Borrar Curso";
-            this.tbnDeleteCurso.ToolTipText = "Borrar Curso";
-            // 
-            // btnAsignarDocente
-            // 
-            this.btnAsignarDocente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAsignarDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarDocente.Image")));
-            this.btnAsignarDocente.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAsignarDocente.Name = "btnAsignarDocente";
-            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 33);
-            this.btnAsignarDocente.Text = "Asignar Docente";
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -307,6 +215,98 @@ namespace UI.Desktop
             this.descCargo.Name = "descCargo";
             this.descCargo.ReadOnly = true;
             this.descCargo.Width = 135;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(390, 418);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(614, 418);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(227, 68);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // tsMaterias
+            // 
+            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddCurso,
+            this.btnEditCurso,
+            this.tbnDeleteCurso,
+            this.toolStripSeparator1,
+            this.btnAsignarDocente});
+            this.tsMaterias.Location = new System.Drawing.Point(4, 0);
+            this.tsMaterias.Name = "tsMaterias";
+            this.tsMaterias.Size = new System.Drawing.Size(160, 38);
+            this.tsMaterias.TabIndex = 0;
+            // 
+            // btnAddCurso
+            // 
+            this.btnAddCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCurso.Image")));
+            this.btnAddCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddCurso.Name = "btnAddCurso";
+            this.btnAddCurso.Size = new System.Drawing.Size(34, 33);
+            this.btnAddCurso.Text = "Agregar Curso";
+            // 
+            // btnEditCurso
+            // 
+            this.btnEditCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCurso.Image")));
+            this.btnEditCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditCurso.Name = "btnEditCurso";
+            this.btnEditCurso.Size = new System.Drawing.Size(34, 33);
+            this.btnEditCurso.Text = "editar Curso";
+            // 
+            // tbnDeleteCurso
+            // 
+            this.tbnDeleteCurso.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbnDeleteCurso.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteCurso.Image")));
+            this.tbnDeleteCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbnDeleteCurso.Name = "tbnDeleteCurso";
+            this.tbnDeleteCurso.Size = new System.Drawing.Size(34, 33);
+            this.tbnDeleteCurso.Text = "Borrar Curso";
+            this.tbnDeleteCurso.ToolTipText = "Borrar Curso";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            // 
+            // btnAsignarDocente
+            // 
+            this.btnAsignarDocente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAsignarDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarDocente.Image")));
+            this.btnAsignarDocente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAsignarDocente.Name = "btnAsignarDocente";
+            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 33);
+            this.btnAsignarDocente.Text = "Asignar Docente";
             // 
             // Dictados
             // 

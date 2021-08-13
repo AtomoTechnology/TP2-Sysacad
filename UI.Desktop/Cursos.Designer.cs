@@ -63,7 +63,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1821, 968);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1214, 664);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -90,7 +90,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1821, 968);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1214, 664);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvCursos
@@ -146,7 +146,7 @@ namespace UI.Desktop
             this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCursos.RowTemplate.Height = 28;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(1815, 868);
+            this.dgvCursos.Size = new System.Drawing.Size(1208, 564);
             this.dgvCursos.TabIndex = 0;
             // 
             // ID
@@ -204,7 +204,7 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(1367, 877);
+            this.btnUpdate.Location = new System.Drawing.Point(760, 573);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(218, 68);
             this.btnUpdate.TabIndex = 1;
@@ -221,7 +221,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1591, 877);
+            this.btnClose.Location = new System.Drawing.Point(984, 573);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(227, 68);
             this.btnClose.TabIndex = 2;
@@ -241,7 +241,7 @@ namespace UI.Desktop
             this.btnAsignarDocente});
             this.tsMaterias.Location = new System.Drawing.Point(4, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(206, 33);
+            this.tsMaterias.Size = new System.Drawing.Size(160, 38);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddCurso
@@ -250,7 +250,7 @@ namespace UI.Desktop
             this.btnAddCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCurso.Image")));
             this.btnAddCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddCurso.Name = "btnAddCurso";
-            this.btnAddCurso.Size = new System.Drawing.Size(34, 28);
+            this.btnAddCurso.Size = new System.Drawing.Size(34, 33);
             this.btnAddCurso.Text = "Agregar Curso";
             this.btnAddCurso.Click += new System.EventHandler(this.btnAddCurso_Click);
             // 
@@ -260,7 +260,7 @@ namespace UI.Desktop
             this.btnEditCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCurso.Image")));
             this.btnEditCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditCurso.Name = "btnEditCurso";
-            this.btnEditCurso.Size = new System.Drawing.Size(34, 28);
+            this.btnEditCurso.Size = new System.Drawing.Size(34, 33);
             this.btnEditCurso.Text = "editar Curso";
             this.btnEditCurso.Click += new System.EventHandler(this.btnEditCurso_Click);
             // 
@@ -270,7 +270,7 @@ namespace UI.Desktop
             this.tbnDeleteCurso.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteCurso.Image")));
             this.tbnDeleteCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteCurso.Name = "tbnDeleteCurso";
-            this.tbnDeleteCurso.Size = new System.Drawing.Size(34, 28);
+            this.tbnDeleteCurso.Size = new System.Drawing.Size(34, 33);
             this.tbnDeleteCurso.Text = "Borrar Curso";
             this.tbnDeleteCurso.ToolTipText = "Borrar Curso";
             this.tbnDeleteCurso.Click += new System.EventHandler(this.tbnDeleteCurso_Click);
@@ -278,7 +278,7 @@ namespace UI.Desktop
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
             // 
             // btnAsignarDocente
             // 
@@ -286,7 +286,7 @@ namespace UI.Desktop
             this.btnAsignarDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarDocente.Image")));
             this.btnAsignarDocente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAsignarDocente.Name = "btnAsignarDocente";
-            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 28);
+            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 33);
             this.btnAsignarDocente.Text = "Asignar Docente";
             this.btnAsignarDocente.Click += new System.EventHandler(this.btnAsignarDocente_Click);
             // 

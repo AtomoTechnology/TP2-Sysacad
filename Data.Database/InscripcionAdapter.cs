@@ -251,14 +251,14 @@ namespace Data.Database
             ins.State = BusinessEntity.States.Unmodified;
 
         }
-        public List<Inscripcion> ReporteCursos( int? idCurso )
+        public List<Inscripcion> ReporteCursos( int? idCurso , string orderBy)
         {
             List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
             {
                 this.OpenConnection();
                 string query = "select ins.id_curso , per.legajo, CONCAT(per.apellido ,' ', per.nombre) NombreCompleto , ins.condicion " +
-                    ",isnull(ins.nota,-1), mat.desc_materia ,com.desc_comision  " +
+                    ",isnull(ins.nota,-1) nota , mat.desc_materia ,com.desc_comision  " +
                     "from alumnos_inscripciones ins " +
                     "inner join cursos cur " +
                     "on cur.id_curso = ins.id_curso " +
@@ -269,11 +269,16 @@ namespace Data.Database
                     "inner join materias mat " +
                     "on mat.id_materia = cur.id_materia " +
                     "inner join comisiones com " +
-                    "on com.id_comision = cur.id_comision";
+                    "on com.id_comision = cur.id_comision ";
                 if(idCurso != null)
                 {
-                    query += $"where ins.id_curso = {idCurso} ";
+                    query += $" where ins.id_curso = {idCurso} ";
                 }
+                if (orderBy != null)
+                {
+                    query += $" order by {orderBy} ";
+                }
+                MessageBox.Show(query);
                 SqlCommand cmdInscripcion = new SqlCommand(query,SqlConn);
                 SqlDataReader reader = cmdInscripcion.ExecuteReader();
                 while (reader.Read())
@@ -285,7 +290,7 @@ namespace Data.Database
                     ins.DescComision = (string)reader["desc_comision"];
                     ins.NombreCompleto = (string)reader["NombreCompleto"];
                     ins.Condicion = (string)reader["condicion"];
-                    //ins.Nota = (int)reader["nota"];
+                    ins.Nota = (int)reader["nota"];
                     ins.Legajo = (int)reader["legajo"];
 
                     //var n = 0 ;
