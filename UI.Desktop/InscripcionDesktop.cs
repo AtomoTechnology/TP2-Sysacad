@@ -27,6 +27,26 @@ namespace UI.Desktop
             Modo = modo;
             this.CargarAlumnosCursos();
         }
+        public InscripcionDesktop( Curso curso , ModoForm modo)
+        {
+            InitializeComponent();
+            Modo = modo;
+            if(curso != null)
+            {
+                //currentInscripcion.IdCurso = curso.ID;
+                //currentInscripcion.DescComision = curso.DescComision;
+                //currentInscripcion.DescMateria = curso.DescMateria;
+                //Curso cur = CursoLogic.GetInstance().GetOne(currentInscripcion.IdCurso);
+                //Usuario usr = UsuarioLogic.GetInstance().GetOne(currentInscripcion.IdAlumno);
+                this.cbComisiones.Text = curso.DescComision;
+                this.cbMaterias.Text = curso.DescMateria;
+                this.CargarCursos();
+                this.cbCursos.SelectedIndex = this.cbCursos.FindString(curso.ID.ToString());
+                this.CargarAlumnos();
+                //this.cbAlumnos.SelectedIndex = this.cbAlumnos.FindString(usr.Legajo.ToString());
+                //this.MapearDeDatos();
+            }
+        }
         public InscripcionDesktop(int ID, ModoForm modo)
         {
             InitializeComponent();
@@ -161,11 +181,16 @@ namespace UI.Desktop
             this.cbMaterias.DisplayMember = "DescMateria";
             this.cbMaterias.ValueMember = "ID";
             //this.cbMaterias.SelectedIndex = -1;
+            this.CargarAlumnos();
+       
+
+        }
+        private void CargarAlumnos()
+        {
             this.cbAlumnos.DataSource = UsuarioLogic.GetInstance().GetAll();
             this.cbAlumnos.DisplayMember = "Legajo";
             this.cbAlumnos.ValueMember = "ID";
             this.cbAlumnos.SelectedIndex = -1;
-
         }
 
         private void cbCursos_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,6 +217,12 @@ namespace UI.Desktop
                 this.cbCursos.ValueMember = "ID";
             
 
+        }
+        private void CargarCursos()
+        {
+            this.cbCursos.DataSource = CursoLogic.GetInstance().GetAll();
+            this.cbCursos.DisplayMember = "ID";
+            this.cbCursos.ValueMember = "ID";
         }
     }
 

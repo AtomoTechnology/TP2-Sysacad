@@ -67,6 +67,13 @@ namespace UI.Desktop
 
             //Usuarios usrs = new Usuarios();
             //usrs.ShowDialog();
+           
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            InscripcionDesktop insDesk = new InscripcionDesktop(((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem), ApplicationForm.ModoForm.Alta);
+            insDesk.ShowDialog();
         }
     }
 }

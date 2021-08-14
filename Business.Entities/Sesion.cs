@@ -11,6 +11,7 @@ namespace Business.Entities
         public static int idUser;
         public static string userName;
         public static int userType;
+        public static Usuario currentUser; 
 
     }
 }

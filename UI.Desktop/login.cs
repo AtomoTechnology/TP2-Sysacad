@@ -28,9 +28,10 @@ namespace UI.Desktop
                 if (currentUser != null )
                 {
                     this.DialogResult = DialogResult.OK;
-                    Sesion.idUser = currentUser.ID;
-                    Sesion.userName = currentUser.NombreUsuario;
-                    Sesion.userType = currentUser.TipoPersona;
+                    //Sesion.idUser = currentUser.ID;
+                    //Sesion.userName = currentUser.NombreUsuario;
+                    //Sesion.userType = currentUser.TipoPersona;
+                    Sesion.currentUser = currentUser;
                     isOk = true;
                     //this.Close();
                     
@@ -57,7 +58,11 @@ namespace UI.Desktop
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (new LogOut().ShowDialog() == DialogResult.OK)
+            {
+                Application.Exit();
+
+            }
         }
     }
 }

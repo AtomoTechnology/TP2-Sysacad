@@ -162,9 +162,9 @@ namespace UI.Desktop
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(47, 204);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 29);
+            this.label5.Size = new System.Drawing.Size(128, 44);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Alumnos";
+            this.label5.Text = "Legajo";
             // 
             // cbAlumnos
             // 
@@ -242,7 +242,7 @@ namespace UI.Desktop
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Bowlby One SC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightCoral;
-            this.label4.Location = new System.Drawing.Point(160, 198);
+            this.label4.Location = new System.Drawing.Point(138, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 56);
             this.label4.TabIndex = 23;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Data.Database
 {
     public class InscripcionAdapter : Adapter
@@ -21,20 +22,22 @@ namespace Data.Database
             }
             return singleton;
         }
-        public List<Inscripcion> GetAll()
+        public List<Inscripcion> GetAll(int? idDocente )
         {
             List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMateria = new SqlCommand(
-                    "select ai.id_inscripcion , mat.desc_materia, com.desc_comision ,per.legajo,ai.id_curso," +
+                string query = "select ai.id_inscripcion , mat.desc_materia, com.desc_comision ,per.legajo,ai.id_curso," +
                     " CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , isnull(ai.nota,'') nota  from alumnos_inscripciones ai " +
-                    "inner join personas per on per.id_persona = ai.id_alumno " +
+                     "inner join usuarios usr on usr.id_usuario = ai.id_alumno " +
+                    "inner join personas per on per.id_persona = usr.id_persona " +
                     "inner join cursos cur on cur.id_curso = ai.id_curso " +
                     "inner join materias mat on mat.id_materia = cur.id_materia " +
-                    " inner join comisiones com on com.id_comision = cur.id_comision",
-                    SqlConn);
+                    " inner join comisiones com on com.id_comision = cur.id_comision ";
+                if (idDocente != null)
+                    query += $" where usr.id_usuario = {idDocente} ";
+                SqlCommand cmdMateria = new SqlCommand(query,SqlConn);
                 SqlDataReader reader = cmdMateria.ExecuteReader();
                 while (reader.Read())
                 {
@@ -170,7 +173,7 @@ namespace Data.Database
                     cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = ins.IdCurso;
                     cmdSave.ExecuteNonQuery();
                     MessageBox.Show("Inscripcion realizada con exito :)");
-
+                     
                     SqlCommand updateCursoCupo = new SqlCommand("UPDATE cursos SET  cupo = @cupo WHERE id_curso=@id", SqlConn);
                     updateCursoCupo.Parameters.Add("@id", SqlDbType.Int).Value = ins.IdCurso;
                     updateCursoCupo.Parameters.Add("@cupo", SqlDbType.Int).Value = ins.CursoCupo - 1;
@@ -204,16 +207,14 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand(
-                "UPDATE alumnos_inscripciones SET nota = @nota, condicion = @condicion, " +
-                "id_alumno = @id_alumno, id_curso = @id_curso " +
-                "WHERE id_inscripcion = @id", SqlConn);
+                "UPDATE alumnos_inscripciones SET nota = @nota, condicion = @condicion " +              
+                " WHERE id_inscripcion = @id", SqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = ins.ID;
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ins.IdAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = ins.IdCurso;
                 cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = ins.Nota;
                 cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = ins.Condicion;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Inscripcion actualizada con exito :)");
             }
             catch (Exception Ex)
             {
@@ -226,6 +227,8 @@ namespace Data.Database
 
                 this.CloseConnection();
             }
+            MessageBox.Show("Inscripcion actualizada con exito :)");
+
 
         }
 
@@ -258,7 +261,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 string query = "select ins.id_curso , per.legajo, CONCAT(per.apellido ,' ', per.nombre) NombreCompleto , ins.condicion " +
-                    ",isnull(ins.nota,-1) nota , mat.desc_materia ,com.desc_comision  " +
+                    ",ins.nota, mat.desc_materia ,com.desc_comision  " +
                     "from alumnos_inscripciones ins " +
                     "inner join cursos cur " +
                     "on cur.id_curso = ins.id_curso " +
@@ -290,7 +293,7 @@ namespace Data.Database
                     ins.DescComision = (string)reader["desc_comision"];
                     ins.NombreCompleto = (string)reader["NombreCompleto"];
                     ins.Condicion = (string)reader["condicion"];
-                    ins.Nota = (int)reader["nota"];
+                    ins.Nota = !String.IsNullOrEmpty(reader["nota"].ToString()) ? (int)reader["nota"]: 0;
                     ins.Legajo = (int)reader["legajo"];
 
                     //var n = 0 ;

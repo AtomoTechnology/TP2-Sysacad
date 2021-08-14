@@ -17,17 +17,19 @@ namespace Business.Entities
         private string _nombreCompleto;
         private int _legajo;
         private int _cupoCurso;
+        public string InsertarCondicion { get; set; }
+        public int InsertarNota { get; set; }
         public string notaString
         {
             get
             {
-                if (Nota.HasValue)
+                if (Nota.Value > 0)
                 {
-                    return Nota.Value.ToString( "N2" );
+                    return Nota.Value.ToString("N2");
                 }
                 else
                 {
-                    return string.Empty;
+                    return "--";
                 }
             }
         }

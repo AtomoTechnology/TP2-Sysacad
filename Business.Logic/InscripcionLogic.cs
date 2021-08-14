@@ -21,9 +21,9 @@ namespace Business.Logic
             return singleton;
         }
 
-        public List<Inscripcion> GetAll()
+        public List<Inscripcion> GetAll(int? idDocente = null)
         {
-           return  InscripcionAdapter.GetInstance().GetAll();
+           return  InscripcionAdapter.GetInstance().GetAll(idDocente);
         }
         public Inscripcion GetOne(int ID)
         {
@@ -36,6 +36,7 @@ namespace Business.Logic
        
         public void Save(Inscripcion ins)
         {
+            
             InscripcionAdapter.GetInstance().Save(ins);
         }
         public List<Inscripcion> ReporteCursos(int? idCurso = null, string orderBy = null )

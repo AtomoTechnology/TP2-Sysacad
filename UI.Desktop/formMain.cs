@@ -27,7 +27,11 @@ namespace UI.Desktop
 
         private void mnuSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (new LogOut().ShowDialog() == DialogResult.OK)
+            {
+                Application.Exit();
+
+            }
         }
         public void PantallaOk()
         {
@@ -49,11 +53,11 @@ namespace UI.Desktop
 
                 this.pnlMenuAcademia.Visible = true;
 
-                if (Sesion.userType == 1)
+                if (Sesion.currentUser.TipoPersona == 1)
                 {
                     this.GetAdmin();
                 }
-                else if (Sesion.userType == 2)
+                else if (Sesion.currentUser.TipoPersona == 2)
                 {
                     this.GetTeacher();
                 }
@@ -61,7 +65,7 @@ namespace UI.Desktop
                 {
                     this.GetStudent();
                 }
-                this.lblUserName.Text = Sesion.userName;
+                this.lblUserName.Text = Sesion.currentUser.NombreUsuario;
             }
            
           
@@ -214,12 +218,20 @@ namespace UI.Desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (new LogOut().ShowDialog() == DialogResult.OK)
+            {
+                Application.Exit();
+
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(  new LogOut().ShowDialog() == DialogResult.OK)
+            {
+              Application.Exit();
+
+            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -234,7 +246,11 @@ namespace UI.Desktop
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            if (new LogOut().ShowDialog() == DialogResult.OK)
+            {
+                Application.Exit();
+
+            }
         }
 
         private void misCursosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -278,6 +294,16 @@ namespace UI.Desktop
             this.CloseOtherForm();
             this.form = null;
             form = new ReporteCursos();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void registrarNotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new Insccipciones(true);
             form.MdiParent = this;
             form.Dock = DockStyle.Fill;
             form.Show();

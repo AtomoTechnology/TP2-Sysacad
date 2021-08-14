@@ -14,20 +14,53 @@ namespace UI.Desktop
 {
     public partial class Insccipciones : Form
     {
+        private bool RegistrarNota = false;
         public Insccipciones()
         {
             InitializeComponent();
             this.dgvInscripciones.AutoGenerateColumns = false;
+            this.dgvInscripciones.ReadOnly = true;
+            this.dgvInscripciones.Columns[8].Visible = false ;
+            this.dgvInscripciones.Columns[9].Visible = false;
+
+
+        }
+        public Insccipciones(bool registrar)
+        {
+            InitializeComponent();
+            this.dgvInscripciones.AutoGenerateColumns = false;
+            this.RegistrarNota = registrar;
         }
 
         private void Insccipciones_Load(object sender, EventArgs e)
         {
+
             this.ListarInscripciones();
         }
 
         private void ListarInscripciones()
         {
-            this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll();
+            if (RegistrarNota)
+            {
+                if (Sesion.currentUser.TipoPersona == 2)
+                {
+                    this.btnRegistrarNota.Visible = true;
+                    this.btnUpdate.Visible = false;
+                    this.btnClose.Visible = false;
+                    this.dgvInscripciones.Columns[8].Visible = true;
+                    this.dgvInscripciones.Columns[9].Visible = true;
+                    this.dgvInscripciones.Columns[0].Visible = false;
+
+
+                    this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.ID);
+                }
+
+            }
+            else
+            {
+                this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll();
+
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -44,7 +77,7 @@ namespace UI.Desktop
 
         private void btnEditInscripcion_Click(object sender, EventArgs e)
         {
-            InscripcionDesktop insDesk = new InscripcionDesktop( ((Business.Entities.Inscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID , ApplicationForm.ModoForm.Modificacion);
+            InscripcionDesktop insDesk = new InscripcionDesktop(((Business.Entities.Inscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Modificacion);
             insDesk.ShowDialog();
             this.ListarInscripciones();
         }
@@ -59,6 +92,30 @@ namespace UI.Desktop
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRegistrarNota_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.dgvInscripciones.Rows.Count; i++)
+            {
+                Inscripcion insUpdate = new Inscripcion();
+                insUpdate.ID = ((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).ID;
+                insUpdate.Nota = ((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).InsertarNota;
+                insUpdate.Condicion = ((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).InsertarCondicion;
+
+                //if(((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).InsertarNota >= 6)
+                //{
+                //    insUpdate.Condicion = "Aprobado";
+                //}
+                //else
+                //{
+                //    insUpdate.Condicion = "Libre";
+                //}
+
+
+                insUpdate.State = BusinessEntity.States.Modified;
+                InscripcionLogic.GetInstance().Save(insUpdate);
+            }
         }
     }
 }

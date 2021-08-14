@@ -70,6 +70,18 @@
     <Compile Include="InscripcionDesktop.Designer.cs">
       <DependentUpon>InscripcionDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogOut.Designer.cs">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotifyDesktop.Designer.cs">
+      <DependentUpon>NotifyDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteCursos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +198,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InscripcionDesktop.resx">
       <DependentUpon>InscripcionDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogOut.resx">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyDesktop.resx">
+      <DependentUpon>NotifyDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteCursos.resx">
       <DependentUpon>ReporteCursos.cs</DependentUpon>
@@ -321,6 +339,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca-de-la-senal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contrato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shadow Notificaciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarForm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
