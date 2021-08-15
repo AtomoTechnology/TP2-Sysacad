@@ -29,20 +29,13 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Insccipciones));
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
             this.dgvInscripciones = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.tsMaterias = new System.Windows.Forms.ToolStrip();
-            this.btnAddInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnRegistrarNota = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +46,13 @@ namespace UI.Desktop
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InsertarNota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InsertarCondicion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.tsMaterias = new System.Windows.Forms.ToolStrip();
+            this.btnAddInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.btnRegistrarNota = new System.Windows.Forms.Button();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
@@ -67,11 +67,11 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1163, 657);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1467, 591);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
-            this.tscEspecialidades.Size = new System.Drawing.Size(1163, 690);
+            this.tscEspecialidades.Size = new System.Drawing.Size(1467, 649);
             this.tscEspecialidades.TabIndex = 0;
             this.tscEspecialidades.Text = "toolStripContainer1";
             // 
@@ -83,6 +83,7 @@ namespace UI.Desktop
             // 
             this.tlpEspecialidades.ColumnCount = 2;
             this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
             this.tlpEspecialidades.Controls.Add(this.btnRegistrarNota, 0, 2);
             this.tlpEspecialidades.Controls.Add(this.dgvInscripciones, 0, 0);
             this.tlpEspecialidades.Controls.Add(this.btnUpdate, 0, 1);
@@ -93,7 +94,8 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowCount = 3;
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1163, 657);
+            this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1467, 591);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvInscripciones
@@ -107,14 +109,14 @@ namespace UI.Desktop
             this.dgvInscripciones.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvInscripciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInscripciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInscripciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInscripciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInscripciones.ColumnHeadersHeight = 30;
             this.dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -135,125 +137,26 @@ namespace UI.Desktop
             this.dgvInscripciones.MultiSelect = false;
             this.dgvInscripciones.Name = "dgvInscripciones";
             this.dgvInscripciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInscripciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInscripciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInscripciones.RowHeadersWidth = 62;
             this.dgvInscripciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInscripciones.RowTemplate.Height = 28;
             this.dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInscripciones.Size = new System.Drawing.Size(1157, 557);
+            this.dgvInscripciones.Size = new System.Drawing.Size(1461, 429);
             this.dgvInscripciones.TabIndex = 0;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(710, 567);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Actualizar";
-            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // tsMaterias
-            // 
-            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddInscripcion,
-            this.btnEditInscripcion,
-            this.tbnDeleteInscripcion});
-            this.tsMaterias.Location = new System.Drawing.Point(14, 0);
-            this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
-            this.tsMaterias.TabIndex = 0;
-            // 
-            // btnAddInscripcion
-            // 
-            this.btnAddInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
-            this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddInscripcion.Name = "btnAddInscripcion";
-            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.btnAddInscripcion.Text = "Agregar Inscripcion";
-            this.btnAddInscripcion.Click += new System.EventHandler(this.btnAddInscripcion_Click);
-            // 
-            // btnEditInscripcion
-            // 
-            this.btnEditInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
-            this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditInscripcion.Name = "btnEditInscripcion";
-            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.btnEditInscripcion.Text = "editar Inscripcion";
-            this.btnEditInscripcion.Click += new System.EventHandler(this.btnEditInscripcion_Click);
-            // 
-            // tbnDeleteInscripcion
-            // 
-            this.tbnDeleteInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
-            this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
-            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
-            this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
-            this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
-            this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(933, 566);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(227, 68);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Salir";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnRegistrarNota
-            // 
-            this.btnRegistrarNota.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnRegistrarNota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRegistrarNota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarNota.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRegistrarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarNota.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarNota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegistrarNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarNota.Location = new System.Drawing.Point(0, 567);
-            this.btnRegistrarNota.Name = "btnRegistrarNota";
-            this.btnRegistrarNota.Size = new System.Drawing.Size(311, 68);
-            this.btnRegistrarNota.TabIndex = 3;
-            this.btnRegistrarNota.Text = "Registrar Nota";
-            this.btnRegistrarNota.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegistrarNota.UseVisualStyleBackColor = false;
-            this.btnRegistrarNota.Visible = false;
-            this.btnRegistrarNota.Click += new System.EventHandler(this.btnRegistrarNota_Click);
             // 
             // ID
             // 
@@ -342,11 +245,112 @@ namespace UI.Desktop
             this.InsertarCondicion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.InsertarCondicion.Width = 306;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(1031, 438);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1255, 438);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(209, 68);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // tsMaterias
+            // 
+            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsMaterias.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddInscripcion,
+            this.btnEditInscripcion,
+            this.tbnDeleteInscripcion});
+            this.tsMaterias.Location = new System.Drawing.Point(14, 0);
+            this.tsMaterias.Name = "tsMaterias";
+            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
+            this.tsMaterias.TabIndex = 0;
+            // 
+            // btnAddInscripcion
+            // 
+            this.btnAddInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
+            this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddInscripcion.Name = "btnAddInscripcion";
+            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
+            this.btnAddInscripcion.Text = "Agregar Inscripcion";
+            this.btnAddInscripcion.Click += new System.EventHandler(this.btnAddInscripcion_Click);
+            // 
+            // btnEditInscripcion
+            // 
+            this.btnEditInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
+            this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditInscripcion.Name = "btnEditInscripcion";
+            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
+            this.btnEditInscripcion.Text = "editar Inscripcion";
+            this.btnEditInscripcion.Click += new System.EventHandler(this.btnEditInscripcion_Click);
+            // 
+            // tbnDeleteInscripcion
+            // 
+            this.tbnDeleteInscripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
+            this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
+            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
+            this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
+            this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
+            this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);
+            // 
+            // btnRegistrarNota
+            // 
+            this.btnRegistrarNota.AutoSize = true;
+            this.btnRegistrarNota.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnRegistrarNota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tlpEspecialidades.SetColumnSpan(this.btnRegistrarNota, 2);
+            this.btnRegistrarNota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarNota.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRegistrarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarNota.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarNota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegistrarNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrarNota.Location = new System.Drawing.Point(1031, 512);
+            this.btnRegistrarNota.Name = "btnRegistrarNota";
+            this.btnRegistrarNota.Size = new System.Drawing.Size(433, 76);
+            this.btnRegistrarNota.TabIndex = 3;
+            this.btnRegistrarNota.Text = "Registrar Nota";
+            this.btnRegistrarNota.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegistrarNota.UseVisualStyleBackColor = false;
+            this.btnRegistrarNota.Visible = false;
+            this.btnRegistrarNota.Click += new System.EventHandler(this.btnRegistrarNota_Click);
+            // 
             // Insccipciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 690);
+            this.ClientSize = new System.Drawing.Size(1467, 649);
             this.Controls.Add(this.tscEspecialidades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Insccipciones";
@@ -359,6 +363,7 @@ namespace UI.Desktop
             this.tscEspecialidades.ResumeLayout(false);
             this.tscEspecialidades.PerformLayout();
             this.tlpEspecialidades.ResumeLayout(false);
+            this.tlpEspecialidades.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).EndInit();
             this.tsMaterias.ResumeLayout(false);
             this.tsMaterias.PerformLayout();
@@ -376,7 +381,6 @@ namespace UI.Desktop
         private System.Windows.Forms.TableLayoutPanel tlpEspecialidades;
         private System.Windows.Forms.DataGridView dgvInscripciones;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnRegistrarNota;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn isCurso;
@@ -388,5 +392,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
         private System.Windows.Forms.DataGridViewTextBoxColumn InsertarNota;
         private System.Windows.Forms.DataGridViewComboBoxColumn InsertarCondicion;
+        private System.Windows.Forms.Button btnRegistrarNota;
     }
 }

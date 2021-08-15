@@ -60,27 +60,29 @@ namespace UI.Desktop
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if( this.chkMayorNota.Checked)
-            {
-                this.dgvReporteCursos.DataSource = InscripcionLogic.GetInstance().ReporteCursos(null, " ins.nota ");
-            }
-            else
-            {
-                this.ListarReporteCursos();
-            }
-        }
+       
 
-        private void chkMenorNota_CheckedChanged(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.chkMenorNota.Checked)
+            if( this.rdbMayorNota.Checked)
             {
                 this.dgvReporteCursos.DataSource = InscripcionLogic.GetInstance().ReporteCursos(null, " ins.nota desc ");
             }
-            else
+        }
+
+        private void rdbMenorNota_CheckedChanged(object sender, EventArgs e)
+        {
+            if( this.rdbMenorNota.Checked)
             {
-                this.ListarReporteCursos();
+                this.dgvReporteCursos.DataSource = InscripcionLogic.GetInstance().ReporteCursos(null, " ins.nota asc ");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(this.comboBox1.SelectedItem != null)
+            {
+                this.dgvReporteCursos.DataSource = InscripcionLogic.GetInstance().ReporteCursos(null, null, this.comboBox1.Text );
             }
         }
     }

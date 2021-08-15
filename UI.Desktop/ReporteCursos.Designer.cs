@@ -29,9 +29,9 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -43,10 +43,11 @@ namespace UI.Desktop
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chkMenorNota = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbMenorNota = new System.Windows.Forms.RadioButton();
+            this.rdbMayorNota = new System.Windows.Forms.RadioButton();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.chkMayorNota = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -60,12 +61,16 @@ namespace UI.Desktop
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteCursos)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -112,7 +117,7 @@ namespace UI.Desktop
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1692, 102);
+            this.panel1.Size = new System.Drawing.Size(1847, 102);
             this.panel1.TabIndex = 0;
             // 
             // panel5
@@ -120,7 +125,7 @@ namespace UI.Desktop
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.btnBuscar);
             this.panel5.Controls.Add(this.txtBuscar);
-            this.panel5.Location = new System.Drawing.Point(1008, 12);
+            this.panel5.Location = new System.Drawing.Point(1163, 12);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(613, 78);
             this.panel5.TabIndex = 1;
@@ -171,35 +176,63 @@ namespace UI.Desktop
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.chkMenorNota);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.checkBox2);
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.chkMayorNota);
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 102);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(296, 963);
+            this.panel2.Size = new System.Drawing.Size(328, 988);
             this.panel2.TabIndex = 1;
             // 
-            // chkMenorNota
+            // groupBox1
             // 
-            this.chkMenorNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkMenorNota.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chkMenorNota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkMenorNota.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.chkMenorNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkMenorNota.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMenorNota.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkMenorNota.Location = new System.Drawing.Point(6, 153);
-            this.chkMenorNota.Name = "chkMenorNota";
-            this.chkMenorNota.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.chkMenorNota.Size = new System.Drawing.Size(287, 54);
-            this.chkMenorNota.TabIndex = 7;
-            this.chkMenorNota.Text = "Menor Nota";
-            this.chkMenorNota.UseVisualStyleBackColor = false;
-            this.chkMenorNota.CheckedChanged += new System.EventHandler(this.chkMenorNota_CheckedChanged);
+            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.rdbMenorNota);
+            this.groupBox1.Controls.Add(this.rdbMayorNota);
+            this.groupBox1.Font = new System.Drawing.Font("Bowlby One SC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox1.Location = new System.Drawing.Point(12, 97);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(310, 185);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ordenar Por Nota";
+            // 
+            // rdbMenorNota
+            // 
+            this.rdbMenorNota.BackColor = System.Drawing.Color.White;
+            this.rdbMenorNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbMenorNota.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMenorNota.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.rdbMenorNota.Location = new System.Drawing.Point(15, 120);
+            this.rdbMenorNota.Name = "rdbMenorNota";
+            this.rdbMenorNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbMenorNota.Size = new System.Drawing.Size(279, 48);
+            this.rdbMenorNota.TabIndex = 1;
+            this.rdbMenorNota.TabStop = true;
+            this.rdbMenorNota.Text = "Menor Nota";
+            this.rdbMenorNota.UseVisualStyleBackColor = false;
+            this.rdbMenorNota.CheckedChanged += new System.EventHandler(this.rdbMenorNota_CheckedChanged);
+            // 
+            // rdbMayorNota
+            // 
+            this.rdbMayorNota.BackColor = System.Drawing.Color.White;
+            this.rdbMayorNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbMayorNota.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMayorNota.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.rdbMayorNota.Location = new System.Drawing.Point(15, 48);
+            this.rdbMayorNota.Name = "rdbMayorNota";
+            this.rdbMayorNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbMayorNota.Size = new System.Drawing.Size(279, 48);
+            this.rdbMayorNota.TabIndex = 0;
+            this.rdbMayorNota.TabStop = true;
+            this.rdbMayorNota.Text = "Mayor Nota";
+            this.rdbMayorNota.UseVisualStyleBackColor = false;
+            this.rdbMayorNota.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -211,10 +244,10 @@ namespace UI.Desktop
             this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox2.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.checkBox2.Location = new System.Drawing.Point(6, 213);
+            this.checkBox2.Location = new System.Drawing.Point(12, 525);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.checkBox2.Size = new System.Drawing.Size(287, 54);
+            this.checkBox2.Size = new System.Drawing.Size(299, 54);
             this.checkBox2.TabIndex = 6;
             this.checkBox2.Text = "Comision";
             this.checkBox2.UseVisualStyleBackColor = false;
@@ -227,25 +260,6 @@ namespace UI.Desktop
             this.panel6.Size = new System.Drawing.Size(308, 10);
             this.panel6.TabIndex = 5;
             // 
-            // chkMayorNota
-            // 
-            this.chkMayorNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkMayorNota.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chkMayorNota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkMayorNota.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.chkMayorNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkMayorNota.Font = new System.Drawing.Font("Bowlby One SC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMayorNota.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkMayorNota.Location = new System.Drawing.Point(6, 93);
-            this.chkMayorNota.Name = "chkMayorNota";
-            this.chkMayorNota.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.chkMayorNota.Size = new System.Drawing.Size(287, 54);
-            this.chkMayorNota.TabIndex = 3;
-            this.chkMayorNota.Text = "Mayor Nota";
-            this.chkMayorNota.UseVisualStyleBackColor = false;
-            this.chkMayorNota.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -254,7 +268,7 @@ namespace UI.Desktop
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 66);
+            this.label2.Size = new System.Drawing.Size(319, 66);
             this.label2.TabIndex = 1;
             this.label2.Text = "Filtrar";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,13 +276,13 @@ namespace UI.Desktop
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.btnSalir);
             this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(296, 973);
+            this.panel3.Location = new System.Drawing.Point(328, 998);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1396, 92);
+            this.panel3.Size = new System.Drawing.Size(1519, 92);
             this.panel3.TabIndex = 2;
             // 
             // btnSalir
@@ -281,7 +295,7 @@ namespace UI.Desktop
             this.btnSalir.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(1166, 13);
+            this.btnSalir.Location = new System.Drawing.Point(1289, 13);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(218, 68);
             this.btnSalir.TabIndex = 3;
@@ -300,7 +314,7 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(921, 13);
+            this.btnUpdate.Location = new System.Drawing.Point(1044, 13);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(218, 68);
             this.btnUpdate.TabIndex = 2;
@@ -313,9 +327,9 @@ namespace UI.Desktop
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel4.Controls.Add(this.dgvReporteCursos);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(296, 102);
+            this.panel4.Location = new System.Drawing.Point(328, 102);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1396, 871);
+            this.panel4.Size = new System.Drawing.Size(1519, 896);
             this.panel4.TabIndex = 3;
             // 
             // dgvReporteCursos
@@ -329,14 +343,14 @@ namespace UI.Desktop
             this.dgvReporteCursos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvReporteCursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReporteCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReporteCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReporteCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvReporteCursos.ColumnHeadersHeight = 30;
             this.dgvReporteCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvReporteCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -354,25 +368,25 @@ namespace UI.Desktop
             this.dgvReporteCursos.Name = "dgvReporteCursos";
             this.dgvReporteCursos.ReadOnly = true;
             this.dgvReporteCursos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReporteCursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReporteCursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvReporteCursos.RowHeadersWidth = 62;
             this.dgvReporteCursos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            this.dgvReporteCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            this.dgvReporteCursos.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvReporteCursos.RowTemplate.Height = 28;
             this.dgvReporteCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReporteCursos.Size = new System.Drawing.Size(1396, 871);
+            this.dgvReporteCursos.Size = new System.Drawing.Size(1519, 896);
             this.dgvReporteCursos.TabIndex = 3;
             // 
             // isCurso
@@ -438,11 +452,43 @@ namespace UI.Desktop
             this.nota.ReadOnly = true;
             this.nota.Width = 115;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Font = new System.Drawing.Font("Bowlby One SC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox2.Location = new System.Drawing.Point(12, 329);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(310, 136);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Condicion";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Cursando",
+            "Aprobada",
+            "Regular",
+            "Libre"});
+            this.comboBox1.Location = new System.Drawing.Point(15, 54);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(279, 51);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ReporteCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1692, 1065);
+            this.ClientSize = new System.Drawing.Size(1847, 1090);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -456,9 +502,11 @@ namespace UI.Desktop
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteCursos)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -479,11 +527,9 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridView dgvReporteCursos;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.CheckBox chkMayorNota;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.CheckBox chkMenorNota;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridViewTextBoxColumn isCurso;
@@ -493,5 +539,10 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbMenorNota;
+        private System.Windows.Forms.RadioButton rdbMayorNota;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

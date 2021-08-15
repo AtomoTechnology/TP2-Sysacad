@@ -254,7 +254,7 @@ namespace Data.Database
             ins.State = BusinessEntity.States.Unmodified;
 
         }
-        public List<Inscripcion> ReporteCursos( int? idCurso , string orderBy)
+        public List<Inscripcion> ReporteCursos( int? idCurso , string orderBy, string condicion)
         {
             List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
@@ -276,6 +276,14 @@ namespace Data.Database
                 if(idCurso != null)
                 {
                     query += $" where ins.id_curso = {idCurso} ";
+
+                }
+                if( condicion != "" && idCurso != null)
+                {
+                    query += $" and ins.condicion = '{condicion}'  ";
+                }else if( condicion !="" && idCurso == null)
+                {
+                    query += $" where  ins.condicion = '{condicion}' ";
                 }
                 if (orderBy != null)
                 {
