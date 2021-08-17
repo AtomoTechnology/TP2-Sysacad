@@ -35,17 +35,17 @@ namespace UI.Desktop
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.tsMaterias = new System.Windows.Forms.ToolStrip();
             this.btnAddMateria = new System.Windows.Forms.ToolStripButton();
             this.btnEditMateria = new System.Windows.Forms.ToolStripButton();
             this.tbnDeleteMateria = new System.Windows.Forms.ToolStripButton();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
@@ -140,6 +140,51 @@ namespace UI.Desktop
             this.dgvMaterias.Size = new System.Drawing.Size(1406, 716);
             this.dgvMaterias.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 73;
+            // 
+            // descMateria
+            // 
+            this.descMateria.DataPropertyName = "DescMateria";
+            this.descMateria.HeaderText = "Desc Materia";
+            this.descMateria.MinimumWidth = 8;
+            this.descMateria.Name = "descMateria";
+            this.descMateria.ReadOnly = true;
+            this.descMateria.Width = 201;
+            // 
+            // hsSemanales
+            // 
+            this.hsSemanales.DataPropertyName = "HsSemanales";
+            this.hsSemanales.HeaderText = "Hs Semanales";
+            this.hsSemanales.MinimumWidth = 8;
+            this.hsSemanales.Name = "hsSemanales";
+            this.hsSemanales.ReadOnly = true;
+            this.hsSemanales.Width = 216;
+            // 
+            // hsTotales
+            // 
+            this.hsTotales.DataPropertyName = "HsTotales";
+            this.hsTotales.HeaderText = "HS. Totales";
+            this.hsTotales.MinimumWidth = 8;
+            this.hsTotales.Name = "hsTotales";
+            this.hsTotales.ReadOnly = true;
+            this.hsTotales.Width = 185;
+            // 
+            // descPlan
+            // 
+            this.descPlan.DataPropertyName = "DescPlan";
+            this.descPlan.HeaderText = "Desc. Plan";
+            this.descPlan.MinimumWidth = 8;
+            this.descPlan.Name = "descPlan";
+            this.descPlan.ReadOnly = true;
+            this.descPlan.Width = 173;
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -220,51 +265,6 @@ namespace UI.Desktop
             this.tbnDeleteMateria.Text = "Borrar Materia";
             this.tbnDeleteMateria.ToolTipText = "Borrar Materia";
             this.tbnDeleteMateria.Click += new System.EventHandler(this.tbnDeleteMateria_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 73;
-            // 
-            // descMateria
-            // 
-            this.descMateria.DataPropertyName = "DescMateria";
-            this.descMateria.HeaderText = "Desc Materia";
-            this.descMateria.MinimumWidth = 8;
-            this.descMateria.Name = "descMateria";
-            this.descMateria.ReadOnly = true;
-            this.descMateria.Width = 201;
-            // 
-            // hsSemanales
-            // 
-            this.hsSemanales.DataPropertyName = "HsSemanales";
-            this.hsSemanales.HeaderText = "Hs Semanales";
-            this.hsSemanales.MinimumWidth = 8;
-            this.hsSemanales.Name = "hsSemanales";
-            this.hsSemanales.ReadOnly = true;
-            this.hsSemanales.Width = 216;
-            // 
-            // hsTotales
-            // 
-            this.hsTotales.DataPropertyName = "HsTotales";
-            this.hsTotales.HeaderText = "HS. Totales";
-            this.hsTotales.MinimumWidth = 8;
-            this.hsTotales.Name = "hsTotales";
-            this.hsTotales.ReadOnly = true;
-            this.hsTotales.Width = 185;
-            // 
-            // descPlan
-            // 
-            this.descPlan.DataPropertyName = "DescPlan";
-            this.descPlan.HeaderText = "Desc. Plan";
-            this.descPlan.MinimumWidth = 8;
-            this.descPlan.Name = "descPlan";
-            this.descPlan.ReadOnly = true;
-            this.descPlan.Width = 173;
             // 
             // Materias
             // 

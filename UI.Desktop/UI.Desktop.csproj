@@ -76,6 +76,12 @@
     <Compile Include="LogOut.Designer.cs">
       <DependentUpon>LogOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportePlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePlanes.Designer.cs">
+      <DependentUpon>ReportePlanes.cs</DependentUpon>
+    </Compile>
     <Compile Include="NotifyDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogOut.resx">
       <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportePlanes.resx">
+      <DependentUpon>ReportePlanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotifyDesktop.resx">
       <DependentUpon>NotifyDesktop.cs</DependentUpon>

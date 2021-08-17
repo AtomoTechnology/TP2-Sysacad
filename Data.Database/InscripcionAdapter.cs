@@ -261,7 +261,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 string query = "select ins.id_curso , per.legajo, CONCAT(per.apellido ,' ', per.nombre) NombreCompleto , ins.condicion " +
-                    ",ins.nota, mat.desc_materia ,com.desc_comision  " +
+                    ",isnull(ins.nota,''), mat.desc_materia ,com.desc_comision  " +
                     "from alumnos_inscripciones ins " +
                     "inner join cursos cur " +
                     "on cur.id_curso = ins.id_curso " +

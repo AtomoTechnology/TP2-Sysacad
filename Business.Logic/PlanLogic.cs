@@ -45,5 +45,9 @@ namespace Business.Logic
         {
             adapterPlan.Save(plan);
         }
+        public List<Materia> ReportePlanes(int? idPlan = null , int? idMateria = null )
+        {
+            return adapterPlan.ReportePlanes(idPlan,idMateria);
+        }
     }
 }

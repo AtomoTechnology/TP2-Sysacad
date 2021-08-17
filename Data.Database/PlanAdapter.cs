@@ -166,5 +166,55 @@ namespace Data.Database
             }
             plan.State = BusinessEntity.States.Unmodified;
         }
+
+        public List<Materia> ReportePlanes( int? idPlan , int? idMateria )
+        {
+            List<Materia> materias = new List<Materia>();
+            try
+            {
+                this.OpenConnection();
+                string query = "select * from planes pl inner join materias mat  on mat.id_plan = pl.id_plan ";
+                if(idPlan != null)
+                {
+                    query += $" where pl.id_plan = { idPlan} ";
+                }
+                if (idMateria !=null)
+                {
+                    query += $" where mat.id_materia = { idMateria} ";
+                }
+
+                SqlCommand cmdPlan = new SqlCommand(query, SqlConn);
+                SqlDataReader reader = cmdPlan.ExecuteReader();
+                while (reader.Read())
+                {
+                    Materia m = new Materia();
+                    m.ID = (int)reader["id_plan"];
+                    m.DescPlan = (string)reader["desc_plan"];
+                    m.IdPlan = (int)reader["id_plan"];
+                    m.DescMateria = (string)reader["desc_materia"];
+                    m.HsSemanales = (int)reader["hs_semanales"];
+                    m.HsTotales = (int)reader["hs_totales"];
+
+
+                    materias.Add(m);
+
+                }
+                if (materias.Count <= 0)
+                    MessageBox.Show("No hay resultado para esa filtro!!!");
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            
+            return materias;
+        }
     }
 }

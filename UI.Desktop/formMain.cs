@@ -308,5 +308,16 @@ namespace UI.Desktop
             form.Dock = DockStyle.Fill;
             form.Show();
         }
+
+        private void reportePlanesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.CloseOtherForm();
+            this.form = null;
+            form = new ReportePlanes();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }
