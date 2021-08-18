@@ -14,7 +14,6 @@ namespace Business.Entities
         private string _apellido;
         private string _email;
         private bool _habilitado;
-       // private int _idPersona;
         private int _tipopersona;
         private string _direccion;
         private string _telefono;
@@ -23,7 +22,7 @@ namespace Business.Entities
         private int _idPlan;
         private string  _descPlan;
         private string _descTipoPersona;
-
+        public int IdPersona { get; set; }
         public string DescTipoPersona
         {
             get { return _descTipoPersona; }

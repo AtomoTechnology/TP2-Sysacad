@@ -36,6 +36,7 @@ namespace UI.Desktop
             this.crearPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.misCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,11 +59,9 @@ namespace UI.Desktop
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlUserModal = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.reportePlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.pnlMenuAcademia.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,7 +91,7 @@ namespace UI.Desktop
             this.mnsPrincipal.Location = new System.Drawing.Point(169, 20);
             this.mnsPrincipal.Name = "mnsPrincipal";
             this.mnsPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.mnsPrincipal.Size = new System.Drawing.Size(928, 33);
+            this.mnsPrincipal.Size = new System.Drawing.Size(748, 33);
             this.mnsPrincipal.TabIndex = 1;
             this.mnsPrincipal.Text = "Menu principal";
             // 
@@ -144,9 +143,16 @@ namespace UI.Desktop
             // reporteCursosToolStripMenuItem
             // 
             this.reporteCursosToolStripMenuItem.Name = "reporteCursosToolStripMenuItem";
-            this.reporteCursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.reporteCursosToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
             this.reporteCursosToolStripMenuItem.Text = "Reporte Cursos";
             this.reporteCursosToolStripMenuItem.Click += new System.EventHandler(this.reporteCursosToolStripMenuItem_Click);
+            // 
+            // reportePlanesToolStripMenuItem
+            // 
+            this.reportePlanesToolStripMenuItem.Name = "reportePlanesToolStripMenuItem";
+            this.reportePlanesToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
+            this.reportePlanesToolStripMenuItem.Text = "Reporte Planes";
+            this.reportePlanesToolStripMenuItem.Click += new System.EventHandler(this.reportePlanesToolStripMenuItem_Click);
             // 
             // profesoresToolStripMenuItem
             // 
@@ -161,14 +167,14 @@ namespace UI.Desktop
             // misCursosToolStripMenuItem
             // 
             this.misCursosToolStripMenuItem.Name = "misCursosToolStripMenuItem";
-            this.misCursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.misCursosToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.misCursosToolStripMenuItem.Text = "Mis Cursos";
             this.misCursosToolStripMenuItem.Click += new System.EventHandler(this.misCursosToolStripMenuItem_Click);
             // 
             // registrarNotaToolStripMenuItem
             // 
             this.registrarNotaToolStripMenuItem.Name = "registrarNotaToolStripMenuItem";
-            this.registrarNotaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.registrarNotaToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.registrarNotaToolStripMenuItem.Text = "Registrar Nota";
             this.registrarNotaToolStripMenuItem.Click += new System.EventHandler(this.registrarNotaToolStripMenuItem_Click);
             // 
@@ -189,42 +195,42 @@ namespace UI.Desktop
             // planToolStripMenuItem
             // 
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.planToolStripMenuItem.Text = "Planes";
             this.planToolStripMenuItem.Click += new System.EventHandler(this.planToolStripMenuItem_Click);
             // 
             // materiaToolStripMenuItem
             // 
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.materiaToolStripMenuItem.Text = "Materias";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // especialidadToolStripMenuItem
             // 
             this.especialidadToolStripMenuItem.Name = "especialidadToolStripMenuItem";
-            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.especialidadToolStripMenuItem.Text = "Especialidades";
             this.especialidadToolStripMenuItem.Click += new System.EventHandler(this.especialidadToolStripMenuItem_Click);
             // 
             // comisionesToolStripMenuItem
             // 
             this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
-            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.comisionesToolStripMenuItem.Text = "Comisiones";
             this.comisionesToolStripMenuItem.Click += new System.EventHandler(this.comisionesToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.cursosToolStripMenuItem.Text = "Cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // inscripcionesToolStripMenuItem
             // 
             this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
             this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
             // 
@@ -254,11 +260,13 @@ namespace UI.Desktop
             // 
             this.panel2.Controls.Add(this.lblUserName);
             this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.Location = new System.Drawing.Point(1187, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(283, 70);
             this.panel2.TabIndex = 4;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblUserName
             // 
@@ -273,7 +281,7 @@ namespace UI.Desktop
             this.lblUserName.Size = new System.Drawing.Size(167, 32);
             this.lblUserName.TabIndex = 3;
             this.lblUserName.Text = "usernamefull";
-            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
+            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click_1);
             // 
             // pictureBox3
             // 
@@ -286,7 +294,7 @@ namespace UI.Desktop
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
             // 
             // panel1
             // 
@@ -353,12 +361,11 @@ namespace UI.Desktop
             // 
             this.pnlUserModal.BackColor = System.Drawing.Color.White;
             this.pnlUserModal.Controls.Add(this.panel3);
-            this.pnlUserModal.Controls.Add(this.button3);
             this.pnlUserModal.Controls.Add(this.button2);
             this.pnlUserModal.Controls.Add(this.button1);
             this.pnlUserModal.Location = new System.Drawing.Point(1211, 75);
             this.pnlUserModal.Name = "pnlUserModal";
-            this.pnlUserModal.Size = new System.Drawing.Size(259, 300);
+            this.pnlUserModal.Size = new System.Drawing.Size(259, 137);
             this.pnlUserModal.TabIndex = 8;
             // 
             // panel3
@@ -368,25 +375,6 @@ namespace UI.Desktop
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(10, 300);
             this.panel3.TabIndex = 9;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Bowlby One SC", 12F);
-            this.button3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(20, 117);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(235, 51);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Mis datos";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -399,13 +387,14 @@ namespace UI.Desktop
             this.button2.Font = new System.Drawing.Font("Bowlby One SC", 12F);
             this.button2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(19, 177);
+            this.button2.Location = new System.Drawing.Point(18, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(235, 51);
             this.button2.TabIndex = 1;
             this.button2.Text = "Setting";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -417,7 +406,7 @@ namespace UI.Desktop
             this.button1.Font = new System.Drawing.Font("Bowlby One SC", 10F);
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(20, 238);
+            this.button1.Location = new System.Drawing.Point(18, 73);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button1.Size = new System.Drawing.Size(235, 51);
@@ -426,13 +415,6 @@ namespace UI.Desktop
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // reportePlanesToolStripMenuItem
-            // 
-            this.reportePlanesToolStripMenuItem.Name = "reportePlanesToolStripMenuItem";
-            this.reportePlanesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.reportePlanesToolStripMenuItem.Text = "Reporte Planes";
-            this.reportePlanesToolStripMenuItem.Click += new System.EventHandler(this.reportePlanesToolStripMenuItem_Click);
             // 
             // formMain
             // 
@@ -498,7 +480,6 @@ namespace UI.Desktop
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel pnlUserModal;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;

@@ -278,15 +278,7 @@ namespace UI.Desktop
 
         private void lblUserName_Click(object sender, EventArgs e)
         {
-            if (this.pnlUserModal.Visible)
-            {
-                this.pnlUserModal.Visible = false;
-            }
-            else
-            {
 
-                this.pnlUserModal.Visible = true;
-            }
         }
 
         private void reporteCursosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -318,6 +310,57 @@ namespace UI.Desktop
             form.MdiParent = this;
             form.Dock = DockStyle.Fill;
             form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            this.CloseOtherForm();
+            this.form = null;
+            form = new UserPerfil();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            if (this.pnlUserModal.Visible)
+            {
+                this.pnlUserModal.Visible = false;
+            }
+            else
+            {
+
+                this.pnlUserModal.Visible = true;
+            }
+        }
+
+        private void lblUserName_Click_1(object sender, EventArgs e)
+        {
+            if (this.pnlUserModal.Visible)
+            {
+                this.pnlUserModal.Visible = false;
+            }
+            else
+            {
+
+                this.pnlUserModal.Visible = true;
+            }
+
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            if (this.pnlUserModal.Visible)
+            {
+                this.pnlUserModal.Visible = false;
+            }
+            else
+            {
+
+                this.pnlUserModal.Visible = true;
+            }
         }
     }
 }

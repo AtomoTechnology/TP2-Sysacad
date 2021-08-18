@@ -60,7 +60,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1412, 796);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1412, 791);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -90,7 +90,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowCount = 2;
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1412, 796);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1412, 791);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvMaterias
@@ -137,7 +137,7 @@ namespace UI.Desktop
             this.dgvMaterias.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaterias.RowTemplate.Height = 28;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(1406, 716);
+            this.dgvMaterias.Size = new System.Drawing.Size(1406, 711);
             this.dgvMaterias.TabIndex = 0;
             // 
             // ID
@@ -196,7 +196,7 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(969, 725);
+            this.btnUpdate.Location = new System.Drawing.Point(969, 720);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(223, 68);
             this.btnUpdate.TabIndex = 1;
@@ -214,7 +214,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1198, 725);
+            this.btnClose.Location = new System.Drawing.Point(1198, 720);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(211, 68);
             this.btnClose.TabIndex = 2;
@@ -232,7 +232,7 @@ namespace UI.Desktop
             this.tbnDeleteMateria});
             this.tsMaterias.Location = new System.Drawing.Point(30, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
+            this.tsMaterias.Size = new System.Drawing.Size(120, 38);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddMateria
@@ -241,7 +241,7 @@ namespace UI.Desktop
             this.btnAddMateria.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMateria.Image")));
             this.btnAddMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddMateria.Name = "btnAddMateria";
-            this.btnAddMateria.Size = new System.Drawing.Size(34, 28);
+            this.btnAddMateria.Size = new System.Drawing.Size(34, 33);
             this.btnAddMateria.Text = "Agregar Materia";
             this.btnAddMateria.Click += new System.EventHandler(this.btnAddMateria_Click);
             // 
@@ -251,7 +251,7 @@ namespace UI.Desktop
             this.btnEditMateria.Image = ((System.Drawing.Image)(resources.GetObject("btnEditMateria.Image")));
             this.btnEditMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditMateria.Name = "btnEditMateria";
-            this.btnEditMateria.Size = new System.Drawing.Size(34, 28);
+            this.btnEditMateria.Size = new System.Drawing.Size(34, 33);
             this.btnEditMateria.Text = "editar Materia";
             this.btnEditMateria.Click += new System.EventHandler(this.btnEditMateria_Click);
             // 
@@ -261,7 +261,7 @@ namespace UI.Desktop
             this.tbnDeleteMateria.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteMateria.Image")));
             this.tbnDeleteMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteMateria.Name = "tbnDeleteMateria";
-            this.tbnDeleteMateria.Size = new System.Drawing.Size(34, 28);
+            this.tbnDeleteMateria.Size = new System.Drawing.Size(34, 33);
             this.tbnDeleteMateria.Text = "Borrar Materia";
             this.tbnDeleteMateria.ToolTipText = "Borrar Materia";
             this.tbnDeleteMateria.Click += new System.EventHandler(this.tbnDeleteMateria_Click);
