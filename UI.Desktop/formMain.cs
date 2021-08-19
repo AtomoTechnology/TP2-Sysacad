@@ -246,6 +246,7 @@ namespace UI.Desktop
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            this.pnlUserModal.Visible = false;
             if (new LogOut().ShowDialog() == DialogResult.OK)
             {
                 Application.Exit();
@@ -314,7 +315,7 @@ namespace UI.Desktop
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.pnlUserModal.Visible = false;
             this.CloseOtherForm();
             this.form = null;
             form = new UserPerfil();

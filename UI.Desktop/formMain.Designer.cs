@@ -29,6 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.mnsPrincipal = new System.Windows.Forms.MenuStrip();
             this.mnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,10 +77,9 @@ namespace UI.Desktop
             // 
             // mnsPrincipal
             // 
-            this.mnsPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            this.mnsPrincipal.BackColor = System.Drawing.Color.Transparent;
             this.mnsPrincipal.Dock = System.Windows.Forms.DockStyle.None;
             this.mnsPrincipal.Font = new System.Drawing.Font("Arial", 11F);
-            this.mnsPrincipal.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mnsPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.mnsPrincipal.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -97,8 +97,10 @@ namespace UI.Desktop
             // 
             // mnuArchivo
             // 
+            this.mnuArchivo.BackColor = System.Drawing.Color.Transparent;
             this.mnuArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSalir});
+            this.mnuArchivo.ForeColor = System.Drawing.Color.White;
             this.mnuArchivo.Image = global::UI.Desktop.Properties.Resources.carpeta;
             this.mnuArchivo.Name = "mnuArchivo";
             this.mnuArchivo.Size = new System.Drawing.Size(125, 29);
@@ -109,7 +111,7 @@ namespace UI.Desktop
             // 
             this.mnuSalir.Image = global::UI.Desktop.Properties.Resources.salida;
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(157, 34);
+            this.mnuSalir.Size = new System.Drawing.Size(270, 34);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
@@ -118,6 +120,7 @@ namespace UI.Desktop
             this.aBMAlumnoToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.aBMAlumnoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearPersonaToolStripMenuItem});
+            this.aBMAlumnoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aBMAlumnoToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.estudiante;
             this.aBMAlumnoToolStripMenuItem.Name = "aBMAlumnoToolStripMenuItem";
             this.aBMAlumnoToolStripMenuItem.Size = new System.Drawing.Size(188, 29);
@@ -135,6 +138,7 @@ namespace UI.Desktop
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteCursosToolStripMenuItem,
             this.reportePlanesToolStripMenuItem});
+            this.adminToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.adminToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.admin;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(113, 29);
@@ -159,6 +163,7 @@ namespace UI.Desktop
             this.profesoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.misCursosToolStripMenuItem,
             this.registrarNotaToolStripMenuItem});
+            this.profesoresToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.profesoresToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.docente;
             this.profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
             this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(160, 29);
@@ -187,6 +192,7 @@ namespace UI.Desktop
             this.comisionesToolStripMenuItem,
             this.cursosToolStripMenuItem,
             this.inscripcionesToolStripMenuItem});
+            this.utilidadesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.utilidadesToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.crafts;
             this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
             this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(147, 29);
@@ -195,42 +201,42 @@ namespace UI.Desktop
             // planToolStripMenuItem
             // 
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.planToolStripMenuItem.Text = "Planes";
             this.planToolStripMenuItem.Click += new System.EventHandler(this.planToolStripMenuItem_Click);
             // 
             // materiaToolStripMenuItem
             // 
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.materiaToolStripMenuItem.Text = "Materias";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // especialidadToolStripMenuItem
             // 
             this.especialidadToolStripMenuItem.Name = "especialidadToolStripMenuItem";
-            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.especialidadToolStripMenuItem.Text = "Especialidades";
             this.especialidadToolStripMenuItem.Click += new System.EventHandler(this.especialidadToolStripMenuItem_Click);
             // 
             // comisionesToolStripMenuItem
             // 
             this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
-            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.comisionesToolStripMenuItem.Text = "Comisiones";
             this.comisionesToolStripMenuItem.Click += new System.EventHandler(this.comisionesToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.cursosToolStripMenuItem.Text = "Cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // inscripcionesToolStripMenuItem
             // 
             this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
             this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
             // 
@@ -245,7 +251,7 @@ namespace UI.Desktop
             // 
             // pnlMenuAcademia
             // 
-            this.pnlMenuAcademia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            this.pnlMenuAcademia.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pnlMenuAcademia.Controls.Add(this.panel2);
             this.pnlMenuAcademia.Controls.Add(this.panel1);
             this.pnlMenuAcademia.Controls.Add(this.mnsPrincipal);
@@ -348,11 +354,11 @@ namespace UI.Desktop
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::UI.Desktop.Properties.Resources.utn2;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(78, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(49, -16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(117, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -360,6 +366,8 @@ namespace UI.Desktop
             // pnlUserModal
             // 
             this.pnlUserModal.BackColor = System.Drawing.Color.White;
+            this.pnlUserModal.BackgroundImage = global::UI.Desktop.Properties.Resources.Shadow_Notificaciones;
+            this.pnlUserModal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlUserModal.Controls.Add(this.panel3);
             this.pnlUserModal.Controls.Add(this.button2);
             this.pnlUserModal.Controls.Add(this.button1);

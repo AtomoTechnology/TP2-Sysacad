@@ -80,7 +80,7 @@ namespace UI.Desktop
             this.lblClave.AutoSize = true;
             this.lblClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblClave.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.ForeColor = System.Drawing.Color.White;
+            this.lblClave.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblClave.Location = new System.Drawing.Point(484, 0);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(73, 29);
@@ -92,7 +92,7 @@ namespace UI.Desktop
             this.lblEmail.AutoSize = true;
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEmail.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblEmail.Location = new System.Drawing.Point(3, 138);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(74, 29);
@@ -104,7 +104,7 @@ namespace UI.Desktop
             this.lblNombre.AutoSize = true;
             this.lblNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNombre.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblNombre.Location = new System.Drawing.Point(3, 74);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(106, 29);
@@ -116,7 +116,7 @@ namespace UI.Desktop
             this.lblID.AutoSize = true;
             this.lblID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblID.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
+            this.lblID.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblID.Location = new System.Drawing.Point(3, 0);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(36, 29);
@@ -165,7 +165,7 @@ namespace UI.Desktop
             // cbPlanes
             // 
             this.cbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPlanes.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPlanes.FormattingEnabled = true;
             this.cbPlanes.ItemHeight = 34;
@@ -176,14 +176,14 @@ namespace UI.Desktop
             this.cbPlanes.Location = new System.Drawing.Point(653, 269);
             this.cbPlanes.Name = "cbPlanes";
             this.cbPlanes.Size = new System.Drawing.Size(292, 42);
-            this.cbPlanes.TabIndex = 26;
+            this.cbPlanes.TabIndex = 8;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label9.Location = new System.Drawing.Point(486, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 29);
@@ -195,7 +195,7 @@ namespace UI.Desktop
             this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label5.Location = new System.Drawing.Point(3, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 29);
@@ -207,7 +207,7 @@ namespace UI.Desktop
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label4.Location = new System.Drawing.Point(486, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 29);
@@ -217,21 +217,20 @@ namespace UI.Desktop
             // txtTelefono
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.White;
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtTelefono.Location = new System.Drawing.Point(203, 203);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(254, 44);
-            this.txtTelefono.TabIndex = 20;
+            this.txtTelefono.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label3.Location = new System.Drawing.Point(486, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 29);
@@ -241,21 +240,20 @@ namespace UI.Desktop
             // txtLegajo
             // 
             this.txtLegajo.BackColor = System.Drawing.Color.White;
-            this.txtLegajo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLegajo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLegajo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtLegajo.Location = new System.Drawing.Point(653, 3);
             this.txtLegajo.Multiline = true;
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(292, 46);
-            this.txtLegajo.TabIndex = 18;
+            this.txtLegajo.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label2.Location = new System.Drawing.Point(486, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 29);
@@ -265,57 +263,54 @@ namespace UI.Desktop
             // txtDireccion
             // 
             this.txtDireccion.BackColor = System.Drawing.Color.White;
-            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDireccion.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtDireccion.Location = new System.Drawing.Point(653, 141);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(292, 41);
-            this.txtDireccion.TabIndex = 16;
+            this.txtDireccion.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtEmail.Location = new System.Drawing.Point(203, 141);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(254, 41);
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.Text = "test@gmail.com";
             // 
             // txtApellido
             // 
             this.txtApellido.BackColor = System.Drawing.Color.White;
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellido.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtApellido.Location = new System.Drawing.Point(653, 77);
             this.txtApellido.Multiline = true;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(292, 42);
-            this.txtApellido.TabIndex = 13;
+            this.txtApellido.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtNombre.Location = new System.Drawing.Point(203, 77);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(254, 42);
-            this.txtNombre.TabIndex = 12;
+            this.txtNombre.TabIndex = 1;
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblApellido.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.ForeColor = System.Drawing.Color.White;
+            this.lblApellido.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblApellido.Location = new System.Drawing.Point(486, 74);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(101, 29);
@@ -325,7 +320,6 @@ namespace UI.Desktop
             // txtID
             // 
             this.txtID.BackColor = System.Drawing.Color.White;
-            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtID.Location = new System.Drawing.Point(203, 3);
@@ -340,7 +334,7 @@ namespace UI.Desktop
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(3, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 29);
@@ -350,7 +344,7 @@ namespace UI.Desktop
             // cbTipoPersona
             // 
             this.cbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTipoPersona.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoPersona.FormattingEnabled = true;
             this.cbTipoPersona.IntegralHeight = false;
@@ -362,7 +356,7 @@ namespace UI.Desktop
             this.cbTipoPersona.Location = new System.Drawing.Point(203, 269);
             this.cbTipoPersona.Name = "cbTipoPersona";
             this.cbTipoPersona.Size = new System.Drawing.Size(254, 42);
-            this.cbTipoPersona.TabIndex = 24;
+            this.cbTipoPersona.TabIndex = 7;
             // 
             // txtFechaNac
             // 
@@ -375,52 +369,51 @@ namespace UI.Desktop
             this.txtFechaNac.Location = new System.Drawing.Point(653, 203);
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(291, 41);
-            this.txtFechaNac.TabIndex = 27;
+            this.txtFechaNac.TabIndex = 6;
             // 
             // txtConfirmarClave
             // 
             this.txtConfirmarClave.BackColor = System.Drawing.Color.White;
-            this.txtConfirmarClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmarClave.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarClave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarClave.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtConfirmarClave.Location = new System.Drawing.Point(645, 67);
             this.txtConfirmarClave.Multiline = true;
             this.txtConfirmarClave.Name = "txtConfirmarClave";
-            this.txtConfirmarClave.PasswordChar = '#';
-            this.txtConfirmarClave.Size = new System.Drawing.Size(292, 46);
-            this.txtConfirmarClave.TabIndex = 17;
+            this.txtConfirmarClave.PasswordChar = '.';
+            this.txtConfirmarClave.Size = new System.Drawing.Size(294, 59);
+            this.txtConfirmarClave.TabIndex = 11;
+            this.txtConfirmarClave.Text = "utn2021.";
             // 
             // txtClave
             // 
             this.txtClave.BackColor = System.Drawing.Color.White;
-            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClave.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtClave.Location = new System.Drawing.Point(645, 3);
             this.txtClave.Multiline = true;
             this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '#';
-            this.txtClave.Size = new System.Drawing.Size(293, 45);
-            this.txtClave.TabIndex = 16;
+            this.txtClave.PasswordChar = '.';
+            this.txtClave.Size = new System.Drawing.Size(294, 58);
+            this.txtClave.TabIndex = 10;
+            this.txtClave.Text = "utn2021.";
             // 
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtUsuario.Location = new System.Drawing.Point(207, 3);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(261, 45);
-            this.txtUsuario.TabIndex = 15;
+            this.txtUsuario.TabIndex = 9;
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblUsuario.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblUsuario.Location = new System.Drawing.Point(3, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(96, 29);
@@ -432,7 +425,7 @@ namespace UI.Desktop
             this.lblConfirmarClave.AutoSize = true;
             this.lblConfirmarClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblConfirmarClave.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmarClave.ForeColor = System.Drawing.Color.White;
+            this.lblConfirmarClave.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblConfirmarClave.Location = new System.Drawing.Point(484, 64);
             this.lblConfirmarClave.Name = "lblConfirmarClave";
             this.lblConfirmarClave.Size = new System.Drawing.Size(128, 58);
@@ -441,16 +434,19 @@ namespace UI.Desktop
             // 
             // chkHabilitado
             // 
-            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Checked = true;
+            this.chkHabilitado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkHabilitado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHabilitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkHabilitado.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHabilitado.ForeColor = System.Drawing.Color.White;
+            this.chkHabilitado.ForeColor = System.Drawing.SystemColors.Highlight;
             this.chkHabilitado.Location = new System.Drawing.Point(3, 67);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chkHabilitado.Size = new System.Drawing.Size(142, 33);
+            this.chkHabilitado.Size = new System.Drawing.Size(198, 55);
             this.chkHabilitado.TabIndex = 9;
             this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
             // btnAceptar
@@ -464,14 +460,14 @@ namespace UI.Desktop
             this.btnAceptar.Location = new System.Drawing.Point(503, 771);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(262, 65);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
@@ -512,11 +508,11 @@ namespace UI.Desktop
             // 
             this.label6.AutoSize = true;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(57, 117);
+            this.label6.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(57, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(255, 43);
+            this.label6.Size = new System.Drawing.Size(272, 43);
             this.label6.TabIndex = 7;
             this.label6.Text = "Datos Persona";
             // 
@@ -524,16 +520,17 @@ namespace UI.Desktop
             // 
             this.label7.AutoSize = true;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(57, 527);
+            this.label7.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label7.Location = new System.Drawing.Point(58, 521);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(249, 43);
+            this.label7.Size = new System.Drawing.Size(253, 43);
             this.label7.TabIndex = 8;
             this.label7.Text = "Datos Usuario";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(153)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -545,7 +542,7 @@ namespace UI.Desktop
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::UI.Desktop.Properties.Resources.CerrarForm;
             this.pictureBox1.Location = new System.Drawing.Point(1032, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 73);
@@ -556,25 +553,24 @@ namespace UI.Desktop
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("Russo One", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(24, 19);
+            this.label8.Location = new System.Drawing.Point(3, 3);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(244, 48);
+            this.label8.Size = new System.Drawing.Size(335, 76);
             this.label8.TabIndex = 0;
-            this.label8.Text = "USUARIOS";
+            this.label8.Text = "USUARIO";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.SlateGray;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-20, 82);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(2682, 8);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(4023, 3);
             this.flowLayoutPanel1.TabIndex = 10;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -583,7 +579,7 @@ namespace UI.Desktop
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(1135, 863);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -606,7 +602,6 @@ namespace UI.Desktop
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

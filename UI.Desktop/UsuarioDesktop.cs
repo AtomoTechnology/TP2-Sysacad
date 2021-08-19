@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
@@ -83,6 +84,7 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Modificacion:
                     this.txtConfirmarClave.Visible = false;
+                    this.lblConfirmarClave.Visible = false;
                     btnAceptar.Text = "Guardar";
                     break;
                 case ModoForm.Consulta:
@@ -101,7 +103,7 @@ namespace UI.Desktop
             {
                 case ModoForm.Alta:
 
-                    this.txtID.Text = this.UsuarioActual.ID.ToString();
+                    //this.txtID.Text = this.UsuarioActual.ID.ToString();
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     this.UsuarioActual.Nombre = this.txtNombre.Text;
                     this.UsuarioActual.Apellido = this.txtApellido.Text;
@@ -121,6 +123,7 @@ namespace UI.Desktop
 
                     break;
                 case ModoForm.Modificacion:
+                    this.txtID.Text = this.UsuarioActual.ID.ToString();
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     this.UsuarioActual.Nombre = this.txtNombre.Text;
                     this.UsuarioActual.Apellido = this.txtApellido.Text;
@@ -131,7 +134,7 @@ namespace UI.Desktop
                     this.UsuarioActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
                     this.UsuarioActual.Telefono = this.txtTelefono.Text;
                     this.UsuarioActual.FechaNac = this.txtFechaNac.Value;
-                    this.UsuarioActual.TipoPersona = (int)this.cbTipoPersona.SelectedItem;
+                    this.UsuarioActual.TipoPersona = Convert.ToInt32(this.cbTipoPersona.Text);
                     this.UsuarioActual.IdPlan = ((Business.Entities.Plan)this.cbPlanes.SelectedItem).ID;
                     UsuarioActual.State = BusinessEntity.States.Modified;
                     break;
@@ -149,17 +152,28 @@ namespace UI.Desktop
         {
 
             this.MapearADatos();
-            UsuarioLogic.GetInstance().Save(UsuarioActual);
+            Usuario usr = UsuarioLogic.GetInstance().GetOneByEmailUsernameLegajo(UsuarioActual);
+            if (usr == null)
+            {
+
+                UsuarioLogic.GetInstance().Save(UsuarioActual);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("El legajo/email/nombreUsuario ya existio!!");
+            }
 
         }
         public override bool Validar()
         {
-            if(Modo == ModoForm.Modificacion)
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(this.txtEmail.Text);
+            if (Modo == ModoForm.Modificacion)
             {
                 this.txtConfirmarClave.Text = this.txtClave.Text;
             }
-
-            if (txtApellido.Text == "" || txtClave.Text.Length < 8 || txtNombre.Text == "" || txtUsuario.Text == "" || txtEmail.Text == "" || txtClave.Text == "" || txtConfirmarClave.Text != txtClave.Text || cbTipoPersona.SelectedItem == null || cbPlanes.SelectedItem == null)
+            if (!match.Success || !Regex.IsMatch(txtLegajo.Text, @"^\d+$") || txtLegajo.Text.Length < 5 || txtLegajo.Text.Length > 5 || txtApellido.Text == "" || txtClave.Text.Length < 8 || txtNombre.Text == "" || txtUsuario.Text == "" || txtClave.Text == "" || txtConfirmarClave.Text != txtClave.Text || cbTipoPersona.SelectedItem == null || cbPlanes.SelectedItem == null || txtFechaNac.Value == null)
             {
                 this.Notificar("Datos invalido", "Revisar los datos del formulario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -183,7 +197,7 @@ namespace UI.Desktop
             if (this.Validar())
             {
                 this.GuardarCambios();
-                this.Close();
+
             }
 
         }

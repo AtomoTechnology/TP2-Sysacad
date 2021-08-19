@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,6 +69,8 @@ namespace UI.Desktop
 
         private void UserPerfil_Load(object sender, EventArgs e)
         {
+            this.lblFullname.Text = Sesion.currentUser.Apellido + " " +  Sesion.currentUser.Nombre;
+            this.lblLegajo.Text = Sesion.currentUser.Legajo.ToString();
             this.lineBorder.Width = this.btnMisDatos.Width;
             this.lineBorder.Left = this.btnMisDatos.Left;
             if (this.pnlBody.Controls.Count > 0)

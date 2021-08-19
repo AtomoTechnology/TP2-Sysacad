@@ -38,9 +38,10 @@ namespace UI.Desktop
             this.btnMateriasAprobadas = new System.Windows.Forms.Button();
             this.lineBorder = new System.Windows.Forms.Panel();
             this.btnMisDatos = new System.Windows.Forms.Button();
-            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblFullname = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.lblLegajo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlHeaderPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,10 +66,11 @@ namespace UI.Desktop
             // 
             // pnlHeaderPerfil
             // 
-            this.pnlHeaderPerfil.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlHeaderPerfil.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlHeaderPerfil.Controls.Add(this.lblLegajo);
             this.pnlHeaderPerfil.Controls.Add(this.pictureBox2);
             this.pnlHeaderPerfil.Controls.Add(this.panel1);
-            this.pnlHeaderPerfil.Controls.Add(this.lblUsername);
+            this.pnlHeaderPerfil.Controls.Add(this.lblFullname);
             this.pnlHeaderPerfil.Controls.Add(this.pictureBox1);
             this.pnlHeaderPerfil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHeaderPerfil.Location = new System.Drawing.Point(3, 3);
@@ -79,6 +81,7 @@ namespace UI.Desktop
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Red;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::UI.Desktop.Properties.Resources.CerrarForm1;
             this.pictureBox2.Location = new System.Drawing.Point(1603, 9);
@@ -166,19 +169,20 @@ namespace UI.Desktop
             this.btnMisDatos.UseVisualStyleBackColor = false;
             this.btnMisDatos.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // lblUsername
+            // lblFullname
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(280, 58);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(127, 28);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "username";
-            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFullname.AutoSize = true;
+            this.lblFullname.BackColor = System.Drawing.Color.Transparent;
+            this.lblFullname.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFullname.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFullname.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullname.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblFullname.Location = new System.Drawing.Point(280, 58);
+            this.lblFullname.Name = "lblFullname";
+            this.lblFullname.Size = new System.Drawing.Size(231, 51);
+            this.lblFullname.TabIndex = 1;
+            this.lblFullname.Text = "username";
+            this.lblFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -200,6 +204,21 @@ namespace UI.Desktop
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(1682, 557);
             this.pnlBody.TabIndex = 1;
+            // 
+            // lblLegajo
+            // 
+            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.BackColor = System.Drawing.Color.Transparent;
+            this.lblLegajo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLegajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblLegajo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegajo.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblLegajo.Location = new System.Drawing.Point(280, 130);
+            this.lblLegajo.Name = "lblLegajo";
+            this.lblLegajo.Size = new System.Drawing.Size(154, 34);
+            this.lblLegajo.TabIndex = 4;
+            this.lblLegajo.Text = "username";
+            this.lblLegajo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserPerfil
             // 
@@ -230,11 +249,12 @@ namespace UI.Desktop
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMateriasAprobadas;
         private System.Windows.Forms.Panel lineBorder;
-        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblFullname;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlBody;
         private System.Windows.Forms.Button btnMisDatos;
         private System.Windows.Forms.Button btnPreferencias;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblLegajo;
     }
 }

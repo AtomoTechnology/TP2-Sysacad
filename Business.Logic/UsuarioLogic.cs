@@ -58,5 +58,9 @@ namespace Business.Logic
             return Usuario.LogIn(username, password);
         }
 
+        public Usuario GetOneByEmailUsernameLegajo(Usuario usuario)
+        {
+            return Usuario.GetOneByEmailUserLegajo(usuario);
+        }
     }
 }

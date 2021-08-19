@@ -85,6 +85,11 @@ namespace UI.Desktop
                 this.dgvReporteCursos.DataSource = InscripcionLogic.GetInstance().ReporteCursos(null, null, this.comboBox1.Text );
             }
         }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            this.ListarReporteCursos();
+        }
     }
 
 
