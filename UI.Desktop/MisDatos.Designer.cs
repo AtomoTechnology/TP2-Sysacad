@@ -30,6 +30,7 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@ namespace UI.Desktop
             this.label6 = new System.Windows.Forms.Label();
             this.cbTipoPersona = new System.Windows.Forms.ComboBox();
             this.txtFechaNac = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -79,6 +79,27 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.76294F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1472, 828);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 741);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(1466, 84);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Actualizar Mis datos";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -119,6 +140,7 @@ namespace UI.Desktop
             this.txtUsuario.Location = new System.Drawing.Point(153, 3);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(399, 43);
             this.txtUsuario.TabIndex = 15;
             // 
@@ -126,14 +148,16 @@ namespace UI.Desktop
             // 
             this.txtClave.BackColor = System.Drawing.Color.White;
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClave.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtClave.Location = new System.Drawing.Point(944, 3);
             this.txtClave.Multiline = true;
             this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '#';
+            this.txtClave.PasswordChar = '.';
+            this.txtClave.ReadOnly = true;
             this.txtClave.Size = new System.Drawing.Size(346, 43);
             this.txtClave.TabIndex = 16;
+            this.txtClave.Text = "yf";
             // 
             // lblUsuario
             // 
@@ -162,6 +186,7 @@ namespace UI.Desktop
             // chkHabilitado
             // 
             this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Enabled = false;
             this.chkHabilitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chkHabilitado.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHabilitado.ForeColor = System.Drawing.Color.SteelBlue;
@@ -214,6 +239,7 @@ namespace UI.Desktop
             // cbPlanes
             // 
             this.cbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPlanes.Enabled = false;
             this.cbPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPlanes.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPlanes.FormattingEnabled = true;
@@ -272,6 +298,7 @@ namespace UI.Desktop
             this.txtTelefono.Location = new System.Drawing.Point(143, 238);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(399, 43);
             this.txtTelefono.TabIndex = 20;
             // 
@@ -296,6 +323,7 @@ namespace UI.Desktop
             this.txtLegajo.Location = new System.Drawing.Point(942, 3);
             this.txtLegajo.Multiline = true;
             this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.ReadOnly = true;
             this.txtLegajo.Size = new System.Drawing.Size(346, 52);
             this.txtLegajo.TabIndex = 18;
             // 
@@ -320,6 +348,7 @@ namespace UI.Desktop
             this.txtDireccion.Location = new System.Drawing.Point(942, 165);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(346, 40);
             this.txtDireccion.TabIndex = 16;
             // 
@@ -332,6 +361,7 @@ namespace UI.Desktop
             this.txtEmail.Location = new System.Drawing.Point(143, 165);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(399, 40);
             this.txtEmail.TabIndex = 14;
             // 
@@ -344,6 +374,7 @@ namespace UI.Desktop
             this.txtApellido.Location = new System.Drawing.Point(942, 90);
             this.txtApellido.Multiline = true;
             this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
             this.txtApellido.Size = new System.Drawing.Size(346, 41);
             this.txtApellido.TabIndex = 13;
             // 
@@ -356,6 +387,7 @@ namespace UI.Desktop
             this.txtNombre.Location = new System.Drawing.Point(143, 90);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(399, 41);
             this.txtNombre.TabIndex = 12;
             // 
@@ -435,6 +467,7 @@ namespace UI.Desktop
             // cbTipoPersona
             // 
             this.cbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoPersona.Enabled = false;
             this.cbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTipoPersona.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoPersona.FormattingEnabled = true;
@@ -455,32 +488,13 @@ namespace UI.Desktop
             this.txtFechaNac.CalendarForeColor = System.Drawing.SystemColors.Highlight;
             this.txtFechaNac.CalendarTitleForeColor = System.Drawing.SystemColors.Highlight;
             this.txtFechaNac.CalendarTrailingForeColor = System.Drawing.SystemColors.HotTrack;
+            this.txtFechaNac.Enabled = false;
             this.txtFechaNac.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtFechaNac.Location = new System.Drawing.Point(942, 238);
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(346, 41);
             this.txtFechaNac.TabIndex = 27;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 741);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(1466, 84);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Actualizar Mis datos";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // MisDatos
             // 

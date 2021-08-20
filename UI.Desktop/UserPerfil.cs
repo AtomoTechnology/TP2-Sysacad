@@ -1,4 +1,5 @@
 ﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +61,13 @@ namespace UI.Desktop
             {
                 this.pnlBody.Controls.RemoveAt(0);
             }
+            Preferences md = new Preferences();
+            md.TopLevel = false;
+            md.Dock = DockStyle.Fill;
+
+            this.pnlBody.Controls.Add(md);
+            this.pnlBody.Tag = md;
+            md.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -69,6 +77,9 @@ namespace UI.Desktop
 
         private void UserPerfil_Load(object sender, EventArgs e)
         {
+
+           this.lblCantidadMateriasAprobadas.Text = InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.ID).Count.ToString();
+
             this.lblFullname.Text = Sesion.currentUser.Apellido + " " +  Sesion.currentUser.Nombre;
             this.lblLegajo.Text = Sesion.currentUser.Legajo.ToString();
             this.lineBorder.Width = this.btnMisDatos.Width;
@@ -85,6 +96,17 @@ namespace UI.Desktop
             this.pnlBody.Controls.Add(md);
             this.pnlBody.Tag = md;
             md.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbEditarDatos_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop usrDesk = new UsuarioDesktop(Sesion.currentUser.ID, ApplicationForm.ModoForm.Modificacion);
+            usrDesk.ShowDialog();
         }
     }
 }

@@ -43,6 +43,9 @@ namespace Business.Logic
         {
             return InscripcionAdapter.GetInstance().ReporteCursos(idCurso, orderBy,condicion);
         }
-
+        public List<Inscripcion> GetMateriasAprobadasAlumnos( int idAlumno)
+        {
+            return InscripcionAdapter.GetInstance().GetMateriasAprobadasAlumnos(idAlumno);
+        }
     }
 }

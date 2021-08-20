@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Entities;
+using Business.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,19 @@ namespace UI.Desktop
         public MateriasAprobadas()
         {
             InitializeComponent();
+            this.dgvMateriasAprobadas.AutoGenerateColumns = false;
         }
+
+        private void MateriasAprobadas_Load(object sender, EventArgs e)
+        {
+            if( Sesion.currentUser != null)
+            {
+
+              this.dgvMateriasAprobadas.DataSource =  InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.ID);
+            }
+
+           
+        }
+
     }
 }

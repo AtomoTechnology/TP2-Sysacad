@@ -33,7 +33,7 @@ namespace UI.Desktop
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvInscripciones = new System.Windows.Forms.DataGridView();
+            this.dgvMateriasAprobadas = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,7 @@ namespace UI.Desktop
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMateriasAprobadas)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -51,7 +51,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.dgvInscripciones, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgvMateriasAprobadas, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -61,17 +61,17 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1294, 696);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dgvInscripciones
+            // dgvMateriasAprobadas
             // 
-            this.dgvInscripciones.AllowUserToAddRows = false;
-            this.dgvInscripciones.AllowUserToDeleteRows = false;
-            this.dgvInscripciones.AllowUserToResizeColumns = false;
-            this.dgvInscripciones.AllowUserToResizeRows = false;
-            this.dgvInscripciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvInscripciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvInscripciones.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvInscripciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvInscripciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvMateriasAprobadas.AllowUserToAddRows = false;
+            this.dgvMateriasAprobadas.AllowUserToDeleteRows = false;
+            this.dgvMateriasAprobadas.AllowUserToResizeColumns = false;
+            this.dgvMateriasAprobadas.AllowUserToResizeRows = false;
+            this.dgvMateriasAprobadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMateriasAprobadas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMateriasAprobadas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvMateriasAprobadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMateriasAprobadas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,10 +79,10 @@ namespace UI.Desktop
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInscripciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvInscripciones.ColumnHeadersHeight = 30;
-            this.dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMateriasAprobadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMateriasAprobadas.ColumnHeadersHeight = 30;
+            this.dgvMateriasAprobadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMateriasAprobadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.isCurso,
             this.descMateria,
@@ -91,12 +91,12 @@ namespace UI.Desktop
             this.NombreApellido,
             this.Condicion,
             this.nota});
-            this.dgvInscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvInscripciones.EnableHeadersVisualStyles = false;
-            this.dgvInscripciones.Location = new System.Drawing.Point(3, 30);
-            this.dgvInscripciones.MultiSelect = false;
-            this.dgvInscripciones.Name = "dgvInscripciones";
-            this.dgvInscripciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvMateriasAprobadas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMateriasAprobadas.EnableHeadersVisualStyles = false;
+            this.dgvMateriasAprobadas.Location = new System.Drawing.Point(3, 30);
+            this.dgvMateriasAprobadas.MultiSelect = false;
+            this.dgvMateriasAprobadas.Name = "dgvMateriasAprobadas";
+            this.dgvMateriasAprobadas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,19 +104,19 @@ namespace UI.Desktop
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInscripciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvInscripciones.RowHeadersWidth = 62;
-            this.dgvInscripciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvMateriasAprobadas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMateriasAprobadas.RowHeadersWidth = 62;
+            this.dgvMateriasAprobadas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvInscripciones.RowTemplate.Height = 28;
-            this.dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInscripciones.Size = new System.Drawing.Size(1288, 663);
-            this.dgvInscripciones.TabIndex = 4;
+            this.dgvMateriasAprobadas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMateriasAprobadas.RowTemplate.Height = 28;
+            this.dgvMateriasAprobadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMateriasAprobadas.Size = new System.Drawing.Size(1288, 663);
+            this.dgvMateriasAprobadas.TabIndex = 4;
             // 
             // ID
             // 
@@ -191,8 +191,9 @@ namespace UI.Desktop
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MateriasAprobadas";
             this.Text = "MateriasAprobadas";
+            this.Load += new System.EventHandler(this.MateriasAprobadas_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMateriasAprobadas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,7 +201,7 @@ namespace UI.Desktop
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dgvInscripciones;
+        private System.Windows.Forms.DataGridView dgvMateriasAprobadas;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn isCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;

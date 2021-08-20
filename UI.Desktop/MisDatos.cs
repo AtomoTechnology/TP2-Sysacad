@@ -45,5 +45,11 @@ namespace UI.Desktop
             this.cbPlanes.DisplayMember = "DescPlan";
             this.cbPlanes.ValueMember = "ID";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop usrDesk = new UsuarioDesktop(Sesion.currentUser.ID, ApplicationForm.ModoForm.Modificacion);
+            usrDesk.ShowDialog();
+        }
     }
 }
