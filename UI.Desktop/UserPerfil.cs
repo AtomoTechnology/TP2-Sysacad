@@ -17,6 +17,12 @@ namespace UI.Desktop
         public UserPerfil()
         {
             InitializeComponent();
+            if (Sesion.currentUser.TipoPersona == 1 || Sesion.currentUser.TipoPersona == 2)
+            {
+
+                this.pnlMateriasAprobadas.Visible = false;
+                this.btnMateriasAprobadas.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,9 +53,9 @@ namespace UI.Desktop
             MisDatos md = new MisDatos();
             md.TopLevel = false;
             md.Dock = DockStyle.Fill;
-          
+
             this.pnlBody.Controls.Add(md);
-            this.pnlBody.Tag =  md ;
+            this.pnlBody.Tag = md;
             md.Show();
         }
 
@@ -78,9 +84,9 @@ namespace UI.Desktop
         private void UserPerfil_Load(object sender, EventArgs e)
         {
 
-           this.lblCantidadMateriasAprobadas.Text = InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.ID).Count.ToString();
+            this.lblCantidadMateriasAprobadas.Text = InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.ID).Count.ToString();
 
-            this.lblFullname.Text = Sesion.currentUser.Apellido + " " +  Sesion.currentUser.Nombre;
+            this.lblFullname.Text = Sesion.currentUser.Apellido + " " + Sesion.currentUser.Nombre;
             this.lblLegajo.Text = Sesion.currentUser.Legajo.ToString();
             this.lineBorder.Width = this.btnMisDatos.Width;
             this.lineBorder.Left = this.btnMisDatos.Left;

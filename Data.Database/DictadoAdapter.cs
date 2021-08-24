@@ -33,7 +33,7 @@ namespace Data.Database
                     "on com.id_comision = cur.id_comision ";
                 if( idUsuario != null)
                 {
-                    query += $" where usr.id_usuario = {idUsuario} ";
+                    query += $" where dc.id_docente = {idUsuario} ";
                 }
                 SqlCommand cmdDictados = new SqlCommand(query, SqlConn);
                 SqlDataReader reader = cmdDictados.ExecuteReader();

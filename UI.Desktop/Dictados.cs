@@ -31,7 +31,7 @@ namespace UI.Desktop
         }
         private void ListarDictados()
         {
-           this.dgvDictados.DataSource =  DictadoLogic.GetInstance().GetAll( Sesion.idUser );
+           this.dgvDictados.DataSource =  DictadoLogic.GetInstance().GetAll( Sesion.currentUser.ID );
         }
 
         private void Dictados_Load(object sender, EventArgs e)

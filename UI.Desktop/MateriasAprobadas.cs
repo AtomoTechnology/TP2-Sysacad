@@ -22,11 +22,12 @@ namespace UI.Desktop
 
         private void MateriasAprobadas_Load(object sender, EventArgs e)
         {
-            if( Sesion.currentUser != null)
+            if( Sesion.currentUser != null && Sesion.currentUser.TipoPersona == 3)
             {
 
               this.dgvMateriasAprobadas.DataSource =  InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.ID);
             }
+           
 
            
         }

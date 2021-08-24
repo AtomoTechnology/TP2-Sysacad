@@ -67,7 +67,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1467, 611);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1467, 616);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -95,7 +95,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1467, 611);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1467, 616);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // btnRegistrarNota
@@ -110,7 +110,7 @@ namespace UI.Desktop
             this.btnRegistrarNota.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarNota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRegistrarNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarNota.Location = new System.Drawing.Point(1031, 532);
+            this.btnRegistrarNota.Location = new System.Drawing.Point(1031, 537);
             this.btnRegistrarNota.Name = "btnRegistrarNota";
             this.btnRegistrarNota.Size = new System.Drawing.Size(433, 76);
             this.btnRegistrarNota.TabIndex = 3;
@@ -158,6 +158,7 @@ namespace UI.Desktop
             this.dgvInscripciones.Location = new System.Drawing.Point(3, 3);
             this.dgvInscripciones.MultiSelect = false;
             this.dgvInscripciones.Name = "dgvInscripciones";
+            this.dgvInscripciones.ReadOnly = true;
             this.dgvInscripciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -177,7 +178,7 @@ namespace UI.Desktop
             this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInscripciones.RowTemplate.Height = 28;
             this.dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInscripciones.Size = new System.Drawing.Size(1461, 449);
+            this.dgvInscripciones.Size = new System.Drawing.Size(1461, 454);
             this.dgvInscripciones.TabIndex = 0;
             // 
             // ID
@@ -186,6 +187,7 @@ namespace UI.Desktop
             this.ID.HeaderText = "ID Inscripcion";
             this.ID.MinimumWidth = 8;
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Width = 242;
             // 
             // isCurso
@@ -194,6 +196,7 @@ namespace UI.Desktop
             this.isCurso.HeaderText = "ID Curso";
             this.isCurso.MinimumWidth = 8;
             this.isCurso.Name = "isCurso";
+            this.isCurso.ReadOnly = true;
             this.isCurso.Width = 169;
             // 
             // descMateria
@@ -202,6 +205,7 @@ namespace UI.Desktop
             this.descMateria.HeaderText = "Desc. Materia";
             this.descMateria.MinimumWidth = 8;
             this.descMateria.Name = "descMateria";
+            this.descMateria.ReadOnly = true;
             this.descMateria.Width = 240;
             // 
             // descComision
@@ -210,6 +214,7 @@ namespace UI.Desktop
             this.descComision.HeaderText = "Desc Comision";
             this.descComision.MinimumWidth = 8;
             this.descComision.Name = "descComision";
+            this.descComision.ReadOnly = true;
             this.descComision.Width = 255;
             // 
             // legajo
@@ -218,6 +223,7 @@ namespace UI.Desktop
             this.legajo.HeaderText = "Legajo";
             this.legajo.MinimumWidth = 8;
             this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
             this.legajo.Width = 144;
             // 
             // NombreApellido
@@ -226,6 +232,7 @@ namespace UI.Desktop
             this.NombreApellido.HeaderText = "Nombre Apellido";
             this.NombreApellido.MinimumWidth = 8;
             this.NombreApellido.Name = "NombreApellido";
+            this.NombreApellido.ReadOnly = true;
             this.NombreApellido.Width = 281;
             // 
             // Condicion
@@ -234,6 +241,7 @@ namespace UI.Desktop
             this.Condicion.HeaderText = "Condicion";
             this.Condicion.MinimumWidth = 8;
             this.Condicion.Name = "Condicion";
+            this.Condicion.ReadOnly = true;
             this.Condicion.Width = 190;
             // 
             // nota
@@ -242,6 +250,7 @@ namespace UI.Desktop
             this.nota.HeaderText = "Nota";
             this.nota.MinimumWidth = 8;
             this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
             this.nota.Width = 115;
             // 
             // InsertarNota
@@ -250,6 +259,7 @@ namespace UI.Desktop
             this.InsertarNota.HeaderText = "Insertar Nota";
             this.InsertarNota.MinimumWidth = 8;
             this.InsertarNota.Name = "InsertarNota";
+            this.InsertarNota.ReadOnly = true;
             this.InsertarNota.Width = 231;
             // 
             // InsertarCondicion
@@ -263,6 +273,7 @@ namespace UI.Desktop
             "Regular"});
             this.InsertarCondicion.MinimumWidth = 8;
             this.InsertarCondicion.Name = "InsertarCondicion";
+            this.InsertarCondicion.ReadOnly = true;
             this.InsertarCondicion.Sorted = true;
             this.InsertarCondicion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.InsertarCondicion.Width = 306;
@@ -277,7 +288,7 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(1031, 458);
+            this.btnUpdate.Location = new System.Drawing.Point(1031, 463);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(218, 68);
             this.btnUpdate.TabIndex = 1;
@@ -294,7 +305,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1255, 458);
+            this.btnClose.Location = new System.Drawing.Point(1255, 463);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(209, 68);
             this.btnClose.TabIndex = 2;
@@ -312,7 +323,7 @@ namespace UI.Desktop
             this.tbnDeleteInscripcion});
             this.tsMaterias.Location = new System.Drawing.Point(14, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 38);
+            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddInscripcion
@@ -321,7 +332,7 @@ namespace UI.Desktop
             this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
             this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddInscripcion.Name = "btnAddInscripcion";
-            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 33);
+            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
             this.btnAddInscripcion.Text = "Agregar Inscripcion";
             this.btnAddInscripcion.Click += new System.EventHandler(this.btnAddInscripcion_Click);
             // 
@@ -331,7 +342,7 @@ namespace UI.Desktop
             this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
             this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditInscripcion.Name = "btnEditInscripcion";
-            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 33);
+            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
             this.btnEditInscripcion.Text = "editar Inscripcion";
             this.btnEditInscripcion.Click += new System.EventHandler(this.btnEditInscripcion_Click);
             // 
@@ -341,7 +352,7 @@ namespace UI.Desktop
             this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
             this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
-            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 33);
+            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
             this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
             this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
             this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);

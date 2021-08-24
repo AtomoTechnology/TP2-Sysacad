@@ -78,9 +78,11 @@ namespace UI.Desktop
         }
         private void GetAdmin(  )
         {
-            this.aBMAlumnoToolStripMenuItem.Visible = true;
-            this.profesoresToolStripMenuItem.Visible =  true;
+            this.aBMAlumnoToolStripMenuItem.Enabled = false;
+            this.profesoresToolStripMenuItem.Enabled =  false;
             this.adminToolStripMenuItem.Visible = true;
+            this.utilidadesToolStripMenuItem.Visible = true;
+            //this.btnSetting.Enabled = false;
 
         }
         private void GetStudent()
@@ -88,47 +90,27 @@ namespace UI.Desktop
             this.aBMAlumnoToolStripMenuItem.Visible = true;
             this.profesoresToolStripMenuItem.Visible = false;
             this.adminToolStripMenuItem.Visible = false;
+            this.utilidadesToolStripMenuItem.Visible = false;
+            //this.btnSetting.Enabled = false;
+
         }
         private void GetTeacher()
         {
-            this.aBMAlumnoToolStripMenuItem.Visible = false;
             this.profesoresToolStripMenuItem.Visible = true;
+            this.aBMAlumnoToolStripMenuItem.Visible = false;
             this.adminToolStripMenuItem.Visible = false;
+            this.utilidadesToolStripMenuItem.Visible = false;
+            //this.btnSetting.Enabled = true;
         }
         private void DiseableMenu()
         {
-            this.pnlMenuAcademia.Visible = false;
-            //this.aBMAlumnoToolStripMenuItem.Visible = false;
-            //this.profesoresToolStripMenuItem.Visible = false;
-            //this.adminToolStripMenuItem.Visible = false;
-            //this.mnsPrincipal.Visible = false;
+            this.pnlMenuAcademia.Visible = false;            
         }
 
         private void formMain_FormClosed(object sender, FormClosedEventArgs e)
         {
 
-        }
-        private void crearPersonaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.CloseOtherForm();
-            this.form = null;
-            form = new Usuarios();
-            form.MdiParent = this;
-            form.Dock = DockStyle.Fill;
-            form.Show();
-            
-            //if(usuario == null)
-            //{
-            //usuario = new Usuario();
-            //usuario.FormClosed += Usuario_FormClosed;
-            //usuario.Show();
-            //}
-            //else
-            //{
-            //    usuario.Activate();
-            //}
-            //usuario.ShowDialog();
-        }
+        }      
 
         private void Usuario_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -313,7 +295,7 @@ namespace UI.Desktop
             form.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //user perfil
         {
             this.pnlUserModal.Visible = false;
             this.CloseOtherForm();
@@ -362,6 +344,59 @@ namespace UI.Desktop
 
                 this.pnlUserModal.Visible = true;
             }
+        }
+
+        private void personasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new Usuarios();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+
+            //if(usuario == null)
+            //{
+            //usuario = new Usuario();
+            //usuario.FormClosed += Usuario_FormClosed;
+            //usuario.Show();
+            //}
+            //else
+            //{
+            //    usuario.Activate();
+            //}
+            //usuario.ShowDialog();
+        }
+
+        private void crearPersonaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new Insccipciones(true);
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void misDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new MisDatos();
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void inscribirAUnaMateriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.CloseOtherForm();
+            this.form = null;
+            form = new Cursos(  );
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
     }
 }

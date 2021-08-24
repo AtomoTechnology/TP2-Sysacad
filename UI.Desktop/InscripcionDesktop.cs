@@ -190,7 +190,16 @@ namespace UI.Desktop
             this.cbAlumnos.DataSource = UsuarioLogic.GetInstance().GetAll();
             this.cbAlumnos.DisplayMember = "Legajo";
             this.cbAlumnos.ValueMember = "ID";
-            this.cbAlumnos.SelectedIndex = -1;
+            if( Sesion.currentUser.TipoPersona == 3)
+            {
+
+                this.cbAlumnos.SelectedIndex = this.cbAlumnos.FindString(Sesion.currentUser.Legajo.ToString());
+            }
+            else
+            {
+
+                this.cbAlumnos.SelectedIndex = -1;
+            }
         }
 
         private void cbCursos_SelectedIndexChanged(object sender, EventArgs e)

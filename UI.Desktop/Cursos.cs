@@ -36,6 +36,13 @@ namespace UI.Desktop
 
         private void Cursos_Load(object sender, EventArgs e)
         {
+            if( Sesion.currentUser.TipoPersona != 1 && Sesion.currentUser.TipoPersona == 3)
+            {
+                this.btnAddCurso.Visible = false;
+                this.btnEditCurso.Visible = false;
+                this.btnAsignarDocente.Visible = false;
+                this.btnDeleteCurso.Visible = false;
+            }
             this.ListarCursos();
         }
 
@@ -74,6 +81,7 @@ namespace UI.Desktop
         {
             InscripcionDesktop insDesk = new InscripcionDesktop(((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem), ApplicationForm.ModoForm.Alta);
             insDesk.ShowDialog();
+            this.ListarCursos();
         }
     }
 }

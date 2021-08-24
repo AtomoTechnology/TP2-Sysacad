@@ -102,7 +102,7 @@ namespace UI.Desktop
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(354, 45);
             this.txtPass.TabIndex = 5;
-            this.txtPass.Text = "10101010";
+            this.txtPass.Text = "utn2021.";
             // 
             // lmkOlvidaPass
             // 

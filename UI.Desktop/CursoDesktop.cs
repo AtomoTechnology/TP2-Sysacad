@@ -41,12 +41,16 @@ namespace UI.Desktop
         {
             this.Close();
         }
+        
         public override void MapearDeDatos()
         {
 
             this.txtId.Text = (currentCurso.ID).ToString();
             this.txtAnioCalendario.Text = currentCurso.AnioCalendario.ToString();
             this.txtCupo.Text = currentCurso.Cupo.ToString();
+            //cargar el alumno si existe
+
+          
 
             this.CargarMateriasYComision();
             Comision com = ComisionLogic.GetInstance().GetOne(currentCurso.IdComision);

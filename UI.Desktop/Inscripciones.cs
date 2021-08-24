@@ -17,11 +17,13 @@ namespace UI.Desktop
         private bool RegistrarNota = false;
         public Insccipciones()
         {
-            InitializeComponent();
+
+            InitializeComponent(  );
             this.dgvInscripciones.AutoGenerateColumns = false;
             this.dgvInscripciones.ReadOnly = true;
             this.dgvInscripciones.Columns[8].Visible = false ;
             this.dgvInscripciones.Columns[9].Visible = false;
+          
 
 
         }
@@ -31,10 +33,14 @@ namespace UI.Desktop
             this.dgvInscripciones.AutoGenerateColumns = false;
             this.RegistrarNota = registrar;
         }
+     
 
         private void Insccipciones_Load(object sender, EventArgs e)
         {
-
+            if (Sesion.currentUser.TipoPersona != 1)
+            {
+                this.tsMaterias.Visible = false;
+            }
             this.ListarInscripciones();
         }
 
@@ -46,13 +52,32 @@ namespace UI.Desktop
                 {
                     this.btnRegistrarNota.Visible = true;
                     this.btnUpdate.Visible = false;
-                    this.btnClose.Visible = false;
+                    this.btnClose.Visible = true;
                     this.dgvInscripciones.Columns[8].Visible = true;
                     this.dgvInscripciones.Columns[9].Visible = true;
                     this.dgvInscripciones.Columns[0].Visible = false;
-
+                    this.dgvInscripciones.ReadOnly = false;
 
                     this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.ID);
+                }
+                else
+                {
+                    this.btnRegistrarNota.Visible = false;
+                    this.btnUpdate.Visible = false;
+                    this.btnClose.Visible = true;
+                    this.dgvInscripciones.Columns[8].Visible =false;
+                    this.dgvInscripciones.Columns[9].Visible =false;
+                    this.dgvInscripciones.Columns[0].Visible =false;
+                    if(Sesion.currentUser.TipoPersona == 3)
+                    {
+
+                     this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(null, Sesion.currentUser.ID);
+                    }
+                    else
+                    {
+                        this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll();
+
+                    }
                 }
 
             }

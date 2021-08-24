@@ -85,6 +85,14 @@ namespace UI.Desktop
                 case ModoForm.Modificacion:
                     this.txtConfirmarClave.Visible = false;
                     this.lblConfirmarClave.Visible = false;
+                    if(Sesion.currentUser.TipoPersona != 1)
+                    {
+                        this.cbTipoPersona.Enabled = false;
+                        this.cbPlanes.Enabled = false;
+                        this.txtLegajo.Enabled = false;
+                        this.txtUsuario.Enabled = false;
+                        this.txtClave.Enabled = false;
+                    }
                     btnAceptar.Text = "Guardar";
                     break;
                 case ModoForm.Consulta:

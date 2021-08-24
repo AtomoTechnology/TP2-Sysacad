@@ -60,9 +60,12 @@ namespace UI.Desktop
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlUserModal = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscribirAUnaMateriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.pnlMenuAcademia.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,18 +83,19 @@ namespace UI.Desktop
             this.mnsPrincipal.BackColor = System.Drawing.Color.Transparent;
             this.mnsPrincipal.Dock = System.Windows.Forms.DockStyle.None;
             this.mnsPrincipal.Font = new System.Drawing.Font("Arial", 11F);
+            this.mnsPrincipal.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mnsPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.mnsPrincipal.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuArchivo,
             this.aBMAlumnoToolStripMenuItem,
-            this.adminToolStripMenuItem,
             this.profesoresToolStripMenuItem,
-            this.utilidadesToolStripMenuItem});
+            this.utilidadesToolStripMenuItem,
+            this.adminToolStripMenuItem});
             this.mnsPrincipal.Location = new System.Drawing.Point(169, 20);
             this.mnsPrincipal.Name = "mnsPrincipal";
             this.mnsPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.mnsPrincipal.Size = new System.Drawing.Size(748, 33);
+            this.mnsPrincipal.Size = new System.Drawing.Size(864, 33);
             this.mnsPrincipal.TabIndex = 1;
             this.mnsPrincipal.Text = "Menu principal";
             // 
@@ -111,7 +115,7 @@ namespace UI.Desktop
             // 
             this.mnuSalir.Image = global::UI.Desktop.Properties.Resources.salida;
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(270, 34);
+            this.mnuSalir.Size = new System.Drawing.Size(157, 34);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
@@ -119,18 +123,20 @@ namespace UI.Desktop
             // 
             this.aBMAlumnoToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.aBMAlumnoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearPersonaToolStripMenuItem});
+            this.crearPersonaToolStripMenuItem,
+            this.misDatosToolStripMenuItem,
+            this.inscribirAUnaMateriaToolStripMenuItem});
             this.aBMAlumnoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aBMAlumnoToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.estudiante;
             this.aBMAlumnoToolStripMenuItem.Name = "aBMAlumnoToolStripMenuItem";
-            this.aBMAlumnoToolStripMenuItem.Size = new System.Drawing.Size(188, 29);
-            this.aBMAlumnoToolStripMenuItem.Text = "ABM Persona";
+            this.aBMAlumnoToolStripMenuItem.Size = new System.Drawing.Size(124, 29);
+            this.aBMAlumnoToolStripMenuItem.Text = "Alumno";
             // 
             // crearPersonaToolStripMenuItem
             // 
             this.crearPersonaToolStripMenuItem.Name = "crearPersonaToolStripMenuItem";
-            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(251, 34);
-            this.crearPersonaToolStripMenuItem.Text = "Listar persona";
+            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
+            this.crearPersonaToolStripMenuItem.Text = "Materias Inscriptas";
             this.crearPersonaToolStripMenuItem.Click += new System.EventHandler(this.crearPersonaToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
@@ -147,14 +153,14 @@ namespace UI.Desktop
             // reporteCursosToolStripMenuItem
             // 
             this.reporteCursosToolStripMenuItem.Name = "reporteCursosToolStripMenuItem";
-            this.reporteCursosToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
+            this.reporteCursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.reporteCursosToolStripMenuItem.Text = "Reporte Cursos";
             this.reporteCursosToolStripMenuItem.Click += new System.EventHandler(this.reporteCursosToolStripMenuItem_Click);
             // 
             // reportePlanesToolStripMenuItem
             // 
             this.reportePlanesToolStripMenuItem.Name = "reportePlanesToolStripMenuItem";
-            this.reportePlanesToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
+            this.reportePlanesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.reportePlanesToolStripMenuItem.Text = "Reporte Planes";
             this.reportePlanesToolStripMenuItem.Click += new System.EventHandler(this.reportePlanesToolStripMenuItem_Click);
             // 
@@ -172,14 +178,14 @@ namespace UI.Desktop
             // misCursosToolStripMenuItem
             // 
             this.misCursosToolStripMenuItem.Name = "misCursosToolStripMenuItem";
-            this.misCursosToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+            this.misCursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.misCursosToolStripMenuItem.Text = "Mis Cursos";
             this.misCursosToolStripMenuItem.Click += new System.EventHandler(this.misCursosToolStripMenuItem_Click);
             // 
             // registrarNotaToolStripMenuItem
             // 
             this.registrarNotaToolStripMenuItem.Name = "registrarNotaToolStripMenuItem";
-            this.registrarNotaToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+            this.registrarNotaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.registrarNotaToolStripMenuItem.Text = "Registrar Nota";
             this.registrarNotaToolStripMenuItem.Click += new System.EventHandler(this.registrarNotaToolStripMenuItem_Click);
             // 
@@ -191,7 +197,8 @@ namespace UI.Desktop
             this.especialidadToolStripMenuItem,
             this.comisionesToolStripMenuItem,
             this.cursosToolStripMenuItem,
-            this.inscripcionesToolStripMenuItem});
+            this.inscripcionesToolStripMenuItem,
+            this.personasToolStripMenuItem});
             this.utilidadesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.utilidadesToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.crafts;
             this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
@@ -369,7 +376,7 @@ namespace UI.Desktop
             this.pnlUserModal.BackgroundImage = global::UI.Desktop.Properties.Resources.Shadow_Notificaciones;
             this.pnlUserModal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlUserModal.Controls.Add(this.panel3);
-            this.pnlUserModal.Controls.Add(this.button2);
+            this.pnlUserModal.Controls.Add(this.btnSetting);
             this.pnlUserModal.Controls.Add(this.button1);
             this.pnlUserModal.Location = new System.Drawing.Point(1211, 75);
             this.pnlUserModal.Name = "pnlUserModal";
@@ -384,25 +391,25 @@ namespace UI.Desktop
             this.panel3.Size = new System.Drawing.Size(10, 300);
             this.panel3.TabIndex = 9;
             // 
-            // button2
+            // btnSetting
             // 
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bowlby One SC", 12F);
-            this.button2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(18, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(235, 51);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Setting";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSetting.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
+            this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Font = new System.Drawing.Font("Bowlby One SC", 12F);
+            this.btnSetting.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSetting.Location = new System.Drawing.Point(18, 4);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(235, 51);
+            this.btnSetting.TabIndex = 1;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.UseVisualStyleBackColor = false;
+            this.btnSetting.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -423,6 +430,27 @@ namespace UI.Desktop
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // personasToolStripMenuItem
+            // 
+            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.personasToolStripMenuItem.Text = "Personas";
+            this.personasToolStripMenuItem.Click += new System.EventHandler(this.personasToolStripMenuItem_Click);
+            // 
+            // misDatosToolStripMenuItem
+            // 
+            this.misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
+            this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
+            this.misDatosToolStripMenuItem.Text = "Mis Datos";
+            this.misDatosToolStripMenuItem.Click += new System.EventHandler(this.misDatosToolStripMenuItem_Click);
+            // 
+            // inscribirAUnaMateriaToolStripMenuItem
+            // 
+            this.inscribirAUnaMateriaToolStripMenuItem.Name = "inscribirAUnaMateriaToolStripMenuItem";
+            this.inscribirAUnaMateriaToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
+            this.inscribirAUnaMateriaToolStripMenuItem.Text = "Inscribir a una materia";
+            this.inscribirAUnaMateriaToolStripMenuItem.Click += new System.EventHandler(this.inscribirAUnaMateriaToolStripMenuItem_Click);
             // 
             // formMain
             // 
@@ -488,7 +516,7 @@ namespace UI.Desktop
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel pnlUserModal;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem misCursosToolStripMenuItem;
@@ -499,5 +527,8 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem registrarNotaToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStripMenuItem reportePlanesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem misDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscribirAUnaMateriaToolStripMenuItem;
     }
 }

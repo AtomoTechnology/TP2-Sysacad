@@ -21,9 +21,9 @@ namespace Business.Logic
             return singleton;
         }
 
-        public List<Inscripcion> GetAll(int? idDocente = null)
+        public List<Inscripcion> GetAll(int? idDocente = null, int? idAlumno= null)
         {
-           return  InscripcionAdapter.GetInstance().GetAll(idDocente);
+           return  InscripcionAdapter.GetInstance().GetAll(idDocente, idAlumno);
         }
         public Inscripcion GetOne(int ID)
         {
@@ -39,7 +39,7 @@ namespace Business.Logic
             
             InscripcionAdapter.GetInstance().Save(ins);
         }
-        public List<Inscripcion> ReporteCursos(int? idCurso = null, string orderBy = null , string condicion = "")
+        public List<Inscripcion> ReporteCursos(int? idCurso = null , string orderBy = null , string condicion = "")
         {
             return InscripcionAdapter.GetInstance().ReporteCursos(idCurso, orderBy,condicion);
         }

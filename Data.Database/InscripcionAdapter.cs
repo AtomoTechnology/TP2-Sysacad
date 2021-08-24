@@ -22,21 +22,27 @@ namespace Data.Database
             }
             return singleton;
         }
-        public List<Inscripcion> GetAll(int? idDocente )
+        public List<Inscripcion> GetAll(int? idDocente , int? idAlumno )
         {
             List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
             {
                 this.OpenConnection();
                 string query = "select ai.id_inscripcion , mat.desc_materia, com.desc_comision ,per.legajo,ai.id_curso," +
-                    " CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , isnull(ai.nota,'') nota  from alumnos_inscripciones ai " +
+                    " CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , isnull(ai.nota,'') nota  from alumnos_inscripciones ai " +                     
                      "inner join usuarios usr on usr.id_usuario = ai.id_alumno " +
                     "inner join personas per on per.id_persona = usr.id_persona " +
                     "inner join cursos cur on cur.id_curso = ai.id_curso " +
                     "inner join materias mat on mat.id_materia = cur.id_materia " +
                     " inner join comisiones com on com.id_comision = cur.id_comision ";
                 if (idDocente != null)
-                    query += $" where usr.id_usuario = {idDocente} ";
+                    query += $"  inner join docentes_cursos dc on dc.id_curso = ai.id_curso  where dc.id_docente = {idDocente} ";
+                if (idAlumno != null)
+                    query += $"where ai.id_alumno = {idAlumno} ";
+
+                //if( idAlumno != null)
+                //    query += $" where usr.id_usuario = {idDocente} ";
+
                 SqlCommand cmdMateria = new SqlCommand(query,SqlConn);
                 SqlDataReader reader = cmdMateria.ExecuteReader();
                 while (reader.Read())
