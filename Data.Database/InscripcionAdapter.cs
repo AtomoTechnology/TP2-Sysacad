@@ -28,7 +28,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                string query = "select ai.id_inscripcion , mat.desc_materia, com.desc_comision ,per.legajo,ai.id_curso," +
+                string query = "select distinct ai.id_inscripcion , mat.desc_materia, com.desc_comision ,per.legajo,ai.id_curso," +
                     " CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , isnull(ai.nota,'') nota  from alumnos_inscripciones ai " +                     
                      "inner join usuarios usr on usr.id_usuario = ai.id_alumno " +
                     "inner join personas per on per.id_persona = usr.id_persona " +
@@ -295,7 +295,7 @@ namespace Data.Database
                 {
                     query += $" order by {orderBy} ";
                 }
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 SqlCommand cmdInscripcion = new SqlCommand(query,SqlConn);
                 SqlDataReader reader = cmdInscripcion.ExecuteReader();
                 while (reader.Read())

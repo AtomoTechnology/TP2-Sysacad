@@ -110,6 +110,25 @@ namespace UI.Desktop
         {
             this.MapearADatos();
             MateriaLogic.GetInstance().Save(currentMateria);
+            switch (Modo)
+            {
+                case ModoForm.Alta:
+                    NotifyDesktop nd1 = new NotifyDesktop("Materia Agregada!!");
+                    nd1.ShowDialog();
+                    break;
+                case ModoForm.Baja:
+
+                    break;
+                case ModoForm.Modificacion:
+                    NotifyDesktop nd2 = new NotifyDesktop("Materia Actualizada!!");
+                    nd2.ShowDialog();
+                    break;
+                case ModoForm.Consulta:
+                    break;
+                default:
+                    break;
+            }
+          
 
         }
         public override bool Validar()

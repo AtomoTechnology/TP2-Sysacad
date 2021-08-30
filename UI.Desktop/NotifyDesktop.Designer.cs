@@ -51,6 +51,7 @@ namespace UI.Desktop
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SeaGreen;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -71,7 +72,7 @@ namespace UI.Desktop
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(8, 345);
@@ -84,7 +85,7 @@ namespace UI.Desktop
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnClose.BackColor = System.Drawing.Color.DarkGreen;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -95,12 +96,12 @@ namespace UI.Desktop
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(250, 62);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Actualizar";
+            this.btnClose.Text = "Ok";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // NotifySuccess
+            // NotifyDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,7 +115,7 @@ namespace UI.Desktop
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NotifySuccess";
+            this.Name = "NotifyDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NotifySuccess";
             this.panel1.ResumeLayout(false);

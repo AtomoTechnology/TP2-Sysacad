@@ -21,7 +21,7 @@ namespace UI.Desktop
             {
 
                 this.pnlMateriasAprobadas.Visible = false;
-                this.btnMateriasAprobadas.Enabled = false;
+                this.btnMateriasAprobadas.Visible = false;
             }
         }
 

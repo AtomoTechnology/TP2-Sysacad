@@ -200,7 +200,7 @@ namespace Data.Database
 
                 }
                 if (materias.Count <= 0)
-                    MessageBox.Show("No hay resultado para esa filtro!!!");
+                    MessageBox.Show("No hay resultado!!!");
                 reader.Close();
             }
             catch (Exception ex)

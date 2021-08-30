@@ -23,9 +23,13 @@ namespace Business.Entities
                 {
                     return "Primer profe";
                 }
-                else
+                else if( this.Cargo == 2)
                 {
                     return "Segundo Profe";
+                }
+                else
+                {
+                    return "Tercer Profe";
                 }
             }
         }

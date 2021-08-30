@@ -94,7 +94,7 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete  from materias where id_materia = @id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                MessageBox.Show("Materia borrada con exito :)");
+                //MessageBox.Show("Materia borrada con exito :)");
 
             }
             catch (Exception ex)
@@ -124,13 +124,14 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HsTotales;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Materia agregada con exito :)");
+                //MessageBox.Show("Materia agregada con exito :)");
                 //asi se obtiene el ID que asigna al BD automaticamente
             }
             catch (Exception Ex)
             {
 
                 Exception Excepcionalejada = new Exception("Error al crear la materia", Ex); throw Excepcionalejada;
+                //MessageBox.Show("error");
             }
 
             finally
@@ -159,7 +160,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.VarChar, 50).Value = materia.HsTotales;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Materia actualizada con exito :)");
+                //MessageBox.Show("Materia actualizada con exito :)");
             }
             catch (Exception Ex)
             {

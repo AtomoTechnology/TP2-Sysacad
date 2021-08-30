@@ -27,6 +27,10 @@ namespace Business.Logic
         {
             return dictadoAdapter.GetAll(idUsuario);
         }
+        public Dictado GetOne( Dictado dic  )
+        {
+            return dictadoAdapter.GetOne(dic);
+        }
         public void Save(Dictado dictado)
         {
             dictadoAdapter.Save(dictado);

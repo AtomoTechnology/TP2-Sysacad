@@ -48,7 +48,20 @@ namespace UI.Desktop
         }
         public override void GuardarCambios() {
             this.MapearADatos();
-            DictadoLogic.GetInstance().Save(currentDictado);
+
+            Dictado dictado = DictadoLogic.GetInstance().GetOne(currentDictado);
+
+            if( dictado == null)
+            {
+
+                DictadoLogic.GetInstance().Save(currentDictado);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("El docente ya está dictando este curso con este cargo ");
+            }
+
         }
         public override bool Validar()
         {
@@ -91,7 +104,7 @@ namespace UI.Desktop
             if (Validar())
             {
                 this.GuardarCambios();
-                this.Close();
+               
             }
         }
     }

@@ -97,6 +97,45 @@ namespace Data.Database
             }
 
         }
+
+        public  Dictado GetOne(Dictado dictado)
+        {
+            Dictado dic = new Dictado();
+         
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdGetOne = new SqlCommand("select * from  docentes_cursos where id_curso = @id_curso  and  id_docente =@id_docente and cargo = @cargo ", SqlConn);
+                cmdGetOne.Parameters.Add("@id_curso", SqlDbType.Int).Value = dictado.IdCurso;
+                cmdGetOne.Parameters.Add("@id_docente", SqlDbType.Int).Value = dictado.IdDocente;
+                cmdGetOne.Parameters.Add("@cargo", SqlDbType.Int).Value = dictado.Cargo;
+                SqlDataReader reader = cmdGetOne.ExecuteReader();
+                if (reader.Read())
+                {
+                    dic.ID = (int)reader["id_dictado"];
+                }
+                else
+                {
+                    dic = null;
+                }
+                   
+                
+              
+            }
+            catch (Exception Ex)
+            {
+                Exception Excepcionalejada = new Exception("Error al asignar el curso", Ex); throw Excepcionalejada;
+            }
+
+            finally
+            {
+
+                this.CloseConnection();
+            }
+            return dic;
+
+        }
         public void Save(Dictado dictado)
         {
             if (dictado.State == BusinessEntity.States.New)

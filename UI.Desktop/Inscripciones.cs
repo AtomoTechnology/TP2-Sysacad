@@ -58,7 +58,7 @@ namespace UI.Desktop
                     this.dgvInscripciones.Columns[0].Visible = false;
                     this.dgvInscripciones.ReadOnly = false;
 
-                    this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.ID);
+                    this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.ID,null);
                 }
                 else
                 {
