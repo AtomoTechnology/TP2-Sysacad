@@ -45,6 +45,7 @@ namespace Data.Database
                 usr.TipoPersona = (int)drUsuarios["tipo_persona"];
                 usr.IdPlan = (int)drUsuarios["id_plan"];
                 usr.DescPlan = (string)drUsuarios["desc_plan"];
+                usr.IdPersona = (int)drUsuarios["id_persona"];
                 switch (usr.TipoPersona)
                 {
                     case 1:
@@ -60,7 +61,7 @@ namespace Data.Database
                         break;
                 }
 
-                usuarios.Add(usr);
+                usuarios.Add(usr); 
             }
             //cerramos el dataReader 
             drUsuarios.Close();
@@ -416,6 +417,7 @@ namespace Data.Database
                     usr.ID = (int)drUsuario["id_usuario"];
                     usr.NombreUsuario = (string)drUsuario["nombre_usuario"];
                     usr.Legajo = (int)drUsuario["legajo"];
+                    usr.IdPersona = (int)drUsuario["id_persona"];
                     //usr.Clave = (string)drUsuario["clave"];
                     //usr.Habilitado = (bool)drUsuario["habilitado"];
                     usr.Nombre = (string)drUsuario["nombre"];

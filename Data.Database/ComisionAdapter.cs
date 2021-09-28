@@ -83,6 +83,43 @@ namespace Data.Database
             return com;
         }
 
+        public List<Comision> GetComisionPlanes(int idPlan)
+        {
+
+            //return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
+            List<Comision> comisiones = new List<Comision>();
+          
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select * from comisiones where id_Plan = @id", SqlConn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = idPlan;
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Comision com = new Comision();
+                    com.ID = (int)reader["id_comision"];
+                    com.DescComision = (string)reader["desc_comision"];
+                    com.AnioEspecialidad = (int)reader["anio_especialidad"];
+                    com.IdPlan = (int)reader["id_plan"];
+                    comisiones.Add(com);
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la comision", ex);
+
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return comisiones;
+        }
+
         public void Delete(int ID)
         {
             try

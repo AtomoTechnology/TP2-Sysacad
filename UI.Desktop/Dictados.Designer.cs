@@ -263,7 +263,7 @@ namespace UI.Desktop
             this.btnAsignarDocente});
             this.tsMaterias.Location = new System.Drawing.Point(4, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(160, 38);
+            this.tsMaterias.Size = new System.Drawing.Size(160, 33);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddCurso
@@ -272,7 +272,7 @@ namespace UI.Desktop
             this.btnAddCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCurso.Image")));
             this.btnAddCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddCurso.Name = "btnAddCurso";
-            this.btnAddCurso.Size = new System.Drawing.Size(34, 33);
+            this.btnAddCurso.Size = new System.Drawing.Size(34, 28);
             this.btnAddCurso.Text = "Agregar Curso";
             // 
             // btnEditCurso
@@ -281,7 +281,7 @@ namespace UI.Desktop
             this.btnEditCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCurso.Image")));
             this.btnEditCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditCurso.Name = "btnEditCurso";
-            this.btnEditCurso.Size = new System.Drawing.Size(34, 33);
+            this.btnEditCurso.Size = new System.Drawing.Size(34, 28);
             this.btnEditCurso.Text = "editar Curso";
             // 
             // tbnDeleteCurso
@@ -290,14 +290,14 @@ namespace UI.Desktop
             this.tbnDeleteCurso.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteCurso.Image")));
             this.tbnDeleteCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteCurso.Name = "tbnDeleteCurso";
-            this.tbnDeleteCurso.Size = new System.Drawing.Size(34, 33);
+            this.tbnDeleteCurso.Size = new System.Drawing.Size(34, 28);
             this.tbnDeleteCurso.Text = "Borrar Curso";
             this.tbnDeleteCurso.ToolTipText = "Borrar Curso";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // btnAsignarDocente
             // 
@@ -305,7 +305,7 @@ namespace UI.Desktop
             this.btnAsignarDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarDocente.Image")));
             this.btnAsignarDocente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAsignarDocente.Name = "btnAsignarDocente";
-            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 33);
+            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 28);
             this.btnAsignarDocente.Text = "Asignar Docente";
             // 
             // Dictados

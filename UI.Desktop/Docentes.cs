@@ -35,7 +35,7 @@ namespace UI.Desktop
         {
             //DocenteCursoDesktop dc = new DocenteCursoDesktop();
             //dc.txt
-            GiveIdDocente(((Business.Entities.Usuario)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID);
+            GiveIdDocente(((Business.Entities.Usuario)this.dgvDocentes.SelectedRows[0].DataBoundItem).IdPersona);
             //MessageBox.Show(.ToString());
             this.Close();
         }

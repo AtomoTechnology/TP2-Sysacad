@@ -231,5 +231,9 @@ namespace UI.Desktop
             this.cbPlanes.ValueMember = "ID";
         }
 
+        private void UsuarioDesktop_Load(object sender, EventArgs e)
+        {
+            cbTipoPersona.Items.Add(TipoPersona.Administrativo.ToString());
+        }
     }
 }

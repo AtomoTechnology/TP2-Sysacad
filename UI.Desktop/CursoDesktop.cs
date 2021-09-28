@@ -157,5 +157,16 @@ namespace UI.Desktop
                 this.Close();
             }
         }
+
+        //private void cbMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //   int idPlan = ((Business.Entities.Materia)this.cbMaterias.SelectedItem).IdPlan;
+
+        //    var comPlanes = ComisionLogic.GetInstance().GetComisionPlanes(idPlan);
+        //    this.cbComisiones.DataSource = comPlanes;
+        //    this.cbComisiones.DisplayMember = "desc_comision";
+        //    this.cbComisiones.ValueMember = "ID";
+
+        //}
     }
 }

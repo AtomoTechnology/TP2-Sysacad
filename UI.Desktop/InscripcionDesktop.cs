@@ -110,7 +110,7 @@ namespace UI.Desktop
             switch (Modo)
             {
                 case ModoForm.Alta:
-                    currentInscripcion.IdAlumno = ((Business.Entities.Usuario)this.cbAlumnos.SelectedItem).ID;
+                    currentInscripcion.IdAlumno = ((Business.Entities.Usuario)this.cbAlumnos.SelectedItem).IdPersona;
                     currentInscripcion.IdCurso = ((Business.Entities.Curso)this.cbCursos.SelectedItem).ID;
                     currentInscripcion.Condicion = "Cursando";
                     currentInscripcion.CursoCupo = ((Business.Entities.Curso)this.cbCursos.SelectedItem).Cupo;
@@ -121,7 +121,7 @@ namespace UI.Desktop
                 case ModoForm.Baja:
                     break;
                 case ModoForm.Modificacion:
-                    currentInscripcion.IdAlumno = ((Business.Entities.Usuario)this.cbAlumnos.SelectedItem).ID;
+                    currentInscripcion.IdAlumno = ((Business.Entities.Usuario)this.cbAlumnos.SelectedItem).IdPersona;
                     currentInscripcion.IdCurso = ((Business.Entities.Curso)this.cbCursos.SelectedItem).ID;
                     currentInscripcion.Condicion = "Cursando";
                     //currentInscripcion.Nota = Convert.ToInt32(this.txtNota.Text);

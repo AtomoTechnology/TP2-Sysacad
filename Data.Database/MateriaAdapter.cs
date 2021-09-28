@@ -117,6 +117,7 @@ namespace Data.Database
 
                 this.OpenConnection();
 
+
                 SqlCommand cmdSave = new SqlCommand("insert into materias (desc_materia,hs_semanales,hs_totales,id_plan )" +
                     "values (@desc_materia,@hs_semanales,@hs_totales,@id_plan)", SqlConn);
                 cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.DescMateria;

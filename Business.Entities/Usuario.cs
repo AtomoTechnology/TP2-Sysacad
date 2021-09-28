@@ -8,6 +8,12 @@ namespace Business.Entities
 {
     public class Usuario : BusinessEntity
     {
+        //enum TipoPersona
+        //{
+        //    Administrativo = 1,
+        //    Alumno ,
+        //    Docente  
+        //};
         private string _nombreUsuario;
         private string _nombre;
         private string _clave;

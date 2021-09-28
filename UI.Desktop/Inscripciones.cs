@@ -58,7 +58,7 @@ namespace UI.Desktop
                     this.dgvInscripciones.Columns[0].Visible = false;
                     this.dgvInscripciones.ReadOnly = false;
 
-                    this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.ID,null);
+                    this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona,null);
                 }
                 else
                 {
@@ -71,7 +71,7 @@ namespace UI.Desktop
                     if(Sesion.currentUser.TipoPersona == 3)
                     {
 
-                     this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(null, Sesion.currentUser.ID);
+                     this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(null, Sesion.currentUser.IdPersona);
                     }
                     else
                     {

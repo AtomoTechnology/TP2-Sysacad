@@ -30,8 +30,7 @@ namespace Data.Database
                 this.OpenConnection();
                 string query = "select distinct ai.id_inscripcion , mat.desc_materia, com.desc_comision ,per.legajo,ai.id_curso," +
                     " CONCAT(per.nombre , ' ',  per.apellido) NombreCompleto, ai.condicion , isnull(ai.nota,'') nota  from alumnos_inscripciones ai " +                     
-                     "inner join usuarios usr on usr.id_usuario = ai.id_alumno " +
-                    "inner join personas per on per.id_persona = usr.id_persona " +
+                    "inner join personas per on per.id_persona = ai.id_alumno " +
                     "inner join cursos cur on cur.id_curso = ai.id_curso " +
                     "inner join materias mat on mat.id_materia = cur.id_materia " +
                     " inner join comisiones com on com.id_comision = cur.id_comision ";

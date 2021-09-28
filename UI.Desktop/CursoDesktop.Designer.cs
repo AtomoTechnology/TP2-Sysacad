@@ -240,6 +240,7 @@ namespace UI.Desktop
             this.cbMaterias.Size = new System.Drawing.Size(357, 36);
             this.cbMaterias.Sorted = true;
             this.cbMaterias.TabIndex = 0;
+            //this.cbMaterias.SelectedIndexChanged += new System.EventHandler(this.cbMaterias_SelectedIndexChanged);
             // 
             // CursoDesktop
             // 

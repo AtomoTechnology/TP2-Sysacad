@@ -349,10 +349,6 @@ namespace UI.Desktop
             this.cbTipoPersona.FormattingEnabled = true;
             this.cbTipoPersona.IntegralHeight = false;
             this.cbTipoPersona.ItemHeight = 34;
-            this.cbTipoPersona.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.cbTipoPersona.Location = new System.Drawing.Point(203, 269);
             this.cbTipoPersona.Name = "cbTipoPersona";
             this.cbTipoPersona.Size = new System.Drawing.Size(254, 42);
@@ -600,6 +596,7 @@ namespace UI.Desktop
             this.Name = "UsuarioDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
+            this.Load += new System.EventHandler(this.UsuarioDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
