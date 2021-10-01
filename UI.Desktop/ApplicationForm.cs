@@ -31,11 +31,6 @@ namespace UI.Desktop
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
-        public enum TipoPersona
-        {
-            Administrativo = 1,
-            Alumno,
-            Docente
-        };
+        
     }
 }

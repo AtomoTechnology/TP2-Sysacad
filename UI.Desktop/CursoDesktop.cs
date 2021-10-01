@@ -45,7 +45,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
 
-            this.txtId.Text = (currentCurso.ID).ToString();
+            //this.txtId.Text = (currentCurso.ID).ToString();
             this.txtAnioCalendario.Text = currentCurso.AnioCalendario.ToString();
             this.txtCupo.Text = currentCurso.Cupo.ToString();
             //cargar el alumno si existe

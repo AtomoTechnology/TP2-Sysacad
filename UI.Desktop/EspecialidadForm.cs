@@ -54,7 +54,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
 
-            this.tbId.Text = currentEsp.ID.ToString();
+            //this.tbId.Text = currentEsp.ID.ToString();
             this.tbDescripcion.Text = currentEsp.desc_especialidad;
             switch (Modo)
             {
@@ -62,11 +62,11 @@ namespace UI.Desktop
                     this.btnSaveEsp.Text = "Crear";
                     break;
                 case ModoForm.Baja:
-                    this.tbId.Enabled = false;
+                    //this.tbId.Enabled = false;
                     this.btnSaveEsp.Text = "Borrar";
                     break;
                 case ModoForm.Modificacion:
-                    this.tbId.Enabled = false;
+                    //this.tbId.Enabled = false;
                     this.btnSaveEsp.Text = "Guardar";
                     this.label3.Text = "Actualizar Especialidad";
                     break;
@@ -93,7 +93,7 @@ namespace UI.Desktop
 
                     break;
                 case ModoForm.Modificacion:
-                    currentEsp.ID = Convert.ToInt32(this.tbId.Text);
+                    //currentEsp.ID = Convert.ToInt32(this.tbId.Text);
                     currentEsp.desc_especialidad = this.tbDescripcion.Text;
                     currentEsp.State = BusinessEntity.States.Modified;
                     break;

@@ -85,7 +85,7 @@ namespace UI.Desktop
                 case ModoForm.Modificacion:
                     this.txtConfirmarClave.Visible = false;
                     this.lblConfirmarClave.Visible = false;
-                    if(Sesion.currentUser.TipoPersona != 1)
+                    if (Sesion.currentUser.TipoPersona != 1)
                     {
                         this.cbTipoPersona.Enabled = false;
                         this.cbPlanes.Enabled = false;
@@ -122,7 +122,7 @@ namespace UI.Desktop
                     this.UsuarioActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
                     this.UsuarioActual.Telefono = this.txtTelefono.Text;
                     this.UsuarioActual.FechaNac = this.txtFechaNac.Value;
-                    this.UsuarioActual.TipoPersona = Convert.ToInt32(this.cbTipoPersona.Text);
+                    this.UsuarioActual.TipoPersona = Convert.ToInt32(cbTipoPersona.SelectedItem);
                     this.UsuarioActual.IdPlan = ((Business.Entities.Plan)this.cbPlanes.SelectedItem).ID;
 
                     UsuarioActual.State = BusinessEntity.States.New;
@@ -142,7 +142,7 @@ namespace UI.Desktop
                     this.UsuarioActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
                     this.UsuarioActual.Telefono = this.txtTelefono.Text;
                     this.UsuarioActual.FechaNac = this.txtFechaNac.Value;
-                    this.UsuarioActual.TipoPersona = Convert.ToInt32(this.cbTipoPersona.Text);
+                    this.UsuarioActual.TipoPersona = Convert.ToInt32(cbTipoPersona.SelectedItem);
                     this.UsuarioActual.IdPlan = ((Business.Entities.Plan)this.cbPlanes.SelectedItem).ID;
                     UsuarioActual.State = BusinessEntity.States.Modified;
                     break;
@@ -232,8 +232,29 @@ namespace UI.Desktop
         }
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
+        {          
+            cbTipoPersona.DataSource = Enum.GetValues(typeof(Enums.PersonType));       
+
+        }
+
+        private void cbTipoPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbTipoPersona.Items.Add(TipoPersona.Administrativo.ToString());
+            //MessageBox.Show( Convert.ToInt32(cbTipoPersona.SelectedItem).ToString());
+        }
+
+
+        private int GetNumberPerson(string desc)
+        {
+            switch (desc)
+            {
+                case "Administrativo":
+                    return 1;
+                case "Alumno":
+                    return 2;
+                default:
+                    return 3;
+
+            }
         }
     }
 }

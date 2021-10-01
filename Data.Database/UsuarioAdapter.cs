@@ -420,9 +420,9 @@ namespace Data.Database
                     usr.IdPersona = (int)drUsuario["id_persona"];
                     //usr.Clave = (string)drUsuario["clave"];
                     //usr.Habilitado = (bool)drUsuario["habilitado"];
+                    //usr.Email = (string)drUsuario["email"];
                     usr.Nombre = (string)drUsuario["nombre"];
                     usr.Apellido = (string)drUsuario["apellido"];
-                    //usr.Email = (string)drUsuario["email"];
                     usr.TipoPersona = (int)drUsuario["tipo_persona"];
 
                 }

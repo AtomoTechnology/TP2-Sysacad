@@ -162,7 +162,7 @@ namespace UI.Desktop
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(47, 204);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 44);
+            this.label5.Size = new System.Drawing.Size(85, 29);
             this.label5.TabIndex = 18;
             this.label5.Text = "Legajo";
             // 

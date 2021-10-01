@@ -28,7 +28,17 @@ namespace Business.Entities
         private int _idPlan;
         private string  _descPlan;
         private string _descTipoPersona;
+        public string NombreCompletoLegajo
+        {
+            get{ 
+
+                return Nombre + " " + Apellido + " - " + Legajo;
+            }
+            //set { _nombreCompletoLegajo = value; }
+        }
+
         public int IdPersona { get; set; }
+
         public string DescTipoPersona
         {
             get { return _descTipoPersona; }

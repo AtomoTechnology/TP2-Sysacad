@@ -57,7 +57,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
 
-            this.txtId.Text = currentComision.ID.ToString();
+            //this.txtId.Text = currentComision.ID.ToString();
             this.txtDess.Text = currentComision.DescComision;
             this.txtAnioEspecialidad.Text = currentComision.AnioEspecialidad.ToString();
             Plan p = PlanLogic.GetInstance().GetOne(currentComision.IdPlan);

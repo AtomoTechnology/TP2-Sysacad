@@ -24,7 +24,7 @@ namespace Data.Database
                     "inner join cursos cur " +
                     "on cur.id_curso = dc.id_curso " +
                     "inner join usuarios usr " +
-                    "on usr.id_usuario = dc.id_docente " +
+                    "on id_persona  = dc.id_docente " +
                     " inner join personas per   " +
                     "on per.id_persona = usr.id_persona " +
                     "inner join materias mat  " +

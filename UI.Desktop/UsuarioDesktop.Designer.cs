@@ -165,7 +165,7 @@ namespace UI.Desktop
             // cbPlanes
             // 
             this.cbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPlanes.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPlanes.FormattingEnabled = true;
             this.cbPlanes.ItemHeight = 34;
@@ -344,7 +344,7 @@ namespace UI.Desktop
             // cbTipoPersona
             // 
             this.cbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoPersona.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTipoPersona.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoPersona.FormattingEnabled = true;
             this.cbTipoPersona.IntegralHeight = false;
@@ -353,6 +353,7 @@ namespace UI.Desktop
             this.cbTipoPersona.Name = "cbTipoPersona";
             this.cbTipoPersona.Size = new System.Drawing.Size(254, 42);
             this.cbTipoPersona.TabIndex = 7;
+            this.cbTipoPersona.SelectedIndexChanged += new System.EventHandler(this.cbTipoPersona_SelectedIndexChanged);
             // 
             // txtFechaNac
             // 

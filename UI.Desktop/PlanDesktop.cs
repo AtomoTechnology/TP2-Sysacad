@@ -54,7 +54,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
 
-            this.txtId.Text = currentPlan.ID.ToString();
+            //this.txtId.Text = currentPlan.ID.ToString();
             this.txtDess.Text = currentPlan.DescPlan;
             this.CargarEspecialidades();
             Especialidad esp = EspecialidadLogic.GetInstance().GetOne(currentPlan.IdEspecialidad);

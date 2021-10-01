@@ -31,9 +31,7 @@ namespace UI.Desktop
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtIdCurso = new System.Windows.Forms.TextBox();
             this.txtIdDocente = new System.Windows.Forms.TextBox();
             this.btnAsignarCurso = new System.Windows.Forms.Button();
@@ -64,23 +62,11 @@ namespace UI.Desktop
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(34, 210);
+            this.label3.Location = new System.Drawing.Point(38, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 43);
             this.label3.TabIndex = 2;
             this.label3.Text = "ID Curso";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(34, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 43);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "ID";
             // 
             // label5
             // 
@@ -88,26 +74,16 @@ namespace UI.Desktop
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(34, 362);
+            this.label5.Location = new System.Drawing.Point(38, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(193, 43);
             this.label5.TabIndex = 4;
             this.label5.Text = "ID Docente";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(42, 136);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(316, 50);
-            this.textBox1.TabIndex = 5;
-            // 
             // txtIdCurso
             // 
             this.txtIdCurso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdCurso.Location = new System.Drawing.Point(42, 269);
+            this.txtIdCurso.Location = new System.Drawing.Point(46, 173);
             this.txtIdCurso.Multiline = true;
             this.txtIdCurso.Name = "txtIdCurso";
             this.txtIdCurso.Size = new System.Drawing.Size(232, 50);
@@ -116,7 +92,7 @@ namespace UI.Desktop
             // txtIdDocente
             // 
             this.txtIdDocente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdDocente.Location = new System.Drawing.Point(42, 413);
+            this.txtIdDocente.Location = new System.Drawing.Point(46, 317);
             this.txtIdDocente.Multiline = true;
             this.txtIdDocente.Name = "txtIdDocente";
             this.txtIdDocente.Size = new System.Drawing.Size(232, 50);
@@ -128,7 +104,7 @@ namespace UI.Desktop
             this.btnAsignarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarCurso.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAsignarCurso.Location = new System.Drawing.Point(42, 610);
+            this.btnAsignarCurso.Location = new System.Drawing.Point(46, 514);
             this.btnAsignarCurso.Name = "btnAsignarCurso";
             this.btnAsignarCurso.Size = new System.Drawing.Size(144, 53);
             this.btnAsignarCurso.TabIndex = 8;
@@ -143,7 +119,7 @@ namespace UI.Desktop
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(219, 610);
+            this.btnSalir.Location = new System.Drawing.Point(223, 514);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(139, 53);
             this.btnSalir.TabIndex = 9;
@@ -156,7 +132,7 @@ namespace UI.Desktop
             this.pbDocente.BackColor = System.Drawing.Color.White;
             this.pbDocente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDocente.Image = global::UI.Desktop.Properties.Resources.estudiante;
-            this.pbDocente.Location = new System.Drawing.Point(294, 413);
+            this.pbDocente.Location = new System.Drawing.Point(298, 317);
             this.pbDocente.Name = "pbDocente";
             this.pbDocente.Size = new System.Drawing.Size(64, 50);
             this.pbDocente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,7 +145,7 @@ namespace UI.Desktop
             this.pbCursos.BackColor = System.Drawing.Color.White;
             this.pbCursos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCursos.Image = global::UI.Desktop.Properties.Resources.estudiante;
-            this.pbCursos.Location = new System.Drawing.Point(294, 269);
+            this.pbCursos.Location = new System.Drawing.Point(298, 173);
             this.pbCursos.Name = "pbCursos";
             this.pbCursos.Size = new System.Drawing.Size(64, 50);
             this.pbCursos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +159,7 @@ namespace UI.Desktop
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(34, 473);
+            this.label1.Location = new System.Drawing.Point(38, 377);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 43);
             this.label1.TabIndex = 13;
@@ -200,7 +176,7 @@ namespace UI.Desktop
             "1",
             "2",
             "3"});
-            this.cbCargo.Location = new System.Drawing.Point(42, 535);
+            this.cbCargo.Location = new System.Drawing.Point(46, 439);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(316, 40);
             this.cbCargo.Sorted = true;
@@ -211,7 +187,7 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            this.ClientSize = new System.Drawing.Size(410, 675);
+            this.ClientSize = new System.Drawing.Size(410, 612);
             this.Controls.Add(this.cbCargo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbCursos);
@@ -220,9 +196,7 @@ namespace UI.Desktop
             this.Controls.Add(this.btnAsignarCurso);
             this.Controls.Add(this.txtIdDocente);
             this.Controls.Add(this.txtIdCurso);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -240,9 +214,7 @@ namespace UI.Desktop
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtIdCurso;
         private System.Windows.Forms.TextBox txtIdDocente;
         private System.Windows.Forms.Button btnAsignarCurso;

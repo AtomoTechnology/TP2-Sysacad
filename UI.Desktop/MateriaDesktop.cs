@@ -40,7 +40,7 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            this.txtId.Text = currentMateria.ID.ToString();
+            //this.txtId.Text = currentMateria.ID.ToString();
             this.txtDess.Text = currentMateria.DescMateria;
             this.txtHsSemanales.Text = currentMateria.HsSemanales.ToString();
             this.txtHstotales.Text = currentMateria.HsTotales.ToString();
@@ -56,6 +56,7 @@ namespace UI.Desktop
                 case ModoForm.Baja:
                     this.btnSaveMateria.Text = "Borrar";
                     this.btnSaveMateria.BackColor = Color.Red;
+                    this.btnCancel.BackColor = Color.Gray;
                     this.txtDess.ReadOnly = true;
                     this.txtHsSemanales.ReadOnly = true;
                     this.txtHstotales.ReadOnly = true;

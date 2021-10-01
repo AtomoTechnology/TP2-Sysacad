@@ -34,8 +34,6 @@ namespace UI.Desktop
             this.btnSaveEsp = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,7 +42,7 @@ namespace UI.Desktop
             this.tbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDescripcion.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescripcion.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.tbDescripcion.Location = new System.Drawing.Point(44, 346);
+            this.tbDescripcion.Location = new System.Drawing.Point(44, 192);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(323, 43);
@@ -58,7 +56,7 @@ namespace UI.Desktop
             this.btnSaveEsp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveEsp.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveEsp.ForeColor = System.Drawing.Color.White;
-            this.btnSaveEsp.Location = new System.Drawing.Point(44, 486);
+            this.btnSaveEsp.Location = new System.Drawing.Point(44, 283);
             this.btnSaveEsp.Name = "btnSaveEsp";
             this.btnSaveEsp.Size = new System.Drawing.Size(156, 58);
             this.btnSaveEsp.TabIndex = 2;
@@ -75,7 +73,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(228, 486);
+            this.btnClose.Location = new System.Drawing.Point(228, 283);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(139, 58);
             this.btnClose.TabIndex = 3;
@@ -88,34 +86,11 @@ namespace UI.Desktop
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 299);
+            this.label1.Location = new System.Drawing.Point(39, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Descripcion";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(49, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 29);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ID";
-            // 
-            // tbId
-            // 
-            this.tbId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbId.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbId.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.tbId.Location = new System.Drawing.Point(44, 211);
-            this.tbId.Multiline = true;
-            this.tbId.Name = "tbId";
-            this.tbId.ReadOnly = true;
-            this.tbId.Size = new System.Drawing.Size(323, 47);
-            this.tbId.TabIndex = 0;
             // 
             // label3
             // 
@@ -135,10 +110,8 @@ namespace UI.Desktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(419, 606);
+            this.ClientSize = new System.Drawing.Size(419, 383);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbId);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSaveEsp);
@@ -159,8 +132,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnSaveEsp;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label3;
     }
 }

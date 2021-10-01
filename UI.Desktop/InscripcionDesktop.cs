@@ -27,11 +27,11 @@ namespace UI.Desktop
             Modo = modo;
             this.CargarAlumnosCursos();
         }
-        public InscripcionDesktop( Curso curso , ModoForm modo)
+        public InscripcionDesktop(Curso curso, ModoForm modo)
         {
             InitializeComponent();
             Modo = modo;
-            if(curso != null)
+            if (curso != null)
             {
                 //currentInscripcion.IdCurso = curso.ID;
                 //currentInscripcion.DescComision = curso.DescComision;
@@ -182,15 +182,15 @@ namespace UI.Desktop
             this.cbMaterias.ValueMember = "ID";
             //this.cbMaterias.SelectedIndex = -1;
             this.CargarAlumnos();
-       
+
 
         }
         private void CargarAlumnos()
         {
-            this.cbAlumnos.DataSource = UsuarioLogic.GetInstance().GetAll();
-            this.cbAlumnos.DisplayMember = "Legajo";
+            this.cbAlumnos.DataSource = UsuarioLogic.GetInstance().GetAll( 3 );
+            this.cbAlumnos.DisplayMember = "NombreCompletoLegajo";
             this.cbAlumnos.ValueMember = "ID";
-            if( Sesion.currentUser.TipoPersona == 3)
+            if (Sesion.currentUser.TipoPersona == 3)
             {
 
                 this.cbAlumnos.SelectedIndex = this.cbAlumnos.FindString(Sesion.currentUser.Legajo.ToString());
@@ -209,22 +209,22 @@ namespace UI.Desktop
 
         private void cbMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-                this.idMateriaActual = ((Business.Entities.Materia)this.cbMaterias.SelectedItem).ID;
-                this.cbComisiones.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, null, null);
-                this.cbComisiones.DisplayMember = "DescComision";
-                this.cbComisiones.ValueMember = "ID";
-            
+
+            this.idMateriaActual = ((Business.Entities.Materia)this.cbMaterias.SelectedItem).ID;
+            this.cbComisiones.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, null, null);
+            this.cbComisiones.DisplayMember = "DescComision";
+            this.cbComisiones.ValueMember = "ID";
+
         }
 
         private void cbComisiones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-                int idComision = ((Business.Entities.Curso)this.cbComisiones.SelectedItem).IdComision;
-                this.cbCursos.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, idComision, null);
-                this.cbCursos.DisplayMember = "ID";
-                this.cbCursos.ValueMember = "ID";
-            
+
+            int idComision = ((Business.Entities.Curso)this.cbComisiones.SelectedItem).IdComision;
+            this.cbCursos.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, idComision, null);
+            this.cbCursos.DisplayMember = "ID";
+            this.cbCursos.ValueMember = "ID";
+
 
         }
         private void CargarCursos()
