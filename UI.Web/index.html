@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Index
+    </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            position: relative;
+        }
+
+        a {
+            color: #042f48;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: system-ui;
+            transition: 300ms ease-in-out;
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        header {
+            width: 100%;
+            position: static;
+            height: 50px;
+            background: #eceeef;
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-gap: 1rem;
+            padding: 0.4rem;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 1rem;
+            box-shadow: 1px 2px 10px rgba( 0,0,0,0.5 );
+        }
+
+        .header-left {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            overflow: hidden;
+            box-shadow: 1px 2px 1px #ff9800, -2px -2px 2px #607d8b
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+
+        ul > li:hover > a {
+            color: #ff9800;
+        }
+
+        ul > li:hover {
+            background: #ffffff;
+            <!-- border-radius: 3px; -->
+            border: 0.3px solid #00000029;
+        }
+
+        ul > li {
+            position: relative;
+            padding: 5px 7px;
+            transition: 300ms ease-in-out;
+        }
+
+        ul li ul {
+            position: absolute;
+            text-align: left;
+            min-width: 150px;
+            width: auto;
+            background: white;
+            border-left: 2px solid #ff9800;
+            box-shadow: 1px 2px 10px rgba( 0,0,0,0.5 );
+            transition: 200ms ease-in-out;
+            display: none;
+        }
+
+        ul > li ul li {
+            border-bottom: 0.5px solid #042f4845;
+        }
+
+            ul > li ul li:hover {
+                background: #062e41;
+                color: #042f48;
+            }
+
+        ul > li:hover ul {
+            display: block;
+            z-index: 10;
+        }
+
+
+        .icon {
+            background: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .items-menu {
+            display: flex;
+            position: relative;
+            list-style: none;
+            /* background: red; */
+            gap: 0.5rem;
+            color: white;
+        }
+
+        .sub-menu-right {
+            right: 0;
+        }
+
+        .sub-menu-left {
+            left: 0;
+        }
+
+        .box-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <a href="">
+                   
+                    <div class="logo">
+                        <img src="https://play-lh.googleusercontent.com/on7AWbuav44mB2ztIB6mp1BUu6bhIMcNd-9YjbjNDxgViamcJ3bo1dkEo06EGbC7njw" width="50" alt="Logo UTN" />
+                    </div>
+                </a>
+                <ul class="items-menu">
+                    <li class="item">
+                        <a href="">
+                            Alumnos
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="#">Inscripcion a Materia</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Materias Aprobadas</a>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            Docentes
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="#">Mis Cursos</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Registrar Nota</a>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="">
+                            Utilidades
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="ListaUsuarios.aspx">Usuarios</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Especialidades</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Planes</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Comisiones</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Materias</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Cursos</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Inscripciones</a>
+                                </li>
+                            </ul>
+
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            Reporte
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="#">Cursos</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Planes</a>
+                                </li>
+                        </a>
+                    </li>
+                </ul>
+
+
+                </ul>
+            </div>
+            <div class="header-right">
+                <div class="box-1">
+                    <i class="icon"> 1</i>
+                    <i class="icon">2</i>
+                    <i class="icon">2</i>
+                </div>
+                <div>
+                    <ul class="menu-right">
+
+                        <li class="item">
+                            <a href="#">
+                                Usuario
+                                <ul class="sub-items-menu sub-menu-right">
+                                    <li class="sub-item">
+                                        <a href="#">Mis Datos</a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="#">Mis Preferencias</a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="#">Salir</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+        </main>
+    </div>
+
+</body>
+</html>

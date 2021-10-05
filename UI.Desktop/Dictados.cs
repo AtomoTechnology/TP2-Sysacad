@@ -22,7 +22,7 @@ namespace UI.Desktop
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();           
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
