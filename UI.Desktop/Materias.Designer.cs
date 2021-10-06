@@ -232,7 +232,7 @@ namespace UI.Desktop
             this.tbnDeleteMateria});
             this.tsMaterias.Location = new System.Drawing.Point(30, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
+            this.tsMaterias.Size = new System.Drawing.Size(120, 38);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddMateria
@@ -241,7 +241,7 @@ namespace UI.Desktop
             this.btnAddMateria.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMateria.Image")));
             this.btnAddMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddMateria.Name = "btnAddMateria";
-            this.btnAddMateria.Size = new System.Drawing.Size(34, 28);
+            this.btnAddMateria.Size = new System.Drawing.Size(34, 33);
             this.btnAddMateria.Text = "Agregar Materia";
             this.btnAddMateria.Click += new System.EventHandler(this.btnAddMateria_Click);
             // 
@@ -251,7 +251,7 @@ namespace UI.Desktop
             this.btnEditMateria.Image = ((System.Drawing.Image)(resources.GetObject("btnEditMateria.Image")));
             this.btnEditMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditMateria.Name = "btnEditMateria";
-            this.btnEditMateria.Size = new System.Drawing.Size(34, 28);
+            this.btnEditMateria.Size = new System.Drawing.Size(34, 33);
             this.btnEditMateria.Text = "editar Materia";
             this.btnEditMateria.Click += new System.EventHandler(this.btnEditMateria_Click);
             // 
@@ -261,7 +261,7 @@ namespace UI.Desktop
             this.tbnDeleteMateria.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteMateria.Image")));
             this.tbnDeleteMateria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteMateria.Name = "tbnDeleteMateria";
-            this.tbnDeleteMateria.Size = new System.Drawing.Size(34, 28);
+            this.tbnDeleteMateria.Size = new System.Drawing.Size(34, 33);
             this.tbnDeleteMateria.Text = "Borrar Materia";
             this.tbnDeleteMateria.ToolTipText = "Borrar Materia";
             this.tbnDeleteMateria.Click += new System.EventHandler(this.tbnDeleteMateria_Click);

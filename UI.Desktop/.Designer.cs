@@ -63,7 +63,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(958, 539);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(958, 534);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -91,7 +91,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(958, 539);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(958, 534);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvDocentes
@@ -149,7 +149,7 @@ namespace UI.Desktop
             this.dgvDocentes.RowTemplate.DividerHeight = 1;
             this.dgvDocentes.RowTemplate.Height = 28;
             this.dgvDocentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDocentes.Size = new System.Drawing.Size(952, 459);
+            this.dgvDocentes.Size = new System.Drawing.Size(952, 454);
             this.dgvDocentes.TabIndex = 0;
             // 
             // ID
@@ -226,7 +226,7 @@ namespace UI.Desktop
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(522, 468);
+            this.btnAceptar.Location = new System.Drawing.Point(522, 463);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAceptar.Size = new System.Drawing.Size(216, 68);
@@ -245,7 +245,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(744, 468);
+            this.btnClose.Location = new System.Drawing.Point(744, 463);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(211, 68);
             this.btnClose.TabIndex = 2;
@@ -263,7 +263,7 @@ namespace UI.Desktop
             this.btnDeleteUsuario});
             this.tsUsuarios.Location = new System.Drawing.Point(30, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(120, 33);
+            this.tsUsuarios.Size = new System.Drawing.Size(120, 38);
             this.tsUsuarios.TabIndex = 0;
             // 
             // btnAddUsuario
@@ -272,7 +272,7 @@ namespace UI.Desktop
             this.btnAddUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUsuario.Image")));
             this.btnAddUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddUsuario.Name = "btnAddUsuario";
-            this.btnAddUsuario.Size = new System.Drawing.Size(34, 28);
+            this.btnAddUsuario.Size = new System.Drawing.Size(34, 33);
             this.btnAddUsuario.Text = "Agregar Usuario";
             // 
             // btnEditUsuario
@@ -281,7 +281,7 @@ namespace UI.Desktop
             this.btnEditUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUsuario.Image")));
             this.btnEditUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(34, 28);
+            this.btnEditUsuario.Size = new System.Drawing.Size(34, 33);
             this.btnEditUsuario.Text = "editar Usuario";
             // 
             // btnDeleteUsuario
@@ -290,7 +290,7 @@ namespace UI.Desktop
             this.btnDeleteUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteUsuario.Image")));
             this.btnDeleteUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteUsuario.Name = "btnDeleteUsuario";
-            this.btnDeleteUsuario.Size = new System.Drawing.Size(34, 28);
+            this.btnDeleteUsuario.Size = new System.Drawing.Size(34, 33);
             this.btnDeleteUsuario.Text = "Borrar Usuario";
             // 
             // Docentes

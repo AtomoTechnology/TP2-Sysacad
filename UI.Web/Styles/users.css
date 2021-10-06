@@ -1,0 +1,40 @@
+﻿.add-user-box {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 2px 5px grey;
+    /* padding: 10px; */
+    margin: 1rem 0px;
+}
+.header-add-user {
+    text-align: center;
+    padding: 10px;
+    background: #ff9800;
+}
+.add-user {
+    display: flex;
+    gap: 1rem;
+    padding: 10px;
+}
+.add-user table{
+    text-align : center ;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+    margin: auto;
+}
+
+.actions .btn-guardar {
+    width: 137px;
+    flex: 1;
+    background: #ff9800;
+    margin-bottom: 1rem;
+}
+.actions .btn-cancelar {
+    flex: 1;
+    background: #607d8b;
+    margin-bottom: 1rem;
+}

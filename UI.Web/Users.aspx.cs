@@ -9,15 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace UI.Web
 {
-    public partial class ListaUsuarios : System.Web.UI.Page
+    public partial class Users : System.Web.UI.Page
     {
         Usuario currentUser = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Session["current_user"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("SignIn.aspx");
 
             }
             else
@@ -35,7 +34,7 @@ namespace UI.Web
             {
                 this.lblAccion.Text = "Alta";
             }
-           
+
         }
         private bool PaginaEnEstadoEdicion()
         {
@@ -51,7 +50,6 @@ namespace UI.Web
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-
             currentUser.Apellido = txtApellido.Text;
             currentUser.Nombre = txtNombre.Text;
             currentUser.Email = txtEmail.Text;

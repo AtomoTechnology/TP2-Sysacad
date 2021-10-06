@@ -1,0 +1,235 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+fieldset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+input {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    margin: 5px 0px;
+    border-radius: 3px;
+    border: 0.4px solid rgba(0,0,0,0.4);
+    /*    width: 90%;*/
+    border-radius: 50px;
+    background: #e6e4e4;
+    transition: ease-in-out 200ms;
+}
+
+    input:focus {
+        border: none;
+        border-bottom: 1px solid #e2a900;
+    }
+button {
+    width: 100%;
+}
+
+table {
+    background: whitesmoke;
+    box-shadow: 1px 2px 5px #e7e0e0;
+    border: 0.3px solid #e1dcdc;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    padding: 10px;
+    background: #ff9800;
+    color: #093b4e;
+}
+td {
+    padding: 10px;
+}
+td a {
+    padding : 10px ;
+}
+.principal {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+/*menu style*/
+
+ul {
+    list-style: none;
+    position: relative;
+}
+
+a {
+    color: #042f48;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: system-ui;
+    transition: 300ms ease-in-out;
+}
+
+li {
+    cursor: pointer;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: auto;
+    background: #ff9800;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    /*    grid-gap: 1rem;*/
+    /*    padding: 0.4rem;*/
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 1px 2px 10px rgba( 0,0,0,0.5 );
+}
+
+.header-left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    overflow: hidden;
+    box-shadow: 1px 2px 1px #ff9800, -2px -2px 2px #607d8b;
+    padding : 5px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+ul > li:hover > a {
+    color: #ff9800;
+}
+
+ul > li:hover {
+    background: #ffffff;
+    <!-- border-radius: 3px; -->
+    border: 0.3px solid #00000029;
+}
+ul > .item{
+    line-height : 40px ;
+}
+ul > li {
+    position: relative;
+    padding: 5px 7px;
+    transition: 300ms ease-in-out;
+}
+
+ul li ul {
+    position: absolute;
+    text-align: left;
+    min-width: 150px;
+    width: auto;
+    background: white;
+    border-left: 2px solid #ff9800;
+    box-shadow: 1px 2px 10px rgba( 0,0,0,0.5 );
+    transition: 200ms ease-in-out;
+    display: none;
+}
+
+ul > li ul li {
+    border-bottom: 0.5px solid rgb(255 255 255 / 54%);
+    background: #062e41;
+}
+ul > li > ul li a {   
+    color: #fff !important;  
+}
+
+ul > li ul li:hover {
+    background: #062e41;
+ 
+}
+ul > li ul li:hover a  {
+    
+    color: #ff9800 !important;
+}
+ul > li:hover ul {
+    display: block;
+    z-index: 10;
+    top : 3.3rem ;
+}
+ul li .sub-menu-left::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background: #062e41;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 10%;
+    top: -9px;
+}
+ul li .sub-menu-right::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background: #062e41;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10%;
+    top: -9px;
+}
+
+.icon {
+    background: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.items-menu {
+    display: flex;
+    position: relative;
+    list-style: none;
+    /* background: red; */
+    gap: 0.5rem;
+    color: white;
+}
+
+.sub-menu-right {
+    right: 0;
+}
+
+.sub-menu-left {
+    left: 0;
+}
+
+.box-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*footer*/
+footer {
+    width: 100%;
+    text-align: center;
+    background: #ff9800;
+    padding: 0.4rem 0px;
+}

@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <link href="Styles/main.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="principal">
+
+            <header class="header">
+                <div class="header-left">
+                    <a href="">
+
+                        <div class="logo-menu">
+                            <img src="https://play-lh.googleusercontent.com/on7AWbuav44mB2ztIB6mp1BUu6bhIMcNd-9YjbjNDxgViamcJ3bo1dkEo06EGbC7njw" width="40" alt="Logo UTN" />
+                        </div>
+                    </a>
+                    <ul class="items-menu">
+                        <li class="item">
+                            <a href="">Alumnos
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="#">Inscripcion a Materia</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Materias Aprobadas</a>
+                                </li>
+                            </ul>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">Docentes
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="#">Mis Cursos</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Registrar Nota</a>
+                                </li>
+                            </ul>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="">Utilidades
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="Users.aspx">Usuarios</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Especialidades</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="Planes.aspx">Planes</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Comisiones</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Materias</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Cursos</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Inscripciones</a>
+                                </li>
+                            </ul>
+
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">Reporte
+                            <ul class="sub-items-menu sub-menu-left">
+                                <li class="sub-item">
+                                    <a href="#">Cursos</a>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#">Planes</a>
+                                </li>
+                            </ul>
+                            </a>
+
+                    </ul>
+
+
+                </div>
+                <div class="header-right">
+                    <div class="box-1">
+                        <i class="icon">1</i>
+                        <i class="icon">2</i>
+                        <i class="icon">2</i>
+                    </div>
+                    <div>
+                        <ul class="menu-right">
+
+                            <li class="item">
+                                <a href="#">Usuario
+                                <ul class="sub-items-menu sub-menu-right">
+                                    <li class="sub-item">
+                                        <a href="#">Mis Datos</a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="#">Mis Preferencias</a>
+                                    </li>
+                                    <li class="sub-item">                                       
+                                        <a href="SignOut.aspx">Salir</a>
+                                    </li>
+                                </ul>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer>
+                
+                <asp:Label Text="Academia 2021" runat="server" />
+
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

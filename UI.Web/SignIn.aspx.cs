@@ -9,30 +9,33 @@ using System.Web.UI.WebControls;
 
 namespace UI.Web
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class SignIn : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["id_persona"] != null)
+            signInFailedBox.Visible = false ;
+
+            if (Session["current_user"] != null)
             {
                 Response.Redirect("index.aspx");
 
             }
-
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Usuario user = UsuarioLogic.GetInstance().LogIn(txtUsername.Value, txtPassword.Value);
-            if (user != null)
+            
+            Usuario user = UsuarioLogic.GetInstance().LogIn(txtUsuarname.Text, txtPassword.Text);
+            if( user != null)
             {
                 Session["current_user"] = user;
-                Response.Redirect("index.html");
-                //Session.RemoveAll();
+                Response.Redirect("Planes.aspx");
             }
             else
             {
-                Response.Write("No existe el usuario");
+                signInFailedBox.Visible = true;
+                lblSignInFailed.Text = "Ouup!!! Nombre Usuario/Clave Incorrecto...";
+                //Response.Write("No existe el usuario");
             }
         }
     }

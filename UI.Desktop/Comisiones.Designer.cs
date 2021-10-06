@@ -60,7 +60,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1243, 753);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1243, 748);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -87,7 +87,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1243, 753);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1243, 748);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvComisiones
@@ -140,7 +140,7 @@ namespace UI.Desktop
             this.dgvComisiones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvComisiones.RowTemplate.Height = 28;
             this.dgvComisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComisiones.Size = new System.Drawing.Size(1237, 653);
+            this.dgvComisiones.Size = new System.Drawing.Size(1237, 648);
             this.dgvComisiones.TabIndex = 0;
             // 
             // ID
@@ -189,7 +189,7 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(758, 662);
+            this.btnUpdate.Location = new System.Drawing.Point(758, 657);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(227, 68);
             this.btnUpdate.TabIndex = 1;
@@ -206,7 +206,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(991, 662);
+            this.btnClose.Location = new System.Drawing.Point(991, 657);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(249, 68);
             this.btnClose.TabIndex = 2;
@@ -224,7 +224,7 @@ namespace UI.Desktop
             this.tbnDeleteComision});
             this.tsMaterias.Location = new System.Drawing.Point(14, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
+            this.tsMaterias.Size = new System.Drawing.Size(120, 38);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddComision
@@ -233,7 +233,7 @@ namespace UI.Desktop
             this.btnAddComision.Image = ((System.Drawing.Image)(resources.GetObject("btnAddComision.Image")));
             this.btnAddComision.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddComision.Name = "btnAddComision";
-            this.btnAddComision.Size = new System.Drawing.Size(34, 28);
+            this.btnAddComision.Size = new System.Drawing.Size(34, 33);
             this.btnAddComision.Text = "Agregar Comision";
             this.btnAddComision.Click += new System.EventHandler(this.btnAddComision_Click);
             // 
@@ -243,7 +243,7 @@ namespace UI.Desktop
             this.btnEditComision.Image = ((System.Drawing.Image)(resources.GetObject("btnEditComision.Image")));
             this.btnEditComision.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditComision.Name = "btnEditComision";
-            this.btnEditComision.Size = new System.Drawing.Size(34, 28);
+            this.btnEditComision.Size = new System.Drawing.Size(34, 33);
             this.btnEditComision.Text = "editar Comision";
             this.btnEditComision.Click += new System.EventHandler(this.btnEditComision_Click);
             // 
@@ -253,7 +253,7 @@ namespace UI.Desktop
             this.tbnDeleteComision.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteComision.Image")));
             this.tbnDeleteComision.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteComision.Name = "tbnDeleteComision";
-            this.tbnDeleteComision.Size = new System.Drawing.Size(34, 28);
+            this.tbnDeleteComision.Size = new System.Drawing.Size(34, 33);
             this.tbnDeleteComision.Text = "Borrar Comision";
             this.tbnDeleteComision.ToolTipText = "Borrar Comision";
             this.tbnDeleteComision.Click += new System.EventHandler(this.tbnDeleteComision_Click);

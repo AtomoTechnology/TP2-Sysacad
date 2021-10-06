@@ -59,7 +59,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1473, 887);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1473, 882);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -85,7 +85,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowCount = 2;
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1473, 887);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1473, 882);
             this.tlpEspecialidades.TabIndex = 0;
             this.tlpEspecialidades.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpEspecialidades_Paint);
             // 
@@ -146,7 +146,7 @@ namespace UI.Desktop
             this.dgvEspecialidades.RowTemplate.DividerHeight = 1;
             this.dgvEspecialidades.RowTemplate.Height = 28;
             this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidades.Size = new System.Drawing.Size(1467, 799);
+            this.dgvEspecialidades.Size = new System.Drawing.Size(1467, 794);
             this.dgvEspecialidades.TabIndex = 0;
             // 
             // ID
@@ -178,7 +178,7 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(991, 808);
+            this.btnUpdate.Location = new System.Drawing.Point(991, 803);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(222, 76);
             this.btnUpdate.TabIndex = 1;
@@ -196,7 +196,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1219, 808);
+            this.btnClose.Location = new System.Drawing.Point(1219, 803);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(251, 76);
             this.btnClose.TabIndex = 2;
@@ -214,7 +214,7 @@ namespace UI.Desktop
             this.tbnDeleteEsp});
             this.tsEspecialiddes.Location = new System.Drawing.Point(14, 0);
             this.tsEspecialiddes.Name = "tsEspecialiddes";
-            this.tsEspecialiddes.Size = new System.Drawing.Size(120, 33);
+            this.tsEspecialiddes.Size = new System.Drawing.Size(120, 38);
             this.tsEspecialiddes.TabIndex = 0;
             // 
             // btnAddEsp
@@ -223,7 +223,7 @@ namespace UI.Desktop
             this.btnAddEsp.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEsp.Image")));
             this.btnAddEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddEsp.Name = "btnAddEsp";
-            this.btnAddEsp.Size = new System.Drawing.Size(34, 28);
+            this.btnAddEsp.Size = new System.Drawing.Size(34, 33);
             this.btnAddEsp.Text = "Agregar Especialidad";
             this.btnAddEsp.Click += new System.EventHandler(this.btnAddEsp_Click_1);
             // 
@@ -233,7 +233,7 @@ namespace UI.Desktop
             this.btnEditEsp.Image = ((System.Drawing.Image)(resources.GetObject("btnEditEsp.Image")));
             this.btnEditEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditEsp.Name = "btnEditEsp";
-            this.btnEditEsp.Size = new System.Drawing.Size(34, 28);
+            this.btnEditEsp.Size = new System.Drawing.Size(34, 33);
             this.btnEditEsp.Text = "editar Especialidad";
             this.btnEditEsp.Click += new System.EventHandler(this.btnEditEsp_Click_1);
             // 
@@ -243,7 +243,7 @@ namespace UI.Desktop
             this.tbnDeleteEsp.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteEsp.Image")));
             this.tbnDeleteEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteEsp.Name = "tbnDeleteEsp";
-            this.tbnDeleteEsp.Size = new System.Drawing.Size(34, 28);
+            this.tbnDeleteEsp.Size = new System.Drawing.Size(34, 33);
             this.tbnDeleteEsp.Text = "Borrar Especialidad";
             this.tbnDeleteEsp.Click += new System.EventHandler(this.tbnDeleteEsp_Click);
             // 

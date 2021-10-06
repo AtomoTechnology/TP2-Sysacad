@@ -60,7 +60,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(938, 527);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(938, 522);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -87,7 +87,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowCount = 2;
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEspecialidades.Size = new System.Drawing.Size(938, 527);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(938, 522);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // dgvPlanes
@@ -148,7 +148,7 @@ namespace UI.Desktop
             this.dgvPlanes.RowTemplate.DividerHeight = 1;
             this.dgvPlanes.RowTemplate.Height = 28;
             this.dgvPlanes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanes.Size = new System.Drawing.Size(932, 454);
+            this.dgvPlanes.Size = new System.Drawing.Size(932, 449);
             this.dgvPlanes.TabIndex = 0;
             // 
             // ID
@@ -187,7 +187,7 @@ namespace UI.Desktop
             this.btnUpdatePlanes.FlatAppearance.BorderSize = 0;
             this.btnUpdatePlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatePlanes.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePlanes.Location = new System.Drawing.Point(502, 463);
+            this.btnUpdatePlanes.Location = new System.Drawing.Point(502, 458);
             this.btnUpdatePlanes.Name = "btnUpdatePlanes";
             this.btnUpdatePlanes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnUpdatePlanes.Size = new System.Drawing.Size(216, 59);
@@ -206,7 +206,7 @@ namespace UI.Desktop
             this.btnClosePlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClosePlanes.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClosePlanes.ForeColor = System.Drawing.Color.White;
-            this.btnClosePlanes.Location = new System.Drawing.Point(724, 463);
+            this.btnClosePlanes.Location = new System.Drawing.Point(724, 458);
             this.btnClosePlanes.Name = "btnClosePlanes";
             this.btnClosePlanes.Size = new System.Drawing.Size(211, 61);
             this.btnClosePlanes.TabIndex = 2;
@@ -224,7 +224,7 @@ namespace UI.Desktop
             this.btnDeletePlan});
             this.tsPlanes.Location = new System.Drawing.Point(30, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(120, 33);
+            this.tsPlanes.Size = new System.Drawing.Size(120, 38);
             this.tsPlanes.TabIndex = 0;
             // 
             // btnAddPlan
@@ -233,7 +233,7 @@ namespace UI.Desktop
             this.btnAddPlan.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPlan.Image")));
             this.btnAddPlan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(34, 28);
+            this.btnAddPlan.Size = new System.Drawing.Size(34, 33);
             this.btnAddPlan.Text = "Agregar Plan";
             this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
@@ -243,7 +243,7 @@ namespace UI.Desktop
             this.btnEditEsp.Image = ((System.Drawing.Image)(resources.GetObject("btnEditEsp.Image")));
             this.btnEditEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditEsp.Name = "btnEditEsp";
-            this.btnEditEsp.Size = new System.Drawing.Size(34, 28);
+            this.btnEditEsp.Size = new System.Drawing.Size(34, 33);
             this.btnEditEsp.Text = "editar Especialidad";
             this.btnEditEsp.Click += new System.EventHandler(this.btnEditEsp_Click);
             // 
@@ -253,7 +253,7 @@ namespace UI.Desktop
             this.btnDeletePlan.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePlan.Image")));
             this.btnDeletePlan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeletePlan.Name = "btnDeletePlan";
-            this.btnDeletePlan.Size = new System.Drawing.Size(34, 28);
+            this.btnDeletePlan.Size = new System.Drawing.Size(34, 33);
             this.btnDeletePlan.Text = "Borrar Plan";
             this.btnDeletePlan.Click += new System.EventHandler(this.btnDeletePlan_Click);
             // 

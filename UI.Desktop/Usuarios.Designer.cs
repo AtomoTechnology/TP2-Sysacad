@@ -296,7 +296,7 @@ namespace UI.Desktop
             this.btnDeleteUsuario});
             this.tsUsuarios.Location = new System.Drawing.Point(30, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(120, 33);
+            this.tsUsuarios.Size = new System.Drawing.Size(120, 38);
             this.tsUsuarios.TabIndex = 0;
             // 
             // btnAddUsuario
@@ -305,7 +305,7 @@ namespace UI.Desktop
             this.btnAddUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUsuario.Image")));
             this.btnAddUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddUsuario.Name = "btnAddUsuario";
-            this.btnAddUsuario.Size = new System.Drawing.Size(34, 28);
+            this.btnAddUsuario.Size = new System.Drawing.Size(34, 33);
             this.btnAddUsuario.Text = "Agregar Usuario";
             this.btnAddUsuario.Click += new System.EventHandler(this.btnAddUsuario_Click);
             // 
@@ -315,7 +315,7 @@ namespace UI.Desktop
             this.btnEditUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUsuario.Image")));
             this.btnEditUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditUsuario.Name = "btnEditUsuario";
-            this.btnEditUsuario.Size = new System.Drawing.Size(34, 28);
+            this.btnEditUsuario.Size = new System.Drawing.Size(34, 33);
             this.btnEditUsuario.Text = "editar Usuario";
             this.btnEditUsuario.Click += new System.EventHandler(this.btnEditUsuario_Click);
             // 
@@ -325,7 +325,7 @@ namespace UI.Desktop
             this.btnDeleteUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteUsuario.Image")));
             this.btnDeleteUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteUsuario.Name = "btnDeleteUsuario";
-            this.btnDeleteUsuario.Size = new System.Drawing.Size(34, 28);
+            this.btnDeleteUsuario.Size = new System.Drawing.Size(34, 33);
             this.btnDeleteUsuario.Text = "Borrar Usuario";
             this.btnDeleteUsuario.Click += new System.EventHandler(this.btnDeleteUsuario_Click);
             // 
