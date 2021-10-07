@@ -1,6 +1,15 @@
 ﻿.add-plan-box {
-    padding: 10px;
+   
     background: #ffffff;
     border-radius: 3px;
     box-shadow: 1px 2px 5px grey;
+    margin : 1rem ;
+}
+
+
+.add-plan{
+    padding : 10px ;
+}
+.btn-add-plan {
+    background: #ff9800;
 }

@@ -36,21 +36,21 @@
         </div>
         <div class="add-user-box">
 
-            <div class="header-add-user">
+            <div class="header-add-x">
                 <asp:Label ID="lblAccion" runat="server" Text="Label"></asp:Label>
             </div>
             <section class="add-user">
                 <div>
                     <fieldset>
-                        <asp:Label Text="Apellido" runat="server" />
+                        <asp:Label Text="Apellido * " runat="server" />
                         <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
                     </fieldset>
                     <fieldset>
-                        <asp:Label Text="Nombre" runat="server" />
+                        <asp:Label Text="Nombre * " runat="server" />
                         <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                     </fieldset>
                     <fieldset>
-                        <asp:Label Text="Tipo persona" runat="server" />
+                        <asp:Label Text="Tipo persona * " runat="server" />
 
                         <asp:RadioButtonList ID="tipoPersona" runat="server">
                             <asp:ListItem Value="1">Administrador</asp:ListItem>
@@ -58,21 +58,15 @@
                             <asp:ListItem Value="3">Alumno</asp:ListItem>
                         </asp:RadioButtonList>
                     </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Plan" runat="server" />
-                        <select runat="server" id="planes">
-                            <option value="10">2010</option>
-                        </select>
-                    </fieldset>
-
+                    
                 </div>
                 <div>
                     <fieldset>
-                        <asp:Label Text="Legajo" runat="server" />
+                        <asp:Label Text="Legajo * " runat="server" />
                         <asp:TextBox ID="txtNroDocumento" runat="server"></asp:TextBox>
                     </fieldset>
                     <fieldset>
-                        <asp:Label Text="Fecha Nac." runat="server" />
+                        <asp:Label Text="Fecha Nac. *" runat="server" />
                         <input runat="server" type="date" id="txtFechaNacimiento" />
                     </fieldset>
 
@@ -86,21 +80,28 @@
                     </fieldset>
                 </div>
                 <div>
-
                     <fieldset>
-                        <asp:Label Text="Email" runat="server" />
+                        <asp:Label Text="Plan * " ID="lblPlan" runat="server" />
+                         <asp:DropDownList ID="ddlPlanes" runat="server" DataSourceID="SqlDataSource1" DataTextField="desc_plan" DataValueField="id_plan">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AcademiaConnectionString %>" SelectCommand="SELECT * FROM [planes]"></asp:SqlDataSource>
+                    
+                    </fieldset>
+                    <fieldset>
+                        <asp:Label Text="Email *" runat="server" />
                         <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                     </fieldset>
                     <fieldset>
-                        <asp:Label Text="Nombre Usuario" runat="server" />
+                        <asp:Label Text="Nombre Usuario *" runat="server" />
                         <asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox>
                     </fieldset>
                     <fieldset>
-                        <asp:Label Text="Contraseña" runat="server" />
+                        <asp:Label Text="Contraseña *" runat="server" />
                         <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
+                       
                     </fieldset>
                     <fieldset>
-                        <asp:Label Text="Confirma Contrseña" runat="server" />
+                        <asp:Label Text="Confirma Contrseña *" runat="server" />
                         <asp:TextBox ID="txtConfirmarClave" runat="server" TextMode="Password"></asp:TextBox>
                     </fieldset>
 
@@ -111,6 +112,7 @@
                 <asp:Button ID="btnCancelar" runat="server" CssClass="btn-cancelar" Text="Cancelar" />
 
             </div>
+                <asp:Label Text="" CssClass="error" ID="error" runat="server" />
 
         </div>
         <asp:ObjectDataSource ID="odsUsuarios" runat="server" DeleteMethod="Delete" SelectMethod="GetAll" TypeName="Data.Database.UsuarioAdapter">

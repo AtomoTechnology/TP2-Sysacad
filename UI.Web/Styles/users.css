@@ -5,36 +5,49 @@
     /* padding: 10px; */
     margin: 1rem 0px;
 }
+
 .header-add-user {
     text-align: center;
     padding: 10px;
     background: #ff9800;
 }
+
 .add-user {
     display: flex;
     gap: 1rem;
     padding: 10px;
 }
-.add-user table{
-    text-align : center ;
-}
+
+    .add-user table {
+        text-align: center;
+    }
+
 .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    width: 90%;
+    width: 96%;
     margin: auto;
 }
 
-.actions .btn-guardar {
-    width: 137px;
-    flex: 1;
-    background: #ff9800;
-    margin-bottom: 1rem;
-}
-.actions .btn-cancelar {
-    flex: 1;
-    background: #607d8b;
-    margin-bottom: 1rem;
+    .actions .btn-guardar {
+        width: 137px;
+        flex: 1;
+        background: #ff9800;
+        margin-bottom: 1rem;
+        cursor: pointer !important;
+    }
+
+    .actions .btn-cancelar {
+        flex: 1;
+        cursor: pointer !important;
+        background: #607d8b;
+        margin-bottom: 1rem;
+    }
+.error {
+    text-align: center;
+    padding: 10px;
+    background: #eccfcf;
+    color: red;
 }

@@ -4,6 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/plan.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            margin-top: 46px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
@@ -25,19 +30,26 @@
     </asp:ObjectDataSource>
 
     <div class="add-plan-box">
+         <div class="header-add-x">
+                <asp:Label ID="lblAccion" runat="server" Text="Alta"></asp:Label>
+            </div>
         <div class="add-plan">
                 
             <fieldset>
                 <asp:Label Text="Descripcion" ID="lblDesc" runat="server" />
-                <input type="text" name="name" value="" runat="server"  id="txtDesc"/>
-            </fieldset>
-
-              <fieldset>
-                <asp:Label Text="Descripcion" ID="Label1" runat="server" />
-                <input type="text" name="name" value="" runat="server"  id="Text1"/>
+                <input type="text" name="name" value="" runat="server"  id="txtDescPlan"/>
+            </fieldset>             
+            <fieldset>
+                <asp:Label Text="Especialidad" ID="lblEspecilaidad" runat="server" />                
+                <asp:DropDownList ID="ddlEspecialidades" CssClass="ddlEspecialidades" runat="server" DataSourceID="odsEspecialidades" DataTextField="desc_especialidad" DataValueField="ID">
+                </asp:DropDownList>                
             </fieldset>
             <fieldset>
-                <asp:Button Text="Agregar Plan" ID="bntAddPlan" runat="server" />
+                <asp:Button Text="Agregar Plan" ID="bntAddPlan" runat="server" CssClass="btn-add-plan" OnClick="bntAddPlan_Click" />
+                <asp:ObjectDataSource ID="odsEspecialidades" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.EspecialidadLogic"></asp:ObjectDataSource>
+            </fieldset>
+            <fieldset>
+                <asp:Label Text="" ID="errorAddPlan" CssClass="error error-add-plan" runat="server" />
             </fieldset>
 
         </div>

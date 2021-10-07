@@ -50,26 +50,33 @@ namespace UI.Web
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            currentUser.Apellido = txtApellido.Text;
-            currentUser.Nombre = txtNombre.Text;
-            currentUser.Email = txtEmail.Text;
-            currentUser.FechaNac = Convert.ToDateTime(txtFechaNacimiento.Value);
-            currentUser.Direccion = txtDirección.Text;
-            currentUser.Telefono = txtTelefono.Text;
-            currentUser.Legajo = Convert.ToInt32(txtNroDocumento.Text);
-            currentUser.TipoPersona = Convert.ToInt32(tipoPersona.SelectedValue);
-            currentUser.IdPlan = 16;
-            currentUser.NombreUsuario = txtNombreUsuario.Text;
-            currentUser.Clave = txtClave.Text;
-            currentUser.Habilitado = true;
+            if (txtApellido.Text.Equals("") || txtClave.Text.Equals(""))
+            {
+                error.Text = " Asegurese que todos los campos con * tiene información";
+            }
+            else
+            {
+                currentUser.Apellido = txtApellido.Text;
+                currentUser.Nombre = txtNombre.Text;
+                currentUser.Email = txtEmail.Text;
+                currentUser.FechaNac = Convert.ToDateTime(txtFechaNacimiento.Value);
+                currentUser.Direccion = txtDirección.Text;
+                currentUser.Telefono = txtTelefono.Text;
+                currentUser.Legajo = Convert.ToInt32(txtNroDocumento.Text);
+                currentUser.TipoPersona = Convert.ToInt32(tipoPersona.SelectedValue);
+                currentUser.IdPlan = 16;
+                currentUser.NombreUsuario = txtNombreUsuario.Text;
+                currentUser.Clave = txtClave.Text;
+                currentUser.Habilitado = true;
 
 
-            //hacer lo mismo para todo ....
-            currentUser.State = BusinessEntity.States.New;
+                //hacer lo mismo para todo ....
+                currentUser.State = BusinessEntity.States.New;
 
-            // llamar al metodo agregar Usuario
-            UsuarioLogic.GetInstance().Save(currentUser);
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                // llamar al metodo agregar Usuario
+                UsuarioLogic.GetInstance().Save(currentUser);
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
         }
     }
 }

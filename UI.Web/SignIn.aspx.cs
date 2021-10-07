@@ -33,7 +33,7 @@ namespace UI.Web
             }
             else
             {
-                signInFailedBox.Visible = true;
+                signInFailedBox.Visible = true;              
                 lblSignInFailed.Text = "Ouup!!! Nombre Usuario/Clave Incorrecto...";
                 //Response.Write("No existe el usuario");
             }
