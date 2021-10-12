@@ -224,7 +224,7 @@ namespace UI.Desktop
             this.btnDeletePlan});
             this.tsPlanes.Location = new System.Drawing.Point(30, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(120, 38);
+            this.tsPlanes.Size = new System.Drawing.Size(120, 33);
             this.tsPlanes.TabIndex = 0;
             // 
             // btnAddPlan
@@ -233,7 +233,7 @@ namespace UI.Desktop
             this.btnAddPlan.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPlan.Image")));
             this.btnAddPlan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(34, 33);
+            this.btnAddPlan.Size = new System.Drawing.Size(34, 28);
             this.btnAddPlan.Text = "Agregar Plan";
             this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
@@ -243,7 +243,7 @@ namespace UI.Desktop
             this.btnEditEsp.Image = ((System.Drawing.Image)(resources.GetObject("btnEditEsp.Image")));
             this.btnEditEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditEsp.Name = "btnEditEsp";
-            this.btnEditEsp.Size = new System.Drawing.Size(34, 33);
+            this.btnEditEsp.Size = new System.Drawing.Size(34, 28);
             this.btnEditEsp.Text = "editar Especialidad";
             this.btnEditEsp.Click += new System.EventHandler(this.btnEditEsp_Click);
             // 
@@ -253,7 +253,7 @@ namespace UI.Desktop
             this.btnDeletePlan.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePlan.Image")));
             this.btnDeletePlan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeletePlan.Name = "btnDeletePlan";
-            this.btnDeletePlan.Size = new System.Drawing.Size(34, 33);
+            this.btnDeletePlan.Size = new System.Drawing.Size(34, 28);
             this.btnDeletePlan.Text = "Borrar Plan";
             this.btnDeletePlan.Click += new System.EventHandler(this.btnDeletePlan_Click);
             // 

@@ -21,7 +21,6 @@
             <header class="header">
                 <div class="header-left">
                     <a href="">
-
                         <div class="logo-menu">
                             <img src="https://play-lh.googleusercontent.com/on7AWbuav44mB2ztIB6mp1BUu6bhIMcNd-9YjbjNDxgViamcJ3bo1dkEo06EGbC7njw" width="40" alt="Logo UTN" />
                         </div>
@@ -58,7 +57,7 @@
                                     <a href="Users.aspx">Usuarios</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Especialidades</a>
+                                    <a href="Especialidades.aspx">Especialidades</a>
                                 </li>
                                 <li class="sub-item">
                                     <a href="Planes.aspx">Planes</a>

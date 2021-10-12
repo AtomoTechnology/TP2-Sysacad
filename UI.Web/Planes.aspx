@@ -4,12 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/plan.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            margin-top: 46px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="odsPlanes">
@@ -37,12 +32,13 @@
                 
             <fieldset>
                 <asp:Label Text="Descripcion" ID="lblDesc" runat="server" />
-                <input type="text" name="name" value="" runat="server"  id="txtDescPlan"/>
+                <asp:TextBox ID="txtDescPlan" runat="server" OnTextChanged="txtDescPlan_TextChanged"></asp:TextBox>
             </fieldset>             
             <fieldset>
                 <asp:Label Text="Especialidad" ID="lblEspecilaidad" runat="server" />                
                 <asp:DropDownList ID="ddlEspecialidades" CssClass="ddlEspecialidades" runat="server" DataSourceID="odsEspecialidades" DataTextField="desc_especialidad" DataValueField="ID">
                 </asp:DropDownList>                
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </fieldset>
             <fieldset>
                 <asp:Button Text="Agregar Plan" ID="bntAddPlan" runat="server" CssClass="btn-add-plan" OnClick="bntAddPlan_Click" />

@@ -251,7 +251,7 @@ namespace UI.Desktop
             this.btnInscribir});
             this.tsMaterias.Location = new System.Drawing.Point(4, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(194, 38);
+            this.tsMaterias.Size = new System.Drawing.Size(194, 33);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddCurso
@@ -260,7 +260,7 @@ namespace UI.Desktop
             this.btnAddCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCurso.Image")));
             this.btnAddCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddCurso.Name = "btnAddCurso";
-            this.btnAddCurso.Size = new System.Drawing.Size(34, 33);
+            this.btnAddCurso.Size = new System.Drawing.Size(34, 28);
             this.btnAddCurso.Text = "Agregar Curso";
             this.btnAddCurso.Click += new System.EventHandler(this.btnAddCurso_Click);
             // 
@@ -270,7 +270,7 @@ namespace UI.Desktop
             this.btnEditCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCurso.Image")));
             this.btnEditCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditCurso.Name = "btnEditCurso";
-            this.btnEditCurso.Size = new System.Drawing.Size(34, 33);
+            this.btnEditCurso.Size = new System.Drawing.Size(34, 28);
             this.btnEditCurso.Text = "editar Curso";
             this.btnEditCurso.Click += new System.EventHandler(this.btnEditCurso_Click);
             // 
@@ -280,7 +280,7 @@ namespace UI.Desktop
             this.btnDeleteCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCurso.Image")));
             this.btnDeleteCurso.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteCurso.Name = "btnDeleteCurso";
-            this.btnDeleteCurso.Size = new System.Drawing.Size(34, 33);
+            this.btnDeleteCurso.Size = new System.Drawing.Size(34, 28);
             this.btnDeleteCurso.Text = "Borrar Curso";
             this.btnDeleteCurso.ToolTipText = "Borrar Curso";
             this.btnDeleteCurso.Click += new System.EventHandler(this.tbnDeleteCurso_Click);
@@ -288,7 +288,7 @@ namespace UI.Desktop
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // btnAsignarDocente
             // 
@@ -296,7 +296,7 @@ namespace UI.Desktop
             this.btnAsignarDocente.Image = global::UI.Desktop.Properties.Resources.marca_de_la_senal;
             this.btnAsignarDocente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAsignarDocente.Name = "btnAsignarDocente";
-            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 33);
+            this.btnAsignarDocente.Size = new System.Drawing.Size(34, 28);
             this.btnAsignarDocente.Text = "Asignar Docente";
             this.btnAsignarDocente.Click += new System.EventHandler(this.btnAsignarDocente_Click);
             // 
@@ -306,7 +306,7 @@ namespace UI.Desktop
             this.btnInscribir.Image = global::UI.Desktop.Properties.Resources.contrato;
             this.btnInscribir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnInscribir.Name = "btnInscribir";
-            this.btnInscribir.Size = new System.Drawing.Size(34, 33);
+            this.btnInscribir.Size = new System.Drawing.Size(34, 28);
             this.btnInscribir.Text = "Inscribir a una materia";
             this.btnInscribir.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 

@@ -11,6 +11,14 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.ValidateAcess();
+        }
+        protected void ValidateAcess(string path = "")
+        {
+            if (Session["current_user"] == null)
+            {
+                Response.Redirect("SignIn.aspx");
+            }
 
         }
     }

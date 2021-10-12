@@ -322,7 +322,7 @@ namespace UI.Desktop
             this.tbnDeleteInscripcion});
             this.tsMaterias.Location = new System.Drawing.Point(14, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 38);
+            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddInscripcion
@@ -331,7 +331,7 @@ namespace UI.Desktop
             this.btnAddInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInscripcion.Image")));
             this.btnAddInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddInscripcion.Name = "btnAddInscripcion";
-            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 33);
+            this.btnAddInscripcion.Size = new System.Drawing.Size(34, 28);
             this.btnAddInscripcion.Text = "Agregar Inscripcion";
             this.btnAddInscripcion.Click += new System.EventHandler(this.btnAddInscripcion_Click);
             // 
@@ -341,7 +341,7 @@ namespace UI.Desktop
             this.btnEditInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEditInscripcion.Image")));
             this.btnEditInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditInscripcion.Name = "btnEditInscripcion";
-            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 33);
+            this.btnEditInscripcion.Size = new System.Drawing.Size(34, 28);
             this.btnEditInscripcion.Text = "editar Inscripcion";
             this.btnEditInscripcion.Click += new System.EventHandler(this.btnEditInscripcion_Click);
             // 
@@ -351,7 +351,7 @@ namespace UI.Desktop
             this.tbnDeleteInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteInscripcion.Image")));
             this.tbnDeleteInscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteInscripcion.Name = "tbnDeleteInscripcion";
-            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 33);
+            this.tbnDeleteInscripcion.Size = new System.Drawing.Size(34, 28);
             this.tbnDeleteInscripcion.Text = "Borrar Inscripcion";
             this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
             this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);

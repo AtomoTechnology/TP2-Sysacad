@@ -224,7 +224,7 @@ namespace UI.Desktop
             this.tbnDeleteComision});
             this.tsMaterias.Location = new System.Drawing.Point(14, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(120, 38);
+            this.tsMaterias.Size = new System.Drawing.Size(120, 33);
             this.tsMaterias.TabIndex = 0;
             // 
             // btnAddComision
@@ -233,7 +233,7 @@ namespace UI.Desktop
             this.btnAddComision.Image = ((System.Drawing.Image)(resources.GetObject("btnAddComision.Image")));
             this.btnAddComision.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddComision.Name = "btnAddComision";
-            this.btnAddComision.Size = new System.Drawing.Size(34, 33);
+            this.btnAddComision.Size = new System.Drawing.Size(34, 28);
             this.btnAddComision.Text = "Agregar Comision";
             this.btnAddComision.Click += new System.EventHandler(this.btnAddComision_Click);
             // 
@@ -243,7 +243,7 @@ namespace UI.Desktop
             this.btnEditComision.Image = ((System.Drawing.Image)(resources.GetObject("btnEditComision.Image")));
             this.btnEditComision.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditComision.Name = "btnEditComision";
-            this.btnEditComision.Size = new System.Drawing.Size(34, 33);
+            this.btnEditComision.Size = new System.Drawing.Size(34, 28);
             this.btnEditComision.Text = "editar Comision";
             this.btnEditComision.Click += new System.EventHandler(this.btnEditComision_Click);
             // 
@@ -253,7 +253,7 @@ namespace UI.Desktop
             this.tbnDeleteComision.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteComision.Image")));
             this.tbnDeleteComision.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteComision.Name = "tbnDeleteComision";
-            this.tbnDeleteComision.Size = new System.Drawing.Size(34, 33);
+            this.tbnDeleteComision.Size = new System.Drawing.Size(34, 28);
             this.tbnDeleteComision.Text = "Borrar Comision";
             this.tbnDeleteComision.ToolTipText = "Borrar Comision";
             this.tbnDeleteComision.Click += new System.EventHandler(this.tbnDeleteComision_Click);

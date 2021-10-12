@@ -104,6 +104,7 @@
                         <asp:Label Text="Confirma Contrseña *" runat="server" />
                         <asp:TextBox ID="txtConfirmarClave" runat="server" TextMode="Password"></asp:TextBox>
                     </fieldset>
+                    <input type="hidden" name="txtIdPersona" runat="server" id="txtIdPersona" />
 
                 </div>
             </section>

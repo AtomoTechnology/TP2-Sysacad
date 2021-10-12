@@ -214,7 +214,7 @@ namespace UI.Desktop
             this.tbnDeleteEsp});
             this.tsEspecialiddes.Location = new System.Drawing.Point(14, 0);
             this.tsEspecialiddes.Name = "tsEspecialiddes";
-            this.tsEspecialiddes.Size = new System.Drawing.Size(120, 38);
+            this.tsEspecialiddes.Size = new System.Drawing.Size(120, 33);
             this.tsEspecialiddes.TabIndex = 0;
             // 
             // btnAddEsp
@@ -223,7 +223,7 @@ namespace UI.Desktop
             this.btnAddEsp.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEsp.Image")));
             this.btnAddEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddEsp.Name = "btnAddEsp";
-            this.btnAddEsp.Size = new System.Drawing.Size(34, 33);
+            this.btnAddEsp.Size = new System.Drawing.Size(34, 28);
             this.btnAddEsp.Text = "Agregar Especialidad";
             this.btnAddEsp.Click += new System.EventHandler(this.btnAddEsp_Click_1);
             // 
@@ -233,7 +233,7 @@ namespace UI.Desktop
             this.btnEditEsp.Image = ((System.Drawing.Image)(resources.GetObject("btnEditEsp.Image")));
             this.btnEditEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditEsp.Name = "btnEditEsp";
-            this.btnEditEsp.Size = new System.Drawing.Size(34, 33);
+            this.btnEditEsp.Size = new System.Drawing.Size(34, 28);
             this.btnEditEsp.Text = "editar Especialidad";
             this.btnEditEsp.Click += new System.EventHandler(this.btnEditEsp_Click_1);
             // 
@@ -243,7 +243,7 @@ namespace UI.Desktop
             this.tbnDeleteEsp.Image = ((System.Drawing.Image)(resources.GetObject("tbnDeleteEsp.Image")));
             this.tbnDeleteEsp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbnDeleteEsp.Name = "tbnDeleteEsp";
-            this.tbnDeleteEsp.Size = new System.Drawing.Size(34, 33);
+            this.tbnDeleteEsp.Size = new System.Drawing.Size(34, 28);
             this.tbnDeleteEsp.Text = "Borrar Especialidad";
             this.tbnDeleteEsp.Click += new System.EventHandler(this.tbnDeleteEsp_Click);
             // 
