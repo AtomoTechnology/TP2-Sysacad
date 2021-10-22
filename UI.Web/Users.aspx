@@ -1,128 +1,162 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="UI.Web.Users" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Academia | Usuarios
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/users.css" rel="stylesheet" />
+    <style>
+        .error-input {
+            color: red;
+            padding: 3px 5px;
+            background-color: #e5b8b8;
+            border-radius: 50px;
+            text-align : center ;
+        }
+
+        .chkHabilitar {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="lista_usuario" style="font-family: Arial; font-size: medium; font-style: normal; background-color: #FFFFFF; border: thin none #C0C0C0; padding: 6px; margin: 2px; cursor: pointer; overflow: auto; border-spacing: inherit">
+    <div class="lista_usuario" style="font-family: Arial; font-size: medium; font-style: normal; background-color: #FFFFFF; border: thin none #C0C0C0; padding: 6px; margin: 2px; cursor: pointer; overflow: auto; border-spacing: inherit">
 
-            <asp:GridView ID="grdUsuarios" runat="server" AutoGenerateColumns="False" DataSourceID="odsUsuarios" Height="270px">
-                <Columns>
-                    <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" Visible="False" />
-                    <asp:BoundField DataField="Legajo" HeaderText="Legajo" SortExpression="Legajo" />
-                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                    <asp:BoundField DataField="IdPersona" HeaderText="IdPersona" SortExpression="IdPersona" Visible="False" />
-                    <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
-                    <asp:BoundField DataField="DescTipoPersona" HeaderText="DescTipoPersona" SortExpression="DescTipoPersona" />
-                    <asp:BoundField DataField="DescPlan" HeaderText="DescPlan" SortExpression="DescPlan" />
-                    <asp:BoundField DataField="IdPlan" HeaderText="IdPlan" SortExpression="IdPlan" Visible="False" />
-                    <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" Visible="False" />
-                    <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-                    <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" Visible="False" />
-                    <asp:BoundField DataField="TipoPersona" HeaderText="TipoPersona" SortExpression="TipoPersona" Visible="False" />
-                    <asp:BoundField DataField="NombreUsuario" HeaderText="NombreUsuario" SortExpression="NombreUsuario" />
-                    <asp:BoundField DataField="Clave" HeaderText="Clave" SortExpression="Clave" Visible="False" />
-                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" Visible="False" />
-                    <asp:CheckBoxField DataField="Habilitado" HeaderText="Habilitado" SortExpression="Habilitado" />
-                    <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" Visible="False" />
-              
-                    <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Users.aspx?id={0}" Text="Editar" />
-                    <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Users.aspx?id={0}" Text="Borrar" />
-                
-                </Columns>
-            </asp:GridView>
+        <asp:GridView ID="grdUsuarios" runat="server" AutoGenerateColumns="False" DataSourceID="odsUsuarios" Height="270px">
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" Visible="False" />
+                <asp:BoundField DataField="Legajo" HeaderText="Legajo" SortExpression="Legajo" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                <asp:BoundField DataField="IdPersona" HeaderText="IdPersona" SortExpression="IdPersona" Visible="False" />
+                <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+                <asp:BoundField DataField="DescTipoPersona" HeaderText="DescTipoPersona" SortExpression="DescTipoPersona" />
+                <asp:BoundField DataField="DescPlan" HeaderText="DescPlan" SortExpression="DescPlan" />
+                <asp:BoundField DataField="IdPlan" HeaderText="IdPlan" SortExpression="IdPlan" Visible="False" />
+                <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" Visible="False" />
+                <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
+                <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" Visible="False" />
+                <asp:BoundField DataField="TipoPersona" HeaderText="TipoPersona" SortExpression="TipoPersona" Visible="False" />
+                <asp:BoundField DataField="NombreUsuario" HeaderText="NombreUsuario" SortExpression="NombreUsuario" />
+                <asp:BoundField DataField="Clave" HeaderText="Clave" SortExpression="Clave" Visible="False" />
+                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" Visible="False" />
+                <asp:CheckBoxField DataField="Habilitado" HeaderText="Habilitado" SortExpression="Habilitado" />
+                <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" Visible="False" />
+
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Users.aspx?id={0}" Text="Editar" />
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Users.aspx?id={0}" Text="Borrar" />
+
+            </Columns>
+        </asp:GridView>
+    </div>
+    <div class="add-user-box">
+
+        <div class="header-add-x">
+            <asp:Label ID="lblAccion" runat="server" Text="Label"></asp:Label>
         </div>
-        <div class="add-user-box">
+        <section class="add-user">
+            <div>
+                <fieldset>
+                    <asp:Label Text="Apellido * " runat="server" />
+                    <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
+                    <asp:Label Text="Apellido Obligatorio" CssClass="error-input" ID="errorApellido" runat="server" Visible="False" />
+                </fieldset>
+                <fieldset>
+                    <asp:Label Text="Nombre * " runat="server" />
+                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                    <asp:Label Text="Nombre Obligatorio" CssClass="error-input" ID="errorNombre" runat="server" Visible="False" />
 
-            <div class="header-add-x">
-                <asp:Label ID="lblAccion" runat="server" Text="Label"></asp:Label>
+                </fieldset>
+                <fieldset>
+                    <asp:Label Text="Tipo persona * " runat="server" />
+
+                    <asp:RadioButtonList ID="tipoPersona" runat="server">
+                        <asp:ListItem Value="1">Administrador</asp:ListItem>
+                        <asp:ListItem Value="2">Docente</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="3">Alumno</asp:ListItem>
+                    </asp:RadioButtonList>
+                </fieldset>
+
             </div>
-            <section class="add-user">
-                <div>
-                    <fieldset>
-                        <asp:Label Text="Apellido * " runat="server" />
-                        <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
-                    </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Nombre * " runat="server" />
-                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                    </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Tipo persona * " runat="server" />
+            <div>
+                <fieldset>
+                    <asp:Label Text="Legajo * " runat="server" />
+                    <asp:TextBox ID="txtNroDocumento" runat="server"></asp:TextBox>
+                    <asp:Label Text="Legajo Obligatorio" CssClass="error-input" ID="errorLegajo" runat="server" Visible="False" />
 
-                        <asp:RadioButtonList ID="tipoPersona" runat="server">
-                            <asp:ListItem Value="1">Administrador</asp:ListItem>
-                            <asp:ListItem Value="2">Docente</asp:ListItem>
-                            <asp:ListItem Value="3">Alumno</asp:ListItem>
-                        </asp:RadioButtonList>
-                    </fieldset>
-                    
-                </div>
-                <div>
-                    <fieldset>
-                        <asp:Label Text="Legajo * " runat="server" />
-                        <asp:TextBox ID="txtNroDocumento" runat="server"></asp:TextBox>
-                    </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Fecha Nac. *" runat="server" />
-                        <input runat="server" type="date" id="txtFechaNacimiento" />
-                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <asp:Label Text="Fecha Nac. *" runat="server" />
+                    <input runat="server" type="date" id="txtFechaNacimiento" required="required" />
+                </fieldset>
 
-                    <fieldset>
-                        <asp:Label Text="Direccion" runat="server" />
-                        <asp:TextBox ID="txtDirección" runat="server"></asp:TextBox>
-                    </fieldset>
+                <fieldset>
+                    <asp:Label Text="Direccion" runat="server" />
+                    <asp:TextBox ID="txtDirección" runat="server"></asp:TextBox>
                     <fieldset>
                         <asp:Label Text="Telefono" runat="server" />
                         <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
                     </fieldset>
-                </div>
-                <div>
-                    <fieldset>
-                        <asp:Label Text="Plan * " ID="lblPlan" runat="server" />
-                         <asp:DropDownList ID="ddlPlanes" runat="server" DataSourceID="SqlDataSource1" DataTextField="desc_plan" DataValueField="id_plan">
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AcademiaConnectionString %>" SelectCommand="SELECT * FROM [planes]"></asp:SqlDataSource>
-                    
-                    </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Email *" runat="server" />
-                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                    </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Nombre Usuario *" runat="server" />
-                        <asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox>
-                    </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Contraseña *" runat="server" />
-                        <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
-                       
-                    </fieldset>
-                    <fieldset>
-                        <asp:Label Text="Confirma Contrseña *" runat="server" />
-                        <asp:TextBox ID="txtConfirmarClave" runat="server" TextMode="Password"></asp:TextBox>
-                    </fieldset>
-                    <input type="hidden" name="txtIdPersona" runat="server" id="txtIdPersona" />
+                </fieldset>
+                <fieldset class="chkHabilitar">
+                    <asp:CheckBox ID="chkHabilitado" runat="server" Text="Habilitado" />
+                </fieldset>
+                &nbsp;
+            </div>
+            <div>
+                <fieldset>
+                    <asp:Label Text="Plan * " ID="lblPlan" runat="server" />
+                    <asp:DropDownList ID="ddlPlanes" runat="server" DataSourceID="SqlDataSource1" DataTextField="desc_plan" DataValueField="id_plan">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AcademiaConnectionString %>" SelectCommand="SELECT * FROM [planes]"></asp:SqlDataSource>
 
-                </div>
-            </section>
-            <div class="actions">
-                <asp:Button ID="btnGuardar" CssClass="btn-guardar" runat="server" Text="Guardar" Width="137px" OnClick="btnGuardar_Click" />
-                <asp:Button ID="btnCancelar" runat="server" CssClass="btn-cancelar" Text="Cancelar" />
+                </fieldset>
+                <fieldset>
+                    <asp:Label Text="Email *" runat="server" />
+                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:Label Text="Email Obligatorio y Valido" CssClass="error-input" ID="errorEmail" runat="server" Visible="False" />
+
+                </fieldset>
+                <fieldset>
+                    <asp:Label Text="Nombre Usuario *" runat="server" />
+                    <asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox>
+                    <asp:Label Text="Nombre Usuario Obligatorio" CssClass="error-input" ID="errorNombreUsuario" runat="server" Visible="False" />
+
+                </fieldset>
+                <fieldset class="password" runat="server" id="password">
+                    <asp:Label Text="Contraseña *" runat="server" />
+                    <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:Label Text="Clave Obligatorio" CssClass="error-input" ID="errorClave" runat="server" Visible="False" />
+
+                </fieldset>
+                <fieldset runat="server" id="passwordConfirm">
+                    <asp:Label Text="Confirma Contrseña *" runat="server" />
+                    <asp:TextBox ID="txtConfirmarClave" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:Label Text="Las claves deben ser igaules" CssClass="error-input" ID="errorConfirmClave" runat="server" Visible="False" />
+
+                </fieldset>
+
+                <input type="hidden" name="txtIdPersona" runat="server" id="txtIdPersona" />
 
             </div>
-                <asp:Label Text="" CssClass="error" ID="error" runat="server" />
+        </section>
+        <div class="actions">
+            <asp:Button ID="btnGuardar" CssClass="btn-guardar" runat="server" Text="Guardar" Width="137px" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnCancelar" runat="server" CssClass="btn-cancelar" Text="Cancelar" />
 
         </div>
-        <asp:ObjectDataSource ID="odsUsuarios" runat="server" DeleteMethod="Delete" SelectMethod="GetAll" TypeName="Data.Database.UsuarioAdapter">
-            <DeleteParameters>
-                <asp:Parameter Name="ID" Type="Int32" />
-            </DeleteParameters>
-            <SelectParameters>
-                <asp:Parameter Name="tipoPersona" Type="Int32" />
-            </SelectParameters>
-        </asp:ObjectDataSource>
+        <asp:Label Text="" CssClass="error" ID="error" runat="server" />
+
+    </div>
+    <asp:ObjectDataSource ID="odsUsuarios" runat="server" DeleteMethod="Delete" SelectMethod="GetAll" TypeName="Data.Database.UsuarioAdapter">
+        <DeleteParameters>
+            <asp:Parameter Name="ID" Type="Int32" />
+        </DeleteParameters>
+        <SelectParameters>
+            <asp:Parameter Name="tipoPersona" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 </asp:Content>

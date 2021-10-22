@@ -20,7 +20,7 @@ namespace UI.Web
                 {
                     Response.Redirect("SignIn.aspx");
                 }
-
+                errorDesc.Visible = false;
                 if (Request.QueryString["id"] != null)
                 {
                     if (Request.QueryString["type"] != null)
@@ -46,10 +46,21 @@ namespace UI.Web
 
         protected void btnUpdateEsp_Click(object sender, EventArgs e)
         {
-            esp.desc_especialidad = txtDesc.Value;
-            esp.ID = Convert.ToInt32(Request.QueryString["id"]);
-            esp.State = BusinessEntity.States.Modified;
-            EspecialidadLogic.GetInstance().Save(esp);
+            if (!Validations.ValidateInput(txtDesc.Value))
+            {
+                errorDesc.Visible = true;
+                errorDesc.Text = "Descripcion obligatoria";
+            }
+            else
+            {
+                errorDesc.Visible = false;
+                esp.desc_especialidad = txtDesc.Value;
+                esp.ID = Convert.ToInt32(Request.QueryString["id"]);
+                esp.State = BusinessEntity.States.Modified;
+                EspecialidadLogic.GetInstance().Save(esp);
+                Response.Redirect("Especialidades.aspx");
+
+            }
 
         }
     }

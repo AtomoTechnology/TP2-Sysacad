@@ -9,31 +9,29 @@
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
-    <link href="Styles/main.css" rel="stylesheet" />
+    <link href="Styles/main.css" rel="stylesheet" />  
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="principal">
-
             <header class="header">
                 <div class="header-left">
-                    <a href="">
+                    <a href="Index.aspx">
                         <div class="logo-menu">
                             <img src="https://play-lh.googleusercontent.com/on7AWbuav44mB2ztIB6mp1BUu6bhIMcNd-9YjbjNDxgViamcJ3bo1dkEo06EGbC7njw" width="40" alt="Logo UTN" />
                         </div>
                     </a>
                     <ul class="items-menu">
                         <li class="item">
-                            <a href="">Alumnos
+                            <a >Alumnos
                             <ul class="sub-items-menu sub-menu-left">
                                 <li class="sub-item">
-                                    <a href="#">Inscripcion a Materia</a>
+                                    <a href="NuevoInscripto.aspx">Inscripcion de Materia</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Materias Aprobadas</a>
+                                    <a href="MisDatos.aspx">Materias Aprobadas</a>
                                 </li>
                             </ul>
                             </a>
@@ -63,29 +61,29 @@
                                     <a href="Planes.aspx">Planes</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Comisiones</a>
+                                    <a href="Comisiones.aspx">Comisiones</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Materias</a>
+                                    <a href="Materias.aspx">Materias</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Cursos</a>
+                                    <a href="Cursos.aspx">Cursos</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Inscripciones</a>
-                                </li>
+                                    <a href="Inscripciones.aspx" >Inscripciones</a>
+                                </li>                               
                             </ul>
 
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#">Reporte
+                            <a>Reporte
                             <ul class="sub-items-menu sub-menu-left">
                                 <li class="sub-item">
-                                    <a href="#">Cursos</a>
+                                    <a href="ReporteCursos.aspx">Reporte Cursos</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Planes</a>
+                                    <a href="ReportePlanes.aspx" >Reporte Planes</a>
                                 </li>
                             </ul>
                             </a>
@@ -107,12 +105,12 @@
                                 <a href="#">Usuario
                                 <ul class="sub-items-menu sub-menu-right">
                                     <li class="sub-item">
-                                        <a href="#">Mis Datos</a>
+                                        <a href="MisDatos.aspx">Mis Datos</a>
                                     </li>
-                                    <li class="sub-item">
+                                    <!-- <li class="sub-item">
                                         <a href="#">Mis Preferencias</a>
-                                    </li>
-                                    <li class="sub-item">                                       
+                                    </li>--> 
+                                    <li class="sub-item">
                                         <a href="SignOut.aspx">Salir</a>
                                     </li>
                                 </ul>
@@ -132,5 +130,6 @@
             </footer>
         </div>
     </form>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

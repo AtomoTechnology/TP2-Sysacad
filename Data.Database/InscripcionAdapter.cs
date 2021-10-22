@@ -270,10 +270,10 @@ namespace Data.Database
                     "from alumnos_inscripciones ins " +
                     "inner join cursos cur " +
                     "on cur.id_curso = ins.id_curso " +
+                      "inner join personas per " +
+                    "on per.id_persona = ins.id_alumno  " +
                     "inner join usuarios usr " +
-                    "on usr.id_usuario = ins.id_alumno " +
-                    "inner join personas per " +
-                    "on per.id_persona = usr.id_persona " +
+                    "on usr.id_persona = per.id_persona " +                  
                     "inner join materias mat " +
                     "on mat.id_materia = cur.id_materia " +
                     "inner join comisiones com " +

@@ -45,9 +45,22 @@
         background: #607d8b;
         margin-bottom: 1rem;
     }
+
 .error {
     text-align: center;
     padding: 10px;
     background: #eccfcf;
     color: red;
+}
+
+.error-input{
+    color: red;
+    padding: 3px 5px;
+    background-color: #e5b8b8;
+    border-radius: 50px;
+}
+.chkHabilitar {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 }

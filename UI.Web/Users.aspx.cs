@@ -2,6 +2,7 @@
 using Business.Logic;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -28,28 +29,12 @@ namespace UI.Web
                     var user = ((Usuario)Session["current_user"]);
 
                 }
-                Boolean editionState = this.PaginaEnEstadoEdicion();
-                if (editionState)
+                error.Visible = false;
+                if (PaginaEnEstadoEdicion())
                 {
-                    currentUser = UsuarioLogic.GetInstance().GetOne(Convert.ToInt32(Request.QueryString["id"]));
-                    if (currentUser != null)
-                    {
-                        txtApellido.Text = currentUser.Apellido;
-                        txtNombre.Text = currentUser.Nombre;
-                        txtEmail.Text = currentUser.Email;
-                        txtFechaNacimiento.Value = currentUser.FechaNac.Date.ToString();
-                        txtDirección.Text = currentUser.Direccion;
-                        txtTelefono.Text = currentUser.Telefono;
-                        txtNroDocumento.Text = currentUser.Legajo.ToString();
-                        tipoPersona.SelectedValue = currentUser.TipoPersona.ToString();
-                        ddlPlanes.SelectedValue = currentUser.IdPlan.ToString();
-                        txtNombreUsuario.Text = currentUser.NombreUsuario;
-                        txtClave.Text = currentUser.Clave;
-                        txtIdPersona.Value = currentUser.IdPersona.ToString();
-                        this.lblAccion.Text = "edition";
-                        btnGuardar.Text = "Actualizar";
-                    }
-
+                    CargarUsuario(Convert.ToInt32(Request.QueryString["id"]));
+                    password.Visible = false;
+                    passwordConfirm.Visible = false;
                 }
                 else
                 {
@@ -58,7 +43,29 @@ namespace UI.Web
 
             }
         }
-        private bool PaginaEnEstadoEdicion()
+        private void CargarUsuario(int idUsuario)
+        {
+            currentUser = UsuarioLogic.GetInstance().GetOne(idUsuario);
+            if (currentUser != null)
+            {
+                txtApellido.Text = currentUser.Apellido;
+                txtNombre.Text = currentUser.Nombre;
+                txtEmail.Text = currentUser.Email;
+                txtFechaNacimiento.Value = currentUser.FechaNac.ToString();
+                txtDirección.Text = currentUser.Direccion;
+                txtTelefono.Text = currentUser.Telefono;
+                txtNroDocumento.Text = currentUser.Legajo.ToString();
+                tipoPersona.SelectedValue = currentUser.TipoPersona.ToString();
+                ddlPlanes.SelectedValue = currentUser.IdPlan.ToString();
+                txtNombreUsuario.Text = currentUser.NombreUsuario;
+                txtClave.Text = currentUser.Clave;
+                txtIdPersona.Value = currentUser.IdPersona.ToString();
+                chkHabilitado.Checked = currentUser.Habilitado;
+                this.lblAccion.Text = "Edition Usuario ID : " + idUsuario;
+                btnGuardar.Text = "Actualizar";
+            }
+        }
+        private  bool PaginaEnEstadoEdicion()
         {
             if (Request.QueryString["id"] != null)
             {
@@ -72,43 +79,145 @@ namespace UI.Web
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            //    if (txtApellido.Text.Equals("") || txtClave.Text.Equals(""))
-            //    {
-            //        error.Text = " Asegurese que todos los campos con * tiene información";
-            //    }
-            //    else
-            //{
-            currentUser.Apellido = txtApellido.Text;
-            currentUser.Nombre = txtNombre.Text;
-            currentUser.Email = txtEmail.Text;
-            currentUser.FechaNac = Convert.ToDateTime(txtFechaNacimiento.Value);
-            currentUser.Direccion = txtDirección.Text;
-            currentUser.Telefono = txtTelefono.Text;
-            currentUser.Legajo = Convert.ToInt32(txtNroDocumento.Text);
-            currentUser.TipoPersona = Convert.ToInt32(tipoPersona.SelectedValue);
-            currentUser.IdPlan = Convert.ToInt32(ddlPlanes.SelectedValue);
-            currentUser.NombreUsuario = txtNombreUsuario.Text;
-            currentUser.Clave = txtClave.Text;
-            currentUser.IdPersona = Convert.ToInt32(txtIdPersona.Value);
-           
-            currentUser.Habilitado = true;
-            //hacer lo mismo para todo ....
-            if (PaginaEnEstadoEdicion())
+            string errors = "";
+            bool ok = true;
+            if (!Validations.ValidateInput(txtApellido.Text))
             {
-                currentUser.ID = Convert.ToInt32(Request.QueryString["id"]);
-                currentUser.State = BusinessEntity.States.Modified;
+                ok = false;
+                errors += "Apellido Obligatorio\n";
+                errorApellido.Visible = true;
+            }
+            else
+            {
+                errorApellido.Visible = false;
+               
+
+            }
+            if (!Validations.ValidateInput(txtNroDocumento.Text))
+            {
+                ok = false;
+                errors += "Nro Documento Obligatorio\n";
+                errorLegajo.Visible = true;
+            }
+            else
+            {
+                errorLegajo.Visible = false;
+
+            }
+            if (!Validations.ValidateInput(txtNombre.Text))
+            {
+                ok = false;
+                errors += "Nombre Obligatorio\n";
+                errorNombre.Visible = true;
 
             }
             else
             {
-                currentUser.State = BusinessEntity.States.New;
+                errorNombre.Visible = false;
+
+            }
+            if (!PaginaEnEstadoEdicion())
+            {
+                if (!Validations.ValidateInput(txtClave.Text))
+                {
+                    ok = false;
+                    errors += "Clave Obligatorio\n";
+                    errorClave.Visible = true;
+
+                }
+                else
+                {
+                    errorClave.Visible = false;
+
+                }
+                if (!Validations.ValidateInput(txtConfirmarClave.Text) || txtConfirmarClave.Text != txtClave.Text)
+                {
+                    ok = false;
+                    errors += "Confirmar clave Obligatorio\n";
+                    errorConfirmClave.Visible = true;
+                }
+                else
+                {
+                    errorConfirmClave.Visible = false;
+
+                }
+            }
+           
+            if (!Validations.ValidateInput(txtFechaNacimiento.Value))
+            {
+                ok = false;
+                errors += "Fecha de Nacimiento Obligatorio\n";
+            }
+            if (!Validations.ValidateInput(txtNombreUsuario.Text))
+            {
+                ok = false;
+                errors += "Nombre de usuario Obligatorio\n";
+                errorNombreUsuario.Visible = true;
+
+            }
+            else
+            {
+                errorNombreUsuario.Visible = false;
+
+            }
+            if ( !Validations.ValidateEmail( txtEmail.Text ))
+            {
+
+                ok = false;
+                errors += "Email Obligatorio y debe ser valido\n";
+                errorEmail.Visible = true;
+
+            }
+            else
+            {
+                errorEmail.Visible = false;
 
             }
 
-            // llamar al metodo agregar Usuario
-            UsuarioLogic.GetInstance().Save(currentUser);
-            Page.Response.Redirect("Users.aspx");
-            //}
+            if ( ok)
+            {
+                currentUser.Apellido = txtApellido.Text;
+                currentUser.Nombre = txtNombre.Text;
+                currentUser.Email = txtEmail.Text;
+                currentUser.FechaNac = Convert.ToDateTime(txtFechaNacimiento.Value);
+                currentUser.Direccion = txtDirección.Text;
+                currentUser.Telefono = txtTelefono.Text;
+                currentUser.Legajo = Convert.ToInt32(txtNroDocumento.Text);
+                currentUser.TipoPersona = Convert.ToInt32(tipoPersona.SelectedValue);
+                currentUser.IdPlan = Convert.ToInt32(ddlPlanes.SelectedValue);
+                currentUser.NombreUsuario = txtNombreUsuario.Text;
+                
+                //hacer lo mismo para todo ....
+                if (PaginaEnEstadoEdicion())
+                {
+                    currentUser.Habilitado = chkHabilitado.Checked ;
+                    currentUser.IdPersona = Convert.ToInt32(txtIdPersona.Value);
+                    currentUser.ID = Convert.ToInt32(Request.QueryString["id"]);
+                    currentUser.State = BusinessEntity.States.Modified;
+
+                }
+                else
+                {
+                    currentUser.Clave = txtClave.Text;
+                    currentUser.Habilitado = true;
+                    currentUser.State = BusinessEntity.States.New;
+
+                }
+
+                // llamar al metodo agregar Usuario
+                UsuarioLogic.GetInstance().Save(currentUser);
+                Page.Response.Redirect("Users.aspx");
+                //}
+            }
+            else
+            {
+                
+            }
+         
+          
+           
         }
+
+       
     }
 }

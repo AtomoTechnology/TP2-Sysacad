@@ -31,13 +31,13 @@
 
             <fieldset>
                 <asp:Label Text="Nombre Usuario" ID="lblUsername" runat="server" />
-                <asp:TextBox ID="txtUsuarname" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtUsuarname" Text="jhmesseroux_profe" runat="server"></asp:TextBox>
 
             </fieldset>
 
             <fieldset>
                 <asp:Label Text="Contraseña" ID="lblPassword" runat="server" />
-                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" Text="utn2021." runat="server"></asp:TextBox>
 
             </fieldset>
 

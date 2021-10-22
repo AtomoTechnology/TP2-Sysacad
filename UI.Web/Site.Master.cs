@@ -9,6 +9,7 @@ namespace UI.Web
 {
     public partial class Site : System.Web.UI.MasterPage
     {
+        static Page resquest = new Page();
         protected void Page_Load(object sender, EventArgs e)
         {
             this.ValidateAcess();
@@ -20,6 +21,21 @@ namespace UI.Web
                 Response.Redirect("SignIn.aspx");
             }
 
+        }
+        public void Hello(string he)
+        {
+
+        }
+        public static bool PaginaEnEstadoEdicion()
+        {
+            if (resquest.Request.QueryString["id"] != null)
+            {                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -24,7 +24,7 @@
         </DeleteParameters>
     </asp:ObjectDataSource>
 
-    <div class="add-plan-box">
+    <div class="add-xxx-box">
          <div class="header-add-x">
                 <asp:Label ID="lblAccion" runat="server" Text="Alta"></asp:Label>
             </div>

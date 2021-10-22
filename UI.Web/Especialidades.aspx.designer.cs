@@ -60,15 +60,6 @@ namespace UI.Web
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescPlan;
 
         /// <summary>
-        /// Control bntAddPlan.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bntAddPlan;
-
-        /// <summary>
         /// Control errorAddPlan.
         /// </summary>
         /// <remarks>
@@ -78,12 +69,12 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label errorAddPlan;
 
         /// <summary>
-        /// Control ObjectDataSource1.
+        /// Control btnAddEsp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.Button btnAddEsp;
     }
 }

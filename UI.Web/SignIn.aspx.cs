@@ -29,7 +29,7 @@ namespace UI.Web
             if( user != null)
             {
                 Session["current_user"] = user;
-                Response.Redirect("Planes.aspx");
+                Response.Redirect("Index.aspx");
             }
             else
             {

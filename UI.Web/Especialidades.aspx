@@ -24,7 +24,7 @@
         </DeleteParameters>
     </asp:ObjectDataSource>
 
-    <div class="add-plan-box">
+    <div class="add-xxx-box">
         <div class="header-add-x">
             <asp:Label ID="lblAccion" runat="server" Text="Alta"></asp:Label>
         </div>
@@ -33,15 +33,13 @@
             <fieldset>
                 <asp:Label Text="Descripcion" ID="lblDesc" runat="server" />
                 <input type="text" name="name" value="" runat="server" id="txtDescPlan" />
-            </fieldset>
-
-            <fieldset>
-                <asp:Button Text="Agregar Plan" ID="bntAddPlan" runat="server" CssClass="btn-add-plan" />
-            </fieldset>
-            <fieldset>
                 <asp:Label Text="" ID="errorAddPlan" CssClass="error error-add-plan" runat="server" />
+                <fieldset>
+                    <asp:Button Text="Agregar" ID="btnAddEsp" runat="server"  ToolTip="Agregar un Plan" OnClick="btnAddPlan" />
+                </fieldset>
             </fieldset>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.EspecialidadLogic"></asp:ObjectDataSource>
+            <br />
+            <br />
 
         </div>
     </div>

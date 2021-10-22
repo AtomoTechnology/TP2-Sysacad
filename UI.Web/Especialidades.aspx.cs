@@ -13,5 +13,10 @@ namespace UI.Web
         {
 
         }
+        protected void btnAddPlan()
+        {
+            Response.Write("hj");
+        }
+     
     }
 }

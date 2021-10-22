@@ -29,6 +29,7 @@
         <fieldset>
             <asp:Label Text="Descripcion" runat="server" />
             <input type="text" runat="server" name="" id="txtDesc" />
+            <asp:Label Text="" ID="errorDesc" CssClass="errorinput" runat="server" />
         </fieldset>
         <fieldset>
             <asp:Button Text="Actualizar" CssClass="btnUpdateEsp" ID="btnUpdateEsp" runat="server" OnClick="btnUpdateEsp_Click" />

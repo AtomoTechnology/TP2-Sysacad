@@ -194,8 +194,6 @@ namespace Data.Database
                     m.DescMateria = (string)reader["desc_materia"];
                     m.HsSemanales = (int)reader["hs_semanales"];
                     m.HsTotales = (int)reader["hs_totales"];
-
-
                     materias.Add(m);
 
                 }
