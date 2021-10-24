@@ -214,6 +214,7 @@ namespace UI.Desktop
             this.cbComisiones.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, null, null);
             this.cbComisiones.DisplayMember = "DescComision";
             this.cbComisiones.ValueMember = "ID";
+            
 
         }
 

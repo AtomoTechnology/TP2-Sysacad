@@ -232,7 +232,7 @@ namespace Data.Database
 
                 this.CloseConnection();
             }
-            MessageBox.Show("Inscripcion actualizada con exito :)");
+            //MessageBox.Show("Inscripcion actualizada con exito :)");
 
 
         }

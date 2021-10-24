@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -89,6 +90,7 @@
     <Content Include="Styles\plan.css" />
     <Content Include="Styles\users.css" />
     <Content Include="User.aspx" />
+    <Content Include="UserMateria.aspx" />
     <Content Include="Users.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -210,6 +212,20 @@
     <Compile Include="User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserMateria.aspx.cs">
+      <DependentUpon>UserMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserMateria.aspx.designer.cs">
+      <DependentUpon>UserMateria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,6 +237,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

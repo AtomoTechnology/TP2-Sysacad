@@ -35,12 +35,23 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <div runat="server" id="ModalBox" visible="false" class="modal-box">
+        <div class="modal modal-delete-materia">
+            <div class="header-add-x">
+                <asp:Label Text="¿ Estás seguro ? " ID="Label1" runat="server" />
+            </div>
+            <div class="btns">
+                <asp:Button Text="Borrar" CssClass="btn-delete" ID="btnDelete" runat="server" OnClick="btnDelete_Click"  />
+                <asp:Button Text="Cancelar" CssClass="btn-cancel" ID="bntCancer" runat="server"  />
+            </div>
+        </div>
+    </div>
     <div class="box">
 
         <div class="btn-nuevo">
             <a href="NuevoInscripto.aspx">Nuevo Inscripto</a>
         </div>
-        <asp:GridView ID="dgvInscripciones" runat="server">
+        <asp:GridView ID="dgvInscripciones" runat="server" DataKeyNames="ID" OnSelectedIndexChanged="dgvInscripciones_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="Legajo" HeaderText="Legajo" />
                 <asp:BoundField DataField="NombreCompleto" HeaderText="NombreCompleto" />
@@ -48,6 +59,8 @@
                 <asp:BoundField DataField="DescComision" HeaderText="Comision" />
                 <asp:BoundField DataField="NotaString" HeaderText="Nota" />
                 <asp:BoundField DataField="Condicion" HeaderText="Condicion" />
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="NuevoInscripto.aspx?id={0}" Text="Editar" />
+                <asp:CommandField SelectText="Borrar"  ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
     </div>

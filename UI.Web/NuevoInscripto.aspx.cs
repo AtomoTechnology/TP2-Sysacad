@@ -1,4 +1,5 @@
-﻿using Business.Logic;
+﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +11,112 @@ namespace UI.Web
 {
     public partial class NuevoInscripto : System.Web.UI.Page
     {
+        Inscripcion ins = new Inscripcion();
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadAlumnosCursos();
+            if (!IsPostBack)
+            {
+                this.LoadAlumnosCursos();
+
+                if (PaginaEnEstadoEdicion())
+                {
+                    otherFields.Visible = true;
+                    this.LoadFields(Convert.ToInt32(Request.QueryString["id"]));
+                }
+            }
         }
 
-        private void LoadAlumnosCursos()
+        private void LoadFields(int id)
         {
-            ddlAlumno.DataSource = UsuarioLogic.GetInstance().GetAll( 3 );
-            ddlAlumno.DataBind();
-            ddlAlumno.DataTextField = "Legajo";
-            ddlAlumno.DataValueField = "ID";
-            ddlCurso.DataSource = CursoLogic.GetInstance().GetAll();
-            ddlCurso.DataBind();
-            ddlCurso.DataTextField = "ID";
-            ddlCurso.DataValueField = "ID";
-           
+            ins = InscripcionLogic.GetInstance().GetOne(id);
+            if (ins != null)
+            {
+                ddlAlumno.SelectedValue = ins.IdAlumno.ToString();
+                ddlCurso.SelectedValue = ins.IdCurso.ToString();
+                txtNota.Text = ins.Nota.ToString();
+                ddlCondicion.SelectedValue = ins.Condicion;
+                btnInscribir.Text = "Actualizar Curso";
+                lblAction.Text = " Actualizar Inscripcion " + id;
+            }
+        }
+        private void LoadAlumnosCursos()
+        {          
+            foreach (var item in UsuarioLogic.GetInstance().GetAll(3))
+            {
+                ListItem listItem = new ListItem();
+                listItem.Value = item.IdPersona.ToString();
+                listItem.Text =  item.NombreCompletoLegajo ;
+                ddlAlumno.Items.Add(listItem);
+
+            }           
+            foreach (var item in CursoLogic.GetInstance().GetAll())
+            {
+                ListItem listItem = new ListItem();
+                listItem.Value =item.ID.ToString();
+                listItem.Text = item.DescComision +  " | " + item.DescMateria + " | Cupo :  " + item.Cupo ;               
+                ddlCurso.Items.Add(listItem);
+
+            }
+
+            ddlComison.DataSource = ComisionLogic.GetInstance().GetAll();
+            ddlComison.DataBind();
+
+            ddlMateria.DataSource = MateriaLogic.GetInstance().GetAll();
+            ddlMateria.DataBind();
+
+        }
+        private bool PaginaEnEstadoEdicion()
+        {
+            if (Request.QueryString["id"] != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }     
+              
+             
+
+        protected void btnInscribir_Click(object sender, EventArgs e)
+        {
+            bool ok = true;
+            if (!Validations.ValidateInput(ddlAlumno.SelectedValue))
+            {
+                ok = false;
+            }
+            if (!Validations.ValidateInput(ddlCurso.SelectedValue))
+            {
+                ok = false;
+            }
+
+            if (ok)
+            {
+                ins.IdAlumno = Convert.ToInt32(ddlAlumno.SelectedValue);
+                ins.IdCurso = Convert.ToInt32(ddlCurso.SelectedItem.Value);
+                if (PaginaEnEstadoEdicion())
+                {
+                    ins.Condicion = ddlCondicion.SelectedItem.Value;
+                    ins.Nota = Convert.ToInt32(txtNota.Text);
+                    ins.ID = Convert.ToInt32(Request.QueryString["id"]);
+                    ins.State = BusinessEntity.States.Modified;
+                }
+                else
+                {
+                    
+                    ins.Condicion = "Cursando";
+                    ins.State = BusinessEntity.States.New;
+                }
+
+                InscripcionLogic.GetInstance().Save(ins);
+                Response.Redirect("Inscripciones.aspx");
+            }
+        }
+
+        protected void ddlCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+           ins.CursoCupo = CursoLogic.GetInstance().GetOne(Convert.ToInt32(ddlCurso.SelectedValue)).Cupo;           
         }
     }
 }

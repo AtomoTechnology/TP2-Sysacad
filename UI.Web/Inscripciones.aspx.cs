@@ -14,12 +14,43 @@ namespace UI.Web
         {
             LoadInscripciones();
         }
+        public int SelectedID
+        {
+            get
+            {
+                if (this.ViewState["SelectedID"] != null)
+                {
+                    return (int)this.ViewState["SelectedID"];
+                }
+                else
+                {
+                    return 0;
+                }
+            }
 
+            set { this.ViewState["SelectedID"] = value; }
+        }
         private void LoadInscripciones()
         {
             dgvInscripciones.AutoGenerateColumns = false;
             dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll();
             dgvInscripciones.DataBind();
+        }
+
+        protected void dgvInscripciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.SelectedID = (int)this.dgvInscripciones.SelectedValue;
+            ModalBox.Visible = true;
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (SelectedID != 0)
+            {
+                InscripcionLogic.GetInstance().Delete(SelectedID);
+                ModalBox.Visible = false;
+                Response.Redirect("Inscripciones.aspx");
+            }
         }
     }
 }
