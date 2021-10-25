@@ -56,7 +56,7 @@
                     </fieldset>
                 </fieldset>
                 <fieldset>
-                    <asp:Button Text="Inscribir" ID="btnInscribir" runat="server" OnClick="btnInscribir_Click" />
+                    <asp:Button CssClass="btn-add" Text="Inscribir" ID="btnInscribir" runat="server" OnClick="btnInscribir_Click" />
                 </fieldset>
             </div>
         </div>

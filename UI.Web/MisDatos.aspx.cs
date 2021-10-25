@@ -13,19 +13,58 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if( !IsPostBack)
+            if (!IsPostBack)
             {
-                if( Session["current_user"] != null)
-                {                    
-                    this.FillData(UsuarioLogic.GetInstance().GetOne(((Usuario)Session["current_user"]).ID));                    
+                if (Session["current_user"] != null)
+                {
+                    this.FillData(UsuarioLogic.GetInstance().GetOne(((Usuario)Session["current_user"]).ID));
                 }
             }
         }
 
 
-        private void FillData( Usuario usuario)
+        private void FillData(Usuario usuario)
         {
-           
+            if (usuario != null)
+            {
+                txtApellido.Value = usuario.Apellido;
+                txtNombre.Value = usuario.Nombre;
+                txtUsuario.Value = usuario.NombreUsuario;
+                txtTelefono.Value = usuario.Telefono;
+                txtLegajo.Value = usuario.Legajo.ToString();
+                txtDireccion.Value = usuario.Direccion;
+                txtEmail.Value = usuario.Email;
+                txtPassword.Value = "********";
+                lblNombreCompleto.Text = usuario.Apellido + "   " + usuario.Nombre;
+                if (usuario.TipoPersona == 3)
+                {
+                    userBoxmateria1.Visible = true;
+                    userBoxmateria2.Visible = true;
+                    List<Inscripcion> ins = InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(usuario.IdPersona);
+                    if (ins.Count > 0)
+                    {
+                        lblCantMatApro.Text = ins.Count.ToString();
+                        gvMaterias.AutoGenerateColumns = false;
+                        lblCantidadMateriasAprobadass.Text = ins.Count.ToString();
+                        gvMaterias.DataSource = ins;
+                        gvMaterias.DataBind();
+                    }
+                    else
+                        lblCantidadMateriasAprobadass.Text = "0";
+                }
+                else
+                {
+                    userBoxmateria1.Visible = false;
+                    userBoxmateria2.Visible = false;
+                   
+                }
+            }
+
+        }
+
+        protected void btnVerEmail_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace UI.Web
             {
                 Session.Remove("current_user");
                 Session["current_user"] = null;
-                //Response.Redirect("SignIn.aspx");
+                Response.Redirect("SignIn.aspx");
             }
             else
             {

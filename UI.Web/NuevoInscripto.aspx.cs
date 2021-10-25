@@ -57,12 +57,13 @@ namespace UI.Web
                 ddlCurso.Items.Add(listItem);
 
             }
-
-            ddlComison.DataSource = ComisionLogic.GetInstance().GetAll();
-            ddlComison.DataBind();
-
-            ddlMateria.DataSource = MateriaLogic.GetInstance().GetAll();
-            ddlMateria.DataBind();
+            var user = (Usuario)Session["current_user"];
+            if( user!= null  && user.TipoPersona == 3)
+            {
+                //ddlAlumno.SelectedItem.Value = user.IdPersona.ToString();
+                ddlAlumno.SelectedValue = user.IdPersona.ToString();
+                ddlAlumno.Enabled = false;
+            }
 
         }
         private bool PaginaEnEstadoEdicion()
