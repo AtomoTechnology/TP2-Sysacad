@@ -27,7 +27,7 @@
 
             </div>
 
-            <h3>Inicia Session </h3>
+            <h3>Inicia Sesión </h3>
 
             <fieldset>
                 <asp:Label Text="Nombre Usuario" ID="lblUsername" runat="server" />
@@ -37,15 +37,14 @@
 
             <fieldset>
                 <asp:Label Text="Contraseña" ID="lblPassword" runat="server" />
-                <asp:TextBox ID="txtPassword" Text="utn2021." runat="server"></asp:TextBox>
-
+                <input  value="utn2021." runat="server" id="txtPassword" type="password" />
             </fieldset>
 
             <fieldset>
-                <asp:Button Text="Inicia Sesion" CssClass="btn-login" ID="btnLogin" runat="server" OnClick="btnLogin_Click" />
+                <asp:Button Text="Inicia Sesión" CssClass="btn-login" ID="btnLogin" runat="server" OnClick="btnLogin_Click" />
             </fieldset>
             <fieldset>
-                <a class="forget-password" href="#">Olvidé mi Contrseña</a>
+                <a class="forget-password" href="">Olvidé mi Contraseña</a>
             </fieldset>
             <fieldset id="signInFailedBox" runat="server" class="sign-in-failed">
                 <asp:Label ID="lblSignInFailed" runat="server" />

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.v12.12.0.0.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -167,6 +170,12 @@
       <DependentUpon>Docentes.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPlan.Designer.cs">
+      <DependentUpon>ReportPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +286,10 @@
     <EmbeddedResource Include="Docentes.resx">
       <DependentUpon>Docentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPlan.resx">
+      <DependentUpon>ReportPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPlans.rdlc" />
     <EmbeddedResource Include="UserPerfil.resx">
       <DependentUpon>UserPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +324,8 @@
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Business.Logic.PlanLogic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

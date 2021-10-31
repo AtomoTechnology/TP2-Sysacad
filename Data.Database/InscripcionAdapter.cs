@@ -22,7 +22,7 @@ namespace Data.Database
             }
             return singleton;
         }
-        public List<Inscripcion> GetAll(int? idDocente , int? idAlumno )
+        public List<Inscripcion> GetAll(int? idDocente , int? idAlumno , int? idCom , int? idMat  )
         {
             List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
@@ -35,7 +35,18 @@ namespace Data.Database
                     "inner join materias mat on mat.id_materia = cur.id_materia " +
                     " inner join comisiones com on com.id_comision = cur.id_comision ";
                 if (idDocente != null)
+                {
+                    if( idCom != null && idMat != null)
+                    {
+                        query += $"  inner join docentes_cursos dc on dc.id_curso = ai.id_curso  where dc.id_docente = {idDocente} and cur.id_comision = { idCom } and cur.id_materia = {idMat} ";
+
+                    }
+                    else
+                    {
+
                     query += $"  inner join docentes_cursos dc on dc.id_curso = ai.id_curso  where dc.id_docente = {idDocente} ";
+                    }
+                }
                 if (idAlumno != null)
                     query += $"where ai.id_alumno = {idAlumno} ";
 

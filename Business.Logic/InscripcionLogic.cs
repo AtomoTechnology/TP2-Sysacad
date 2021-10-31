@@ -21,9 +21,9 @@ namespace Business.Logic
             return singleton;
         }
 
-        public List<Inscripcion> GetAll(int? idDocente = null, int? idAlumno= null)
+        public List<Inscripcion> GetAll(int? idDocente = null, int? idAlumno= null, int? idCom = null, int? idMat= null)
         {
-           return  InscripcionAdapter.GetInstance().GetAll(idDocente, idAlumno);
+           return  InscripcionAdapter.GetInstance().GetAll(idDocente, idAlumno,idCom , idMat);
         }
         public Inscripcion GetOne(int ID)
         {

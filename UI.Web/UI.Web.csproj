@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AsignarDocente.aspx" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Cursos.aspx" />
     <Content Include="Esp.aspx" />
@@ -76,9 +77,11 @@
     <Content Include="Index.aspx" />
     <Content Include="Inscripciones.aspx" />
     <Content Include="Materias.aspx" />
+    <Content Include="MisCursos.aspx" />
     <Content Include="MisDatos.aspx" />
     <Content Include="NuevoInscripto.aspx" />
     <Content Include="Planes.aspx" />
+    <Content Include="RegistrarNota.aspx" />
     <Content Include="ReporteCursos.aspx" />
     <Content Include="ReportePlanes.aspx" />
     <Content Include="scripts\main.js" />
@@ -95,6 +98,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignarDocente.aspx.cs">
+      <DependentUpon>AsignarDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarDocente.aspx.designer.cs">
+      <DependentUpon>AsignarDocente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +158,13 @@
     <Compile Include="Materias.aspx.designer.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MisCursos.aspx.cs">
+      <DependentUpon>MisCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisCursos.aspx.designer.cs">
+      <DependentUpon>MisCursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MisDatos.aspx.cs">
       <DependentUpon>MisDatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -170,6 +187,13 @@
       <DependentUpon>Planes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarNota.aspx.cs">
+      <DependentUpon>RegistrarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarNota.aspx.designer.cs">
+      <DependentUpon>RegistrarNota.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReporteCursos.aspx.cs">
       <DependentUpon>ReporteCursos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

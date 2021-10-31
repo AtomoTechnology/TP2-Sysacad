@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -16,21 +17,11 @@ namespace UI.Web
         Usuario currentUser = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Methods.ValidatePermission("Users");
             if (!IsPostBack)
             {
-
-                if (Session["current_user"] == null)
-                {
-                    Response.Redirect("SignIn.aspx");
-
-                }
-                else
-                {
-                    var user = ((Usuario)Session["current_user"]);
-
-                }
                 error.Visible = false;
-                if (PaginaEnEstadoEdicion())
+                if (Methods.PaginaEnEstadoEdicion())
                 {
                     CargarUsuario(Convert.ToInt32(Request.QueryString["id"]));
                     password.Visible = false;
@@ -65,17 +56,6 @@ namespace UI.Web
                 btnGuardar.Text = "Actualizar";
             }
         }
-        private  bool PaginaEnEstadoEdicion()
-        {
-            if (Request.QueryString["id"] != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -84,13 +64,12 @@ namespace UI.Web
             if (!Validations.ValidateInput(txtApellido.Text))
             {
                 ok = false;
-                errors += "Apellido Obligatorio\n";
+                errors += "Apellido Obligatorio  \n";
                 errorApellido.Visible = true;
             }
             else
             {
                 errorApellido.Visible = false;
-               
 
             }
             if (!Validations.ValidateInput(txtNroDocumento.Text))
@@ -102,33 +81,28 @@ namespace UI.Web
             else
             {
                 errorLegajo.Visible = false;
-
             }
             if (!Validations.ValidateInput(txtNombre.Text))
             {
                 ok = false;
                 errors += "Nombre Obligatorio\n";
                 errorNombre.Visible = true;
-
             }
             else
             {
                 errorNombre.Visible = false;
-
             }
-            if (!PaginaEnEstadoEdicion())
+            if (!Methods.PaginaEnEstadoEdicion())
             {
                 if (!Validations.ValidateInput(txtClave.Text))
                 {
                     ok = false;
-                    errors += "Clave Obligatorio\n";
+                    errors += "Clave Obligatorio \n";
                     errorClave.Visible = true;
-
                 }
                 else
                 {
                     errorClave.Visible = false;
-
                 }
                 if (!Validations.ValidateInput(txtConfirmarClave.Text) || txtConfirmarClave.Text != txtClave.Text)
                 {
@@ -139,10 +113,9 @@ namespace UI.Web
                 else
                 {
                     errorConfirmClave.Visible = false;
-
                 }
             }
-           
+
             if (!Validations.ValidateInput(txtFechaNacimiento.Value))
             {
                 ok = false;
@@ -153,28 +126,23 @@ namespace UI.Web
                 ok = false;
                 errors += "Nombre de usuario Obligatorio\n";
                 errorNombreUsuario.Visible = true;
-
             }
             else
             {
                 errorNombreUsuario.Visible = false;
-
             }
-            if ( !Validations.ValidateEmail( txtEmail.Text ))
+            if (!Validations.ValidateEmail(txtEmail.Text))
             {
-
                 ok = false;
                 errors += "Email Obligatorio y debe ser valido\n";
                 errorEmail.Visible = true;
-
             }
             else
             {
                 errorEmail.Visible = false;
-
             }
 
-            if ( ok)
+            if (ok)
             {
                 currentUser.Apellido = txtApellido.Text;
                 currentUser.Nombre = txtNombre.Text;
@@ -186,38 +154,24 @@ namespace UI.Web
                 currentUser.TipoPersona = Convert.ToInt32(tipoPersona.SelectedValue);
                 currentUser.IdPlan = Convert.ToInt32(ddlPlanes.SelectedValue);
                 currentUser.NombreUsuario = txtNombreUsuario.Text;
-                
+
                 //hacer lo mismo para todo ....
-                if (PaginaEnEstadoEdicion())
+                if (Methods.PaginaEnEstadoEdicion())
                 {
-                    currentUser.Habilitado = chkHabilitado.Checked ;
+                    currentUser.Habilitado = chkHabilitado.Checked;
                     currentUser.IdPersona = Convert.ToInt32(txtIdPersona.Value);
                     currentUser.ID = Convert.ToInt32(Request.QueryString["id"]);
                     currentUser.State = BusinessEntity.States.Modified;
-
                 }
                 else
                 {
                     currentUser.Clave = txtClave.Text;
                     currentUser.Habilitado = true;
                     currentUser.State = BusinessEntity.States.New;
-
                 }
-
-                // llamar al metodo agregar Usuario
                 UsuarioLogic.GetInstance().Save(currentUser);
                 Page.Response.Redirect("Users.aspx");
-                //}
             }
-            else
-            {
-                
-            }
-         
-          
-           
         }
-
-       
     }
 }

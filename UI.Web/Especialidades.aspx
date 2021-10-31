@@ -28,19 +28,16 @@
         <div class="header-add-x">
             <asp:Label ID="lblAccion" runat="server" Text="Alta"></asp:Label>
         </div>
-        <div class="add-plan">
-
+        <div class="add-box">
             <fieldset>
                 <asp:Label Text="Descripcion" ID="lblDesc" runat="server" />
                 <input type="text" name="name" value="" runat="server" id="txtDescPlan" />
                 <asp:Label Text="" ID="errorAddPlan" CssClass="error error-add-plan" runat="server" />
-                <fieldset>
-                    <asp:Button Text="Agregar" ID="btnAddEsp" runat="server"  ToolTip="Agregar un Plan" OnClick="btnAddPlan" />
-                </fieldset>
             </fieldset>
-            <br />
-            <br />
-
+            <fieldset>
+                <input id="btnAddEsp" type="submit" value="Agregar Especialidad" />
+                <asp:Button Text="text" runat="server" />
+            </fieldset>
         </div>
     </div>
 </asp:Content>

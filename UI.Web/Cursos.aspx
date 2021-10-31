@@ -11,6 +11,7 @@
         <Columns>
             <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Cursos.aspx?id={0}" Text="Editar" />
             <asp:CommandField HeaderText="Borrar" ShowHeader="True" SelectText="Borrar" ShowSelectButton="True" />
+            <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="AsignarDocente.aspx?id={0}" HeaderText="Asignar Docente" Text="Asignar" />
         </Columns>
     </asp:GridView>
     <div class="add-xxx-box">

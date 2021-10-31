@@ -40,10 +40,10 @@
                             <a href="#">Docentes
                             <ul class="sub-items-menu sub-menu-left">
                                 <li class="sub-item">
-                                    <a href="#">Mis Cursos</a>
+                                    <a href="MisCursos.aspx">Mis Cursos</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="#">Registrar Nota</a>
+                                    <a href="RegistrarNota.aspx">Registrar Nota</a>
                                 </li>
                             </ul>
                             </a>

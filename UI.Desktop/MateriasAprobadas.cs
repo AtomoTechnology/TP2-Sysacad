@@ -25,7 +25,7 @@ namespace UI.Desktop
             if( Sesion.currentUser != null && Sesion.currentUser.TipoPersona == 3)
             {
 
-              this.dgvMateriasAprobadas.DataSource =  InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.ID);
+              this.dgvMateriasAprobadas.DataSource =  InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.IdPersona);
             }
            
 

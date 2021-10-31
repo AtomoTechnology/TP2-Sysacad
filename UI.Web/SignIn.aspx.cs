@@ -17,7 +17,7 @@ namespace UI.Web
 
             if (Session["current_user"] != null)
             {
-                Response.Redirect("index.aspx");
+                Response.Redirect("Index.aspx");
 
             }
         }
@@ -25,7 +25,7 @@ namespace UI.Web
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             
-            Usuario user = UsuarioLogic.GetInstance().LogIn(txtUsuarname.Text, txtPassword.Text);
+            Usuario user = UsuarioLogic.GetInstance().LogIn(txtUsuarname.Text, txtPassword.Value);
             if( user != null)
             {
                 Session["current_user"] = user;
