@@ -29,9 +29,9 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Insccipciones));
             this.tscEspecialidades = new System.Windows.Forms.ToolStripContainer();
             this.tlpEspecialidades = new System.Windows.Forms.TableLayoutPanel();
@@ -53,12 +53,21 @@ namespace UI.Desktop
             this.btnAddInscripcion = new System.Windows.Forms.ToolStripButton();
             this.btnEditInscripcion = new System.Windows.Forms.ToolStripButton();
             this.tbnDeleteInscripcion = new System.Windows.Forms.ToolStripButton();
+            this.pnlFiltroIns = new System.Windows.Forms.Panel();
+            this.cbMateria = new System.Windows.Forms.ComboBox();
+            this.cbComision = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFiltrarIns = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBorrarFiltro = new System.Windows.Forms.Button();
             this.tscEspecialidades.ContentPanel.SuspendLayout();
             this.tscEspecialidades.TopToolStripPanel.SuspendLayout();
             this.tscEspecialidades.SuspendLayout();
             this.tlpEspecialidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).BeginInit();
             this.tsMaterias.SuspendLayout();
+            this.pnlFiltroIns.SuspendLayout();
             this.SuspendLayout();
             // 
             // tscEspecialidades
@@ -67,7 +76,7 @@ namespace UI.Desktop
             // tscEspecialidades.ContentPanel
             // 
             this.tscEspecialidades.ContentPanel.Controls.Add(this.tlpEspecialidades);
-            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1467, 611);
+            this.tscEspecialidades.ContentPanel.Size = new System.Drawing.Size(1467, 616);
             this.tscEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tscEspecialidades.Name = "tscEspecialidades";
@@ -81,13 +90,15 @@ namespace UI.Desktop
             // 
             // tlpEspecialidades
             // 
-            this.tlpEspecialidades.ColumnCount = 2;
+            this.tlpEspecialidades.ColumnCount = 3;
+            this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 355F));
             this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
-            this.tlpEspecialidades.Controls.Add(this.btnRegistrarNota, 0, 2);
-            this.tlpEspecialidades.Controls.Add(this.dgvInscripciones, 0, 0);
-            this.tlpEspecialidades.Controls.Add(this.btnUpdate, 0, 1);
-            this.tlpEspecialidades.Controls.Add(this.btnClose, 1, 1);
+            this.tlpEspecialidades.Controls.Add(this.btnRegistrarNota, 1, 2);
+            this.tlpEspecialidades.Controls.Add(this.dgvInscripciones, 1, 0);
+            this.tlpEspecialidades.Controls.Add(this.btnUpdate, 1, 1);
+            this.tlpEspecialidades.Controls.Add(this.btnClose, 2, 1);
+            this.tlpEspecialidades.Controls.Add(this.pnlFiltroIns, 0, 0);
             this.tlpEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpEspecialidades.Location = new System.Drawing.Point(0, 0);
             this.tlpEspecialidades.Name = "tlpEspecialidades";
@@ -95,7 +106,7 @@ namespace UI.Desktop
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tlpEspecialidades.Size = new System.Drawing.Size(1467, 611);
+            this.tlpEspecialidades.Size = new System.Drawing.Size(1467, 616);
             this.tlpEspecialidades.TabIndex = 0;
             // 
             // btnRegistrarNota
@@ -110,7 +121,7 @@ namespace UI.Desktop
             this.btnRegistrarNota.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarNota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRegistrarNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarNota.Location = new System.Drawing.Point(1031, 532);
+            this.btnRegistrarNota.Location = new System.Drawing.Point(1031, 537);
             this.btnRegistrarNota.Name = "btnRegistrarNota";
             this.btnRegistrarNota.Size = new System.Drawing.Size(433, 76);
             this.btnRegistrarNota.TabIndex = 3;
@@ -130,14 +141,14 @@ namespace UI.Desktop
             this.dgvInscripciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInscripciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(221)))), ((int)(((byte)(223)))));
             this.dgvInscripciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInscripciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInscripciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvInscripciones.ColumnHeadersHeight = 30;
             this.dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -154,30 +165,30 @@ namespace UI.Desktop
             this.tlpEspecialidades.SetColumnSpan(this.dgvInscripciones, 2);
             this.dgvInscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInscripciones.EnableHeadersVisualStyles = false;
-            this.dgvInscripciones.Location = new System.Drawing.Point(3, 3);
+            this.dgvInscripciones.Location = new System.Drawing.Point(358, 3);
             this.dgvInscripciones.MultiSelect = false;
             this.dgvInscripciones.Name = "dgvInscripciones";
             this.dgvInscripciones.ReadOnly = true;
             this.dgvInscripciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInscripciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInscripciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvInscripciones.RowHeadersWidth = 62;
             this.dgvInscripciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(59)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            this.dgvInscripciones.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvInscripciones.RowTemplate.Height = 28;
             this.dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInscripciones.Size = new System.Drawing.Size(1461, 449);
+            this.dgvInscripciones.Size = new System.Drawing.Size(1106, 454);
             this.dgvInscripciones.TabIndex = 0;
             // 
             // ID
@@ -287,9 +298,9 @@ namespace UI.Desktop
             this.btnUpdate.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(1031, 458);
+            this.btnUpdate.Location = new System.Drawing.Point(999, 463);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(218, 68);
+            this.btnUpdate.Size = new System.Drawing.Size(250, 68);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -304,7 +315,7 @@ namespace UI.Desktop
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Bowlby One SC", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1255, 458);
+            this.btnClose.Location = new System.Drawing.Point(1255, 463);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(209, 68);
             this.btnClose.TabIndex = 2;
@@ -356,6 +367,123 @@ namespace UI.Desktop
             this.tbnDeleteInscripcion.ToolTipText = "Borrar Curso";
             this.tbnDeleteInscripcion.Click += new System.EventHandler(this.tbnDeleteInscripcion_Click);
             // 
+            // pnlFiltroIns
+            // 
+            this.pnlFiltroIns.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlFiltroIns.Controls.Add(this.btnBorrarFiltro);
+            this.pnlFiltroIns.Controls.Add(this.label2);
+            this.pnlFiltroIns.Controls.Add(this.btnFiltrarIns);
+            this.pnlFiltroIns.Controls.Add(this.label1);
+            this.pnlFiltroIns.Controls.Add(this.label5);
+            this.pnlFiltroIns.Controls.Add(this.cbComision);
+            this.pnlFiltroIns.Controls.Add(this.cbMateria);
+            this.pnlFiltroIns.Location = new System.Drawing.Point(3, 3);
+            this.pnlFiltroIns.Name = "pnlFiltroIns";
+            this.pnlFiltroIns.Size = new System.Drawing.Size(293, 454);
+            this.pnlFiltroIns.TabIndex = 4;
+            this.pnlFiltroIns.Visible = false;
+            // 
+            // cbMateria
+            // 
+            this.cbMateria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbMateria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
+            this.cbMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMateria.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMateria.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.cbMateria.FormattingEnabled = true;
+            this.cbMateria.ItemHeight = 28;
+            this.cbMateria.Location = new System.Drawing.Point(22, 101);
+            this.cbMateria.Name = "cbMateria";
+            this.cbMateria.Size = new System.Drawing.Size(255, 36);
+            this.cbMateria.Sorted = true;
+            this.cbMateria.TabIndex = 1;
+            // 
+            // cbComision
+            // 
+            this.cbComision.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbComision.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
+            this.cbComision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbComision.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbComision.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.cbComision.FormattingEnabled = true;
+            this.cbComision.ItemHeight = 28;
+            this.cbComision.Location = new System.Drawing.Point(22, 190);
+            this.cbComision.Name = "cbComision";
+            this.cbComision.Size = new System.Drawing.Size(255, 36);
+            this.cbComision.Sorted = true;
+            this.cbComision.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label5.Location = new System.Drawing.Point(17, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 29);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Materia";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(22, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 29);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Comision";
+            // 
+            // btnFiltrarIns
+            // 
+            this.btnFiltrarIns.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnFiltrarIns.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrarIns.FlatAppearance.BorderSize = 0;
+            this.btnFiltrarIns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrarIns.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrarIns.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnFiltrarIns.Location = new System.Drawing.Point(22, 265);
+            this.btnFiltrarIns.Name = "btnFiltrarIns";
+            this.btnFiltrarIns.Size = new System.Drawing.Size(250, 59);
+            this.btnFiltrarIns.TabIndex = 21;
+            this.btnFiltrarIns.Text = "Filtrar";
+            this.btnFiltrarIns.UseVisualStyleBackColor = false;
+            this.btnFiltrarIns.Click += new System.EventHandler(this.btnFiltrarIns_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(110, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 29);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Filtro";
+            // 
+            // btnBorrarFiltro
+            // 
+            this.btnBorrarFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrarFiltro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBorrarFiltro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBorrarFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarFiltro.Font = new System.Drawing.Font("Bowlby One SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarFiltro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBorrarFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBorrarFiltro.Location = new System.Drawing.Point(22, 371);
+            this.btnBorrarFiltro.Name = "btnBorrarFiltro";
+            this.btnBorrarFiltro.Size = new System.Drawing.Size(250, 68);
+            this.btnBorrarFiltro.TabIndex = 23;
+            this.btnBorrarFiltro.Text = "Borrar filtro";
+            this.btnBorrarFiltro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBorrarFiltro.UseVisualStyleBackColor = false;
+            this.btnBorrarFiltro.Click += new System.EventHandler(this.btnBorrarFiltro_Click);
+            // 
             // Insccipciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -377,6 +505,8 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).EndInit();
             this.tsMaterias.ResumeLayout(false);
             this.tsMaterias.PerformLayout();
+            this.pnlFiltroIns.ResumeLayout(false);
+            this.pnlFiltroIns.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -403,5 +533,13 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn InsertarNota;
         private System.Windows.Forms.DataGridViewComboBoxColumn InsertarCondicion;
         private System.Windows.Forms.Button btnRegistrarNota;
+        private System.Windows.Forms.Panel pnlFiltroIns;
+        private System.Windows.Forms.ComboBox cbComision;
+        private System.Windows.Forms.ComboBox cbMateria;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnFiltrarIns;
+        private System.Windows.Forms.Button btnBorrarFiltro;
     }
 }

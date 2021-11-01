@@ -75,7 +75,7 @@ namespace UI.Desktop
         {
 
 
-            this.txtId.Text = currentInscripcion.ID.ToString();
+            //this.txtId.Text = currentInscripcion.ID.ToString();
             //this.txtNota.Text = currentInscripcion.Nota.ToString();
             this.CargarAlumnosCursos();
             Curso cur = CursoLogic.GetInstance().GetOne(currentInscripcion.IdCurso);

@@ -42,6 +42,13 @@ namespace UI.Desktop
                 this.tsMaterias.Visible = false;
             }
             this.ListarInscripciones();
+            //load cbMaterias y cbComision 
+            cbComision.DataSource = ComisionLogic.GetInstance().GetAll();
+            this.cbComision.DisplayMember = "DescComision";
+            this.cbComision.ValueMember = "ID";
+            cbMateria.DataSource = MateriaLogic.GetInstance().GetAll();
+            this.cbMateria.DisplayMember = "DescMateria";
+            this.cbMateria.ValueMember = "ID";
         }
 
         private void ListarInscripciones()
@@ -57,6 +64,7 @@ namespace UI.Desktop
                     this.dgvInscripciones.Columns[9].Visible = true;
                     this.dgvInscripciones.Columns[0].Visible = false;
                     this.dgvInscripciones.ReadOnly = false;
+                    pnlFiltroIns.Visible = true;
 
                     this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona,null);
                 }
@@ -136,11 +144,23 @@ namespace UI.Desktop
                 //{
                 //    insUpdate.Condicion = "Libre";
                 //}
-
-
                 insUpdate.State = BusinessEntity.States.Modified;
                 InscripcionLogic.GetInstance().Save(insUpdate);
             }
+            MessageBox.Show("Notas registradas con  existoss!!!");
+        }
+
+        private void btnFiltrarIns_Click(object sender, EventArgs e)
+        {       
+
+            this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona, null, ((Business.Entities.Comision)this.cbComision.SelectedItem).ID, ((Business.Entities.Materia)this.cbMateria.SelectedItem).ID);
+
+        }
+
+        private void btnBorrarFiltro_Click(object sender, EventArgs e)
+        {
+            this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona, null);
+
         }
     }
 }
