@@ -24,7 +24,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <asp:Label Text="" ID="lblId" runat="server" />
+        <asp:Label Text="Agregar una especialidad" ID="lblId" runat="server" />
     <div class="esp-action">
         <fieldset>
             <asp:Label Text="Descripcion" runat="server" />

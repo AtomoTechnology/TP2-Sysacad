@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -13,11 +14,12 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario  usr = Methods.ValidatePermission("MisDatos");
             if (!IsPostBack)
-            {
+            {             
                 if (Session["current_user"] != null)
                 {
-                    this.FillData(UsuarioLogic.GetInstance().GetOne(((Usuario)Session["current_user"]).ID));
+                    this.FillData(UsuarioLogic.GetInstance().GetOne(usr.ID));
                 }
             }
         }
@@ -34,12 +36,13 @@ namespace UI.Web
                 txtLegajo.Value = usuario.Legajo.ToString();
                 txtDireccion.Value = usuario.Direccion;
                 txtEmail.Value = usuario.Email;
-                txtPassword.Value = "********";
+                txtPassword.Value = "..........";
                 lblNombreCompleto.Text = usuario.Apellido + "   " + usuario.Nombre;
                 if (usuario.TipoPersona == 3)
                 {
                     userBoxmateria1.Visible = true;
                     userBoxmateria2.Visible = true;
+                    itemMateria.Visible = true;
                     List<Inscripcion> ins = InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(usuario.IdPersona);
                     if (ins.Count > 0)
                     {
@@ -50,7 +53,12 @@ namespace UI.Web
                         gvMaterias.DataBind();
                     }
                     else
+                    {
+
                         lblCantidadMateriasAprobadass.Text = "0";
+                        lblCantMatApro.Text ="0" ;
+                    }
+
                 }
                 else
                 {

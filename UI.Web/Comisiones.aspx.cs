@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -14,7 +15,20 @@ namespace UI.Web
         Comision comision = new Comision();
         protected void Page_Load(object sender, EventArgs e) 
         {
-            
+            Methods.ValidatePermission("Comisiones");
+            if( !IsPostBack)
+            {
+                if (Methods.PaginaEnEstadoEdicion())
+                {
+                   comision =  ComisionLogic.GetInstance().GetOne(Convert.ToInt32(Request.QueryString["id"]));
+                    txtDesc.Value = comision.DescComision;
+                    txtAno.Value = comision.AnioEspecialidad.ToString();
+                    ddlPlanes.SelectedValue = comision.IdPlan.ToString();
+                    this.lblAccionHead.Text = "Editar Comision " + comision.ID ;
+                    btnAddComision.Text = "Actualizar";
+
+                }
+            }
         }
 
         protected void btnAddComision_Click(object sender, EventArgs e)
@@ -37,14 +51,33 @@ namespace UI.Web
                 comision.DescComision = txtDesc.Value;
                 comision.AnioEspecialidad = Convert.ToInt32(txtAno.Value);
                 comision.IdPlan = Convert.ToInt32(ddlPlanes.SelectedValue);
-                comision.State = BusinessEntity.States.New;
+
+                if(Methods.PaginaEnEstadoEdicion())
+                {
+                    comision.ID =Convert.ToInt32(Request.QueryString["id"]);
+                    comision.State = BusinessEntity.States.Modified;
+
+                }
+                else
+                {
+                    comision.State = BusinessEntity.States.New;
+
+                }
                 ComisionLogic.GetInstance().Save(comision);
                 Response.Redirect("Comisiones.aspx");
             }
             else
             {
+                errorBox.Visible = true;
                 errorBox.InnerText = error;
             }
+        }
+
+        protected void gvComisiones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComisionLogic.GetInstance().Delete(Convert.ToInt32(gvComisiones.SelectedValue));
+            Response.Redirect("Comisiones.aspx");
+
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -30,10 +31,11 @@ namespace UI.Web
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Methods.ValidatePermission("Materias");
             if (!IsPostBack)
             {
                 errorsBox.Visible = false;
+                dgvMaterias.AutoGenerateColumns = false;
                 this.LoadData();
 
                 if (Request.QueryString["id"] != null)
@@ -69,17 +71,7 @@ namespace UI.Web
             ddlPlanes.DataSource = PlanLogic.GetInstance().GetAll();
             ddlPlanes.DataBind();
         }
-        private bool PaginaEnEstadoEdicion()
-        {
-            if (Request.QueryString["id"] != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }            
-        }
+
         protected void addMateria_Click(object sender, EventArgs e)
         {
             bool ok = true;
@@ -107,7 +99,7 @@ namespace UI.Web
                 materia.HsTotales = Convert.ToInt32(txtHsTotales.Value);
                 materia.IdPlan = Convert.ToInt32(ddlPlanes.SelectedValue);
 
-                if (PaginaEnEstadoEdicion())
+                if (Methods.PaginaEnEstadoEdicion())
                 {
                     materia.ID = Convert.ToInt32(Request.QueryString["id"]);
                     materia.State = BusinessEntity.States.Modified;
@@ -117,7 +109,7 @@ namespace UI.Web
                     materia.State = BusinessEntity.States.New;
                 }
 
-                MateriaLogic.GetInstance().Save(materia);                
+                MateriaLogic.GetInstance().Save(materia);
                 Response.Redirect("Materias.aspx");
             }
             else
@@ -128,9 +120,9 @@ namespace UI.Web
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
-        {        
+        {
 
-            if (SelectedID != 0 )
+            if (SelectedID != 0)
             {
                 MateriaLogic.GetInstance().Delete(SelectedID);
                 ModalBox.Visible = false;

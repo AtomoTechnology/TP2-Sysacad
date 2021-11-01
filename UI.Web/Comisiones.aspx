@@ -22,7 +22,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="gvComisiones" runat="server" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="odsComisiones">
+    <asp:GridView ID="gvComisiones" runat="server" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="odsComisiones" DataKeyNames="ID" OnSelectedIndexChanged="gvComisiones_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
             <asp:BoundField DataField="DescComision" HeaderText="DescComision" SortExpression="DescComision" />
@@ -30,11 +30,13 @@
             <asp:BoundField DataField="DescPlan" HeaderText="DescPlan" SortExpression="DescPlan" />
             <asp:BoundField DataField="IdPlan" HeaderText="IdPlan" SortExpression="IdPlan" Visible="False" />
             <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" Visible="False" />
+            <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Comisiones.aspx?id={0}" Text="Editar" />
+            <asp:CommandField SelectText="Borrar" ShowSelectButton="True" />
         </Columns>
     </asp:GridView>
     <div class="add-xxx-box">
         <div class="header-add-x">
-            <asp:Label ID="lblAccion" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblAccionHead" runat="server" Text="Alta"/>
         </div>
         <div style="padding: 10px;">
             <fieldset>
@@ -54,7 +56,7 @@
                 <asp:Button Text="Agregar Comision" CssClass="btnAdd" ID="btnAddComision" runat="server" OnClick="btnAddComision_Click" />
             </fieldset>
             <fieldset>
-                <div class="error" runat="server" id="errorBox">
+                <div class="error" visible="false" runat="server" id="errorBox">
 
                 </div>
             </fieldset>

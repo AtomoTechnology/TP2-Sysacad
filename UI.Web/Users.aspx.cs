@@ -52,7 +52,7 @@ namespace UI.Web
                 txtClave.Text = currentUser.Clave;
                 txtIdPersona.Value = currentUser.IdPersona.ToString();
                 chkHabilitado.Checked = currentUser.Habilitado;
-                this.lblAccion.Text = "Edition Usuario ID : " + idUsuario;
+                this.lblAccion.Text = "Edicion Usuario ID : " + idUsuario;
                 btnGuardar.Text = "Actualizar";
             }
         }
@@ -165,7 +165,7 @@ namespace UI.Web
                 }
                 else
                 {
-                    currentUser.Clave = txtClave.Text;
+                    currentUser.Clave = Methods.Encriptar(txtClave.Text);
                     currentUser.Habilitado = true;
                     currentUser.State = BusinessEntity.States.New;
                 }

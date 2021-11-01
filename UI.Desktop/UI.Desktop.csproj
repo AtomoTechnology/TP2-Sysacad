@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.v12.12.0.0.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,6 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Academiadatset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Academiadatset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,7 +303,7 @@
     <EmbeddedResource Include="ReportPlan.resx">
       <DependentUpon>ReportPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportPlans.rdlc" />
+    <EmbeddedResource Include="ReportViewerCursos.rdlc" />
     <EmbeddedResource Include="UserPerfil.resx">
       <DependentUpon>UserPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +338,17 @@
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Academiadatset.xsc">
+      <DependentUpon>Academiadatset.xsd</DependentUpon>
+    </None>
+    <None Include="Academiadatset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Academiadatset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Academiadatset.xss">
+      <DependentUpon>Academiadatset.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Business.Logic.PlanLogic.datasource" />
     <None Include="Properties\Settings.settings">
@@ -347,6 +372,10 @@
     <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
       <Project>{0e8a7f6e-4410-4b00-b49f-55c2c4539ab5}</Project>
       <Name>Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI.Web\UI.Web.csproj">
+      <Project>{D19E12E1-D919-4A14-B57F-9F6FF33896BB}</Project>
+      <Name>UI.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

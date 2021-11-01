@@ -20,11 +20,11 @@
                 <div class="header-left">
                     <a href="Index.aspx">
                         <div class="logo-menu">
-                            <img src="https://play-lh.googleusercontent.com/on7AWbuav44mB2ztIB6mp1BUu6bhIMcNd-9YjbjNDxgViamcJ3bo1dkEo06EGbC7njw" width="40" alt="Logo UTN" />
+                            <img src="assets/utn.png" width="40" alt="Logo UTN" />
                         </div>
                     </a>
                     <ul class="items-menu">
-                        <li class="item">
+                        <li class="item" runat="server" visible="false" id="menuAlumno">
                             <a >Alumnos
                             <ul class="sub-items-menu sub-menu-left">
                                 <li class="sub-item">
@@ -36,7 +36,7 @@
                             </ul>
                             </a>
                         </li>
-                        <li class="item">
+                        <li class="item" runat="server" visible="false" id="menuDocente">
                             <a href="#">Docentes
                             <ul class="sub-items-menu sub-menu-left">
                                 <li class="sub-item">
@@ -48,7 +48,7 @@
                             </ul>
                             </a>
                         </li>
-                        <li class="item">
+                        <li class="item" runat="server" visible="false" id="menuAdmin">
                             <a href="">Utilidades
                             <ul class="sub-items-menu sub-menu-left">
                                 <li class="sub-item">
@@ -76,7 +76,7 @@
 
                             </a>
                         </li>
-                        <li class="item">
+                        <li class="item" runat="server" visible="false" id="menuAdmin2">
                             <a>Reporte
                             <ul class="sub-items-menu sub-menu-left">
                                 <li class="sub-item">
@@ -87,22 +87,23 @@
                                 </li>
                             </ul>
                             </a>
-
+</li>
                     </ul>
 
 
                 </div>
                 <div class="header-right">
-                    <div class="box-1">
+                    <!--<div class="box-1">
                         <i class="icon">1</i>
                         <i class="icon">2</i>
                         <i class="icon">2</i>
-                    </div>
+                    </div> -->
                     <div>
                         <ul class="menu-right">
 
                             <li class="item">
-                                <a href="#">Usuario
+                                <a href="#">
+                                    <asp:Label Text="Usuariossssss" ID="username" runat="server" /> 
                                 <ul class="sub-items-menu sub-menu-right">
                                     <li class="sub-item">
                                         <a href="MisDatos.aspx">Mis Datos</a>

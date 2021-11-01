@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,33 +10,32 @@ namespace UI.Web
 {
     public partial class Site : System.Web.UI.MasterPage
     {
-        static Page resquest = new Page();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.ValidateAcess();
-        }
-        protected void ValidateAcess(string path = "")
-        {
-            if (Session["current_user"] == null)
+            if(Session["current_user"] != null)
             {
-                Response.Redirect("SignIn.aspx");
+                Usuario usr = (Usuario)Session["current_user"];
+                username.Text = usr.NombreUsuario;
+                    switch (usr.TipoPersona)
+                    {
+                    case 1:
+                        menuAdmin.Visible = true;
+                        menuAdmin2.Visible = true;
+                        break;
+                    case 2:
+                        menuDocente.Visible = true;
+                        break;
+                    case 3:
+                        menuAlumno.Visible = true;
+                        break;
+                        default:
+                            break;
+                    }
             }
-
         }
-        public void Hello(string he)
-        {
-
-        }
-        public static bool PaginaEnEstadoEdicion()
-        {
-            if (resquest.Request.QueryString["id"] != null)
-            {                
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+      
+       
+       
     }
 }

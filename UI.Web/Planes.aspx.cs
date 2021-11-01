@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -14,35 +15,18 @@ namespace UI.Web
         Plan current_plan;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Methods.ValidatePermission("Planes");
             if (!IsPostBack)
             {
-
-                if (Session["current_user"] == null)
-                {
-                    Response.Redirect("SignIn.aspx");
-                }
-
-
-                if (PaginaEnEstadoEdicion())
+                if (Methods.PaginaEnEstadoEdicion())
                 {
                     current_plan = PlanLogic.GetInstance().GetOne(Convert.ToInt32(Request.QueryString["id"]));
                     txtDescPlan.Text = current_plan.DescPlan;
                     ddlEspecialidades.SelectedValue = current_plan.IdEspecialidad.ToString();
-                    lblAccion.Text = "Edicion";
+                    lblAccion.Text = "Edicion Plan " + current_plan.ID;
                     bntAddPlan.Text = "Actualizar";
                 }
 
-            }
-        }
-        private bool PaginaEnEstadoEdicion()
-        {
-            if (Request.QueryString["id"] != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
         protected void bntAddPlan_Click(object sender, EventArgs e)
@@ -56,17 +40,17 @@ namespace UI.Web
             else
             {
                 txtDescPlan.Style.Remove(HtmlTextWriterStyle.BorderColor);
-                txtDescPlan.Style.Add(HtmlTextWriterStyle.BorderColor, "green");              
-            }        
+                txtDescPlan.Style.Add(HtmlTextWriterStyle.BorderColor, "green");
+            }
 
             if (ok)
             {
                 current_plan = new Plan();
-                current_plan.ID = Convert.ToInt32(Request.QueryString["id"]);
                 current_plan.DescPlan = txtDescPlan.Text;
                 current_plan.IdEspecialidad = Convert.ToInt32(ddlEspecialidades.SelectedValue);
-                if (PaginaEnEstadoEdicion())
+                if (Methods.PaginaEnEstadoEdicion())
                 {
+                    current_plan.ID = Convert.ToInt32(Request.QueryString["id"]);
                     current_plan.State = BusinessEntity.States.Modified;
                 }
                 else
@@ -79,9 +63,11 @@ namespace UI.Web
 
         }
 
-        protected void txtDescPlan_TextChanged(object sender, EventArgs e)
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Label1.Text = this.txtDescPlan.Text;
+            PlanLogic.GetInstance().Delete(Convert.ToInt32(GridView1.SelectedValue));
+            Response.Redirect("Planes.aspx");
+
         }
     }
 }

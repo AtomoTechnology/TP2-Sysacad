@@ -11,25 +11,34 @@ namespace UI.Web
 {
 
 
-    public partial class Comisiones
+    public partial class NewPassword
     {
 
         /// <summary>
-        /// Control GridView1.
+        /// Control txtPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPassword;
 
         /// <summary>
-        /// Control odsEspecialidades.
+        /// Control btnChangePassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsEspecialidades;
+        protected global::System.Web.UI.WebControls.Button btnChangePassword;
+
+        /// <summary>
+        /// Control errorChangePassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorChangePassword;
     }
 }

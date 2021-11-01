@@ -5,13 +5,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <a href="#"> Cursos 
-    </a>
-    <asp:GridView ID="dgvCursos" runat="server">
+    <asp:GridView ID="dgvCursos" runat="server" DataKeyNames="ID" OnSelectedIndexChanged="dgvCursos_SelectedIndexChanged">
         <Columns>
+            <asp:BoundField DataField="DescMateria" HeaderText="Materia" />
+            <asp:BoundField DataField="DescComision" HeaderText="Comision" />
+            <asp:BoundField DataField="AnioCalendario" HeaderText="Año" />
+            <asp:BoundField DataField="Cupo" HeaderText="Cupo" />
+            <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="AsignarDocente.aspx?id={0}" HeaderText="Asignar Docente" Text="Asignar" />
             <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Cursos.aspx?id={0}" Text="Editar" />
             <asp:CommandField HeaderText="Borrar" ShowHeader="True" SelectText="Borrar" ShowSelectButton="True" />
-            <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="AsignarDocente.aspx?id={0}" HeaderText="Asignar Docente" Text="Asignar" />
         </Columns>
     </asp:GridView>
     <div class="add-xxx-box">

@@ -23,6 +23,10 @@
 
     <asp:GridView ID="dgvMaterias" runat="server" OnSelectedIndexChanged="dgvMaterias_SelectedIndexChanged" DataKeyNames="ID">
         <Columns>
+            <asp:BoundField DataField="DescMateria" HeaderText="Materia" />
+            <asp:BoundField DataField="HsSemanales" HeaderText="HS Semanales" />
+            <asp:BoundField DataField="HsTotales" HeaderText="HS Totales" />
+            <asp:BoundField DataField="DescPlan" HeaderText="Plan" />
             <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Materias.aspx?id={0}" Text="Editar" />           
             <asp:CommandField ItemStyle-CssClass="btn-delete-materia" NewText="Borrar" ShowSelectButton="True" SelectText="Borrar" >
 <ItemStyle CssClass="btn-delete-materia"></ItemStyle>

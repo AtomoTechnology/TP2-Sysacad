@@ -35,9 +35,8 @@ namespace UI.Desktop
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportePlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscribirAUnaMateriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.misCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +47,10 @@ namespace UI.Desktop
             this.comisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMenuAcademia = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,9 +66,7 @@ namespace UI.Desktop
             this.btnSetting = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inscribirAUnaMateriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportViewerCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.pnlMenuAcademia.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -135,34 +136,23 @@ namespace UI.Desktop
             // crearPersonaToolStripMenuItem
             // 
             this.crearPersonaToolStripMenuItem.Name = "crearPersonaToolStripMenuItem";
-            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
+            this.crearPersonaToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
             this.crearPersonaToolStripMenuItem.Text = "Materias Inscriptas";
             this.crearPersonaToolStripMenuItem.Click += new System.EventHandler(this.crearPersonaToolStripMenuItem_Click);
             // 
-            // adminToolStripMenuItem
+            // misDatosToolStripMenuItem
             // 
-            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteCursosToolStripMenuItem,
-            this.reportePlanesToolStripMenuItem});
-            this.adminToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.adminToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.admin;
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(113, 29);
-            this.adminToolStripMenuItem.Text = "Admin";
+            this.misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
+            this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
+            this.misDatosToolStripMenuItem.Text = "Mis Datos";
+            this.misDatosToolStripMenuItem.Click += new System.EventHandler(this.misDatosToolStripMenuItem_Click);
             // 
-            // reporteCursosToolStripMenuItem
+            // inscribirAUnaMateriaToolStripMenuItem
             // 
-            this.reporteCursosToolStripMenuItem.Name = "reporteCursosToolStripMenuItem";
-            this.reporteCursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.reporteCursosToolStripMenuItem.Text = "Reporte Cursos";
-            this.reporteCursosToolStripMenuItem.Click += new System.EventHandler(this.reporteCursosToolStripMenuItem_Click);
-            // 
-            // reportePlanesToolStripMenuItem
-            // 
-            this.reportePlanesToolStripMenuItem.Name = "reportePlanesToolStripMenuItem";
-            this.reportePlanesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.reportePlanesToolStripMenuItem.Text = "Reporte Planes";
-            this.reportePlanesToolStripMenuItem.Click += new System.EventHandler(this.reportePlanesToolStripMenuItem_Click);
+            this.inscribirAUnaMateriaToolStripMenuItem.Name = "inscribirAUnaMateriaToolStripMenuItem";
+            this.inscribirAUnaMateriaToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
+            this.inscribirAUnaMateriaToolStripMenuItem.Text = "Inscribir a una materia";
+            this.inscribirAUnaMateriaToolStripMenuItem.Click += new System.EventHandler(this.inscribirAUnaMateriaToolStripMenuItem_Click);
             // 
             // profesoresToolStripMenuItem
             // 
@@ -178,14 +168,14 @@ namespace UI.Desktop
             // misCursosToolStripMenuItem
             // 
             this.misCursosToolStripMenuItem.Name = "misCursosToolStripMenuItem";
-            this.misCursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.misCursosToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.misCursosToolStripMenuItem.Text = "Mis Cursos";
             this.misCursosToolStripMenuItem.Click += new System.EventHandler(this.misCursosToolStripMenuItem_Click);
             // 
             // registrarNotaToolStripMenuItem
             // 
             this.registrarNotaToolStripMenuItem.Name = "registrarNotaToolStripMenuItem";
-            this.registrarNotaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.registrarNotaToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.registrarNotaToolStripMenuItem.Text = "Registrar Nota";
             this.registrarNotaToolStripMenuItem.Click += new System.EventHandler(this.registrarNotaToolStripMenuItem_Click);
             // 
@@ -208,44 +198,77 @@ namespace UI.Desktop
             // planToolStripMenuItem
             // 
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.planToolStripMenuItem.Text = "Planes";
             this.planToolStripMenuItem.Click += new System.EventHandler(this.planToolStripMenuItem_Click);
             // 
             // materiaToolStripMenuItem
             // 
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.materiaToolStripMenuItem.Text = "Materias";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // especialidadToolStripMenuItem
             // 
             this.especialidadToolStripMenuItem.Name = "especialidadToolStripMenuItem";
-            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.especialidadToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.especialidadToolStripMenuItem.Text = "Especialidades";
             this.especialidadToolStripMenuItem.Click += new System.EventHandler(this.especialidadToolStripMenuItem_Click);
             // 
             // comisionesToolStripMenuItem
             // 
             this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
-            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.comisionesToolStripMenuItem.Text = "Comisiones";
             this.comisionesToolStripMenuItem.Click += new System.EventHandler(this.comisionesToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.cursosToolStripMenuItem.Text = "Cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // inscripcionesToolStripMenuItem
             // 
             this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
             this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
+            // 
+            // personasToolStripMenuItem
+            // 
+            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            this.personasToolStripMenuItem.Text = "Personas";
+            this.personasToolStripMenuItem.Click += new System.EventHandler(this.personasToolStripMenuItem_Click);
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteCursosToolStripMenuItem,
+            this.reportePlanesToolStripMenuItem,
+            this.reportViewerCursosToolStripMenuItem});
+            this.adminToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.adminToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.admin;
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(113, 29);
+            this.adminToolStripMenuItem.Text = "Admin";
+            // 
+            // reporteCursosToolStripMenuItem
+            // 
+            this.reporteCursosToolStripMenuItem.Name = "reporteCursosToolStripMenuItem";
+            this.reporteCursosToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
+            this.reporteCursosToolStripMenuItem.Text = "Reporte Cursos";
+            this.reporteCursosToolStripMenuItem.Click += new System.EventHandler(this.reporteCursosToolStripMenuItem_Click);
+            // 
+            // reportePlanesToolStripMenuItem
+            // 
+            this.reportePlanesToolStripMenuItem.Name = "reportePlanesToolStripMenuItem";
+            this.reportePlanesToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
+            this.reportePlanesToolStripMenuItem.Text = "Reporte Planes";
+            this.reportePlanesToolStripMenuItem.Click += new System.EventHandler(this.reportePlanesToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -431,26 +454,12 @@ namespace UI.Desktop
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // personasToolStripMenuItem
+            // reportViewerCursosToolStripMenuItem
             // 
-            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
-            this.personasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.personasToolStripMenuItem.Text = "Personas";
-            this.personasToolStripMenuItem.Click += new System.EventHandler(this.personasToolStripMenuItem_Click);
-            // 
-            // misDatosToolStripMenuItem
-            // 
-            this.misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
-            this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
-            this.misDatosToolStripMenuItem.Text = "Mis Datos";
-            this.misDatosToolStripMenuItem.Click += new System.EventHandler(this.misDatosToolStripMenuItem_Click);
-            // 
-            // inscribirAUnaMateriaToolStripMenuItem
-            // 
-            this.inscribirAUnaMateriaToolStripMenuItem.Name = "inscribirAUnaMateriaToolStripMenuItem";
-            this.inscribirAUnaMateriaToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
-            this.inscribirAUnaMateriaToolStripMenuItem.Text = "Inscribir a una materia";
-            this.inscribirAUnaMateriaToolStripMenuItem.Click += new System.EventHandler(this.inscribirAUnaMateriaToolStripMenuItem_Click);
+            this.reportViewerCursosToolStripMenuItem.Name = "reportViewerCursosToolStripMenuItem";
+            this.reportViewerCursosToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
+            this.reportViewerCursosToolStripMenuItem.Text = "Report Viewer Cursos";
+            this.reportViewerCursosToolStripMenuItem.Click += new System.EventHandler(this.reportViewerCursosToolStripMenuItem_Click);
             // 
             // formMain
             // 
@@ -530,5 +539,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem misDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscribirAUnaMateriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportViewerCursosToolStripMenuItem;
     }
 }

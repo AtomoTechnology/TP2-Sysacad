@@ -23,7 +23,7 @@
         <div class="login">
             <div class="logo">
 
-                <img src="https://play-lh.googleusercontent.com/on7AWbuav44mB2ztIB6mp1BUu6bhIMcNd-9YjbjNDxgViamcJ3bo1dkEo06EGbC7njw" width="100" alt="Logo UTN" />
+                <img src="assets/utn.png" width="100" alt="Logo UTN" />
 
             </div>
 

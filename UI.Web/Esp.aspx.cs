@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -14,12 +15,9 @@ namespace UI.Web
         Especialidad esp = new Especialidad();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Methods.ValidatePermission("Esp");
             if (!IsPostBack)
-            {
-                if (Session["current_user"] == null)
-                {
-                    Response.Redirect("SignIn.aspx");
-                }
+            {               
                 errorDesc.Visible = false;
                 if (Request.QueryString["id"] != null)
                 {
@@ -55,8 +53,16 @@ namespace UI.Web
             {
                 errorDesc.Visible = false;
                 esp.desc_especialidad = txtDesc.Value;
-                esp.ID = Convert.ToInt32(Request.QueryString["id"]);
-                esp.State = BusinessEntity.States.Modified;
+                if(Methods.PaginaEnEstadoEdicion())
+                {
+                    esp.ID = Convert.ToInt32(Request.QueryString["id"]);
+                    esp.State = BusinessEntity.States.Modified;
+
+                }
+                else
+                {
+                    esp.State = BusinessEntity.States.New;
+                }
                 EspecialidadLogic.GetInstance().Save(esp);
                 Response.Redirect("Especialidades.aspx");
 

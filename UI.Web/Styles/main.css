@@ -80,6 +80,7 @@ li {
 header {
     width: 100%;
     position: sticky;
+    z-index: 2;
     top: 0;
     height: auto;
     background: #ff9800;
@@ -115,8 +116,10 @@ header {
 
 .header-left {
     display: flex;
-    justify-content: space-around;
+/*    justify-content: space-around;*/
     align-items: center;
+    gap: 3rem;
+    margin-left: 1rem;
 }
 .btn-add {
     background: #ff9800;

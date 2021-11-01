@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -25,7 +26,7 @@ namespace UI.Web
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             
-            Usuario user = UsuarioLogic.GetInstance().LogIn(txtUsuarname.Text, txtPassword.Value);
+            Usuario user = UsuarioLogic.GetInstance().LogIn(txtUsuarname.Text, Methods.Encriptar(txtPassword.Value));
             if( user != null)
             {
                 Session["current_user"] = user;

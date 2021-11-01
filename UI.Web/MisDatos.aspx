@@ -36,6 +36,7 @@
             margin-bottom: 0.4rem;
             transition: 300ms ease-in-out;
             padding: 10px 7px;
+            border-bottom: 0.4px solid #d0c7c8;
         }
 
             .item-user:hover {
@@ -60,8 +61,8 @@
             grid-template-columns: 25% 70%;
             justify-content: center;
             margin: 1rem 0px;
-            position: relative;
-            z-index: -1;
+/*            position: relative;*/
+/*            z-index: -1;*/
             background: #fcfcfc;
         }
 
@@ -144,7 +145,7 @@
         <div class="user-header">
             <div class="box-img">
 
-                <img src="https://www.pngitem.com/pimgs/m/256-2560275_avatar-icon-red-png-clipart-png-download-red.png" alt="Logo User" />
+                <img  src="assets/logoUser.png" alt="Logo User" />
             </div>
 
             <div class="user-header-right">
@@ -153,7 +154,7 @@
                     <a class="editar" href="#">Editar Perfil</a>
                 </fieldset>
                 <fieldset visible="false" runat="server" id="userBoxmateria1">
-                    <a href="MisDatos.aspx#userBoxmateria2">Materias Aprobadas</a>
+                    <a href="#datos-cuenta">Materias Aprobadas</a>
                     <asp:Label Text="" ID="lblCantMatApro" CssClass="lblCant" runat="server" />
                 </fieldset>
 
@@ -170,8 +171,8 @@
                     <li class="item-user">
                         <a href="#datos-cuenta">Datos Cuenta</a>
                     </li>
-                    <li class="item-user">
-                        <a href="#userBoxmateria2">Datos personal</a>
+                    <li class="item-user" runat="server" id="itemMateria" visible="false">
+                        <a href="#datos-cuenta">Materia(s) Aprobada(s)</a>
                     </li>
 
                 </ul>
@@ -217,7 +218,7 @@
                         </fieldset>
                         <fieldset>
                             <asp:Label Text="Contraseña" runat="server" />
-                            <input type="password" runat="server" id="txtPassword" readonly name="name" value="abx123" />
+                            <input type="password" runat="server" id="txtPassword" readonly  value="" />
                         </fieldset>
                         <fieldset>
                             <a class="change-password" href="PasswordChange.aspx">Cambiar Contrseña</a>

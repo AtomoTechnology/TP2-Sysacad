@@ -440,5 +440,46 @@ namespace Data.Database
             }
             return usr;
         }
+
+        public void UpdatePassword(int ID , string clave)
+        {
+            try
+            {
+                this.OpenConnection();
+                using (var dbTr = SqlConn.BeginTransaction())
+                {
+                    try
+                    {                   
+
+                         SqlCommand cmdUpdateUser = new SqlCommand("UPDATE usuarios SET clave = @clave  " +                     
+                        "WHERE id_usuario=@id", SqlConn, dbTr);
+                        cmdUpdateUser.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                        cmdUpdateUser.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = clave;
+                        cmdUpdateUser.ExecuteNonQuery();                    
+                        dbTr.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        dbTr.Rollback();
+                        MessageBox.Show("Error al realizar la operación!!!");
+                        Exception Excepcionalejada = new Exception("Error al realizar la operación!!!", ex); throw Excepcionalejada;
+                    }
+                    finally
+                    {
+                        this.CloseConnection();
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                Exception Excepcionalejada = new Exception("Error al realizar la operación!!!", Ex); throw Excepcionalejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+
+        }
     }
 }

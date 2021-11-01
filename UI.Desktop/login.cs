@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Web.Helpers;
 
 namespace UI.Desktop
 {
@@ -24,7 +25,7 @@ namespace UI.Desktop
         {
             if(this.txtUsuario.Text != "" && this.txtPass.Text != "")
             {
-                Business.Entities.Usuario currentUser = UsuarioLogic.GetInstance().LogIn(this.txtUsuario.Text, this.txtPass.Text);
+                Business.Entities.Usuario currentUser = UsuarioLogic.GetInstance().LogIn(this.txtUsuario.Text, Methods.Encriptar(this.txtPass.Text));
                 if (currentUser != null )
                 {
                     this.DialogResult = DialogResult.OK;
@@ -61,7 +62,6 @@ namespace UI.Desktop
             if (new LogOut().ShowDialog() == DialogResult.OK)
             {
                 Application.Exit();
-
             }
         }
     }

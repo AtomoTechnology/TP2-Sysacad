@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -14,10 +15,12 @@ namespace UI.Web
         Curso curso = new Curso();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            Methods.ValidatePermission("Cursos");
+            dgvCursos.AutoGenerateColumns = false;
+            if (!IsPostBack)
             {
                 this.LoadCursos();
-                if(PaginaEnEstadoEdicion())
+                if(Methods.PaginaEnEstadoEdicion())
                 {
                     this.LoadFields(Convert.ToInt32(Request.QueryString["id"]));
                 }
@@ -38,18 +41,7 @@ namespace UI.Web
                 lblAction.Text = "Editar curso " + curso.ID;
             }
         }
-
-        private bool PaginaEnEstadoEdicion()
-        {
-            if (Request.QueryString["id"] != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
         private void LoadCursos()
         {
             dgvCursos.DataSource = CursoLogic.GetInstance().GetAll();
@@ -89,7 +81,7 @@ namespace UI.Web
                 curso.Cupo = Convert.ToInt32(txtCupo.Text);
                 curso.IdComision = Convert.ToInt32(ddlComisiones.SelectedValue);
                 curso.IdMateria = Convert.ToInt32(ddlMateria.SelectedValue);
-                if(PaginaEnEstadoEdicion())
+                if(Methods.PaginaEnEstadoEdicion())
                 {
                     curso.ID = Convert.ToInt32(Request.QueryString["id"]);
                     curso.State = BusinessEntity.States.Modified;
@@ -102,6 +94,13 @@ namespace UI.Web
                 CursoLogic.GetInstance().Save(curso);
                 Response.Redirect("Cursos.aspx");
             }
+        }
+
+        protected void dgvCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CursoLogic.GetInstance().Delete(Convert.ToInt32(dgvCursos.SelectedValue));
+            Response.Redirect("Cursos.aspx");
+
         }
     }
 }

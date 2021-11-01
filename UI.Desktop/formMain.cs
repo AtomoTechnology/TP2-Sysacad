@@ -398,5 +398,15 @@ namespace UI.Desktop
             form.Dock = DockStyle.Fill;
             form.Show();
         }
+
+        private void reportViewerCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new ReportPlan(); 
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }

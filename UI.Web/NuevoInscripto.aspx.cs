@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -14,12 +15,14 @@ namespace UI.Web
         Inscripcion ins = new Inscripcion();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Methods.ValidatePermission("NuevoInscripto");
             if (!IsPostBack)
             {
                 this.LoadAlumnosCursos();
-
-                if (PaginaEnEstadoEdicion())
+                if (Methods.PaginaEnEstadoEdicion())
                 {
+                    ddlAlumno.Enabled = false;
+                    ddlCurso.Enabled = false;
                     otherFields.Visible = true;
                     this.LoadFields(Convert.ToInt32(Request.QueryString["id"]));
                 }
@@ -65,17 +68,6 @@ namespace UI.Web
                 ddlAlumno.Enabled = false;
             }
 
-        }
-        private bool PaginaEnEstadoEdicion()
-        {
-            if (Request.QueryString["id"] != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }     
               
              
@@ -96,7 +88,7 @@ namespace UI.Web
             {
                 ins.IdAlumno = Convert.ToInt32(ddlAlumno.SelectedValue);
                 ins.IdCurso = Convert.ToInt32(ddlCurso.SelectedItem.Value);
-                if (PaginaEnEstadoEdicion())
+                if (Methods.PaginaEnEstadoEdicion())
                 {
                     ins.Condicion = ddlCondicion.SelectedItem.Value;
                     ins.Nota = Convert.ToInt32(txtNota.Text);

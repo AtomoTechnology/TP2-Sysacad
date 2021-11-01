@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AsignarDocente.aspx" />
+    <Content Include="assets\logoUser.png" />
+    <Content Include="assets\utn.png" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Cursos.aspx" />
     <Content Include="Esp.aspx" />
@@ -79,7 +81,9 @@
     <Content Include="Materias.aspx" />
     <Content Include="MisCursos.aspx" />
     <Content Include="MisDatos.aspx" />
+    <Content Include="NewPassword.aspx" />
     <Content Include="NuevoInscripto.aspx" />
+    <Content Include="PasswordChange.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="RegistrarNota.aspx" />
     <Content Include="ReporteCursos.aspx" />
@@ -172,12 +176,26 @@
     <Compile Include="MisDatos.aspx.designer.cs">
       <DependentUpon>MisDatos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewPassword.aspx.cs">
+      <DependentUpon>NewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewPassword.aspx.designer.cs">
+      <DependentUpon>NewPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NuevoInscripto.aspx.cs">
       <DependentUpon>NuevoInscripto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NuevoInscripto.aspx.designer.cs">
       <DependentUpon>NuevoInscripto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordChange.aspx.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordChange.aspx.designer.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
     </Compile>
     <Compile Include="Planes.aspx.cs">
       <DependentUpon>Planes.aspx</DependentUpon>

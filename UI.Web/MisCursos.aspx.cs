@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UI.Web.Helpers;
 
 namespace UI.Web
 {
@@ -13,10 +14,10 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["current_user"] != null)
+            var user = Methods.ValidatePermission("MisCursos");
+            gvMisCursos.AutoGenerateColumns = false;
+            if (Session["current_user"] != null)
             {
-
-                 var user = (Usuario)Session["current_user"];
                 gvMisCursos.DataSource = DictadoLogic.GetInstance().GetAll(user.IdPersona);
                 gvMisCursos.DataBind();
             }

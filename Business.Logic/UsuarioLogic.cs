@@ -57,6 +57,10 @@ namespace Business.Logic
         {
             return Usuario.LogIn(username, password);
         }
+        public void UpdatePassword(int ID, string clave)
+        {
+            Usuario.UpdatePassword(ID, clave);
+        }
 
         public Usuario GetOneByEmailUsernameLegajo(Usuario usuario)
         {
