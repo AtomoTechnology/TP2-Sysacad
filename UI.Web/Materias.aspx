@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="UI.Web.Materias" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
-    Academia | Materias
-</asp:Content>
+    Academia | Materias</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <style>
        
