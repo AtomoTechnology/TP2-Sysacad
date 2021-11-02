@@ -6,21 +6,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.59199cm</Width>
+              <Width>5.64796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.59199cm</Width>
+              <Width>5.64796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.59199cm</Width>
+              <Width>5.64796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.96731cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.96731cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.6316cm</Height>
+              <Height>0.9175cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -31,7 +34,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id comision</Value>
+                              <Value>Desc Plan</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -61,7 +64,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id curso</Value>
+                              <Value>Desc Materia</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -91,7 +94,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id materia</Value>
+                              <Value>Hs Semanales</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -121,7 +124,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>cupo</Value>
+                              <Value>Hs Totales</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -142,28 +145,58 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.6316cm</Height>
+              <Height>0.9175cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="id_comision">
+                    <Textbox Name="DescPlan">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!id_comision.Value</Value>
+                              <Value>=Fields!DescPlan.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>id_comision</rd:DefaultName>
+                      <rd:DefaultName>DescPlan</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -179,21 +212,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="id_curso">
+                    <Textbox Name="DescMateria">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!id_curso.Value</Value>
+                              <Value>=Fields!DescMateria.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>id_curso</rd:DefaultName>
+                      <rd:DefaultName>DescMateria</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -209,21 +242,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="id_materia">
+                    <Textbox Name="HsSemanales">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!id_materia.Value</Value>
+                              <Value>=Fields!HsSemanales.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>id_materia</rd:DefaultName>
+                      <rd:DefaultName>HsSemanales</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -239,21 +272,51 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="cupo">
+                    <Textbox Name="HsTotales">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!cupo.Value</Value>
+                              <Value>=Fields!HsTotales.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>cupo</rd:DefaultName>
+                      <rd:DefaultName>HsTotales</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -277,6 +340,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -290,10 +354,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.18745cm</Top>
-        <Left>1.64606cm</Left>
-        <Height>3.26319cm</Height>
-        <Width>16.27597cm</Width>
+        <Top>4.32717cm</Top>
+        <Left>1.24037cm</Left>
+        <Height>1.83501cm</Height>
+        <Width>20.87848cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -301,10 +365,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>4.70139in</Height>
     <Style />
   </Body>
-  <Width>8.5837in</Width>
+  <Width>11.60417in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -317,52 +381,55 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="Academiadatset">
+    <DataSource Name="BusinessLogic">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>58adc861-b75f-48d8-bf39-c8206815d5cc</rd:DataSourceID>
+      <rd:DataSourceID>c61f37f4-7c60-40d7-97fd-2841dd5ba93e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>Academiadatset</DataSourceName>
+        <DataSourceName>BusinessLogic</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="id_curso">
-          <DataField>id_curso</DataField>
+        <Field Name="DescPlan">
+          <DataField>DescPlan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescMateria">
+          <DataField>DescMateria</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HsSemanales">
+          <DataField>HsSemanales</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="id_materia">
-          <DataField>id_materia</DataField>
+        <Field Name="HsTotales">
+          <DataField>HsTotales</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="id_comision">
-          <DataField>id_comision</DataField>
+        <Field Name="IdPlan">
+          <DataField>IdPlan</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="anio_calendario">
-          <DataField>anio_calendario</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cupo">
-          <DataField>cupo</DataField>
+        <Field Name="ID">
+          <DataField>ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>Academiadatset</rd:DataSetName>
-        <rd:SchemaPath>D:\UTN 3 YEAR\IDE .Net\TP2L05\UI.Desktop\Academiadatset.xsd</rd:SchemaPath>
-        <rd:TableName>cursos</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>cursosTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>Business.Logic</rd:DataSetName>
+        <rd:TableName>PlanLogic</rd:TableName>
+        <rd:ObjectDataSourceSelectMethod>ReportePlanes</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceSelectMethodSignature>System.Collections.Generic.List`1[Business.Entities.Materia] ReportePlanes(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32])</rd:ObjectDataSourceSelectMethodSignature>
+        <rd:ObjectDataSourceType>Business.Logic.PlanLogic, Business.Logic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>dc1c604c-61d2-4ea7-a91a-af6e091df9b5</rd:ReportID>
+  <rd:ReportID>49f98f3a-dcc1-4cf5-90e4-e162d009a96a</rd:ReportID>
 </Report>

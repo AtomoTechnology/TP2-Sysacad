@@ -33,17 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,6 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademiaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcademiaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Academiadatset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,6 +79,12 @@
     </Compile>
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursosReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosReportViewer.Designer.cs">
+      <DependentUpon>CursosReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Dictados.cs">
       <SubType>Form</SubType>
@@ -105,6 +122,18 @@
     <Compile Include="MisDatos.Designer.cs">
       <DependentUpon>MisDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanesReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanesReportViewer.Designer.cs">
+      <DependentUpon>PlanesReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanMateria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanMateria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PlanReportDataSet.cs" />
     <Compile Include="Preferences.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +219,7 @@
     <Compile Include="ReportPlan.Designer.cs">
       <DependentUpon>ReportPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +273,9 @@
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CursosReportViewer.resx">
+      <DependentUpon>CursosReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dictados.resx">
       <DependentUpon>Dictados.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,9 +294,14 @@
     <EmbeddedResource Include="MisDatos.resx">
       <DependentUpon>MisDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlanesReportViewer.resx">
+      <DependentUpon>PlanesReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Preferences.resx">
       <DependentUpon>Preferences.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPlanesViewer.rdlc" />
+    <EmbeddedResource Include="ReportCursosViewer.rdlc" />
     <EmbeddedResource Include="ReportePlanes.resx">
       <DependentUpon>ReportePlanes.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,7 +341,6 @@
     <EmbeddedResource Include="ReportPlan.resx">
       <DependentUpon>ReportPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportViewerCursos.rdlc" />
     <EmbeddedResource Include="UserPerfil.resx">
       <DependentUpon>UserPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +375,17 @@
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AcademiaDataSet.xsc">
+      <DependentUpon>AcademiaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AcademiaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcademiaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AcademiaDataSet.xss">
+      <DependentUpon>AcademiaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Academiadatset.xsc">
       <DependentUpon>Academiadatset.xsd</DependentUpon>
     </None>
@@ -350,7 +398,30 @@
       <DependentUpon>Academiadatset.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="PlanMateria.xsc">
+      <DependentUpon>PlanMateria.xsd</DependentUpon>
+    </None>
+    <None Include="PlanMateria.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlanMateria.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PlanMateria.xss">
+      <DependentUpon>PlanMateria.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Business.Entities.Curso.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.Inscripcion.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.BusinessLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.ComisionLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.CursoLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.DictadoLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.EspecialidadLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.InscripcionLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.MateriaLogic.datasource" />
     <None Include="Properties\DataSources\Business.Logic.PlanLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.UsuarioLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.Validations.datasource" />
+    <None Include="Properties\DataSources\PlanReportDataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -443,6 +514,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CerrarForm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

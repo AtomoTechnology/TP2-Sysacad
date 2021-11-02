@@ -189,8 +189,8 @@ namespace Data.Database
                 {
                     Materia m = new Materia();
                     m.ID = (int)reader["id_plan"];
-                    m.DescPlan = (string)reader["desc_plan"];
                     m.IdPlan = (int)reader["id_plan"];
+                    m.DescPlan = (string)reader["desc_plan"];
                     m.DescMateria = (string)reader["desc_materia"];
                     m.HsSemanales = (int)reader["hs_semanales"];
                     m.HsTotales = (int)reader["hs_totales"];

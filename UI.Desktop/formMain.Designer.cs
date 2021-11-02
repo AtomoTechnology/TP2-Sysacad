@@ -51,6 +51,7 @@ namespace UI.Desktop
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportePlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportViewerCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMenuAcademia = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,7 +67,7 @@ namespace UI.Desktop
             this.btnSetting = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.reportViewerCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportViewerCursosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPrincipal.SuspendLayout();
             this.pnlMenuAcademia.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -249,7 +250,8 @@ namespace UI.Desktop
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteCursosToolStripMenuItem,
             this.reportePlanesToolStripMenuItem,
-            this.reportViewerCursosToolStripMenuItem});
+            this.reportViewerCursosToolStripMenuItem,
+            this.reportViewerCursosToolStripMenuItem1});
             this.adminToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.adminToolStripMenuItem.Image = global::UI.Desktop.Properties.Resources.admin;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
@@ -269,6 +271,13 @@ namespace UI.Desktop
             this.reportePlanesToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
             this.reportePlanesToolStripMenuItem.Text = "Reporte Planes";
             this.reportePlanesToolStripMenuItem.Click += new System.EventHandler(this.reportePlanesToolStripMenuItem_Click);
+            // 
+            // reportViewerCursosToolStripMenuItem
+            // 
+            this.reportViewerCursosToolStripMenuItem.Name = "reportViewerCursosToolStripMenuItem";
+            this.reportViewerCursosToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
+            this.reportViewerCursosToolStripMenuItem.Text = "Report Viewer Planes";
+            this.reportViewerCursosToolStripMenuItem.Click += new System.EventHandler(this.reportViewerCursosToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -454,12 +463,12 @@ namespace UI.Desktop
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // reportViewerCursosToolStripMenuItem
+            // reportViewerCursosToolStripMenuItem1
             // 
-            this.reportViewerCursosToolStripMenuItem.Name = "reportViewerCursosToolStripMenuItem";
-            this.reportViewerCursosToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
-            this.reportViewerCursosToolStripMenuItem.Text = "Report Viewer Cursos";
-            this.reportViewerCursosToolStripMenuItem.Click += new System.EventHandler(this.reportViewerCursosToolStripMenuItem_Click);
+            this.reportViewerCursosToolStripMenuItem1.Name = "reportViewerCursosToolStripMenuItem1";
+            this.reportViewerCursosToolStripMenuItem1.Size = new System.Drawing.Size(327, 34);
+            this.reportViewerCursosToolStripMenuItem1.Text = "Report Viewer Cursos";
+            this.reportViewerCursosToolStripMenuItem1.Click += new System.EventHandler(this.reportViewerCursosToolStripMenuItem1_Click);
             // 
             // formMain
             // 
@@ -540,5 +549,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem misDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscribirAUnaMateriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportViewerCursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportViewerCursosToolStripMenuItem1;
     }
 }

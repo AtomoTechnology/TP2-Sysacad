@@ -403,7 +403,17 @@ namespace UI.Desktop
         {
             this.CloseOtherForm();
             this.form = null;
-            form = new ReportPlan(); 
+            form = new PlanesReportViewer(); 
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void reportViewerCursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.CloseOtherForm();
+            this.form = null;
+            form = new CursosReportViewer();
             form.MdiParent = this;
             form.Dock = DockStyle.Fill;
             form.Show();

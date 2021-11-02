@@ -277,7 +277,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 string query = "select ins.id_curso , per.legajo, CONCAT(per.apellido ,' ', per.nombre) NombreCompleto , ins.condicion " +
-                    ",isnull(ins.nota,'') nota , mat.desc_materia ,com.desc_comision  " +
+                    ",isnull(ins.nota,'') nota , mat.desc_materia ,com.desc_comision , cur.cupo  " +
                     "from alumnos_inscripciones ins " +
                     "inner join cursos cur " +
                     "on cur.id_curso = ins.id_curso " +
@@ -318,6 +318,7 @@ namespace Data.Database
                     ins.NombreCompleto = (string)reader["NombreCompleto"];
                     ins.Condicion = (string)reader["condicion"];
                     ins.Nota = (int)reader["nota"];
+                    ins.CursoCupo = (int)reader["cupo"];
                     //ins.Nota = !String.IsNullOrEmpty(reader["nota"].ToString()) ? (int)reader["nota"]: 0;
                     ins.Legajo = (int)reader["legajo"];
 
