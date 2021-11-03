@@ -1,4 +1,5 @@
 ﻿using Business.Logic;
+using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,20 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadReporteCursos();
+            if (!IsPostBack)
+            {
+                 this.LoadReporteCursos();
+            }
         }
         private void LoadReporteCursos()
         {
-            this.dgvReporteCursos.AutoGenerateColumns = false;
-            this.dgvReporteCursos.DataSource = InscripcionLogic.GetInstance().ReporteCursos();
-            this.dgvReporteCursos.DataBind();
+            
+           var reporte =  InscripcionLogic.GetInstance().ReporteCursos();
+            this.ReportesCursos.LocalReport.DataSources.Clear();
+            ReportDataSource rds = new ReportDataSource("ReporteCursos", reporte);
+            this.ReportesCursos.LocalReport.ReportEmbeddedResource = "UI.Web.ReportViewerCursos.rdlc";
+            this.ReportesCursos.LocalReport.DataSources.Add(rds);
+            this.ReportesCursos.LocalReport.Refresh();
         }
        
     }
