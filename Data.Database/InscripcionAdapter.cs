@@ -226,8 +226,8 @@ namespace Data.Database
                 "UPDATE alumnos_inscripciones SET nota = @nota, condicion = @condicion " +              
                 " WHERE id_inscripcion = @id", SqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = ins.ID;
-                cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ins.IdAlumno;
-                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = ins.IdCurso;
+                //cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ins.IdAlumno;
+                //cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = ins.IdCurso;
                 cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = ins.Nota;
                 cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = ins.Condicion;
                 cmdSave.ExecuteNonQuery();
