@@ -34,9 +34,10 @@ namespace UI.Web.Helpers
             else
             {
                 var user = ((Usuario)HttpContext.Current.Session["current_user"]);
+
                 if( user.TipoPersona == 3 )
                 {
-                    if( path != "MisDatos" && path != "NuevoInscripto" && path != "UserMateria" && path != "PasswordChange" && path != "NewPassword")
+                    if( path != "MisDatos" && path != "NuevoInscripto" && path != "UserMateria" && path != "PasswordChange" && path != "NewPassword" && path != "MateriasInscriptas")
                     {
                         HttpContext.Current.Response.Redirect("Index.aspx");
                     }

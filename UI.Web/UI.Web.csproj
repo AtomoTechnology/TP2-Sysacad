@@ -134,6 +134,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Inscripciones.aspx" />
     <Content Include="Materias.aspx" />
+    <Content Include="MateriasInscriptas.aspx" />
     <Content Include="MisCursos.aspx" />
     <Content Include="MisDatos.aspx" />
     <Content Include="NewPassword.aspx" />
@@ -229,6 +230,13 @@
     </Compile>
     <Compile Include="Materias.aspx.designer.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MateriasInscriptas.aspx.cs">
+      <DependentUpon>MateriasInscriptas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MateriasInscriptas.aspx.designer.cs">
+      <DependentUpon>MateriasInscriptas.aspx</DependentUpon>
     </Compile>
     <Compile Include="MisCursos.aspx.cs">
       <DependentUpon>MisCursos.aspx</DependentUpon>

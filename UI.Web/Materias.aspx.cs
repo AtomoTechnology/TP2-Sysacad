@@ -29,6 +29,7 @@ namespace UI.Web
 
             set { this.ViewState["SelectedID"] = value; }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Methods.ValidatePermission("Materias");
@@ -68,6 +69,7 @@ namespace UI.Web
         {
             dgvMaterias.DataSource = MateriaLogic.GetInstance().GetAll();
             dgvMaterias.DataBind();
+
             ddlPlanes.DataSource = PlanLogic.GetInstance().GetAll();
             ddlPlanes.DataBind();
         }
@@ -76,6 +78,7 @@ namespace UI.Web
         {
             bool ok = true;
             string errors = "";
+
             if (!Validations.ValidateInput(txtDesc.Value))
             {
                 ok = false;

@@ -34,6 +34,7 @@ namespace UI.Web
                         if (esp != null)
                         {
                             txtDesc.Value = esp.desc_especialidad;
+                            btnUpdateEsp.Text = "Actualizar";
 
                         }
                     }

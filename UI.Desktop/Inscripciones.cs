@@ -18,12 +18,12 @@ namespace UI.Desktop
         public Insccipciones()
         {
 
-            InitializeComponent(  );
+            InitializeComponent();
             this.dgvInscripciones.AutoGenerateColumns = false;
             this.dgvInscripciones.ReadOnly = true;
-            this.dgvInscripciones.Columns[8].Visible = false ;
+            this.dgvInscripciones.Columns[8].Visible = false;
             this.dgvInscripciones.Columns[9].Visible = false;
-          
+
 
 
         }
@@ -33,7 +33,7 @@ namespace UI.Desktop
             this.dgvInscripciones.AutoGenerateColumns = false;
             this.RegistrarNota = registrar;
         }
-     
+
 
         private void Insccipciones_Load(object sender, EventArgs e)
         {
@@ -66,20 +66,20 @@ namespace UI.Desktop
                     this.dgvInscripciones.ReadOnly = false;
                     pnlFiltroIns.Visible = true;
 
-                    this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona,null);
+                    this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona, null);
                 }
                 else
                 {
                     this.btnRegistrarNota.Visible = false;
                     this.btnUpdate.Visible = false;
                     this.btnClose.Visible = true;
-                    this.dgvInscripciones.Columns[8].Visible =false;
-                    this.dgvInscripciones.Columns[9].Visible =false;
-                    this.dgvInscripciones.Columns[0].Visible =false;
-                    if(Sesion.currentUser.TipoPersona == 3)
+                    this.dgvInscripciones.Columns[8].Visible = false;
+                    this.dgvInscripciones.Columns[9].Visible = false;
+                    this.dgvInscripciones.Columns[0].Visible = false;
+                    if (Sesion.currentUser.TipoPersona == 3)
                     {
 
-                     this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(null, Sesion.currentUser.IdPersona);
+                        this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(null, Sesion.currentUser.IdPersona);
                     }
                     else
                     {
@@ -135,23 +135,14 @@ namespace UI.Desktop
                 insUpdate.ID = ((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).ID;
                 insUpdate.Nota = ((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).InsertarNota;
                 insUpdate.Condicion = ((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).InsertarCondicion;
-
-                //if(((Business.Entities.Inscripcion)this.dgvInscripciones.Rows[i].DataBoundItem).InsertarNota >= 6)
-                //{
-                //    insUpdate.Condicion = "Aprobado";
-                //}
-                //else
-                //{
-                //    insUpdate.Condicion = "Libre";
-                //}
                 insUpdate.State = BusinessEntity.States.Modified;
                 InscripcionLogic.GetInstance().Save(insUpdate);
             }
-            MessageBox.Show("Notas registradas con  existoss!!!");
+            MessageBox.Show("Notas registradas con  exito!");
         }
 
         private void btnFiltrarIns_Click(object sender, EventArgs e)
-        {       
+        {
 
             this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona, null, ((Business.Entities.Comision)this.cbComision.SelectedItem).ID, ((Business.Entities.Materia)this.cbMateria.SelectedItem).ID);
 

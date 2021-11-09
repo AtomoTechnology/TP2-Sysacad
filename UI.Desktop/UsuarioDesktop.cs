@@ -160,16 +160,24 @@ namespace UI.Desktop
         {
 
             this.MapearADatos();
-            Usuario usr = UsuarioLogic.GetInstance().GetOneByEmailUsernameLegajo(UsuarioActual);
-            if (usr == null)
+            if (UsuarioActual.State != BusinessEntity.States.Modified)
             {
 
-                UsuarioLogic.GetInstance().Save(UsuarioActual);
-                this.Close();
+                Usuario usr = UsuarioLogic.GetInstance().GetOneByEmailUsernameLegajo(UsuarioActual);
+                if (usr == null)
+                {
+                    UsuarioLogic.GetInstance().Save(UsuarioActual);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El legajo/email/nombreUsuario ya existio!!");
+                }
             }
             else
             {
-                MessageBox.Show("El legajo/email/nombreUsuario ya existio!!");
+                UsuarioLogic.GetInstance().Save(UsuarioActual);
+                this.Close();
             }
 
         }
@@ -193,6 +201,8 @@ namespace UI.Desktop
 
 
         }
+
+       
 
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -232,8 +242,11 @@ namespace UI.Desktop
         }
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
-        {          
-            cbTipoPersona.DataSource = Enum.GetValues(typeof(Enums.PersonType));       
+        {
+            cbTipoPersona.DataSource = Enum.GetValues(typeof(Enums.PersonType));        
+             //cbTipoPersona.SelectedValue = Sesion.currentUser.DescTipoPersona;
+            //this.UsuarioActual.TipoPersona = Convert.ToInt32(cbTipoPersona.SelectedItem);
+
 
         }
 

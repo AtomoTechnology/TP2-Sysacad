@@ -30,7 +30,7 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.cursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Academiadatset = new UI.Desktop.Academiadatset();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -54,9 +54,9 @@ namespace UI.Desktop
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.cursosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.cursosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UI.Desktop.ReportCursosViewer.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(33, 57);
             this.reportViewer1.Name = "reportViewer1";
@@ -80,9 +80,9 @@ namespace UI.Desktop
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(770, 805);
+            this.btnCerrar.Location = new System.Drawing.Point(1000, 838);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(405, 53);
+            this.btnCerrar.Size = new System.Drawing.Size(189, 53);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "Salir";
             this.btnCerrar.UseVisualStyleBackColor = false;

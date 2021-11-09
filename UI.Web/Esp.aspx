@@ -32,7 +32,7 @@
             <asp:Label Text="" ID="errorDesc" CssClass="errorinput" runat="server" />
         </fieldset>
         <fieldset>
-            <asp:Button Text="Actualizar" CssClass="btnUpdateEsp" ID="btnUpdateEsp" runat="server" OnClick="btnUpdateEsp_Click" />
+            <asp:Button Text="Agregar" CssClass="btnUpdateEsp" ID="btnUpdateEsp" runat="server" OnClick="btnUpdateEsp_Click" />
         </fieldset>
     </div>
 </asp:Content>

@@ -13,7 +13,10 @@ namespace Data.Database
         //private SqlConnection sqlConnection = new SqlConnection("ConnectionString;");
         //Clave por defecto a utlizar para la cadena de conexion
         //const string consKeyDefaultCnnString = "ConnStringLocal";
-        private string stringConnection = "Data Source=DESKTOP-GDB781L\\JHMESSEROUX;Initial Catalog=Academia;Persist Security Info=True;User ID=sa;Password=jhm.ok";
+        //private string stringConnection = "Data Source=DESKTOP-GDB781L\\JHMESSEROUX;Initial Catalog=Academia;Persist Security Info=True;User ID=sa;Password=jhm.ok";
+        private string stringConnection = "Data Source=JHMESSEROUX\\JHMESSEROUX;initial catalog=Academia;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+
+       
         SqlConnection sqlConn = new SqlConnection();
         public SqlConnection SqlConn
         {

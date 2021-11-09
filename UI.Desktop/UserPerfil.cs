@@ -84,7 +84,7 @@ namespace UI.Desktop
         private void UserPerfil_Load(object sender, EventArgs e)
         {
 
-            this.lblCantidadMateriasAprobadas.Text = InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.ID).Count.ToString();
+            this.lblCantidadMateriasAprobadas.Text = InscripcionLogic.GetInstance().GetMateriasAprobadasAlumnos(Sesion.currentUser.IdPersona).Count.ToString();
 
             this.lblFullname.Text = Sesion.currentUser.Apellido + " " + Sesion.currentUser.Nombre;
             this.lblLegajo.Text = Sesion.currentUser.Legajo.ToString();

@@ -7,6 +7,7 @@
        
     </style>
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div runat="server" id="ModalBox" visible="false" class="modal-box">
         <div class="modal modal-delete-materia">

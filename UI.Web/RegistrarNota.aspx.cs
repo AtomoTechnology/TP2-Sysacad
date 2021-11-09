@@ -24,7 +24,7 @@ namespace UI.Web
                 this.ddlMaterias.DataSource = MateriaLogic.GetInstance().GetAll();
                 ddlMaterias.DataBind();
                 this.LoadGridIns(usr);
-             
+
             }
             //this.btnRegistrarNota_Click(sender,e );
         }

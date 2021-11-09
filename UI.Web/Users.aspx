@@ -19,42 +19,35 @@
             align-items: center;
             gap: 1rem;
         }
+        .add-user-box.toggle{
+            display : none ;
+        }
     </style>
+
+   
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="lista_usuario" style="font-family: Arial; font-size: medium; font-style: normal; background-color: #FFFFFF; border: thin none #C0C0C0; padding: 6px; margin: 2px; cursor: pointer; overflow: auto; border-spacing: inherit">
-
-        <asp:GridView ID="grdUsuarios" runat="server" AutoGenerateColumns="False" DataSourceID="odsUsuarios" Height="270px">
+        <asp:GridView ID="grdUsuarios" runat="server" AutoGenerateColumns="False" Height="270px" DataKeyNames="ID">
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" Visible="False" />
-                <asp:BoundField DataField="Legajo" HeaderText="Legajo" SortExpression="Legajo" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                <asp:BoundField DataField="IdPersona" HeaderText="IdPersona" SortExpression="IdPersona" Visible="False" />
-                <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
-                <asp:BoundField DataField="DescTipoPersona" HeaderText="DescTipoPersona" SortExpression="DescTipoPersona" />
-                <asp:BoundField DataField="DescPlan" HeaderText="DescPlan" SortExpression="DescPlan" />
-                <asp:BoundField DataField="IdPlan" HeaderText="IdPlan" SortExpression="IdPlan" Visible="False" />
-                <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" Visible="False" />
-                <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-                <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" Visible="False" />
-                <asp:BoundField DataField="TipoPersona" HeaderText="TipoPersona" SortExpression="TipoPersona" Visible="False" />
-                <asp:BoundField DataField="NombreUsuario" HeaderText="NombreUsuario" SortExpression="NombreUsuario" />
-                <asp:BoundField DataField="Clave" HeaderText="Clave" SortExpression="Clave" Visible="False" />
-                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" Visible="False" />
-                <asp:CheckBoxField DataField="Habilitado" HeaderText="Habilitado" SortExpression="Habilitado" />
-                <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" Visible="False" />
-
-                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Users.aspx?id={0}" Text="Editar" />
-                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Users.aspx?id={0}" Text="Borrar" />
-
+                <asp:BoundField DataField="Legajo" HeaderText="Legajo" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
+                <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre Usuario" />
+                <asp:BoundField DataField="DescTipoPersona" HeaderText="Tipo Persona" />
+                <asp:BoundField DataField="DescPlan" HeaderText="Plan" />
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="Users.aspx?id={0}" HeaderText="Accion" Text="Editar" />
             </Columns>
         </asp:GridView>
+         <div class="btn-nuevo btn-nuevo-usuario">
+            Nuevo Usuario
+        </div>
     </div>
-    <div class="add-user-box">
+    <div class="add-user-box toggle">
 
         <div class="header-add-x">
-            <asp:Label ID="lblAccion" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblAccion" runat="server" Text="Alta"></asp:Label>
         </div>
         <section class="add-user">
             <div>
@@ -108,9 +101,8 @@
             <div>
                 <fieldset>
                     <asp:Label Text="Plan * " ID="lblPlan" runat="server" />
-                    <asp:DropDownList ID="ddlPlanes" runat="server" DataSourceID="SqlDataSource1" DataTextField="desc_plan" DataValueField="id_plan">
+                    <asp:DropDownList ID="ddlPlanes" runat="server" DataTextField="DescPlan" DataValueField="ID">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AcademiaConnectionString %>" SelectCommand="SELECT * FROM [planes]"></asp:SqlDataSource>
 
                 </fieldset>
                 <fieldset>
@@ -150,13 +142,13 @@
         <asp:Label Text="" CssClass="error" ID="error" runat="server" />
 
     </div>
-    <asp:ObjectDataSource ID="odsUsuarios" runat="server" DeleteMethod="Delete" SelectMethod="GetAll" TypeName="Data.Database.UsuarioAdapter">
-        <DeleteParameters>
-            <asp:Parameter Name="ID" Type="Int32" />
-        </DeleteParameters>
-        <SelectParameters>
-            <asp:Parameter Name="tipoPersona" Type="Int32" />
-        </SelectParameters>
-    </asp:ObjectDataSource>
+    
+ <script> 
 
+     var add = document.querySelector(".btn-nuevo-usuario");
+     var addUser = document.querySelector(".add-user-box");
+     add.addEventListener("click", () => {        
+         addUser.classList.toggle("toggle");
+     });
+ </script>
 </asp:Content>

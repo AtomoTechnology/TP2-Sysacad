@@ -21,19 +21,25 @@ namespace UI.Web
             if (!IsPostBack)
             {
                 error.Visible = false;
+                this.LoadUsersPlans();
                 if (Methods.PaginaEnEstadoEdicion())
                 {
                     CargarUsuario(Convert.ToInt32(Request.QueryString["id"]));
                     password.Visible = false;
                     passwordConfirm.Visible = false;
-                }
-                else
-                {
-                    this.lblAccion.Text = "Alta";
-                }
+                }            
 
             }
         }
+
+        private void LoadUsersPlans()
+        {
+            this.grdUsuarios.DataSource = UsuarioLogic.GetInstance().GetAll();
+            this.grdUsuarios.DataBind();
+            ddlPlanes.DataSource = PlanLogic.GetInstance().GetAll();
+            ddlPlanes.DataBind();
+        }
+        
         private void CargarUsuario(int idUsuario)
         {
             currentUser = UsuarioLogic.GetInstance().GetOne(idUsuario);

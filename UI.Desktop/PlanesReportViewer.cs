@@ -22,6 +22,7 @@ namespace UI.Desktop
         private void PlanesReportViewer_Load(object sender, EventArgs e)
         {
             var result = PlanLogic.GetInstance().ReportePlanes();
+
             ReportDataSource rds = new ReportDataSource("DataSet1", result);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UI.Desktop.ReportPlanesViewer.rdlc";
             this.reportViewer1.LocalReport.DataSources.Clear();

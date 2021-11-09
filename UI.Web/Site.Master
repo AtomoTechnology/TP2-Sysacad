@@ -27,6 +27,9 @@
                         <li class="item" runat="server" visible="false" id="menuAlumno">
                             <a >Alumnos
                             <ul class="sub-items-menu sub-menu-left">
+                                 <li class="sub-item">
+                                    <a href="MateriasInscriptas.aspx"> Materias Inscriptas</a>
+                                </li>
                                 <li class="sub-item">
                                     <a href="NuevoInscripto.aspx">Inscripcion de Materia</a>
                                 </li>

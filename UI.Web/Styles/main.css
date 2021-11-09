@@ -270,6 +270,7 @@ ul li .sub-menu-right::before {
 /*    box-shadow: 1px 2px 5px grey;*/
      padding: 10px; 
     margin: 1rem 0px;
+    transition : 300ms ease-in-out ;
 }
 
 
@@ -312,6 +313,27 @@ ul li .sub-menu-right::before {
     .modal .btns cancel {
         flex: 1;       
         cursor : pointer ;
+    }
+
+
+.btn-nuevo {
+    width: max-content;
+    background: #ff9800;
+    transition: 500ms ease-in-out;
+    padding: 5px 0.3rem;
+    text-align: center;
+    color: black !important;
+    border-radius: 3px;
+    box-shadow: 1px 3px 5px #ebebeb;
+    border: 0.4px solid #cccccc;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+    .btn-nuevo:hover {
+        background: #d29f08;
     }
 
 /*footer*/
