@@ -131,6 +131,7 @@
     <Content Include="ddlplanes.ascx" />
     <Content Include="Esp.aspx" />
     <Content Include="Especialidades.aspx" />
+    <Content Include="field.ascx" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="Inscripciones.aspx" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="Especialidades.aspx.designer.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="field.ascx.cs">
+      <DependentUpon>field.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="field.ascx.designer.cs">
+      <DependentUpon>field.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

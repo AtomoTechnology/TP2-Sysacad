@@ -77,7 +77,7 @@ namespace UI.Web
         protected void addMateria_Click(object sender, EventArgs e)
         {
             bool ok = true;
-            string errors = "";
+            string errors = "";           
 
             if (!Validations.ValidateInput(txtDesc.Value))
             {

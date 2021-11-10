@@ -21,7 +21,7 @@ namespace UI.Web
                 if (Methods.PaginaEnEstadoEdicion())
                 {
                     current_plan = PlanLogic.GetInstance().GetOne(Convert.ToInt32(Request.QueryString["id"]));
-                    txtDescPlan.Text = current_plan.DescPlan;
+                    txtDescPlan.Value = current_plan.DescPlan;
                     ddlEspecialidades.SelectedValue = current_plan.IdEspecialidad.ToString();
                     lblAccion.Text = "Edicion Plan " + current_plan.ID;
                     bntAddPlan.Text = "Actualizar";
@@ -32,21 +32,14 @@ namespace UI.Web
         protected void bntAddPlan_Click(object sender, EventArgs e)
         {
             Boolean ok = true;
-            if (txtDescPlan.Text == "")
+            if ( !Validations.ValidateInput(txtDescPlan.Value))
             {
-                txtDescPlan.Style.Add(HtmlTextWriterStyle.BorderColor, "red");
                 ok = false;
-            }
-            else
-            {
-                txtDescPlan.Style.Remove(HtmlTextWriterStyle.BorderColor);
-                txtDescPlan.Style.Add(HtmlTextWriterStyle.BorderColor, "green");
-            }
-
+            }         
             if (ok)
             {
                 current_plan = new Plan();
-                current_plan.DescPlan = txtDescPlan.Text;
+                current_plan.DescPlan = txtDescPlan.Value;
                 current_plan.IdEspecialidad = Convert.ToInt32(ddlEspecialidades.SelectedValue);
                 if (Methods.PaginaEnEstadoEdicion())
                 {

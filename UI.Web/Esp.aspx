@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Esp.aspx.cs" Inherits="UI.Web.Esp" %>
 
+<%@ Register Src="~/field.ascx" TagPrefix="uc1" TagName="field" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Academia | Especialidad
 </asp:Content>
@@ -28,7 +31,7 @@
     <div class="esp-action">
         <fieldset>
             <asp:Label Text="Descripcion" runat="server" />
-            <input type="text" runat="server" name="" id="txtDesc" />
+            <uc1:field runat="server" ID="txtDesc" />
             <asp:Label Text="" ID="errorDesc" CssClass="errorinput" runat="server" />
         </fieldset>
         <fieldset>

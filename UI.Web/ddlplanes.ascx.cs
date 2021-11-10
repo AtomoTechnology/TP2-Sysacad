@@ -19,11 +19,16 @@ namespace UI.Web
             set { idPlan = value; }
         }
 
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             ddlPlan.DataSource = PlanLogic.GetInstance().GetAll();
             ddlPlan.DataBind();
+        }
+
+        protected void ddlPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.idPlan = Convert.ToInt32(ddlPlan.SelectedValue);
         }
     }
 }

@@ -42,36 +42,45 @@ namespace Business.Logic
                 CursoLogic.GetInstance().Save(curso);
                 InscripcionAdapter.GetInstance().Delete(ID);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-          
+
         }
 
         public void Save(Inscripcion ins)
         {
             // validacion 
-            try
+            if (ins.State == BusinessEntity.States.New)
             {
-                var curso = CursoLogic.GetInstance().GetOne(ins.IdCurso);
-                if (curso.Cupo > 0)
-                {
 
-                    InscripcionAdapter.GetInstance().Save(ins);
+                try
+                {
+                    var curso = CursoLogic.GetInstance().GetOne(ins.IdCurso);
+                    if (curso.Cupo > 0)
+                    {
+
+                        InscripcionAdapter.GetInstance().Save(ins);
+                    }
+                    else
+                    {
+                        Exception exception = new Exception("No hay cupo disponible");
+                        throw exception;
+
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Exception exception = new Exception("No hay cupo disponible");
-                    throw exception;
 
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
+                InscripcionAdapter.GetInstance().Save(ins);
 
-                MessageBox.Show(ex.Message);
             }
 
 

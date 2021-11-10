@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="UI.Web.Planes" %>
 
+<%@ Register Src="~/field.ascx" TagPrefix="uc1" TagName="field" %>
+<%@ Register Src="~/ddlplanes.ascx" TagPrefix="uc1" TagName="ddlplanes" %>
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Academia | Planes
 </asp:Content>
@@ -33,13 +38,12 @@
 
             <fieldset>
                 <asp:Label Text="Descripcion" ID="lblDesc" runat="server" />
-                <asp:TextBox ID="txtDescPlan" runat="server"></asp:TextBox>
+                <uc1:field runat="server" ID="txtDescPlan" />
             </fieldset>
             <fieldset>
                 <asp:Label Text="Especialidad" ID="lblEspecilaidad" runat="server" />
                 <asp:DropDownList ID="ddlEspecialidades" CssClass="ddlEspecialidades" runat="server" DataSourceID="odsEspecialidades" DataTextField="desc_especialidad" DataValueField="ID">
                 </asp:DropDownList>
-
             </fieldset>
             <fieldset>
                 <asp:Button Text="Agregar Plan" ID="bntAddPlan" runat="server" CssClass="btn-add-plan" OnClick="bntAddPlan_Click" />

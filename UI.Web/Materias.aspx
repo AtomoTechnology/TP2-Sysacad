@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="UI.Web.Materias" %>
 
+<%@ Register Src="~/ddlplanes.ascx" TagPrefix="uc1" TagName="ddlplanes" %>
+<%@ Register Src="~/field.ascx" TagPrefix="uc1" TagName="field" %>
+
+
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Academia | Materias</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -54,7 +61,7 @@
             <fieldset>
                 <asp:Label Text="Plan" ID="lblDdlPlan" runat="server" />
                 <asp:DropDownList ID="ddlPlanes" runat="server" DataTextField="DescPlan" DataValueField="ID">
-                </asp:DropDownList>
+                </asp:DropDownList>        
                 <fieldset>
                     <asp:Button Text="Agregar Materia" CssClass="btn-add" ID="addMateria" runat="server" OnClick="addMateria_Click" />
                 </fieldset>
