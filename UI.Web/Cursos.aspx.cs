@@ -44,7 +44,7 @@ namespace UI.Web
         
         private void LoadCursos()
         {
-            dgvCursos.DataSource = CursoLogic.GetInstance().GetAll();
+            dgvCursos.DataSource = CursoLogic.GetInstance().GetAllWithCupo();
             dgvCursos.DataBind();
             ddlComisiones.DataSource = ComisionLogic.GetInstance().GetAll();
             ddlComisiones.DataBind();

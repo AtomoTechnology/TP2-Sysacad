@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inscripciones.aspx.cs" Inherits="UI.Web.Inscripciones" %>
 
+<%@ Register Src="~/ddlplanes.ascx" TagPrefix="uc1" TagName="ddlplanes" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Academia | Inscripciones
 </asp:Content>
@@ -42,7 +45,7 @@
             </div>
             <div class="btns">
                 <asp:Button Text="Borrar" CssClass="btn-delete" ID="btnDelete" runat="server" OnClick="btnDelete_Click"  />
-                <asp:Button Text="Cancelar" CssClass="btn-cancel" ID="bntCancer" runat="server"  />
+                <asp:Button Text="Cancelar" CssClass="btn-cancel" ID="bntCancer" runat="server" OnClick="bntCancer_Click"  />
             </div>
         </div>
     </div>
@@ -64,4 +67,7 @@
             </Columns>
         </asp:GridView>
     </div>
+
+    <uc1:ddlplanes runat="server" id="ddlplanes" />
+
 </asp:Content>

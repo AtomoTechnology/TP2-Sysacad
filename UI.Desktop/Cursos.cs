@@ -31,7 +31,7 @@ namespace UI.Desktop
         }
         private void ListarCursos()
         {
-            this.dgvCursos.DataSource = CursoLogic.GetInstance().GetAll();
+            this.dgvCursos.DataSource = CursoLogic.GetInstance().GetAllWithCupo();
         }
 
         private void Cursos_Load(object sender, EventArgs e)
@@ -70,11 +70,7 @@ namespace UI.Desktop
         private void btnAsignarDocente_Click(object sender, EventArgs e)
         {
             DocenteCursoDesktop dictado = new DocenteCursoDesktop(((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Alta);
-            dictado.ShowDialog();
-
-            //Usuarios usrs = new Usuarios();
-            //usrs.ShowDialog();
-           
+            dictado.ShowDialog();           
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

@@ -36,6 +36,10 @@ namespace Business.Logic
         {
             return CursoData.GetAll(idMateria, idComision, limit  );
         }
+        public List<Curso> GetAllWithCupo()
+        {
+            return CursoData.GetAllWithCupo();
+        }
 
         public Curso GetOne(int id)
         {

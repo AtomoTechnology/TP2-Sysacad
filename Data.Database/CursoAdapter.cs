@@ -12,7 +12,7 @@ namespace Data.Database
 {
     public class CursoAdapter : Adapter
     {
-        public List<Curso> GetAll(int? idMateria = null, int? idComision = null, int? limit = null )
+        public List<Curso> GetAll(int? idMateria = null, int? idComision = null, int? limit = null)
         {
             List<Curso> cursos = new List<Curso>();
             try
@@ -38,6 +38,57 @@ namespace Data.Database
                     query += $" and c.id_comision = {idComision} ";
                 }
                
+
+                //MessageBox.Show(query);
+                SqlCommand cmdCursos = new SqlCommand(query
+                   ,
+                    SqlConn);
+                SqlDataReader reader = cmdCursos.ExecuteReader();
+                while (reader.Read())
+                {
+                    Curso cur = new Curso();
+                    cur.ID = (int)reader["id_curso"];
+                    cur.IdMateria = (int)reader["id_materia"];
+                    cur.IdComision = (int)reader["id_comision"];
+                    cur.AnioCalendario = (int)reader["anio_calendario"];
+                    cur.Cupo = (int)reader["cupo"];
+                    cur.DescComision = (string)reader["desc_comision"];
+                    cur.DescMateria = (string)reader["desc_materia"];
+                    cursos.Add(cur);
+                }
+                //cerramos el dataReader 
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+
+
+            return cursos;
+        }
+
+
+        public List<Curso> GetAllWithCupo()
+        {
+            List<Curso> cursos = new List<Curso>();
+            try
+            {
+                this.OpenConnection();
+                string query = "select  * from cursos c" +
+                    " inner join comisiones com " +
+                    "on com.id_comision = c.id_comision " +
+                    "inner join materias m " +
+                    "on m.id_materia = c.id_materia where cupo > 0 ";              
+
+
                 //MessageBox.Show(query);
                 SqlCommand cmdCursos = new SqlCommand(query
                    ,

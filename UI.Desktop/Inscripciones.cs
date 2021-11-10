@@ -23,9 +23,6 @@ namespace UI.Desktop
             this.dgvInscripciones.ReadOnly = true;
             this.dgvInscripciones.Columns[8].Visible = false;
             this.dgvInscripciones.Columns[9].Visible = false;
-
-
-
         }
         public Insccipciones(bool registrar)
         {
@@ -108,17 +105,9 @@ namespace UI.Desktop
             this.ListarInscripciones();
         }
 
-        private void btnEditInscripcion_Click(object sender, EventArgs e)
-        {
-            InscripcionDesktop insDesk = new InscripcionDesktop(((Business.Entities.Inscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Modificacion);
-            insDesk.ShowDialog();
-            this.ListarInscripciones();
-        }
-
         private void tbnDeleteInscripcion_Click(object sender, EventArgs e)
         {
             InscripcionDesktop insDesk = new InscripcionDesktop(((Business.Entities.Inscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID, ApplicationForm.ModoForm.Baja);
-            //insDesk.ShowDialog();
             this.ListarInscripciones();
         }
 
@@ -143,9 +132,7 @@ namespace UI.Desktop
 
         private void btnFiltrarIns_Click(object sender, EventArgs e)
         {
-
             this.dgvInscripciones.DataSource = InscripcionLogic.GetInstance().GetAll(Sesion.currentUser.IdPersona, null, ((Business.Entities.Comision)this.cbComision.SelectedItem).ID, ((Business.Entities.Materia)this.cbMateria.SelectedItem).ID);
-
         }
 
         private void btnBorrarFiltro_Click(object sender, EventArgs e)

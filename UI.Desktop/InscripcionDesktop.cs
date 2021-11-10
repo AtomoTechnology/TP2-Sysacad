@@ -33,18 +33,11 @@ namespace UI.Desktop
             Modo = modo;
             if (curso != null)
             {
-                //currentInscripcion.IdCurso = curso.ID;
-                //currentInscripcion.DescComision = curso.DescComision;
-                //currentInscripcion.DescMateria = curso.DescMateria;
-                //Curso cur = CursoLogic.GetInstance().GetOne(currentInscripcion.IdCurso);
-                //Usuario usr = UsuarioLogic.GetInstance().GetOne(currentInscripcion.IdAlumno);
                 this.cbComisiones.Text = curso.DescComision;
                 this.cbMaterias.Text = curso.DescMateria;
                 this.CargarCursos();
                 this.cbCursos.SelectedIndex = this.cbCursos.FindString(curso.ID.ToString());
                 this.CargarAlumnos();
-                //this.cbAlumnos.SelectedIndex = this.cbAlumnos.FindString(usr.Legajo.ToString());
-                //this.MapearDeDatos();
             }
         }
         public InscripcionDesktop(int ID, ModoForm modo)
@@ -61,7 +54,6 @@ namespace UI.Desktop
                     {
                         InscripcionLogic.GetInstance().Delete(ID);
                     }
-
                 }
                 else
                 {
@@ -73,16 +65,11 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
-
-
-            //this.txtId.Text = currentInscripcion.ID.ToString();
-            //this.txtNota.Text = currentInscripcion.Nota.ToString();
             this.CargarAlumnosCursos();
             Curso cur = CursoLogic.GetInstance().GetOne(currentInscripcion.IdCurso);
             Usuario usr = UsuarioLogic.GetInstance().GetOne(currentInscripcion.IdAlumno);
             this.cbCursos.SelectedIndex = this.cbCursos.FindString(cur.DescMateria);
             this.cbAlumnos.SelectedIndex = this.cbAlumnos.FindString(usr.Legajo.ToString());
-            //this.cbCondicions.SelectedIndex = this.cbCondicions.FindString(currentInscripcion.Condicion);
 
             switch (Modo)
             {
@@ -187,7 +174,7 @@ namespace UI.Desktop
         }
         private void CargarAlumnos()
         {
-            this.cbAlumnos.DataSource = UsuarioLogic.GetInstance().GetAll( 3 );
+            this.cbAlumnos.DataSource = UsuarioLogic.GetInstance().GetAll(3);
             this.cbAlumnos.DisplayMember = "NombreCompletoLegajo";
             this.cbAlumnos.ValueMember = "ID";
             if (Sesion.currentUser.TipoPersona == 3)
@@ -214,7 +201,7 @@ namespace UI.Desktop
             this.cbComisiones.DataSource = CursoLogic.GetInstance().GetAll(idMateriaActual, null, null);
             this.cbComisiones.DisplayMember = "DescComision";
             this.cbComisiones.ValueMember = "ID";
-            
+
 
         }
 
@@ -230,7 +217,7 @@ namespace UI.Desktop
         }
         private void CargarCursos()
         {
-            this.cbCursos.DataSource = CursoLogic.GetInstance().GetAll();
+            this.cbCursos.DataSource = CursoLogic.GetInstance().GetAllWithCupo();
             this.cbCursos.DisplayMember = "ID";
             this.cbCursos.ValueMember = "ID";
         }

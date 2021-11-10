@@ -13,6 +13,7 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadInscripciones();
+           
         }
         public int SelectedID
         {
@@ -51,6 +52,12 @@ namespace UI.Web
                 ModalBox.Visible = false;
                 Response.Redirect("Inscripciones.aspx");
             }
+        }
+
+        protected void bntCancer_Click(object sender, EventArgs e)
+        {
+            var i = ddlplanes.IDPlan;
+            ModalBox.Visible = false;
         }
     }
 }

@@ -128,6 +128,7 @@
     <Content Include="assets\utn.png" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Cursos.aspx" />
+    <Content Include="ddlplanes.ascx" />
     <Content Include="Esp.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="Global.asax" />
@@ -191,6 +192,13 @@
     </Compile>
     <Compile Include="Cursos.aspx.designer.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ddlplanes.ascx.cs">
+      <DependentUpon>ddlplanes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ddlplanes.ascx.designer.cs">
+      <DependentUpon>ddlplanes.ascx</DependentUpon>
     </Compile>
     <Compile Include="Esp.aspx.cs">
       <DependentUpon>Esp.aspx</DependentUpon>

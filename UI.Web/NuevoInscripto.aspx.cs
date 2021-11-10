@@ -52,7 +52,7 @@ namespace UI.Web
                 ddlAlumno.Items.Add(listItem);
 
             }           
-            foreach (var item in CursoLogic.GetInstance().GetAll())
+            foreach (var item in CursoLogic.GetInstance().GetAllWithCupo())
             {
                 ListItem listItem = new ListItem();
                 listItem.Value =item.ID.ToString();
