@@ -37,7 +37,6 @@ namespace Data.Database
             {
 
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la especialidad", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -86,16 +85,11 @@ namespace Data.Database
                 SqlCommand cmdEsp = new SqlCommand("DELETE  FROM especialidades WHERE id_especialidad = @id", this.SqlConn);
                 cmdEsp.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdEsp.ExecuteNonQuery();
-
-                MessageBox.Show("Especialidad borrado con exito");
-
-
             }
             catch (Exception ex)
             {
 
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la especialidad", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -111,17 +105,15 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand(
-
                 "UPDATE especialidades SET desc_especialidad = @desc_especialidad WHERE id_especialidad=@id", SqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = esp.ID;
-
                 cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = esp.desc_especialidad;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Especialidad actualizado con exito");
             }
             catch (Exception Ex)
             {
-                Exception Excepcionalejada = new Exception("Error al actualizar la especialidad", Ex); throw Excepcionalejada;
+                Exception Excepcionalejada = new Exception("Error al actualizar la especialidad", Ex);
+                throw Excepcionalejada;
             }
 
             finally
@@ -139,13 +131,11 @@ namespace Data.Database
                 SqlCommand cmdEsp = new SqlCommand("insert into  especialidades (desc_especialidad) " + "values (@desc_especialidad)", this.SqlConn);
                 cmdEsp.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = esp.desc_especialidad;
                 cmdEsp.ExecuteNonQuery();
-                MessageBox.Show("Especialidad creado con exito");
 
             }
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la especialidad", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -163,7 +153,6 @@ namespace Data.Database
             else if (esp.State == BusinessEntity.States.New)
             {
                 this.Create(esp);
-
             }
             else if (esp.State == BusinessEntity.States.Modified)
             {

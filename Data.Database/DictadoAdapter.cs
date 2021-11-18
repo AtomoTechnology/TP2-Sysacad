@@ -52,14 +52,16 @@ namespace Data.Database
                 }
                 reader.Close();
                 if( cursosDocentes.Count <= 0)
-                {
-                    MessageBox.Show("Todavia no tiene ningun curso asignado!!!");
+                {                    
+                    Exception ExcepcionManejada = new Exception("Todavia no tiene ningun curso asignado!!!");
+                    throw ExcepcionManejada;
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
 
             }
             finally
@@ -80,9 +82,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = dictado.IdCurso;
                 cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = dictado.IdDocente;
                 cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = dictado.Cargo;
-
-                cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Curso asignado  con exito :)");
+                cmdSave.ExecuteNonQuery();            
                 //asi se obtiene el ID que asigna al BD automaticamente
             }
             catch (Exception Ex)
@@ -141,15 +141,7 @@ namespace Data.Database
             if (dictado.State == BusinessEntity.States.New)
             {
                 this.Insert(dictado);
-            }
-            //else if (dictado.State == BusinessEntity.States.Modified)
-            //{
-            //    this.Update(dictado);
-            //}
-            //else if (dictado.State == BusinessEntity.States.Delete)
-            //{
-            //    this.Delete(dictado.ID);
-            //}
+            }           
             dictado.State = BusinessEntity.States.Unmodified;
         }
     }

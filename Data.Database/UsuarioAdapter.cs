@@ -60,7 +60,6 @@ namespace Data.Database
                     default:
                         break;
                 }
-
                 usuarios.Add(usr); 
             }
             //cerramos el dataReader 
@@ -109,7 +108,6 @@ namespace Data.Database
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos del usuario", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -164,7 +162,6 @@ namespace Data.Database
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos del usuario", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -192,7 +189,6 @@ namespace Data.Database
                             SqlCommand cmdDeletePersona = new SqlCommand("delete  from personas where id_persona = @id_persona ", SqlConn, dbTr);
                             cmdDeletePersona.Parameters.Add("@id_persona", SqlDbType.Int).Value = res.IdPersona;
                             cmdDeletePersona.ExecuteNonQuery();
-                            MessageBox.Show("Operación realizada con  exito :)");
                             dbTr.Commit();
 
 
@@ -221,18 +217,14 @@ namespace Data.Database
             }
             else
             {
-                MessageBox.Show("No existe un usuario con este ID!!");
-                Form form = new Form();
-                form.ShowDialog();
+                Exception ExcepcionManejada = new Exception("No existe un usuario con este ID!!");
+                throw ExcepcionManejada;              
             }
 
         }
 
         protected void Insert(Usuario usuario)
         {
-
-
-
             try
             {
 
@@ -270,7 +262,6 @@ namespace Data.Database
                         cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
                         cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = idPersona;
                         cmdSave.ExecuteNonQuery();
-                        MessageBox.Show("Operación realizada con exito. )");
 
                         //}
                         dbTr.Commit();
@@ -278,7 +269,6 @@ namespace Data.Database
                     catch (Exception ex)
                     {
                         dbTr.Rollback();
-                        MessageBox.Show("Error al realizar la operación!!!");
                         Exception Excepcionalejada = new Exception("Error al realizar la operación!!!", ex); throw Excepcionalejada;
                     }
                     finally
@@ -350,7 +340,6 @@ namespace Data.Database
                         cmdUpdatePerson.ExecuteNonQuery();
                         dbTr.Commit();
 
-                        MessageBox.Show("Operacion realizada con exito :)");
                     }
                     catch (Exception Ex)
                     {

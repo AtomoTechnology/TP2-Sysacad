@@ -37,7 +37,8 @@ namespace Data.Database
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
             }
             finally
             {
@@ -110,7 +111,6 @@ namespace Data.Database
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la comision", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -128,13 +128,11 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete  from comisiones where id_comision = @id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                MessageBox.Show("Comision borrada con exito :)");
 
             }
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al eliminar la comision", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -157,7 +155,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IdPlan;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("comision agregada con exito :)");
                 //asi se obtiene el ID que asigna al BD automaticamente
             }
             catch (Exception Ex)
@@ -191,7 +188,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IdPlan;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Comision actualizada con exito :)");
             }
             catch (Exception Ex)
             {

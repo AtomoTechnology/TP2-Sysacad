@@ -61,7 +61,6 @@ namespace Business.Logic
                     var curso = CursoLogic.GetInstance().GetOne(ins.IdCurso);
                     if (curso.Cupo > 0)
                     {
-
                         InscripcionAdapter.GetInstance().Save(ins);
                     }
                     else
@@ -74,7 +73,8 @@ namespace Business.Logic
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show(ex.Message);
+                    Exception exception = new Exception("No hay cupo disponible");
+                    throw exception;
                 }
             }
             else

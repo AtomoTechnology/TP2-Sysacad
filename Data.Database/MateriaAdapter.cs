@@ -37,16 +37,13 @@ namespace Data.Database
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
             }
             finally
             {
                 this.CloseConnection();
             }
-
-
-
             return materias;
         }
 
@@ -76,7 +73,6 @@ namespace Data.Database
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos de las materias", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -124,15 +120,12 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HsSemanales;
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HsTotales;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
-                cmdSave.ExecuteNonQuery();
-                //MessageBox.Show("Materia agregada con exito :)");
-                //asi se obtiene el ID que asigna al BD automaticamente
+                cmdSave.ExecuteNonQuery();               
             }
             catch (Exception Ex)
             {
 
                 Exception Excepcionalejada = new Exception("Error al crear la materia", Ex); throw Excepcionalejada;
-                //MessageBox.Show("error");
             }
 
             finally
@@ -161,7 +154,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.VarChar, 50).Value = materia.HsTotales;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
                 cmdSave.ExecuteNonQuery();
-                //MessageBox.Show("Materia actualizada con exito :)");
             }
             catch (Exception Ex)
             {

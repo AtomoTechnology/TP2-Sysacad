@@ -35,7 +35,8 @@ namespace Data.Database
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
 
             }
             finally
@@ -53,12 +54,12 @@ namespace Data.Database
                 SqlCommand cmdPlan = new SqlCommand("delete  from planes where id_plan = @idPlan", SqlConn);
                 cmdPlan.Parameters.Add("@idPlan", SqlDbType.Int).Value = ID;
                 cmdPlan.ExecuteNonQuery();
-                MessageBox.Show("Plan borrado con exito :)", "Delete Plan", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
 
             }
             finally
@@ -86,7 +87,8 @@ namespace Data.Database
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
 
             }
             finally
@@ -106,7 +108,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.DescPlan;
                 cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IdEspecialidad;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Plan agregado con exito :)");
                 //asi se obtiene el ID que asigna al BD automaticamente
             }
             catch (Exception Ex)
@@ -135,7 +136,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.DescPlan;
                 cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IdEspecialidad;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Plan actualizado con exito :)");
             }
             catch (Exception Ex)
             {
@@ -198,14 +198,16 @@ namespace Data.Database
 
                 }
                 if (materias.Count <= 0)
-                    MessageBox.Show("No hay resultado!!!");
+                {
+                    Exception ExcepcionManejada = new Exception("No hay resultado!!!");
+                    throw ExcepcionManejada;
+                }
                 reader.Close();
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
-
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
             }
             finally
             {

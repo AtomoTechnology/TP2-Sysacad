@@ -63,7 +63,8 @@ namespace Data.Database
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception("Error al recuperar los datos del curso", ex);
+                throw ExcepcionManejada;
             }
             finally
             {
@@ -112,8 +113,9 @@ namespace Data.Database
             }
             catch (Exception ex)
             {
+                Exception ExcepcionManejada = new Exception("Error al recuperar los datos del curso", ex);
+                throw ExcepcionManejada;
 
-                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -157,7 +159,6 @@ namespace Data.Database
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar los datos del curso", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -175,13 +176,10 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete  from cursos where id_curso = @id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                MessageBox.Show("Curso borrado con exito :)");
-
             }
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al eliminar el curso", ex);
-
                 throw ExcepcionManejada;
             }
             finally
@@ -205,8 +203,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Curso agregado con exito :)");
-                //asi se obtiene el ID que asigna al BD automaticamente
             }
             catch (Exception Ex)
             {
@@ -239,10 +235,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IdComision;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
-
-
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Curso actualizado con exito :)");
             }
             catch (Exception Ex)
             {

@@ -138,8 +138,6 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete  from alumnos_inscripciones where id_inscripcion = @id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                MessageBox.Show("Inscripcion borrada con exito :)");
-
             }
             catch (Exception ex)
             {
@@ -167,8 +165,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ins.IdAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = ins.IdCurso;
                 cmdSave.ExecuteNonQuery();
-                MessageBox.Show("Inscripcion realizada con exito :)");
-
                 SqlCommand updateCursoCupo = new SqlCommand("UPDATE cursos SET  cupo = @cupo WHERE id_curso=@id", SqlConn);
                 updateCursoCupo.Parameters.Add("@id", SqlDbType.Int).Value = ins.IdCurso;
                 updateCursoCupo.Parameters.Add("@cupo", SqlDbType.Int).Value = ins.CursoCupo - 1;
@@ -213,7 +209,6 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            //MessageBox.Show("Inscripcion actualizada con exito :)");
         }
 
 
@@ -296,8 +291,8 @@ namespace Data.Database
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
             }
             finally
             {
@@ -347,7 +342,8 @@ namespace Data.Database
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Exception ExcepcionManejada = new Exception(ex.Message);
+                throw ExcepcionManejada;
             }
             finally
             {
